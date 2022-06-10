@@ -123,27 +123,42 @@
     <file url="file://$PROJECT_DIR$/example/jboss/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/jdbc/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/jdbc/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-cloud-api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-local-api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-boot-base/jeecg-boot-base-core/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-boot-base/jeecg-boot-base-tools/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-boot-module-demo/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-boot-module-system/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-boot-starter/jeecg-boot-starter-cloud/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-boot-starter/jeecg-boot-starter-job/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-boot-starter/jeecg-boot-starter-lock/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-boot-starter/jeecg-boot-starter-rabbitmq/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-boot-starter/jeecg-boot-starter-shardingsphere/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-cloud-module/jeecg-cloud-gateway/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-cloud-module/jeecg-cloud-monitor/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-cloud-module/jeecg-cloud-nacos/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-cloud-module/jeecg-cloud-sentinel/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-cloud-module/jeecg-cloud-system-start/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-more/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-rabbitmq/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-seata/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-shardingsphere/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jeecg-boot/jeecg-cloud-module/jeecg-cloud-xxljob/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-cloud-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-local-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-tools/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-module-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-module-demo/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-module-system/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-module-system/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-cloud/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-cloud/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-job/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-job/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-lock/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-lock/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-rabbitmq/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-shardingsphere/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-shardingsphere/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-monitor/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-monitor/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-nacos/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-nacos/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-sentinel/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-sentinel/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-system-start/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-system-start/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-more/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-rabbitmq/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-seata/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-seata/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-shardingsphere/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-shardingsphere/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-xxljob/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-xxljob/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/jenkins/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/jenkins/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/jetty/src/main/java" charset="UTF-8" />

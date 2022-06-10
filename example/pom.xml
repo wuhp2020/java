@@ -154,7 +154,7 @@
         <module>easypoi</module>
         <module>ruoyi</module>
         <module>dynamic-interface</module>
-        <module>jeecg-boot</module>
+        <module>jeecg-boot-parent</module>
         <module>rocket-api</module>
         <module>diboot</module>
         <module>crudapi</module>
