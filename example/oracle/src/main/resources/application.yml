@@ -1,0 +1,13 @@
+server:
+  port: 8008
+
+mybatis:
+  mapper-locations: classpath:com/web/mapper/*.xml
+  type-aliases-package: com.web.entity
+
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.221.129:3306/test?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123

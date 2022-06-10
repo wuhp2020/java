@@ -1,0 +1,16 @@
+image: "consul"
+imageTag: "1.5.3.0"
+
+consul:
+  servicename: consul-service
+  saslEnable: true
+  replicas: 1
+  port: 8500
+  affinity: |
+    #command
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchLabels:
+              app: "consul"
+          topologyKey: kubernetes.io/hostname

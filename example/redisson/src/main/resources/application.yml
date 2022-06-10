@@ -1,0 +1,6 @@
+server:
+  port: 8008
+
+redisson:
+  cluster.enable: false
+  nodes: 192.168.221.129:6379

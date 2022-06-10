@@ -1,0 +1,9 @@
+server:
+  port: 8008
+
+rocketmq:
+  name-server: 192.168.221.129:9876
+  producer:
+    group: producer
+  consumer:
+    group: consumer

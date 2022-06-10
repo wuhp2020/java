@@ -1,0 +1,87 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: zookeeper-configmap
+data:
+  run.sh: |
+
+    #!/bin/bash
+
+    set -x
+
+    echo "starting zookeeper ..."
+
+    mkdir -p /zookeeper/data
+    rm -rf /zookeeper/conf/zoo.cfg
+    cp /zookeeper/conf/zoo.cfg.bak /zookeeper/conf/zoo.cfg
+
+    for((i=0;i<{{ .Values.zookeeper.replicas }};i++)); do
+      echo "server.$(($i+1))=zookeeper-statefulset-$i.zookeeper-headless-service.default.svc.cluster.local:2888:3888" >> /zookeeper/conf/zoo.cfg
+    done
+
+    echo "quorumListenOnAllIPs=true" >> /zookeeper/conf/zoo.cfg
+
+    if [[ '{{ .Values.zookeeper.saslEnable }}' == 'true' ]]; then
+      echo "authProvider.1=org.apache.zookeeper.server.auth.SASLAuthenticationProvider" >> /zookeeper/conf/zoo.cfg
+      echo "requireClientAuthScheme=sasl" >> /zookeeper/conf/zoo.cfg
+      echo "jaasLoginRenew=3600000" >> /zookeeper/conf/zoo.cfg
+      echo "zookeeper.sasl.client=true" >> /zookeeper/conf/zoo.cfg
+
+      echo " " >> /zookeeper/bin/zkEnv.sh
+      echo "for i in /zookeeper/zk_sasl_dependency/*.jar;" >> /zookeeper/bin/zkEnv.sh
+      echo "do" >> /zookeeper/bin/zkEnv.sh
+      echo '    CLASSPATH="$i:$CLASSPATH"' >> /zookeeper/bin/zkEnv.sh
+      echo "done" >> /zookeeper/bin/zkEnv.sh
+      echo 'SERVER_JVMFLAGS=" -Djava.security.auth.login.config=/zookeeper/conf/zk_server_jaas.conf "' >> /zookeeper/bin/zkEnv.sh
+    fi
+
+    touch /zookeeper/data/myid
+    index=$(echo echo $POD_NAME | egrep -o "[0-9]+")
+    echo $(($index+1)) > /zookeeper/data/myid
+
+    cd /zookeeper && sh ./bin/zkServer.sh start &
+
+    echo "started zookeeper ..."
+    tail -f /dev/null
+
+  zoo.cfg.bak: |
+
+    # The number of milliseconds of each tick
+    tickTime=2000
+    # The number of ticks that the initial
+    # synchronization phase can take
+    initLimit=10
+    # The number of ticks that can pass between
+    # sending a request and getting an acknowledgement
+    syncLimit=5
+    # the directory where the snapshot is stored.
+    # do not use /tmp for storage, /tmp here is just
+    # example sakes.
+    dataDir=/zookeeper/data
+    # the port at which the clients will connect
+    clientPort={{ .Values.zookeeper.port }}
+    # the maximum number of client connections.
+    # increase this if you need to handle more clients
+    #maxClientCnxns=60
+    #
+    # Be sure to read the maintenance section of the
+    # administrator guide before turning on autopurge.
+    #
+    # http://zookeeper.apache.org/doc/current/zookeeperAdmin.html#sc_maintenance
+    #
+    # The number of snapshots to retain in dataDir
+    #autopurge.snapRetainCount=3
+    # Purge task interval in hours
+    # Set to "0" to disable auto purge feature
+    #autopurge.purgeInterval=1
+
+
+  zk_server_jaas.conf: |
+
+    Server {
+      org.apache.kafka.common.security.plain.PlainLoginModule required
+      username="admin"
+      password="admin-sec"
+      user_kafka="kafka-sec"
+      user_producer="prod-sec";
+    };

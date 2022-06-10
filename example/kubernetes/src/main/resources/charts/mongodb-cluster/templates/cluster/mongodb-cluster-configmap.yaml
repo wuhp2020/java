@@ -1,0 +1,224 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongodb-cluster-configmap
+data:
+  run.sh: |
+
+    #!/bin/bash
+
+    set -x
+
+    sleep 25
+
+    echo "starting mongodb-cluster ..."
+
+    # config-server
+    a=""
+    for((i=0;i<{{ .Values.mongodb_config_server.replicas }};i++)); do
+    temp=mongodb-config-server-statefulset-$i.mongodb-config-server-service.default.svc.cluster.local:{{ .Values.mongodb_config_server.port }}
+    while true
+    do
+    sleep 1
+    response=$(mongo $temp/admin --eval "db.adminCommand('ping')" | grep "ok")
+    echo $temp
+    echo '1'
+    if [[ $? -eq 0 ]]; then
+      if [[ $response  == *'"ok" : 1'* ]]; then
+        break
+      fi
+    fi
+    done
+    if [ $i -ne 0 ]; then
+      a="$a,{_id:$i, host:'$temp'}"
+    else
+      a="{_id:$i, host:'$temp'}"
+    fi
+    done
+
+    while true
+    do
+    sleep 1
+    response=$(mongo mongodb-config-server-statefulset-0.mongodb-config-server-service.default.svc.cluster.local:{{ .Values.mongodb_config_server.port }}/admin --eval "rs.initiate({ _id:'config-server', members:[ $a ]})")
+    echo $response
+    echo '2'
+    if [[ $? -eq 0 ]]; then
+      if [[ $response  == *'"ok" : 1'* ]] || [[ $response  == *'already initialized'* ]]; then
+        break
+      fi
+    fi
+    done
+
+    # shard
+    if [[ '{{ .Values.mongodb_shard.slave.enable }}' == 'true' ]]; then
+      for((i=0;i<{{ .Values.mongodb_shard.replicas }};i++)); do
+      tempmaster=mongodb-shard-master-statefulset-$i-0.mongodb-shard-master-service.default.svc.cluster.local:{{ .Values.mongodb_shard.port }}
+      while true
+      do
+      sleep 1
+      response1=$(mongo $tempmaster/admin --eval "db.adminCommand('ping')" | grep "ok")
+      echo '3'
+      if [[ $? -eq 0 ]]; then
+        if [[ $response1  == *'"ok" : 1'* ]]; then
+
+          if [[ {{ .Values.mongodb_shard.replicas }} -eq 1 ]]; then
+            tempslave=mongodb-shard-slave-statefulset-0-0.mongodb-shard-slave-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.port }}
+          elif [[ {{ .Values.mongodb_shard.replicas }} -eq 2 ]]; then
+            if [[ $i -eq 0 ]]; then
+              tempslave=mongodb-shard-slave-statefulset-1-0.mongodb-shard-slave-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.port }}
+            else
+              tempslave=mongodb-shard-slave-statefulset-0-0.mongodb-shard-slave-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.port }}
+            fi
+          else
+            if [[ $i -eq $(({{ .Values.mongodb_shard.replicas }}-1)) ]]; then
+              tempslave=mongodb-shard-slave-statefulset-0-0.mongodb-shard-slave-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.port }}
+            else
+              tempslave=mongodb-shard-slave-statefulset-$(($i+1))-0.mongodb-shard-slave-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.port }}
+            fi
+          fi
+
+          while true
+          do
+          sleep 1
+          response2=$(mongo $tempslave/admin --eval "db.adminCommand('ping')" | grep "ok")
+          echo '4'
+          if [[ $? -eq 0 ]]; then
+            if [[ $response2  == *'"ok" : 1'* ]]; then
+
+              if [[ {{ .Values.mongodb_shard.replicas }} -eq 1 ]]; then
+                temparbiter=mongodb-shard-arbiter-statefulset-0-0.mongodb-shard-arbiter-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.arbiter.port }}
+              elif [[ {{ .Values.mongodb_shard.replicas }} -eq 2 ]]; then
+                if [[ $i -eq 0 ]]; then
+                  temparbiter=mongodb-shard-arbiter-statefulset-1-0.mongodb-shard-arbiter-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.arbiter.port }}
+                else
+                  temparbiter=mongodb-shard-arbiter-statefulset-0-0.mongodb-shard-arbiter-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.arbiter.port }}
+                fi
+              else
+                if [[ $i -eq $(({{ .Values.mongodb_shard.replicas }}-2)) ]]; then
+                  temparbiter=mongodb-shard-arbiter-statefulset-0-0.mongodb-shard-arbiter-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.arbiter.port }}
+                elif [[ $i -eq $(({{ .Values.mongodb_shard.replicas }}-1)) ]]; then
+                  temparbiter=mongodb-shard-arbiter-statefulset-1-0.mongodb-shard-arbiter-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.arbiter.port }}
+                else
+                  temparbiter=mongodb-shard-arbiter-statefulset-$(($i+2))-0.mongodb-shard-arbiter-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.arbiter.port }}
+                fi
+              fi
+
+              while true
+              do
+              sleep 1
+              response3=$(mongo $temparbiter/admin --eval "db.adminCommand('ping')" | grep "ok")
+              echo '5'
+              if [[ $? -eq 0 ]]; then
+                if [[ $response3  == *'"ok" : 1'* ]]; then
+                  while true
+                  do
+                  sleep 1
+                  response4=$(mongo $tempmaster/admin --eval "rs.initiate({ _id:'mongodb-shard-master-statefulset-$i', members:[{_id:0, host:'$tempmaster'}, {_id:1, host:'$tempslave'}, {_id:2, host:'$temparbiter', arbiterOnly:true}]})")
+                  echo $response4
+                  echo '6'
+                  if [[ $? -eq 0 ]]; then
+                    if [[ $response4  == *'"ok" : 1'* ]] || [[ $response4  == *'already initialized'* ]]; then
+                      break
+                    fi
+                  fi
+                  done
+                  break
+                fi
+              fi
+              done
+              break
+            fi
+          fi
+          done
+          break
+        fi
+      fi
+      done
+      done
+    else
+      for((i=0;i<{{ .Values.mongodb_shard.replicas }};i++)); do
+      temp=mongodb-shard-master-statefulset-$i-0.mongodb-shard-master-service.default.svc.cluster.local:{{ .Values.mongodb_shard.port }}
+      while true
+      do
+      sleep 1
+      response1=$(mongo $temp/admin --eval "db.adminCommand('ping')" | grep "ok")
+      echo '7'
+      if [[ $? -eq 0 ]]; then
+        if [[ $response1  == *'"ok" : 1'* ]]; then
+          while true
+          do
+          sleep 1
+          response2=$(mongo $temp/admin --eval "rs.initiate({ _id:'mongodb-shard-master-statefulset-$i', members:[{_id:0, host:'$temp'}]})")
+          echo $response2
+          echo '8'
+          if [[ $? -eq 0 ]]; then
+            if [[ $response2 == *'"ok" : 1'* ]] || [[ $response2  == *'already initialized'* ]]; then
+              break
+            fi
+          fi
+          done
+          break
+        fi
+      fi
+      done
+      done
+    fi
+
+    # mongos
+    for((i=0;i<{{ .Values.mongodb_shard.replicas }};i++)); do
+    tempmaster=mongodb-shard-master-statefulset-$i-0.mongodb-shard-master-service.default.svc.cluster.local:{{ .Values.mongodb_shard.port }}
+
+    if [[ {{ .Values.mongodb_shard.replicas }} -eq 1 ]]; then
+      tempslave=mongodb-shard-slave-statefulset-0-0.mongodb-shard-slave-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.port }}
+    elif [[ {{ .Values.mongodb_shard.replicas }} -eq 2 ]]; then
+      if [[ $i -eq 0 ]]; then
+        tempslave=mongodb-shard-slave-statefulset-1-0.mongodb-shard-slave-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.port }}
+      else
+        tempslave=mongodb-shard-slave-statefulset-0-0.mongodb-shard-slave-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.port }}
+      fi
+    else
+      if [[ $i -eq $(({{ .Values.mongodb_shard.replicas }}-1)) ]]; then
+        tempslave=mongodb-shard-slave-statefulset-0-0.mongodb-shard-slave-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.port }}
+      else
+        tempslave=mongodb-shard-slave-statefulset-$(($i+1))-0.mongodb-shard-slave-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.port }}
+      fi
+    fi
+
+    if [[ {{ .Values.mongodb_shard.replicas }} -eq 1 ]]; then
+      temparbiter=mongodb-shard-arbiter-statefulset-0-0.mongodb-shard-arbiter-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.arbiter.port }}
+    elif [[ {{ .Values.mongodb_shard.replicas }} -eq 2 ]]; then
+      if [[ $i -eq 0 ]]; then
+        temparbiter=mongodb-shard-arbiter-statefulset-1-0.mongodb-shard-arbiter-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.arbiter.port }}
+      else
+        temparbiter=mongodb-shard-arbiter-statefulset-0-0.mongodb-shard-arbiter-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.arbiter.port }}
+      fi
+    else
+      if [[ $i -eq $(({{ .Values.mongodb_shard.replicas }}-2)) ]]; then
+        temparbiter=mongodb-shard-arbiter-statefulset-0-0.mongodb-shard-arbiter-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.arbiter.port }}
+      elif [[ $i -eq $(({{ .Values.mongodb_shard.replicas }}-1)) ]]; then
+        temparbiter=mongodb-shard-arbiter-statefulset-1-0.mongodb-shard-arbiter-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.arbiter.port }}
+      else
+        temparbiter=mongodb-shard-arbiter-statefulset-$(($i+2))-0.mongodb-shard-arbiter-service.default.svc.cluster.local:{{ .Values.mongodb_shard.slave.arbiter.port }}
+      fi
+    fi
+
+    while true
+    do
+    sleep 1
+    if [[ '{{ .Values.mongodb_shard.slave.enable }}' == 'true' ]]; then
+      response2=$(mongo {{.Values.mongodb_mongos.servicename}}:{{.Values.mongodb_mongos.port}}/admin --eval "sh.addShard('mongodb-shard-master-statefulset-$i/$tempmaster,$tempslave,$temparbiter')")
+    else
+      response2=$(mongo {{.Values.mongodb_mongos.servicename}}:{{.Values.mongodb_mongos.port}}/admin --eval "sh.addShard('mongodb-shard-master-statefulset-$i/$tempmaster')")
+    fi
+    echo $response2
+    echo '10'
+    if [[ $? -eq 0 ]]; then
+      if [[ $response2  == *'"ok" : 1'* ]] || [[ $response2  == *shardAdded* ]]; then
+        break
+      fi
+    fi
+    done
+    done
+
+    echo "started mongodb-cluster ..."
+

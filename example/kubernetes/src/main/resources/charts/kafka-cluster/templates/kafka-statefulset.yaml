@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: kafka-statefulset
+  labels:
+    app: "kafka"
+    release: "{{ .Release.Name }}"
+spec:
+  serviceName: "kafka-headless-service"
+  replicas: {{ .Values.kafka.replicas | default 1 }}
+  selector:
+    matchLabels:
+      app: "kafka"
+      release: "{{ .Release.Name }}"
+  updateStrategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: "kafka"
+        release: "{{ .Release.Name }}"
+    spec:
+      dnsPolicy: ClusterFirstWithHostNet
+      hostNetwork: true
+      restartPolicy: Always
+      {{- if .Values.kafka.affinity }}
+      affinity:
+      {{ tpl .Values.kafka.affinity . | indent 8 }}
+      {{- end }}
+      containers:
+      - name: kafka
+        image: "{{ .Values.image }}:{{ .Values.imageTag }}"
+        imagePullPolicy: IfNotPresent
+        command: ['/bin/bash', '-c', '/bin/bash /run.sh']
+        env:
+          - name: POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: NODE_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: spec.nodeName
+        livenessProbe:
+          tcpSocket:
+            port: {{.Values.kafka.port}}
+          initialDelaySeconds: 30
+          periodSeconds: 15
+          timeoutSeconds: 60
+          failureThreshold: 8
+          successThreshold: 1
+        volumeMounts:
+          - name: ro
+            mountPath: /etc/localtime:ro
+          - name: logs
+            mountPath: /kafka/logs
+          - name: kafka-configmap
+            mountPath: /run.sh
+            subPath: run.sh
+          - name: kafka-configmap
+            mountPath: /kafka/config/server.properties.bak
+            subPath: server.properties.bak
+          - name: kafka-configmap
+            mountPath: /kafka/config/kafka_server_jaas.conf
+            subPath: kafka_server_jaas.conf
+          - name: kafka-configmap
+            mountPath: /kafka/config/kafka_client_jaas.conf
+            subPath: kafka_client_jaas.conf
+      volumes:
+        - name: ro
+          hostPath:
+            path: /etc/localtime
+        - name: kafka-configmap
+          configMap:
+            name: kafka-configmap
+  volumeClaimTemplates:
+  - metadata:
+      name: logs
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
+      storageClassName: "local-path"

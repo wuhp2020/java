@@ -1,0 +1,12 @@
+server:
+  port: 8008
+
+spring:
+  application.name: springboot-rabbitmq
+  rabbitmq:
+    host: 192.168.221.129
+    port: 5672
+    username: kongming
+    password: mima
+    virtual-host: /
+    listener.direct.acknowledge-mode: manual

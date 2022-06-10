@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: consul-statefulset
+  labels:
+    app: "consul"
+    release: "{{ .Release.Name }}"
+spec:
+  serviceName: "consul-headless-service"
+  replicas: {{ .Values.consul.replicas | default 1 }}
+  selector:
+    matchLabels:
+      app: "consul"
+      release: "{{ .Release.Name }}"
+  updateStrategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: "consul"
+        release: "{{ .Release.Name }}"
+    spec:
+      dnsPolicy: ClusterFirstWithHostNet
+      hostNetwork: true
+      restartPolicy: Always
+      {{- if .Values.consul.affinity }}
+      affinity:
+      {{ tpl .Values.consul.affinity . | indent 8 }}
+      {{- end }}
+      containers:
+      - name: consul
+        image: "{{ .Values.image }}:{{ .Values.imageTag }}"
+        imagePullPolicy: IfNotPresent
+        command: ['/bin/bash', '-c', '/bin/bash /run.sh']
+        env:
+          - name: POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+        resources:
+          requests:
+            cpu: 100m
+            memory: 1Gi
+          limits:
+            cpu: 4
+            memory: 8Gi
+        livenessProbe:
+          tcpSocket:
+            port: {{.Values.consul.port}}
+          initialDelaySeconds: 120
+          periodSeconds: 15
+          timeoutSeconds: 60
+          failureThreshold: 8
+          successThreshold: 1
+        volumeMounts:
+          - name: ro
+            mountPath: /etc/localtime:ro
+          - name: data
+            mountPath: /consul/data
+          - name: consul-configmap
+            mountPath: /run.sh
+            subPath: run.sh
+          - name: consul-configmap
+            mountPath: /consul/conf/agent.json
+            subPath: agent.json
+      volumes:
+        - name: ro
+          hostPath:
+            path: /etc/localtime
+        - name: consul-configmap
+          configMap:
+            name: consul-configmap
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
+      storageClassName: "local-path"

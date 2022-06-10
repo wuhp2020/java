@@ -1,0 +1,7 @@
+server:
+  port: 8008
+  tomcat:
+    max-connections: 200
+    max-threads: 300
+    uri-encoding: UTF-8
+    max-http-post-size: 0

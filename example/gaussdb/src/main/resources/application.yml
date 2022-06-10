@@ -1,0 +1,15 @@
+server:
+  port: 8008
+
+mybatis:
+  mapper-locations: classpath:com/web/mapper/*.xml
+  type-aliases-package: com.web.entity
+  configuration:
+    cache-enabled: true
+
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.221.129:5432/wuhp?useUnicode=true&characterEncoding=utf-8
+    username: gaussdb
+    password: Secretpassword@123

@@ -1,0 +1,5 @@
+server:
+  port: 8008
+
+elasticsearch:
+  nodes: 192.168.221.129:9200

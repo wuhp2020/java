@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="servlet" />
+        <module name="thrift-client" />
+        <module name="sofaboot" />
+        <module name="ajax" />
+        <module name="jeecg-cloud-xxljob" />
+        <module name="grpc-client" />
+        <module name="jeecg-boot-starter-shardingsphere" />
+        <module name="postman" />
+        <module name="springcloud-eureka" />
+        <module name="xml" />
+        <module name="docx4j" />
+        <module name="diamond-server" />
+        <module name="dubbo-client" />
+        <module name="rocketmq-console" />
+        <module name="rocket-api" />
+        <module name="zookeeper" />
+        <module name="joda-time" />
+        <module name="javascript" />
+        <module name="sharding-jdbc" />
+        <module name="spring-security" />
+        <module name="diamond-utils" />
+        <module name="grpc-eureka" />
+        <module name="ruoyi-system" />
+        <module name="easy-rules" />
+        <module name="jsp" />
+        <module name="poi" />
+        <module name="hibernate" />
+        <module name="jmeter" />
+        <module name="netty-server" />
+        <module name="freemarker" />
+        <module name="commons-codec" />
+        <module name="java8" />
+        <module name="spark" />
+        <module name="open-meituan" />
+        <module name="jeecg-cloud-nacos" />
+        <module name="axure" />
+        <module name="activemq" />
+        <module name="storm" />
+        <module name="rocketmq" />
+        <module name="lz4" />
+        <module name="seata-account" />
+        <module name="io-client" />
+        <module name="diboot" />
+        <module name="dubbo-interface" />
+        <module name="neo4j" />
+        <module name="asm" />
+        <module name="kubernetes" />
+        <module name="fastjson" />
+        <module name="global-handler" />
+        <module name="springcloud-feign-client" />
+        <module name="oauth2" />
+        <module name="snow-flake" />
+        <module name="skywalking" />
+        <module name="cxf" />
+        <module name="spring" />
+        <module name="mycat" />
+        <module name="jmockdata" />
+        <module name="mysql" />
+        <module name="xjar" />
+        <module name="thrift-server" />
+        <module name="jvm" />
+        <module name="easymock" />
+        <module name="jeecg-boot-starter-job" />
+        <module name="oracle" />
+        <module name="sqlite" />
+        <module name="springcloud-hystrix" />
+        <module name="elk" />
+        <module name="dubbo-server" />
+        <module name="jeecg-cloud-test-seata" />
+        <module name="jeecg-system-local-api" />
+        <module name="flink" />
+        <module name="curator" />
+        <module name="seata-business" />
+        <module name="druid" />
+        <module name="diamond-client" />
+        <module name="shell" />
+        <module name="consul" />
+        <module name="seata-storage" />
+        <module name="crudapi-example" />
+        <module name="javafaker" />
+        <module name="netty-client" />
+        <module name="jeecg-system-cloud-api" />
+        <module name="jwt" />
+        <module name="jdbc" />
+        <module name="nodejs" />
+        <module name="seata-eureka" />
+        <module name="nacos" />
+        <module name="docker" />
+        <module name="caffeine" />
+        <module name="jboss" />
+        <module name="sqlserver" />
+        <module name="linux" />
+        <module name="springcloud-netflix" />
+        <module name="ruoyi-common" />
+        <module name="jeecg-boot-base-tools" />
+        <module name="jetty" />
+        <module name="hadoop" />
+        <module name="prometheus" />
+        <module name="hbase" />
+        <module name="junit" />
+        <module name="io-server" />
+        <module name="grpc-server" />
+        <module name="war" />
+        <module name="pdf" />
+        <module name="easyexcel" />
+        <module name="gaussdb" />
+        <module name="guava" />
+        <module name="httpclient" />
+        <module name="snakeyaml" />
+        <module name="springcloud-gateway" />
+        <module name="jeecg-boot-starter-rabbitmq" />
+        <module name="tomcat" />
+        <module name="jeecg-boot-module-demo" />
+        <module name="redis" />
+        <module name="ruoyi-framework" />
+        <module name="elasticsearch" />
+        <module name="jeecg-cloud-system-start" />
+        <module name="okhttp" />
+        <module name="canal-deployer" />
+        <module name="ansible-agent" />
+        <module name="diamond-sdk" />
+        <module name="jeecg-cloud-test-shardingsphere" />
+        <module name="jeecg-boot-starter-lock" />
+        <module name="apollo" />
+        <module name="mapstruct" />
+        <module name="magic-api" />
+        <module name="kafka" />
+        <module name="seata-order" />
+        <module name="word" />
+        <module name="hive" />
+        <module name="jeecg-boot-starter-cloud" />
+        <module name="ruoyi-generator" />
+        <module name="interceptor" />
+        <module name="bootstrap" />
+        <module name="springboot" />
+        <module name="datasource-switch" />
+        <module name="jenkins" />
+        <module name="opennlp" />
+        <module name="esri-geometry" />
+        <module name="netty-websocket" />
+        <module name="weblogic" />
+        <module name="rabbitmq" />
+        <module name="filter" />
+        <module name="struts2" />
+        <module name="shiro" />
+        <module name="mybatis-plus" />
+        <module name="etcd" />
+        <module name="mail" />
+        <module name="jeecg-cloud-monitor" />
+        <module name="jeecg-cloud-test-rabbitmq" />
+        <module name="redisson" />
+        <module name="nacos-server" />
+        <module name="jeecg-boot-module-system" />
+        <module name="swagger" />
+        <module name="pig" />
+        <module name="canal-admin" />
+        <module name="websocket" />
+        <module name="flume" />
+        <module name="springboot-auto-config" />
+        <module name="ffmpeg" />
+        <module name="checkstyle" />
+        <module name="xxl-job-admin" />
+        <module name="ruoyi-admin" />
+        <module name="jeecg-cloud-gateway" />
+        <module name="jni" />
+        <module name="nginx" />
+        <module name="maven" />
+        <module name="jeecg-cloud-sentinel" />
+        <module name="java11" />
+        <module name="dubbo-admin" />
+        <module name="activiti" />
+        <module name="dynamic-interface" />
+        <module name="gitlab" />
+        <module name="canal-client" />
+        <module name="api-manager" />
+        <module name="mybatis" />
+        <module name="jeecg-boot-base-core" />
+        <module name="springcloud-sleuth" />
+        <module name="mockito" />
+        <module name="jquery" />
+        <module name="design-pattern" />
+        <module name="xxl-job-executor" />
+        <module name="git" />
+        <module name="grpc-interface" />
+        <module name="mongodb" />
+        <module name="jeecg-boot-starter-seata" />
+        <module name="easypoi" />
+        <module name="jeecg-cloud-test-more" />
+        <module name="springcloud-server" />
+        <module name="quartz" />
+        <module name="drools" />
+        <module name="command" />
+        <module name="easyui" />
+        <module name="springcloud-ribbon" />
+        <module name="open-ele-me" />
+        <module name="d3js" />
+        <module name="gson" />
+        <module name="socket" />
+        <module name="ruoyi-quartz" />
+        <module name="opencv" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="aa" target="1.8" />
+      <module name="activemq" target="1.8" />
+      <module name="activiti" target="1.8" />
+      <module name="ajax" target="1.8" />
+      <module name="ansible-agent" target="1.8" />
+      <module name="api" target="1.8" />
+      <module name="api-manager" target="1.8" />
+      <module name="apollo" target="1.8" />
+      <module name="asm" target="1.8" />
+      <module name="axure" target="1.8" />
+      <module name="bootstrap" target="1.8" />
+      <module name="caffeine" target="1.8" />
+      <module name="canal" target="1.8" />
+      <module name="canal-admin" target="1.8" />
+      <module name="canal-client" target="1.8" />
+      <module name="canal-common" target="1.8" />
+      <module name="canal-core" target="1.8" />
+      <module name="canal-dbsync" target="1.8" />
+      <module name="canal-deployer" target="1.8" />
+      <module name="canal-driver" target="1.8" />
+      <module name="canal-filter" target="1.8" />
+      <module name="canal-kafka-connector" target="1.8" />
+      <module name="canal-meta" target="1.8" />
+      <module name="canal-parse" target="1.8" />
+      <module name="canal-prometheus" target="1.8" />
+      <module name="canal-protocol" target="1.8" />
+      <module name="canal-rabbitmq-connector" target="1.8" />
+      <module name="canal-rocketmq-connector" target="1.8" />
+      <module name="canal-server" target="1.8" />
+      <module name="canal-sink" target="1.8" />
+      <module name="canal-store" target="1.8" />
+      <module name="canal-tcp-connector" target="1.8" />
+      <module name="canal.admin" target="1.8" />
+      <module name="canal.admin-ui" target="1.8" />
+      <module name="canal.admin-web" target="1.8" />
+      <module name="canal.client" target="1.8" />
+      <module name="canal.client-adapter" target="1.8" />
+      <module name="canal.common" target="1.8" />
+      <module name="canal.connector" target="1.8" />
+      <module name="canal.deployer" target="1.8" />
+      <module name="canal.example" target="1.8" />
+      <module name="canal.filter" target="1.8" />
+      <module name="canal.instance" target="1.8" />
+      <module name="canal.instance.core" target="1.8" />
+      <module name="canal.instance.manager" target="1.8" />
+      <module name="canal.instance.spring" target="1.8" />
+      <module name="canal.meta" target="1.8" />
+      <module name="canal.parse" target="1.8" />
+      <module name="canal.parse.dbsync" target="1.8" />
+      <module name="canal.parse.driver" target="1.8" />
+      <module name="canal.prometheus" target="1.8" />
+      <module name="canal.protocol" target="1.8" />
+      <module name="canal.server" target="1.8" />
+      <module name="canal.sink" target="1.8" />
+      <module name="canal.store" target="1.8" />
+      <module name="checkstyle" target="1.8" />
+      <module name="client-adapter.common" target="1.8" />
+      <module name="client-adapter.es6x" target="1.8" />
+      <module name="client-adapter.es7x" target="1.8" />
+      <module name="client-adapter.escore" target="1.8" />
+      <module name="client-adapter.hbase" target="1.8" />
+      <module name="client-adapter.kudu" target="1.8" />
+      <module name="client-adapter.launcher" target="1.8" />
+      <module name="client-adapter.logger" target="1.8" />
+      <module name="client-adapter.rdb" target="1.8" />
+      <module name="command" target="1.8" />
+      <module name="commons-codec" target="1.8" />
+      <module name="connector.core" target="1.8" />
+      <module name="connector.kafka" target="1.8" />
+      <module name="connector.rabbitmq" target="1.8" />
+      <module name="connector.rocketmq" target="1.8" />
+      <module name="connector.tcp" target="1.8" />
+      <module name="consul" target="1.8" />
+      <module name="crudapi" target="1.8" />
+      <module name="crudapi-example" target="1.8" />
+      <module name="curator" target="1.8" />
+      <module name="cxf" target="1.8" />
+      <module name="d3js" target="1.8" />
+      <module name="datasource-switch" target="1.8" />
+      <module name="db-api" target="1.8" />
+      <module name="design-pattern" target="1.8" />
+      <module name="developer-meituan" target="1.8" />
+      <module name="diamond" target="1.8" />
+      <module name="diamond-client" target="1.8" />
+      <module name="diamond-sdk" target="1.8" />
+      <module name="diamond-server" target="1.8" />
+      <module name="diamond-utils" target="1.8" />
+      <module name="diboot" target="1.8" />
+      <module name="docker" target="1.8" />
+      <module name="docx4j" target="1.8" />
+      <module name="drools" target="1.8" />
+      <module name="druid" target="1.8" />
+      <module name="dubbo" target="1.8" />
+      <module name="dubbo-admin" target="1.8" />
+      <module name="dubbo-client" target="1.8" />
+      <module name="dubbo-interface" target="1.8" />
+      <module name="dubbo-server" target="1.8" />
+      <module name="dynamic-interface" target="1.8" />
+      <module name="easy-rules" target="1.8" />
+      <module name="easyexcel" target="1.8" />
+      <module name="easymock" target="1.8" />
+      <module name="easypoi" target="1.8" />
+      <module name="easyui" target="1.8" />
+      <module name="elasticsearch" target="1.8" />
+      <module name="elk" target="1.8" />
+      <module name="esri-geometry" target="1.8" />
+      <module name="etcd" target="1.8" />
+      <module name="example" target="1.8" />
+      <module name="fastjson" target="1.8" />
+      <module name="ffmpeg" target="1.8" />
+      <module name="filter" target="1.8" />
+      <module name="flink" target="1.8" />
+      <module name="flume" target="1.8" />
+      <module name="freemarker" target="1.8" />
+      <module name="gaussdb" target="1.8" />
+      <module name="git" target="1.8" />
+      <module name="gitlab" target="1.8" />
+      <module name="global-handler" target="1.8" />
+      <module name="grpc" target="1.8" />
+      <module name="grpc-client" target="1.8" />
+      <module name="grpc-eureka" target="1.8" />
+      <module name="grpc-interface" target="1.8" />
+      <module name="grpc-server" target="1.8" />
+      <module name="gson" target="1.8" />
+      <module name="guava" target="1.8" />
+      <module name="hadoop" target="1.8" />
+      <module name="hbase" target="1.8" />
+      <module name="hibernate" target="1.8" />
+      <module name="hive" target="1.8" />
+      <module name="httpclient" target="1.8" />
+      <module name="interceptor" target="1.8" />
+      <module name="io-client" target="1.8" />
+      <module name="io-server" target="1.8" />
+      <module name="java11" target="1.8" />
+      <module name="java8" target="1.8" />
+      <module name="javafaker" target="1.8" />
+      <module name="javascript" target="1.8" />
+      <module name="jboss" target="1.8" />
+      <module name="jdbc" target="1.8" />
+      <module name="jeecg-boot" target="1.8" />
+      <module name="jeecg-boot-base" target="1.8" />
+      <module name="jeecg-boot-base-api" target="1.8" />
+      <module name="jeecg-boot-base-core" target="1.8" />
+      <module name="jeecg-boot-base-tools" target="1.8" />
+      <module name="jeecg-boot-module-demo" target="1.8" />
+      <module name="jeecg-boot-module-system" target="1.8" />
+      <module name="jeecg-boot-starter" target="1.8" />
+      <module name="jeecg-boot-starter-cloud" target="1.8" />
+      <module name="jeecg-boot-starter-job" target="1.8" />
+      <module name="jeecg-boot-starter-lock" target="1.8" />
+      <module name="jeecg-boot-starter-rabbitmq" target="1.8" />
+      <module name="jeecg-boot-starter-seata" target="1.8" />
+      <module name="jeecg-boot-starter-shardingsphere" target="1.8" />
+      <module name="jeecg-cloud-gateway" target="1.8" />
+      <module name="jeecg-cloud-module" target="1.8" />
+      <module name="jeecg-cloud-monitor" target="1.8" />
+      <module name="jeecg-cloud-nacos" target="1.8" />
+      <module name="jeecg-cloud-sentinel" target="1.8" />
+      <module name="jeecg-cloud-system-start" target="1.8" />
+      <module name="jeecg-cloud-test" target="1.8" />
+      <module name="jeecg-cloud-test-more" target="1.8" />
+      <module name="jeecg-cloud-test-rabbitmq" target="1.8" />
+      <module name="jeecg-cloud-test-seata" target="1.8" />
+      <module name="jeecg-cloud-test-shardingsphere" target="1.8" />
+      <module name="jeecg-cloud-xxljob" target="1.8" />
+      <module name="jeecg-system-cloud-api" target="1.8" />
+      <module name="jeecg-system-local-api" target="1.8" />
+      <module name="jenkins" target="1.8" />
+      <module name="jepaas" target="1.8" />
+      <module name="jepaas-base" target="1.8" />
+      <module name="jepaas-boot" target="1.8" />
+      <module name="jepaas-boot-config" target="1.8" />
+      <module name="jetty" target="1.8" />
+      <module name="jmeter" target="1.8" />
+      <module name="jmockdata" target="1.8" />
+      <module name="jni" target="1.8" />
+      <module name="joda-time" target="1.8" />
+      <module name="jquery" target="1.8" />
+      <module name="jsp" target="1.8" />
+      <module name="junit" target="1.8" />
+      <module name="jvm" target="1.8" />
+      <module name="jwt" target="1.8" />
+      <module name="kafka" target="1.8" />
+      <module name="kubernetes" target="1.8" />
+      <module name="linux" target="1.8" />
+      <module name="lz4" target="1.8" />
+      <module name="magic-api" target="1.8" />
+      <module name="mail" target="1.8" />
+      <module name="mapstruct" target="1.8" />
+      <module name="maven" target="1.8" />
+      <module name="mockito" target="1.8" />
+      <module name="mongodb" target="1.8" />
+      <module name="mybatis" target="1.8" />
+      <module name="mybatis-plus" target="1.8" />
+      <module name="mycat" target="1.8" />
+      <module name="mysql" target="1.8" />
+      <module name="nacos" target="1.8" />
+      <module name="nacos-address" target="1.8" />
+      <module name="nacos-all" target="1.8" />
+      <module name="nacos-api" target="6" />
+      <module name="nacos-client" target="6" />
+      <module name="nacos-cmdb" target="1.7" />
+      <module name="nacos-common" target="6" />
+      <module name="nacos-config" target="1.8" />
+      <module name="nacos-console" target="1.8" />
+      <module name="nacos-core" target="8" />
+      <module name="nacos-distribution" target="1.8" />
+      <module name="nacos-example" target="1.8" />
+      <module name="nacos-istio" target="1.8" />
+      <module name="nacos-naming" target="1.8" />
+      <module name="nacos-server" target="1.8" />
+      <module name="nacos-test" target="1.8" />
+      <module name="neo4j" target="1.8" />
+      <module name="netty" target="1.8" />
+      <module name="netty-client" target="1.8" />
+      <module name="netty-server" target="1.8" />
+      <module name="netty-websocket" target="1.8" />
+      <module name="nginx" target="1.8" />
+      <module name="nodejs" target="1.8" />
+      <module name="oauth2" target="1.8" />
+      <module name="okhttp" target="1.8" />
+      <module name="open-ele-me" target="1.8" />
+      <module name="open-meituan" target="1.8" />
+      <module name="opencv" target="1.8" />
+      <module name="opennlp" target="1.8" />
+      <module name="oracle" target="1.8" />
+      <module name="pdf" target="1.8" />
+      <module name="pig" target="1.8" />
+      <module name="poi" target="1.8" />
+      <module name="postman" target="1.8" />
+      <module name="prometheus" target="1.8" />
+      <module name="quartz" target="1.8" />
+      <module name="rabbitmq" target="1.8" />
+      <module name="redis" target="1.8" />
+      <module name="redisson" target="1.8" />
+      <module name="rocket-api" target="1.8" />
+      <module name="rocketmq" target="1.8" />
+      <module name="rocketmq-console" target="1.8" />
+      <module name="ruoyi" target="1.8" />
+      <module name="ruoyi-admin" target="1.8" />
+      <module name="ruoyi-api" target="1.8" />
+      <module name="ruoyi-api-system" target="1.8" />
+      <module name="ruoyi-auth" target="1.8" />
+      <module name="ruoyi-common" target="1.8" />
+      <module name="ruoyi-common-core" target="1.8" />
+      <module name="ruoyi-common-datascope" target="1.8" />
+      <module name="ruoyi-common-datasource" target="1.8" />
+      <module name="ruoyi-common-log" target="1.8" />
+      <module name="ruoyi-common-redis" target="1.8" />
+      <module name="ruoyi-common-security" target="1.8" />
+      <module name="ruoyi-common-swagger" target="1.8" />
+      <module name="ruoyi-framework" target="1.8" />
+      <module name="ruoyi-gateway" target="1.8" />
+      <module name="ruoyi-generator" target="1.8" />
+      <module name="ruoyi-modules" target="1.8" />
+      <module name="ruoyi-modules-file" target="1.8" />
+      <module name="ruoyi-modules-gen" target="1.8" />
+      <module name="ruoyi-modules-job" target="1.8" />
+      <module name="ruoyi-modules-system" target="1.8" />
+      <module name="ruoyi-quartz" target="1.8" />
+      <module name="ruoyi-system" target="1.8" />
+      <module name="ruoyi-visual" target="1.8" />
+      <module name="ruoyi-visual-monitor" target="1.8" />
+      <module name="seata" target="1.8" />
+      <module name="seata-account" target="1.8" />
+      <module name="seata-business" target="1.8" />
+      <module name="seata-eureka" target="1.8" />
+      <module name="seata-order" target="1.8" />
+      <module name="seata-storage" target="1.8" />
+      <module name="servlet" target="1.8" />
+      <module name="sharding-jdbc" target="1.8" />
+      <module name="shell" target="1.8" />
+      <module name="shiro" target="1.8" />
+      <module name="skywalking" target="1.8" />
+      <module name="snakeyaml" target="1.8" />
+      <module name="snow-flake" target="1.8" />
+      <module name="socket" target="1.8" />
+      <module name="sofaboot" target="1.8" />
+      <module name="spark" target="1.8" />
+      <module name="spring" target="1.8" />
+      <module name="spring-security" target="1.8" />
+      <module name="springboot" target="1.8" />
+      <module name="springboot-auto-config" target="1.8" />
+      <module name="springcloud" target="1.8" />
+      <module name="springcloud-eureka" target="1.8" />
+      <module name="springcloud-feign-client" target="1.8" />
+      <module name="springcloud-gateway" target="1.8" />
+      <module name="springcloud-hystrix" target="1.8" />
+      <module name="springcloud-netflix" target="1.8" />
+      <module name="springcloud-ribbon" target="1.8" />
+      <module name="springcloud-server" target="1.8" />
+      <module name="springcloud-sleuth" target="1.8" />
+      <module name="sqlite" target="1.8" />
+      <module name="sqlserver" target="1.8" />
+      <module name="storm" target="1.8" />
+      <module name="struts2" target="1.8" />
+      <module name="super-diamond-client" target="1.5" />
+      <module name="swagger" target="1.8" />
+      <module name="thrift-client" target="1.8" />
+      <module name="thrift-server" target="1.8" />
+      <module name="tomcat" target="1.8" />
+      <module name="war" target="1.8" />
+      <module name="weblogic" target="1.8" />
+      <module name="websocket" target="1.8" />
+      <module name="word" target="1.8" />
+      <module name="xjar" target="1.8" />
+      <module name="xml" target="1.8" />
+      <module name="xxl-job" target="1.8" />
+      <module name="xxl-job-admin" target="1.8" />
+      <module name="xxl-job-executor" target="1.8" />
+      <module name="zookeeper" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="aa" options="-parameters" />
+      <module name="activemq" options="-parameters" />
+      <module name="activiti" options="-parameters" />
+      <module name="ajax" options="-parameters" />
+      <module name="ansible-agent" options="-parameters" />
+      <module name="api" options="-parameters" />
+      <module name="api-manager" options="-parameters" />
+      <module name="apollo" options="-parameters" />
+      <module name="asm" options="-parameters" />
+      <module name="axure" options="-parameters" />
+      <module name="bootstrap" options="-parameters" />
+      <module name="caffeine" options="-parameters" />
+      <module name="canal" options="" />
+      <module name="canal-admin" options="-parameters" />
+      <module name="canal-client" options="-parameters" />
+      <module name="canal-common" options="-parameters" />
+      <module name="canal-core" options="-parameters" />
+      <module name="canal-dbsync" options="-parameters" />
+      <module name="canal-deployer" options="-parameters" />
+      <module name="canal-driver" options="-parameters" />
+      <module name="canal-filter" options="-parameters" />
+      <module name="canal-kafka-connector" options="-parameters" />
+      <module name="canal-meta" options="-parameters" />
+      <module name="canal-parse" options="-parameters" />
+      <module name="canal-prometheus" options="-parameters" />
+      <module name="canal-protocol" options="-parameters" />
+      <module name="canal-rabbitmq-connector" options="-parameters" />
+      <module name="canal-rocketmq-connector" options="-parameters" />
+      <module name="canal-server" options="-parameters" />
+      <module name="canal-sink" options="-parameters" />
+      <module name="canal-store" options="-parameters" />
+      <module name="canal-tcp-connector" options="-parameters" />
+      <module name="canal.client" options="-parameters" />
+      <module name="canal.common" options="-parameters" />
+      <module name="canal.deployer" options="-parameters" />
+      <module name="canal.example" options="-parameters" />
+      <module name="canal.filter" options="-parameters" />
+      <module name="canal.instance.core" options="-parameters" />
+      <module name="canal.instance.manager" options="-parameters" />
+      <module name="canal.instance.spring" options="-parameters" />
+      <module name="canal.meta" options="-parameters" />
+      <module name="canal.parse" options="-parameters" />
+      <module name="canal.parse.dbsync" options="-parameters" />
+      <module name="canal.parse.driver" options="-parameters" />
+      <module name="canal.prometheus" options="-parameters" />
+      <module name="canal.protocol" options="-parameters" />
+      <module name="canal.server" options="-parameters" />
+      <module name="canal.sink" options="-parameters" />
+      <module name="canal.store" options="-parameters" />
+      <module name="checkstyle" options="-parameters" />
+      <module name="client-adapter.common" options="-parameters" />
+      <module name="client-adapter.es6x" options="-parameters" />
+      <module name="client-adapter.es7x" options="-parameters" />
+      <module name="client-adapter.escore" options="-parameters" />
+      <module name="client-adapter.hbase" options="-parameters" />
+      <module name="client-adapter.kudu" options="-parameters" />
+      <module name="client-adapter.launcher" options="-parameters" />
+      <module name="client-adapter.logger" options="-parameters" />
+      <module name="client-adapter.rdb" options="-parameters" />
+      <module name="command" options="-parameters" />
+      <module name="commons-codec" options="-parameters" />
+      <module name="connector.core" options="-parameters" />
+      <module name="connector.kafka" options="-parameters" />
+      <module name="connector.rabbitmq" options="-parameters" />
+      <module name="connector.rocketmq" options="-parameters" />
+      <module name="connector.tcp" options="-parameters" />
+      <module name="consul" options="-parameters" />
+      <module name="crudapi" options="" />
+      <module name="crudapi-example" options="-parameters" />
+      <module name="curator" options="-parameters" />
+      <module name="cxf" options="-parameters" />
+      <module name="d3js" options="-parameters" />
+      <module name="datasource-switch" options="-parameters" />
+      <module name="db-api" options="-parameters" />
+      <module name="design-pattern" options="-parameters" />
+      <module name="developer-meituan" options="-parameters" />
+      <module name="diamond" options="" />
+      <module name="diamond-client" options="-parameters" />
+      <module name="diamond-sdk" options="-parameters" />
+      <module name="diamond-server" options="-parameters" />
+      <module name="diamond-utils" options="-parameters" />
+      <module name="diboot" options="-parameters" />
+      <module name="docker" options="-parameters" />
+      <module name="docx4j" options="-parameters" />
+      <module name="drools" options="-parameters" />
+      <module name="druid" options="-parameters" />
+      <module name="dubbo-admin" options="-parameters" />
+      <module name="dubbo-client" options="-parameters" />
+      <module name="dubbo-interface" options="-parameters" />
+      <module name="dubbo-server" options="-parameters" />
+      <module name="dynamic-interface" options="-parameters -verbose -bootclasspath /Library/Java/JavaVirtualMachines/jdk1.8.0_311.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_311.jdk/Contents/Home/jre/lib/jce.jar" />
+      <module name="easy-rules" options="-parameters" />
+      <module name="easyexcel" options="-parameters" />
+      <module name="easymock" options="-parameters" />
+      <module name="easypoi" options="-parameters" />
+      <module name="easyui" options="-parameters" />
+      <module name="elasticsearch" options="-parameters" />
+      <module name="elk" options="-parameters" />
+      <module name="esri-geometry" options="-parameters" />
+      <module name="etcd" options="-parameters" />
+      <module name="example" options="-parameters" />
+      <module name="fastjson" options="-parameters" />
+      <module name="ffmpeg" options="-parameters" />
+      <module name="filter" options="-parameters" />
+      <module name="flink" options="-parameters" />
+      <module name="flume" options="-parameters" />
+      <module name="freemarker" options="-parameters" />
+      <module name="gaussdb" options="-parameters" />
+      <module name="git" options="-parameters" />
+      <module name="gitlab" options="-parameters" />
+      <module name="global-handler" options="-parameters" />
+      <module name="grpc-client" options="-parameters" />
+      <module name="grpc-eureka" options="-parameters" />
+      <module name="grpc-interface" options="-parameters" />
+      <module name="grpc-server" options="-parameters" />
+      <module name="gson" options="-parameters" />
+      <module name="guava" options="-parameters" />
+      <module name="hadoop" options="-parameters" />
+      <module name="hbase" options="-parameters" />
+      <module name="hibernate" options="-parameters" />
+      <module name="hive" options="-parameters" />
+      <module name="httpclient" options="-parameters" />
+      <module name="interceptor" options="-parameters" />
+      <module name="io-client" options="-parameters" />
+      <module name="io-server" options="-parameters" />
+      <module name="java11" options="-parameters" />
+      <module name="java8" options="-parameters" />
+      <module name="javafaker" options="-parameters" />
+      <module name="javascript" options="-parameters" />
+      <module name="jboss" options="-parameters" />
+      <module name="jdbc" options="-parameters" />
+      <module name="jeecg-boot-base-core" options="-parameters" />
+      <module name="jeecg-boot-base-tools" options="-parameters" />
+      <module name="jeecg-boot-module-demo" options="-parameters" />
+      <module name="jeecg-boot-module-system" options="-parameters" />
+      <module name="jeecg-boot-starter-cloud" options="-parameters" />
+      <module name="jeecg-boot-starter-job" options="-parameters" />
+      <module name="jeecg-boot-starter-lock" options="-parameters" />
+      <module name="jeecg-boot-starter-rabbitmq" options="-parameters" />
+      <module name="jeecg-boot-starter-seata" options="-parameters" />
+      <module name="jeecg-boot-starter-shardingsphere" options="-parameters" />
+      <module name="jeecg-cloud-gateway" options="-parameters" />
+      <module name="jeecg-cloud-monitor" options="-parameters" />
+      <module name="jeecg-cloud-nacos" options="-parameters" />
+      <module name="jeecg-cloud-sentinel" options="-parameters" />
+      <module name="jeecg-cloud-system-start" options="-parameters" />
+      <module name="jeecg-cloud-test-more" options="-parameters" />
+      <module name="jeecg-cloud-test-rabbitmq" options="-parameters" />
+      <module name="jeecg-cloud-test-seata" options="-parameters" />
+      <module name="jeecg-cloud-test-shardingsphere" options="-parameters" />
+      <module name="jeecg-cloud-xxljob" options="-parameters" />
+      <module name="jeecg-system-cloud-api" options="-parameters" />
+      <module name="jeecg-system-local-api" options="-parameters" />
+      <module name="jenkins" options="-parameters" />
+      <module name="jetty" options="-parameters" />
+      <module name="jmeter" options="-parameters" />
+      <module name="jmockdata" options="-parameters" />
+      <module name="jni" options="-parameters" />
+      <module name="joda-time" options="-parameters" />
+      <module name="jquery" options="-parameters" />
+      <module name="jsp" options="-parameters" />
+      <module name="junit" options="-parameters" />
+      <module name="jvm" options="-parameters" />
+      <module name="jwt" options="-parameters" />
+      <module name="kafka" options="-parameters" />
+      <module name="kubernetes" options="-parameters" />
+      <module name="linux" options="-parameters" />
+      <module name="lz4" options="-parameters" />
+      <module name="magic-api" options="-parameters" />
+      <module name="mail" options="-parameters" />
+      <module name="mapstruct" options="-parameters" />
+      <module name="maven" options="-parameters" />
+      <module name="mockito" options="-parameters" />
+      <module name="mongodb" options="-parameters" />
+      <module name="mybatis" options="-parameters" />
+      <module name="mybatis-plus" options="-parameters" />
+      <module name="mycat" options="-parameters" />
+      <module name="mysql" options="-parameters" />
+      <module name="nacos" options="-parameters" />
+      <module name="nacos-address" options="-parameters" />
+      <module name="nacos-api" options="-parameters" />
+      <module name="nacos-client" options="-parameters" />
+      <module name="nacos-cmdb" options="-parameters" />
+      <module name="nacos-common" options="-parameters" />
+      <module name="nacos-config" options="-parameters" />
+      <module name="nacos-console" options="-parameters" />
+      <module name="nacos-core" options="-parameters" />
+      <module name="nacos-example" options="-parameters" />
+      <module name="nacos-istio" options="-parameters" />
+      <module name="nacos-naming" options="-parameters" />
+      <module name="nacos-server" options="-parameters" />
+      <module name="nacos-test" options="-parameters" />
+      <module name="neo4j" options="-parameters" />
+      <module name="netty-client" options="-parameters" />
+      <module name="netty-server" options="-parameters" />
+      <module name="netty-websocket" options="-parameters" />
+      <module name="nginx" options="-parameters" />
+      <module name="nodejs" options="-parameters" />
+      <module name="oauth2" options="-parameters" />
+      <module name="okhttp" options="-parameters" />
+      <module name="open-ele-me" options="-parameters" />
+      <module name="open-meituan" options="-parameters" />
+      <module name="opencv" options="-parameters" />
+      <module name="opennlp" options="-parameters" />
+      <module name="oracle" options="-parameters" />
+      <module name="pdf" options="-parameters" />
+      <module name="pig" options="-parameters" />
+      <module name="poi" options="-parameters" />
+      <module name="postman" options="-parameters" />
+      <module name="prometheus" options="-parameters" />
+      <module name="quartz" options="-parameters" />
+      <module name="rabbitmq" options="-parameters" />
+      <module name="redis" options="-parameters" />
+      <module name="redisson" options="-parameters" />
+      <module name="rocket-api" options="-parameters" />
+      <module name="rocketmq" options="-parameters" />
+      <module name="rocketmq-console" options="-parameters" />
+      <module name="ruoyi-admin" options="-parameters" />
+      <module name="ruoyi-api-system" options="-parameters" />
+      <module name="ruoyi-auth" options="-parameters" />
+      <module name="ruoyi-common" options="-parameters" />
+      <module name="ruoyi-common-core" options="-parameters" />
+      <module name="ruoyi-common-datascope" options="-parameters" />
+      <module name="ruoyi-common-datasource" options="-parameters" />
+      <module name="ruoyi-common-log" options="-parameters" />
+      <module name="ruoyi-common-redis" options="-parameters" />
+      <module name="ruoyi-common-security" options="-parameters" />
+      <module name="ruoyi-common-swagger" options="-parameters" />
+      <module name="ruoyi-framework" options="-parameters" />
+      <module name="ruoyi-gateway" options="-parameters" />
+      <module name="ruoyi-generator" options="-parameters" />
+      <module name="ruoyi-modules-file" options="-parameters" />
+      <module name="ruoyi-modules-gen" options="-parameters" />
+      <module name="ruoyi-modules-job" options="-parameters" />
+      <module name="ruoyi-modules-system" options="-parameters" />
+      <module name="ruoyi-quartz" options="-parameters" />
+      <module name="ruoyi-system" options="-parameters" />
+      <module name="ruoyi-visual-monitor" options="-parameters" />
+      <module name="seata-account" options="-parameters" />
+      <module name="seata-business" options="-parameters" />
+      <module name="seata-eureka" options="-parameters" />
+      <module name="seata-order" options="-parameters" />
+      <module name="seata-storage" options="-parameters" />
+      <module name="servlet" options="-parameters" />
+      <module name="sharding-jdbc" options="-parameters" />
+      <module name="shell" options="-parameters" />
+      <module name="shiro" options="-parameters" />
+      <module name="skywalking" options="-parameters" />
+      <module name="snakeyaml" options="-parameters" />
+      <module name="snow-flake" options="-parameters" />
+      <module name="socket" options="-parameters" />
+      <module name="sofaboot" options="-parameters" />
+      <module name="spark" options="-parameters" />
+      <module name="spring" options="-parameters" />
+      <module name="spring-security" options="-parameters" />
+      <module name="springboot" options="-parameters" />
+      <module name="springboot-auto-config" options="-parameters" />
+      <module name="springcloud-eureka" options="-parameters" />
+      <module name="springcloud-feign-client" options="-parameters" />
+      <module name="springcloud-gateway" options="-parameters" />
+      <module name="springcloud-hystrix" options="-parameters" />
+      <module name="springcloud-netflix" options="-parameters" />
+      <module name="springcloud-ribbon" options="-parameters" />
+      <module name="springcloud-server" options="-parameters" />
+      <module name="springcloud-sleuth" options="-parameters" />
+      <module name="sqlite" options="-parameters" />
+      <module name="sqlserver" options="-parameters" />
+      <module name="storm" options="-parameters" />
+      <module name="struts2" options="-parameters" />
+      <module name="swagger" options="-parameters" />
+      <module name="thrift-client" options="-parameters" />
+      <module name="thrift-server" options="-parameters" />
+      <module name="tomcat" options="-parameters" />
+      <module name="war" options="-parameters" />
+      <module name="weblogic" options="-parameters" />
+      <module name="websocket" options="-parameters" />
+      <module name="word" options="-parameters" />
+      <module name="xjar" options="-parameters" />
+      <module name="xml" options="-parameters" />
+      <module name="xxl-job-admin" options="-parameters" />
+      <module name="xxl-job-executor" options="-parameters" />
+      <module name="zookeeper" options="-parameters" />
+    </option>
+  </component>
+</project>

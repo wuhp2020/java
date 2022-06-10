@@ -1,0 +1,31 @@
+server:
+  port: 8008
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+spring:
+  application:
+    name: client1
+  zipkin:
+    base-url: http://192.168.221.129:9411
+    discoveryClientEnabled: false
+  sleuth:
+    sampler:
+      probability: 1.0
+
+feign:
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    test:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
