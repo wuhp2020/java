@@ -4,65 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d670f713-ca4e-4561-abdf-901ef2c04c75" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/hibernate.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/HibernateApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/spring/aspect/AuthDataAspect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/spring/aspect/LogInfoAspect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/spring/config/WebSecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/spring/init/ResourceInit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/spring/task/ScheduledTask.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/controller/DictController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/controller/OperationLogController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/controller/ResourceController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/controller/RoleController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/model/DictDO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/model/OperationLogDO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/model/OperationLogSetupDO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/model/ResourceDO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/model/RoleDO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/model/RoleLinkedResourceDO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/model/UserDO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/model/UserLinkedRoleDO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/repository/DictRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/repository/OperationLogRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/repository/OperationLogSetupRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/repository/ResourceRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/repository/RoleLinkedResourceRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/repository/RoleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/repository/UserLinkedRoleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/service/DictService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/service/OperationLogService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/service/ResourceService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/service/RoleService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/util/AESUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/util/MD5Util.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/util/StringUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/vo/dict/DictQueryVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/vo/dict/DictVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/vo/operationlog/OperationLogQueryVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/vo/operationlog/OperationLogSetupVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/vo/operationlog/OperationLogVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/vo/resource/ResourceVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/vo/role/RoleQueryVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/vo/role/RoleVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/vo/user/UserQueryVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/java/com/web/vo/user/UserVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/hibernate/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d670f713-ca4e-4561-abdf-901ef2c04c75" name="Changes" comment="" />
     <list id="dc2dba8c-663c-4987-a4d0-dae89c4c37b2" name="not push" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654870764878</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="8008">
+      <created>1654939419186</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654939419186</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
