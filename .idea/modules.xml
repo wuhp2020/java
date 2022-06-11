@@ -72,7 +72,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/guava/guava.iml" filepath="$PROJECT_DIR$/example/guava/guava.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/hadoop/hadoop.iml" filepath="$PROJECT_DIR$/example/hadoop/hadoop.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/hbase/hbase.iml" filepath="$PROJECT_DIR$/example/hbase/hbase.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/hibernate/hibernate.iml" filepath="$PROJECT_DIR$/example/hibernate/hibernate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/manage/hibernate/hibernate.iml" filepath="$PROJECT_DIR$/example/manage/hibernate/hibernate.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/hive/hive.iml" filepath="$PROJECT_DIR$/example/hive/hive.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/httpclient/httpclient.iml" filepath="$PROJECT_DIR$/example/httpclient/httpclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/interceptor/interceptor.iml" filepath="$PROJECT_DIR$/example/interceptor/interceptor.iml" />
@@ -130,6 +130,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/lz4/lz4.iml" filepath="$PROJECT_DIR$/example/lz4/lz4.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/magic-api/magic-api.iml" filepath="$PROJECT_DIR$/example/magic-api/magic-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mail/mail.iml" filepath="$PROJECT_DIR$/example/mail/mail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/manage/manage.iml" filepath="$PROJECT_DIR$/example/manage/manage.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mapstruct/mapstruct.iml" filepath="$PROJECT_DIR$/example/mapstruct/mapstruct.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/maven/maven.iml" filepath="$PROJECT_DIR$/example/maven/maven.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mockito/mockito.iml" filepath="$PROJECT_DIR$/example/mockito/mockito.iml" />
@@ -210,6 +211,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/thrift-client/thrift-client.iml" filepath="$PROJECT_DIR$/example/thrift-client/thrift-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/thrift-server/thrift-server.iml" filepath="$PROJECT_DIR$/example/thrift-server/thrift-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/tomcat/tomcat.iml" filepath="$PROJECT_DIR$/example/tomcat/tomcat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/manage/manage-web/vue.iml" filepath="$PROJECT_DIR$/example/manage/manage-web/vue.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/war/war.iml" filepath="$PROJECT_DIR$/example/war/war.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/weblogic/weblogic.iml" filepath="$PROJECT_DIR$/example/weblogic/weblogic.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/websocket/websocket.iml" filepath="$PROJECT_DIR$/example/websocket/websocket.iml" />

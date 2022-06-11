@@ -336,6 +336,7 @@
       <module name="lz4" target="1.8" />
       <module name="magic-api" target="1.8" />
       <module name="mail" target="1.8" />
+      <module name="manage" target="1.8" />
       <module name="mapstruct" target="1.8" />
       <module name="maven" target="1.8" />
       <module name="mockito" target="1.8" />
@@ -416,6 +417,7 @@
       <module name="thrift-client" target="1.8" />
       <module name="thrift-server" target="1.8" />
       <module name="tomcat" target="1.8" />
+      <module name="vue" target="1.8" />
       <module name="war" target="1.8" />
       <module name="weblogic" target="1.8" />
       <module name="websocket" target="1.8" />
@@ -621,6 +623,7 @@
       <module name="thrift-client" options="-parameters" />
       <module name="thrift-server" options="-parameters" />
       <module name="tomcat" options="-parameters" />
+      <module name="vue" options="-parameters" />
       <module name="war" options="-parameters" />
       <module name="weblogic" options="-parameters" />
       <module name="websocket" options="-parameters" />

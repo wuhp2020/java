@@ -126,8 +126,6 @@
     <file url="file://$PROJECT_DIR$/example/hadoop/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/hbase/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/hbase/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/hibernate/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/hibernate/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/hive/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/hive/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/httpclient/src/main/java" charset="UTF-8" />
@@ -220,6 +218,7 @@
     <file url="file://$PROJECT_DIR$/example/magic-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/mail/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/mail/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/manage/hibernate/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/mapstruct/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/mapstruct/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/maven/src/main/java" charset="UTF-8" />
