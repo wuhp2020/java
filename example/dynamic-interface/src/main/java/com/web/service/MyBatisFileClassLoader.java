@@ -1,9 +1,11 @@
 package com.web.service;
 
-
 import jdk.internal.org.objectweb.asm.ClassWriter;
 import jdk.internal.org.objectweb.asm.MethodVisitor;
-import jdk.internal.org.objectweb.asm.Opcodes;
+
+import static jdk.internal.org.objectweb.asm.Opcodes.ACC_ABSTRACT;
+import static jdk.internal.org.objectweb.asm.Opcodes.ACC_INTERFACE;
+import static jdk.internal.org.objectweb.asm.Opcodes.ACC_PUBLIC;
 
 /**
  * @ Author : wuheping
@@ -14,11 +16,13 @@ public class MyBatisFileClassLoader extends ClassLoader {
 
     private static byte[] dump() {
         ClassWriter cw = new ClassWriter(0);
-        cw.visit(52, Opcodes.ACC_PUBLIC + Opcodes.ACC_ABSTRACT + Opcodes.ACC_INTERFACE, "com/BasicMapper", null, "java/lang/Object", null);
+        cw.visit(52, ACC_PUBLIC + ACC_ABSTRACT + ACC_INTERFACE, "com/BasicMapper", null, "java/lang/Object", null);
         cw.visitSource("BasicMapper.java", null);
         {
-            MethodVisitor mv = cw.visitMethod(Opcodes.ACC_PUBLIC + Opcodes.ACC_ABSTRACT, "select", "(Ljava/util/Map;)Ljava/util/List;", "(Ljava/util/Map;)Ljava/util/List<Ljava/lang/Object;>;", null);
-            mv.visitEnd();
+            MethodVisitor mvSelect = cw.visitMethod(ACC_PUBLIC + ACC_ABSTRACT, "select", "(Ljava/util/Map;)Ljava/util/List;", "(Ljava/util/Map;)Ljava/util/List<Ljava/lang/Object;>;", null);
+            mvSelect.visitEnd();
+            MethodVisitor mvInsert = cw.visitMethod(ACC_PUBLIC + ACC_ABSTRACT, "insert", "(Ljava/util/Map;)V", null, null);
+            mvInsert.visitEnd();
         }
         cw.visitEnd();
         return cw.toByteArray();
