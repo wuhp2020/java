@@ -2,225 +2,328 @@ package com.web.service;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.google.gson.Gson;
 import com.web.convert.MasterDataMapper;
 import com.web.entity.InterfaceEntity;
+import com.web.entity.InterfaceObjectParamRelationEntity;
 import com.web.entity.InterfaceParamEntity;
 import com.web.mapper.InterfaceMapper;
+import com.web.mapper.InterfaceObjectParamRelationMapper;
 import com.web.mapper.InterfaceParamMapper;
-import com.web.mapper.ModelTableMapper;
-import com.web.vo.InterfaceParamVO;
-import com.web.vo.InterfaceVO;
-import com.web.vo.ModelTableColumnVO;
+import com.web.mapper.TableMapper;
+import com.web.vo.InterfaceObjectParamRelationResVO;
+import com.web.vo.InterfaceParamReqVO;
+import com.web.vo.InterfaceParamResVO;
+import com.web.vo.InterfaceReqVO;
+import com.web.vo.InterfaceResVO;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.builder.xml.XMLMapperBuilder;
-import org.apache.ibatis.executor.ErrorContext;
-import org.apache.ibatis.session.Configuration;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.defaults.DefaultSqlSessionFactory;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 
-import javax.servlet.http.HttpServletRequest;
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.lang.reflect.Method;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-
+/**
+ * @ Author : wuheping
+ * @ Date   : 2022/6/13
+ * @ Desc   : 描述
+ */
 @Service
 @Slf4j
 public class InterfaceService {
 
     @Autowired
-    private List<IMyBatisXmlService> myBatisXmlServices;
+    InterfaceMapper interfaceMapper;
 
     @Autowired
-    private InterfaceMapper interfaceMapper;
+    InterfaceParamMapper interfaceParamMapper;
 
     @Autowired
-    private InterfaceParamMapper interfaceParamMapper;
+    InterfaceObjectParamRelationMapper interfaceObjectParamRelationMapper;
 
     @Autowired
-    private ModelTableMapper modelTableMapper;
-
-    @Autowired
-    private ModelService modelService;
-
-    @Autowired
-    private SqlSessionFactory sqlSessionFactory;
-
-    public static Map<String, InterfaceEntity> interfaceEntityMap = Maps.newConcurrentMap();
+    TableMapper tableMapper;
 
     @Transactional(rollbackFor = Exception.class)
-    public void create(InterfaceVO createInterfaceVO) {
-        IMyBatisXmlService myBatisFileService = myBatisXmlServices.stream()
-                .filter(iMyBatisFileService -> iMyBatisFileService.method()
-                        .equals(createInterfaceVO.getMethod()))
-                .findFirst().get();
+    public void saveInterface(InterfaceReqVO reqVO) {
 
-        // 接口主信息
-        String xml = myBatisFileService.xml(createInterfaceVO);
-        InterfaceEntity interfaceEntity = MasterDataMapper.INSTANCES.interfaceVO2Entity(createInterfaceVO);
-        Long id = SnowflakeIdWorker.getId();
-        interfaceEntity.setId(id);
-        interfaceEntity.setXml(xml);
-        interfaceMapper.insert(interfaceEntity);
-
-        // 缓存
-        interfaceEntityMap.put(createInterfaceVO.getUrl(), interfaceEntity);
-
-        // body
-        ModelTableColumnVO body = createInterfaceVO.getBody();
-        if (body != null) {
-            InterfaceParamEntity interfaceParamBody = new InterfaceParamEntity();
-            interfaceParamBody.setId(SnowflakeIdWorker.getId());
-            interfaceParamBody.setType("body");
-            interfaceParamBody.setModelId(modelTableMapper.selectById(body.getTableId()).getModelId());
-            interfaceParamBody.setTableId(body.getTableId());
-            interfaceParamMapper.insert(interfaceParamBody);
-            this.childrenInterfaceParam(id, "body", body.getChildren());
+        Wrapper<InterfaceEntity> wrapper = Wrappers.<InterfaceEntity>query()
+                .lambda().eq(InterfaceEntity::getUrl, reqVO.getUrl());
+        List<InterfaceEntity> list = interfaceMapper.selectList(wrapper);
+        if (!CollectionUtils.isEmpty(list)) {
+            throw new RuntimeException("接口路径已存在，请更换url或删除后再新建");
         }
 
-        // header
-        List<InterfaceParamVO> header = createInterfaceVO.getHeader();
-        Optional.ofNullable(header).orElse(Collections.emptyList()).stream().forEach(headerParam -> {
-            InterfaceParamEntity interfaceParamHeader = new InterfaceParamEntity();
-            interfaceParamHeader.setId(SnowflakeIdWorker.getId());
-            interfaceParamHeader.setInterfaceId(id);
-            interfaceParamHeader.setType("header");
-            interfaceParamHeader.setName(headerParam.getName());
-            interfaceParamHeader.setType(headerParam.getType());
-            interfaceParamMapper.insert(interfaceParamHeader);
+        // 1 Params, 2 Body, 3 header, 4 cookie, 5 auth, 6 result
+        InterfaceEntity interfaceEntity = MasterDataMapper.INSTANCES.masterInterfaceReqVO2Entity(reqVO);
+        String interfaceId = SnowflakeIdWorker.getId();
+        interfaceEntity.setId(interfaceId);
+        interfaceMapper.insert(interfaceEntity);
+
+        // Params
+        Optional.ofNullable(reqVO.getParams()).orElse(Collections.emptyList()).stream().forEach(param -> {
+            InterfaceParamEntity interfaceParam = MasterDataMapper.INSTANCES.masterInterfaceParamReqVO2Entity(param);
+            interfaceParam.setId(SnowflakeIdWorker.getId());
+            interfaceParam.setParamType("1");
+            interfaceParam.setInterfaceId(interfaceId);
+            interfaceParamMapper.insert(interfaceParam);
         });
 
-        // params
-        List<InterfaceParamVO> params = createInterfaceVO.getParams();
-        Optional.ofNullable(params).orElse(Collections.emptyList()).stream().forEach(paramVO -> {
-            InterfaceParamEntity interfaceParamHeader = new InterfaceParamEntity();
-            interfaceParamHeader.setId(SnowflakeIdWorker.getId());
-            interfaceParamHeader.setInterfaceId(id);
-            interfaceParamHeader.setType("param");
-            interfaceParamHeader.setName(paramVO.getName());
-            interfaceParamHeader.setType(paramVO.getType());
-            interfaceParamMapper.insert(interfaceParamHeader);
+        // Body
+        Optional.ofNullable(reqVO.getBody()).ifPresent(param -> {
+            InterfaceParamEntity interfaceParam = MasterDataMapper.INSTANCES.masterInterfaceParamReqVO2Entity(param);
+            String paramId = SnowflakeIdWorker.getId();
+            interfaceParam.setId(paramId);
+            interfaceParam.setParamType("2");
+            interfaceParam.setInterfaceId(interfaceId);
+            interfaceParamMapper.insert(interfaceParam);
+            this.childrenInterfaceParam(interfaceId, paramId, "2", param.getChildren());
+        });
+
+        // header
+        Optional.ofNullable(reqVO.getHeader()).orElse(Collections.emptyList()).stream().forEach(param -> {
+            InterfaceParamEntity interfaceParam = MasterDataMapper.INSTANCES.masterInterfaceParamReqVO2Entity(param);
+            interfaceParam.setId(SnowflakeIdWorker.getId());
+            interfaceParam.setParamType("3");
+            interfaceParam.setInterfaceId(interfaceId);
+            interfaceParamMapper.insert(interfaceParam);
+        });
+
+        // cookie
+        Optional.ofNullable(reqVO.getCookie()).orElse(Collections.emptyList()).stream().forEach(param -> {
+            InterfaceParamEntity interfaceParam = MasterDataMapper.INSTANCES.masterInterfaceParamReqVO2Entity(param);
+            interfaceParam.setId(SnowflakeIdWorker.getId());
+            interfaceParam.setParamType("4");
+            interfaceParam.setInterfaceId(interfaceId);
+            interfaceParamMapper.insert(interfaceParam);
+        });
+
+        // auth
+        Optional.ofNullable(reqVO.getAuth()).orElse(Collections.emptyList()).stream().forEach(param -> {
+            InterfaceParamEntity interfaceParam = MasterDataMapper.INSTANCES.masterInterfaceParamReqVO2Entity(param);
+            String paramId = SnowflakeIdWorker.getId();
+            interfaceParam.setId(paramId);
+            interfaceParam.setParamType("5");
+            interfaceParam.setInterfaceId(interfaceId);
+            interfaceParamMapper.insert(interfaceParam);
         });
 
         // result
-        ModelTableColumnVO result = createInterfaceVO.getResult();
-        if (result != null) {
-            InterfaceParamEntity interfaceParamResult = new InterfaceParamEntity();
-            interfaceParamResult.setId(SnowflakeIdWorker.getId());
-            interfaceParamResult.setType("result");
-            interfaceParamResult.setModelId(modelTableMapper.selectById(result.getTableId()).getModelId());
-            interfaceParamResult.setTableId(result.getTableId());
-            interfaceParamResult.setInterfaceId(id);
-            interfaceParamMapper.insert(interfaceParamResult);
-            this.childrenInterfaceParam(id, "result", result.getChildren());
-        }
+        Optional.ofNullable(reqVO.getResult()).ifPresent(param -> {
+            InterfaceParamEntity interfaceParam = MasterDataMapper.INSTANCES.masterInterfaceParamReqVO2Entity(param);
+            String paramId = SnowflakeIdWorker.getId();
+            interfaceParam.setId(paramId);
+            interfaceParam.setParamType("6");
+            interfaceParam.setInterfaceId(interfaceId);
+            interfaceParamMapper.insert(interfaceParam);
+            this.childrenInterfaceParam(interfaceId, paramId, "6", param.getChildren());
+        });
     }
 
-    private void childrenInterfaceParam(Long interfaceId, String type, List<ModelTableColumnVO> children) {
-        for (ModelTableColumnVO tableColumnVO: children) {
-            if ("Object".equals(tableColumnVO.getType())) {
-                InterfaceParamEntity interfaceParam = new InterfaceParamEntity();
-                interfaceParam.setId(SnowflakeIdWorker.getId());
-                interfaceParam.setType(type);
-                interfaceParam.setModelId(modelTableMapper.selectById(tableColumnVO.getTableId()).getModelId());
-                interfaceParam.setTableId(tableColumnVO.getTableId());
-                interfaceParam.setInterfaceId(interfaceId);
-                interfaceParamMapper.insert(interfaceParam);
-                this.childrenInterfaceParam(interfaceId, type, tableColumnVO.getChildren());
+    /**
+     * 递归参数子集, 保存
+     * @param interfaceId
+     * @param parentId
+     * @param paramType
+     * @param children
+     */
+    private void childrenInterfaceParam(String interfaceId, String parentId, String paramType, List<InterfaceParamReqVO> children) {
+        for (InterfaceParamReqVO paramReqVO: children) {
+            InterfaceParamEntity interfaceParam = MasterDataMapper.INSTANCES.masterInterfaceParamReqVO2Entity(paramReqVO);
+            String paramId = SnowflakeIdWorker.getId();
+            interfaceParam.setId(paramId);
+            interfaceParam.setParamType(paramType);
+            interfaceParam.setInterfaceId(interfaceId);
+            interfaceParam.setParentId(parentId);
+            interfaceParamMapper.insert(interfaceParam);
+            if (!CollectionUtils.isEmpty(paramReqVO.getChildren())) {
+                if (!CollectionUtils.isEmpty(paramReqVO.getRelations())) {
+                    Map<String, Map<String, Object>> sourceTableColumnNames =  this.sysTableColumn(paramReqVO.getRelations()
+                            .get(0).getSourceTableName()).stream().collect(Collectors.toMap(e -> (String) e.get("column_name"), e -> (Map<String, Object>)e));
+
+                    Map<String, Map<String, Object>> targetTableColumnNames = this.sysTableColumn(paramReqVO.getRelations()
+                            .get(0).getTargetTableName()).stream().collect(Collectors.toMap(e -> (String) e.get("column_name"), e -> (Map<String, Object>)e));
+
+                    // 要建立关系
+                    paramReqVO.getRelations().stream().forEach(relation -> {
+                        Map<String, Object> sourceColumn = sourceTableColumnNames.get(relation.getSourceTableColumnName());
+                        String sourceType = "";
+                        if (sourceColumn.get("data_type") != null) {
+                            sourceType = (String) sourceColumn.get("data_type");
+                        }
+
+                        Map<String, Object> targetColumn = targetTableColumnNames.get(relation.getTargetTableColumnName());
+                        String targetType = "";
+                        if (targetColumn.get("data_type") != null) {
+                            targetType = (String) targetColumn.get("data_type");
+                        }
+
+                        InterfaceObjectParamRelationEntity paramRelation = MasterDataMapper.INSTANCES.masterInterfaceObjectParamRelationReqVO2Entity(relation);
+                        paramRelation.setId(SnowflakeIdWorker.getId());
+                        paramRelation.setInterfaceId(interfaceId);
+                        paramRelation.setInterfaceParamId(paramId);
+                        paramRelation.setSourceType(sourceType.toUpperCase(Locale.ROOT));
+                        paramRelation.setTargetType(targetType.toUpperCase(Locale.ROOT));
+                        interfaceObjectParamRelationMapper.insert(paramRelation);
+                    });
+                }
+                // 有子集
+                this.childrenInterfaceParam(interfaceId, paramId, paramType, paramReqVO.getChildren());
             }
         }
     }
 
-    public InterfaceVO getById(Long id) {
+    @Transactional(rollbackFor = Exception.class)
+    public void deleteInterface(String id) {
+
+        // 接口信息
+        interfaceMapper.deleteById(id);
+
+        // 参数信息
+        Wrapper<InterfaceParamEntity> deleteParam =
+                Wrappers.<InterfaceParamEntity>query().lambda().eq(InterfaceParamEntity::getInterfaceId, id);
+        interfaceParamMapper.delete(deleteParam);
+
+        // 表关联信息
+        Wrapper<InterfaceObjectParamRelationEntity> deleteRelation =
+                Wrappers.<InterfaceObjectParamRelationEntity>query().lambda().eq(InterfaceObjectParamRelationEntity::getInterfaceId, id);
+        interfaceObjectParamRelationMapper.delete(deleteRelation);
+
+    }
+
+    public InterfaceEntity findInterfaceByUrl(String url) {
+        Wrapper<InterfaceEntity> wrapper = Wrappers.<InterfaceEntity>query()
+                .lambda().eq(InterfaceEntity::getUrl, url);
+        InterfaceEntity interfaceEntity = interfaceMapper.selectOne(wrapper);
+        return interfaceEntity;
+    }
+
+    public InterfaceResVO findInterfaceById(String id) {
         InterfaceEntity interfaceEntity = interfaceMapper.selectById(id);
-        InterfaceVO interfaceVO = MasterDataMapper.INSTANCES.interfaceEntity2VO(interfaceEntity);
+        InterfaceResVO interfaceVO = MasterDataMapper.INSTANCES.masterInterfaceEntity2VO(interfaceEntity);
         Map<String, List<InterfaceParamEntity>> maps = this.findInterfaceParamByInterfaceId(id);
 
-        interfaceVO.setParams(MasterDataMapper.INSTANCES.interfaceParamEntitys2VOs(maps.get("param")));
-        interfaceVO.setParams(MasterDataMapper.INSTANCES.interfaceParamEntitys2VOs(maps.get("header")));
+        // 1 Params, 2 Body, 3 header, 4 cookie, 5 auth, 6 result
+        interfaceVO.setParams(MasterDataMapper.INSTANCES.masterInterfaceParamEntitys2VO(maps.get("1")));
+        interfaceVO.setHeader(MasterDataMapper.INSTANCES.masterInterfaceParamEntitys2VO(maps.get("3")));
+        interfaceVO.setCookie(MasterDataMapper.INSTANCES.masterInterfaceParamEntitys2VO(maps.get("4")));
+        interfaceVO.setAuth(MasterDataMapper.INSTANCES.masterInterfaceParamEntitys2VO(maps.get("5")));
         // result
-        List<InterfaceParamEntity> interfaceParamEntityResult = maps.get("result");
-        List<Long> resultTableIds = Optional.ofNullable(interfaceParamEntityResult)
-                .orElse(Collections.emptyList()).stream()
-                .map(InterfaceParamEntity::getTableId).collect(Collectors.toList());
-        interfaceVO.setResult(modelService.createTree(resultTableIds, null));
+        List<InterfaceParamEntity> interfaceParamEntityResult = maps.get("6");
+        interfaceVO.setResult(this.createParamTree(interfaceParamEntityResult));
 
         // body
-        List<InterfaceParamEntity> interfaceParamEntityBody = maps.get("body");
-        List<Long> bodyTableIds = Optional.ofNullable(interfaceParamEntityBody)
-                .orElse(Collections.emptyList()).stream()
-                .map(InterfaceParamEntity::getTableId).collect(Collectors.toList());
-        interfaceVO.setBody(modelService.createTree(bodyTableIds, null));
+        List<InterfaceParamEntity> interfaceParamEntityBody = maps.get("2");
+        interfaceVO.setBody(this.createParamTree(interfaceParamEntityBody));
 
         return interfaceVO;
     }
 
-    public Object invoke(HttpServletRequest request) throws Exception {
-        // 测试一个
-        InterfaceEntity interfaceEntity = interfaceEntityMap.get(request.getRequestURI());
-        InputStream inputStream = new ByteArrayInputStream(interfaceEntity.getXml().getBytes());
-        // 不能使用原有的config对象加载, 否则下次就不会重复加载导致传入的SQL语句不能切换
-        // 也可以在这里指定数据源, 从对应的数据源做查询动作
-        Configuration baseConfig = sqlSessionFactory.getConfiguration();
-        Configuration configuration = new Configuration(baseConfig.getEnvironment());
-        String resource = "resource";
-        ErrorContext.instance().resource(resource);
-        XMLMapperBuilder mapperParser = new XMLMapperBuilder(inputStream, configuration,resource ,configuration.getSqlFragments());
-        mapperParser.parse();
-        SqlSession sqlSessionXML = new DefaultSqlSessionFactory(configuration).openSession();
-        // 加载我们生成的Mapper类
-        MyBatisFileClassLoader myBatisFileClassLoader = new MyBatisFileClassLoader();
-        Class<?> clazz = myBatisFileClassLoader.defineClass("com.BasicMapper");
-        // 将生成的类对象加载到configuration中
-        configuration.addMapper(clazz);
-        Method query = clazz.getMethod("select", Map.class);
-        // 这里就是通过类对象从configuration中获取对应的Mapper
-        Object testMapper = sqlSessionXML.getMapper(clazz);
-
-        Map<String,Object> param = Maps.newHashMap();
-        List<InterfaceParamEntity> interfaceParamEntities = this.findInterfaceParamByInterfaceId(interfaceEntity.getId()).get("param");
-        Optional.ofNullable(interfaceParamEntities)
-                .orElse(Collections.emptyList())
-                .stream()
-                .forEach(interfaceParamEntity -> {
-                    String paramValue = request.getParameter(interfaceParamEntity.getName());
-                    param.put(interfaceParamEntity.getName(), paramValue);
-                });
-        Object result = query.invoke(testMapper, param);
-        log.info("执行结果: " + new Gson().toJson(result));
-
-        return result;
-    }
-
-    private Map<String, List<InterfaceParamEntity>> findInterfaceParamByInterfaceId(Long interfaceId) {
+    public Map<String, List<InterfaceParamEntity>> findInterfaceParamByInterfaceId(String interfaceId) {
         Wrapper wrapper = Wrappers.<InterfaceParamEntity>query().lambda().eq(InterfaceParamEntity::getInterfaceId, interfaceId);
         List<InterfaceParamEntity> interfaceParamEntities = interfaceParamMapper.selectList(wrapper);
         Map<String, List<InterfaceParamEntity>> maps = Optional.ofNullable(interfaceParamEntities)
                 .orElse(Collections.emptyList())
                 .stream()
-                .collect(Collectors.groupingBy(InterfaceParamEntity::getType));
+                .collect(Collectors.groupingBy(InterfaceParamEntity::getParamType));
 
         return maps;
     }
 
-    public void initInterface() {
-        Wrapper wrapper = Wrappers.<InterfaceEntity>query().lambda();
-        List<InterfaceEntity> interfaceEntities = interfaceMapper.selectList(wrapper);
-        Optional.ofNullable(interfaceEntities).orElse(Collections.emptyList())
-                .stream().forEach(interfaceEntity -> {
-                    interfaceEntityMap.put(interfaceEntity.getUrl(), interfaceEntity);
-                });
+    private InterfaceParamResVO createParamTree(List<InterfaceParamEntity> paramEntities) {
 
+        if (CollectionUtils.isEmpty(paramEntities)) {
+            return new InterfaceParamResVO();
+        }
+
+        InterfaceParamResVO paramRes = new InterfaceParamResVO();
+        Map<String, InterfaceParamResVO> mapVO = new HashMap<>();
+
+        // 只有一个根节点
+        for (InterfaceParamEntity treeVo : paramEntities) {
+            InterfaceParamResVO paramResVO = MasterDataMapper.INSTANCES.masterInterfaceParamEntity2VO(treeVo);
+            // 添加关系信息
+            if ("object".equals(paramResVO.getType())) {
+                Wrapper<InterfaceObjectParamRelationEntity> relationWrapper =
+                        Wrappers.<InterfaceObjectParamRelationEntity>query().lambda().eq(InterfaceObjectParamRelationEntity::getInterfaceParamId, paramResVO.getId());
+                List<InterfaceObjectParamRelationEntity> relationEntities = interfaceObjectParamRelationMapper.selectList(relationWrapper);
+                List<InterfaceObjectParamRelationResVO> relationResVOS = MasterDataMapper.INSTANCES.masterInterfaceObjectParamRelationEntitys2VO(relationEntities);
+                paramResVO.setRelations(relationResVOS);
+            }
+            mapVO.put(treeVo.getId(), paramResVO);
+            if (StringUtils.isEmpty(paramResVO.getParentId())) {
+                paramRes = paramResVO;
+            }
+        }
+
+        mapVO.forEach((s, masterInterfaceParamResVO) -> {
+            if (masterInterfaceParamResVO.getParentId() != null) {
+                InterfaceParamResVO parent = mapVO.get(masterInterfaceParamResVO.getParentId());
+                if (parent != null) {
+                    parent.getChildren().add(masterInterfaceParamResVO);
+                }
+            }
+        });
+
+        return paramRes;
+    }
+
+    public List<Map<String, Object>> sysTableColumnAll() {
+        List<Map<String, Object>> tables = tableMapper.sysTable();
+        List<Map<String, Object>> resultTable = Lists.newArrayList();
+        Optional.ofNullable(tables).orElse(Collections.emptyList()).stream().forEach(table -> {
+            Map<String, Object> mapTable = Maps.newHashMap();
+            table.forEach((k, v) -> {
+                mapTable.put(k.toLowerCase(), v);
+            });
+            // 表字段
+            List<Map<String, Object>> tableColumns = tableMapper.sysTableColumn((String) table.get(""));
+            List<Map<String, Object>> resultColumn = Lists.newArrayList();
+            Optional.ofNullable(tableColumns).orElse(Collections.emptyList()).stream().forEach(tableColumn -> {
+                Map<String, Object> map = Maps.newHashMap();
+                tableColumn.forEach((kc, vc) -> {
+                    map.put(kc.toLowerCase(), vc);
+                });
+                resultColumn.add(map);
+            });
+            mapTable.put("tableColumns", resultColumn);
+            resultTable.add(mapTable);
+        });
+        return resultTable;
+    }
+
+    public List<Map<String, Object>> sysTable() {
+        List<Map<String, Object>> tables = tableMapper.sysTable();
+        List<Map<String, Object>> result = Lists.newArrayList();
+        Optional.ofNullable(tables).orElse(Collections.emptyList()).stream().forEach(table -> {
+            Map<String, Object> map = Maps.newHashMap();
+            table.forEach((k, v) -> {
+                map.put(k.toLowerCase(), v);
+            });
+            result.add(map);
+        });
+        return result;
+    }
+
+    public List<Map<String, Object>> sysTableColumn(String tableName) {
+        List<Map<String, Object>> tableColumns = tableMapper.sysTableColumn(tableName);
+        List<Map<String, Object>> result = Lists.newArrayList();
+        Optional.ofNullable(tableColumns).orElse(Collections.emptyList()).stream().forEach(tableColumn -> {
+            Map<String, Object> map = Maps.newHashMap();
+            tableColumn.forEach((k, v) -> {
+                map.put(k.toLowerCase(), v);
+            });
+            result.add(map);
+        });
+        return result;
     }
 }

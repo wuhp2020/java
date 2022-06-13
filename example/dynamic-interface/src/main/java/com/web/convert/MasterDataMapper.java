@@ -1,13 +1,14 @@
 package com.web.convert;
 
 import com.web.entity.InterfaceEntity;
+import com.web.entity.InterfaceObjectParamRelationEntity;
 import com.web.entity.InterfaceParamEntity;
-import com.web.entity.ModelEntity;
-import com.web.entity.ModelTableColumnEntity;
-import com.web.vo.InterfaceParamVO;
-import com.web.vo.InterfaceVO;
-import com.web.vo.ModelTableColumnVO;
-import com.web.vo.ModelVO;
+import com.web.vo.InterfaceObjectParamRelationReqVO;
+import com.web.vo.InterfaceObjectParamRelationResVO;
+import com.web.vo.InterfaceParamReqVO;
+import com.web.vo.InterfaceParamResVO;
+import com.web.vo.InterfaceReqVO;
+import com.web.vo.InterfaceResVO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -23,15 +24,15 @@ public interface MasterDataMapper {
 
     MasterDataMapper INSTANCES = Mappers.getMapper(MasterDataMapper.class);
 
-    // 模型
-    ModelTableColumnVO modelTableColumnEntity2VO(ModelTableColumnEntity modelTableColumnEntity);
-    ModelTableColumnEntity modelTableColumnVO2Entity(ModelTableColumnVO modelTableColumnVO);
-    ModelEntity modelVO2Entity(ModelVO modelVO);
-    ModelVO modelEntity2VO(ModelEntity modelEntity);
+    // 接口管理
+    InterfaceEntity masterInterfaceReqVO2Entity(InterfaceReqVO reqVO);
+    InterfaceResVO masterInterfaceEntity2VO(InterfaceEntity entity);
+    InterfaceParamEntity masterInterfaceParamReqVO2Entity(InterfaceParamReqVO reqVO);
+    List<InterfaceParamResVO> masterInterfaceParamEntitys2VO(List<InterfaceParamEntity> entitys);
+    InterfaceParamResVO masterInterfaceParamEntity2VO(InterfaceParamEntity entity);
+    InterfaceObjectParamRelationResVO masterInterfaceObjectParamRelationEntity2VO(InterfaceObjectParamRelationEntity entity);
+    List<InterfaceObjectParamRelationResVO> masterInterfaceObjectParamRelationEntitys2VO(List<InterfaceObjectParamRelationEntity> entities);
+    InterfaceObjectParamRelationEntity masterInterfaceObjectParamRelationReqVO2Entity(InterfaceObjectParamRelationReqVO reqVO);
 
-    // 接口
-    InterfaceEntity interfaceVO2Entity(InterfaceVO interfaceVO);
-    InterfaceVO interfaceEntity2VO(InterfaceEntity interfaceEntity);
-    List<InterfaceParamVO> interfaceParamEntitys2VOs(List<InterfaceParamEntity> interfaceParamEntities);
 
 }

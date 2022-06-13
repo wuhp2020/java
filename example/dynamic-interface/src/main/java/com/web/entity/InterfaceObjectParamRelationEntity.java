@@ -9,36 +9,42 @@ import lombok.Data;
 
 import java.util.Date;
 
+/**
+ * @ Author : wuheping
+ * @ Date   : 2022/6/6
+ * @ Desc   : 描述
+ */
 @Data
-@TableName("sys_interface")
-public class InterfaceEntity {
+@TableName("sys_interface_object_param_relation")
+public class InterfaceObjectParamRelationEntity {
 
     @TableId
     private String id;
 
-    @TableField("item")
-    private String item;
+    @TableField("interface_id")
+    private String interfaceId;
 
-    @TableField("name")
-    private String name;
+    @TableField("interface_param_id")
+    private String interfaceParamId;
 
-    @TableField("method")
-    private String method;
+    @TableField("source_table_name")
+    private String sourceTableName;
 
-    @TableField("url")
-    private String url;
+    @TableField("source_table_column_name")
+    private String sourceTableColumnName;
 
-    @TableField("status")
-    private String status;
+    @TableField("source_type")
+    private String sourceType;
 
-    @TableField("responsible")
-    private String responsible;
 
-    @TableField("tag")
-    private String tag;
+    @TableField("target_table_name")
+    private String targetTableName;
 
-    @TableField("remark")
-    private String remark;
+    @TableField("target_table_column_name")
+    private String targetTableColumnName;
+
+    @TableField("target_type")
+    private String targetType;
 
     @TableField("create_user_id")
     private String createUserId;

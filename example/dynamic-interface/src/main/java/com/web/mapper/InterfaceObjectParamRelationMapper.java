@@ -1,7 +1,7 @@
 package com.web.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.web.entity.InterfaceParamEntity;
+import com.web.entity.InterfaceObjectParamRelationEntity;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -10,6 +10,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @ Desc   : 描述
  */
 @Mapper
-public interface InterfaceParamMapper extends BaseMapper<InterfaceParamEntity> {
+public interface InterfaceObjectParamRelationMapper extends BaseMapper<InterfaceObjectParamRelationEntity> {
 
 }

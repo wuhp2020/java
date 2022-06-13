@@ -164,7 +164,7 @@ public class SnowflakeIdWorker {
      *
      * @return
      */
-    public static synchronized Long getId(){
-        return IdWorker.getId();
+    public static synchronized String getId(){
+        return IdWorker.getId() +"";
     }
 }
