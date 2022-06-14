@@ -16,13 +16,13 @@ public class DepartmentService {
     @Autowired
     private DepartmentMapper departmentMapper;
 
-    public List<Map<String, Object>> selectDepartment() {
-        return departmentMapper.selectDepartment();
+    public List<Map<String, Object>> select() {
+        return departmentMapper.select();
     }
     public Map<String, Object> selectObject() {
         return departmentMapper.selectObject();
     }
-    public void insertObject(Map<String, Object> paramMap) {
-        departmentMapper.insertObject(paramMap);
+    public void insert(Map<String, Object> paramMap) {
+        departmentMapper.insert(paramMap);
     }
 }

@@ -6,6 +6,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,24 +24,24 @@ public class DepartmentController {
     @Autowired
     private DepartmentService departmentService;
 
-    @PostMapping("selectDepartment")
+    @GetMapping("select")
     @ApiOperation(value = "查询部门关联员工")
-    public ResponseVO selectDepartment() {
-        List<Map<String, Object>> data = departmentService.selectDepartment();
+    public ResponseVO select() {
+        List<Map<String, Object>> data = departmentService.select();
         return ResponseVO.SUCCESS(data);
     }
 
-    @PostMapping("selectObject")
+    @GetMapping("selectObject")
     @ApiOperation(value = "查询部门和员工")
     public ResponseVO selectObject() {
         Map<String, Object> data = departmentService.selectObject();
         return ResponseVO.SUCCESS(data);
     }
 
-    @PostMapping("insertObject")
+    @PostMapping("insert")
     @ApiOperation(value = "添加部门、员工和工时")
-    public ResponseVO insertObject(@RequestBody Map<String, Object> paramMap) {
-        departmentService.insertObject(paramMap);
+    public ResponseVO insert(@RequestBody Map<String, Object> paramMap) {
+        departmentService.insert(paramMap);
         return ResponseVO.SUCCESS("ok");
     }
 }

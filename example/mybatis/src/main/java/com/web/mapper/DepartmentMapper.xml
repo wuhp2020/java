@@ -5,9 +5,14 @@
   <resultMap id="BaseResultMap" type="java.util.Map">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
-
-    <collection property="employee" column="{id=id,}" ofType="java.util.Map" javaType="java.util.List" select="selectEmployee"/>
-
+    <association property="department_info" column="{id=id,}" javaType="map" select="selectDepartmentInfo">
+      <id column="id" jdbcType="BIGINT" property="id" />
+      <result column="departmentid" jdbcType="VARCHAR" property="departmentid" />
+      <result column="address" jdbcType="VARCHAR" property="address" />
+      <result column="leader" jdbcType="VARCHAR" property="leader" />
+      <result column="policy" jdbcType="VARCHAR" property="policy" />
+    </association>
+    <collection property="employees" column="{id=id,}" ofType="java.util.Map" javaType="java.util.List" select="selectEmployee"/>
   </resultMap>
   
   <resultMap id="selectEmployeeMap" type="java.util.Map">
@@ -17,9 +22,7 @@
     <result column="departmentid" jdbcType="VARCHAR" property="departmentid" />
     <result column="intotime" jdbcType="DATE" property="intotime" />
     <result column="salary" jdbcType="DOUBLE" property="salary" />
-
-    <collection property="employeework" column="{name=name,}" ofType="java.util.Map" javaType="java.util.List" select="selectEmployeeWork"/>
-
+    <collection property="employee_works" column="{name=name,}" ofType="java.util.Map" javaType="java.util.List" select="selectEmployeeWork"/>
   </resultMap>
 
   <resultMap id="selectEmployeeWorkMap" type="java.util.Map">
@@ -28,8 +31,12 @@
     <result column="intotime" jdbcType="DATE" property="intotime" />
   </resultMap>
 
-  <select id="selectDepartment" resultMap="BaseResultMap">
+  <select id="select" resultMap="BaseResultMap">
     select * from department
+  </select>
+
+  <select id="selectDepartmentInfo" resultType="map">
+    select * from department_info where departmentid = #{id}
   </select>
 
   <select id="selectEmployee" resultMap="selectEmployeeMap">
@@ -49,7 +56,7 @@
     select 'x'
   </select>
 
-  <insert id="insertObject" parameterType="map">
+  <insert id="insert" parameterType="map">
     insert into department
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -67,6 +74,44 @@
         #{name,jdbcType=VARCHAR},
       </if>
     </trim>;
+
+    <if test="department_info != null">
+      insert into department_info
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="department_info.id != null">
+          id,
+        </if>
+        <if test="department_info.departmentid != null">
+          departmentid,
+        </if>
+        <if test="department_info.address != null">
+          address,
+        </if>
+        <if test="department_info.leader != null">
+          leader,
+        </if>
+        <if test="department_info.policy != null">
+          policy,
+        </if>
+      </trim>
+      <trim prefix="values (" suffix=")" suffixOverrides=",">
+        <if test="department_info.id != null">
+          #{department_info.id,jdbcType=BIGINT},
+        </if>
+        <if test="department_info.departmentid != null">
+          #{department_info.departmentid,jdbcType=VARCHAR},
+        </if>
+        <if test="department_info.address != null">
+          #{department_info.address,jdbcType=VARCHAR},
+        </if>
+        <if test="department_info.leader != null">
+          #{department_info.leader,jdbcType=VARCHAR},
+        </if>
+        <if test="department_info.policy != null">
+          #{department_info.policy,jdbcType=VARCHAR},
+        </if>
+      </trim>;
+    </if>
 
     <if test="employees != null and employees.size>0" >
       <foreach collection="employees" item="employee" index="index">
