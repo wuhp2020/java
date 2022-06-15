@@ -8,7 +8,7 @@ import java.util.Map;
 @Mapper
 public interface DepartmentMapper {
 
-    List<Map<String, Object>> select();
+    Map<String, Object> select();
     Map<String, Object> selectObject();
     void insert(Map<String, Object> paramMap);
 }

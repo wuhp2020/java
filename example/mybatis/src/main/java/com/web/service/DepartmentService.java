@@ -16,7 +16,7 @@ public class DepartmentService {
     @Autowired
     private DepartmentMapper departmentMapper;
 
-    public List<Map<String, Object>> select() {
+    public Map<String, Object> select() {
         return departmentMapper.select();
     }
     public Map<String, Object> selectObject() {

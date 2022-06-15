@@ -5,14 +5,16 @@
   <resultMap id="BaseResultMap" type="java.util.Map">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
-    <association property="department_info" column="{id=id,}" javaType="map" select="selectDepartmentInfo">
-      <id column="id" jdbcType="BIGINT" property="id" />
-      <result column="departmentid" jdbcType="VARCHAR" property="departmentid" />
-      <result column="address" jdbcType="VARCHAR" property="address" />
-      <result column="leader" jdbcType="VARCHAR" property="leader" />
-      <result column="policy" jdbcType="VARCHAR" property="policy" />
-    </association>
+    <association property="department_info" column="{id=id,}" javaType="map" select="selectDepartmentInfo" />
     <collection property="employees" column="{id=id,}" ofType="java.util.Map" javaType="java.util.List" select="selectEmployee"/>
+  </resultMap>
+
+  <resultMap id="selectDepartmentInfoMap" type="java.util.Map">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="departmentid" jdbcType="VARCHAR" property="departmentid" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="leader" jdbcType="VARCHAR" property="leader" />
+    <result column="policy" jdbcType="VARCHAR" property="policy" />
   </resultMap>
   
   <resultMap id="selectEmployeeMap" type="java.util.Map">
@@ -35,7 +37,7 @@
     select * from department
   </select>
 
-  <select id="selectDepartmentInfo" resultType="map">
+  <select id="selectDepartmentInfo" resultMap="selectDepartmentInfoMap">
     select * from department_info where departmentid = #{id}
   </select>
 

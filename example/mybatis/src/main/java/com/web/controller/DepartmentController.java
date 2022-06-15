@@ -27,8 +27,7 @@ public class DepartmentController {
     @GetMapping("select")
     @ApiOperation(value = "查询部门关联员工")
     public ResponseVO select() {
-        List<Map<String, Object>> data = departmentService.select();
-        return ResponseVO.SUCCESS(data);
+        return ResponseVO.SUCCESS(departmentService.select());
     }
 
     @GetMapping("selectObject")
