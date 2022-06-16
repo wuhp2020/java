@@ -102,8 +102,8 @@ public class OrderService {
 
     @Transactional(rollbackFor = Exception.class)
     public List<OrderDO> findByDeliveryCompanyName (String deliveryCompanyName) {
-        Wrapper wrapperQuery = Wrappers.<OrderDO>query().lambda().eq(!StringUtils.isEmpty(deliveryCompanyName),
-                OrderDO::getDeliveryCompanyName, deliveryCompanyName);
+        Wrapper wrapperQuery = Wrappers.<OrderDO>query().lambda().and(w -> w.eq(!StringUtils.isEmpty(deliveryCompanyName),
+                OrderDO::getDeliveryCompanyName, deliveryCompanyName).or().eq(OrderDO::getStatus, "1")).eq(OrderDO::getOrderNo, "1");
         List<OrderDO> orderDOs = orderMapper.selectList(wrapperQuery);
         return orderDOs;
     }

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/example/activemq/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/activemq/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/activiti/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/activiti/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/ajax/src/main/java" charset="UTF-8" />
@@ -206,8 +204,6 @@
     <file url="file://$PROJECT_DIR$/example/jvm/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/jwt/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/jwt/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/kafka/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/kafka/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/kubernetes/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/kubernetes/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/linux/src/main/java" charset="UTF-8" />
@@ -227,6 +223,11 @@
     <file url="file://$PROJECT_DIR$/example/mockito/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/mongodb/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/mongodb/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/mq/activemq/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/mq/kafka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/mq/rabbitmq/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/mq/rocketmq-console/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/mq/rocketmq/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/mybatis-plus/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/mybatis-plus/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/mybatis/src/main/java" charset="UTF-8" />
@@ -277,18 +278,12 @@
     <file url="file://$PROJECT_DIR$/example/prometheus/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/quartz/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/quartz/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/rabbitmq/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/rabbitmq/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/redis/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/redis/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/redisson/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/redisson/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/rocket-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/rocket-api/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/rocketmq-console/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/rocketmq-console/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/rocketmq/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/rocketmq/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/ruoyi/ruoyi-admin/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/ruoyi/ruoyi-admin/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/ruoyi/ruoyi-common/src/main/java" charset="UTF-8" />

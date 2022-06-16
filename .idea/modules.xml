@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/example/activemq/activemq.iml" filepath="$PROJECT_DIR$/example/activemq/activemq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/mq/activemq/activemq.iml" filepath="$PROJECT_DIR$/example/mq/activemq/activemq.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/activiti/activiti.iml" filepath="$PROJECT_DIR$/example/activiti/activiti.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/ajax/ajax.iml" filepath="$PROJECT_DIR$/example/ajax/ajax.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/ansible-agent/ansible-agent.iml" filepath="$PROJECT_DIR$/example/ansible-agent/ansible-agent.iml" />
@@ -124,7 +124,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/junit/junit.iml" filepath="$PROJECT_DIR$/example/junit/junit.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/jvm/jvm.iml" filepath="$PROJECT_DIR$/example/jvm/jvm.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/jwt/jwt.iml" filepath="$PROJECT_DIR$/example/jwt/jwt.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/kafka/kafka.iml" filepath="$PROJECT_DIR$/example/kafka/kafka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/mq/kafka/kafka.iml" filepath="$PROJECT_DIR$/example/mq/kafka/kafka.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/kubernetes/kubernetes.iml" filepath="$PROJECT_DIR$/example/kubernetes/kubernetes.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/linux/linux.iml" filepath="$PROJECT_DIR$/example/linux/linux.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/lz4/lz4.iml" filepath="$PROJECT_DIR$/example/lz4/lz4.iml" />
@@ -135,6 +135,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/maven/maven.iml" filepath="$PROJECT_DIR$/example/maven/maven.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mockito/mockito.iml" filepath="$PROJECT_DIR$/example/mockito/mockito.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mongodb/mongodb.iml" filepath="$PROJECT_DIR$/example/mongodb/mongodb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/mq/mq.iml" filepath="$PROJECT_DIR$/example/mq/mq.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mybatis/mybatis.iml" filepath="$PROJECT_DIR$/example/mybatis/mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mybatis-plus/mybatis-plus.iml" filepath="$PROJECT_DIR$/example/mybatis-plus/mybatis-plus.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mycat/mycat.iml" filepath="$PROJECT_DIR$/example/mycat/mycat.iml" />
@@ -161,12 +162,12 @@
       <module fileurl="file://$PROJECT_DIR$/example/postman/postman.iml" filepath="$PROJECT_DIR$/example/postman/postman.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/prometheus/prometheus.iml" filepath="$PROJECT_DIR$/example/prometheus/prometheus.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/quartz/quartz.iml" filepath="$PROJECT_DIR$/example/quartz/quartz.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/rabbitmq/rabbitmq.iml" filepath="$PROJECT_DIR$/example/rabbitmq/rabbitmq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/mq/rabbitmq/rabbitmq.iml" filepath="$PROJECT_DIR$/example/mq/rabbitmq/rabbitmq.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/redis/redis.iml" filepath="$PROJECT_DIR$/example/redis/redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/redisson/redisson.iml" filepath="$PROJECT_DIR$/example/redisson/redisson.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/rocket-api/rocket-api.iml" filepath="$PROJECT_DIR$/example/rocket-api/rocket-api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/rocketmq/rocketmq.iml" filepath="$PROJECT_DIR$/example/rocketmq/rocketmq.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/rocketmq-console/rocketmq-console.iml" filepath="$PROJECT_DIR$/example/rocketmq-console/rocketmq-console.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/mq/rocketmq/rocketmq.iml" filepath="$PROJECT_DIR$/example/mq/rocketmq/rocketmq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/mq/rocketmq-console/rocketmq-console.iml" filepath="$PROJECT_DIR$/example/mq/rocketmq-console/rocketmq-console.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/ruoyi/ruoyi.iml" filepath="$PROJECT_DIR$/example/ruoyi/ruoyi.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/ruoyi/ruoyi-admin/ruoyi-admin.iml" filepath="$PROJECT_DIR$/example/ruoyi/ruoyi-admin/ruoyi-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/ruoyi/ruoyi-common/ruoyi-common.iml" filepath="$PROJECT_DIR$/example/ruoyi/ruoyi-common/ruoyi-common.iml" />

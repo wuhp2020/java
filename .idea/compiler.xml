@@ -342,6 +342,7 @@
       <module name="maven" target="1.8" />
       <module name="mockito" target="1.8" />
       <module name="mongodb" target="1.8" />
+      <module name="mq" target="1.8" />
       <module name="mybatis" target="1.8" />
       <module name="mybatis-plus" target="1.8" />
       <module name="mycat" target="1.8" />
@@ -524,6 +525,7 @@
       <module name="jeecg-cloud-nacos" options="-parameters" />
       <module name="jeecg-cloud-sentinel" options="-parameters" />
       <module name="jeecg-cloud-system-start" options="-parameters" />
+      <module name="jeecg-cloud-test" options="-parameters" />
       <module name="jeecg-cloud-test-more" options="-parameters" />
       <module name="jeecg-cloud-test-rabbitmq" options="-parameters" />
       <module name="jeecg-cloud-test-seata" options="-parameters" />

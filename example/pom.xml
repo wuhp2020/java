@@ -15,7 +15,7 @@
         <module>mybatis</module>
         <module>mybatis-plus</module>
         <module>redis</module>
-        <module>kafka</module>
+        <module>mq</module>
         <module>zookeeper</module>
         <module>sharding-jdbc</module>
         <module>java8</module>
@@ -34,8 +34,6 @@
         <module>servlet</module>
         <module>jetty</module>
         <module>quartz</module>
-        <module>activemq</module>
-        <module>rocketmq</module>
         <module>mysql</module>
         <module>hadoop</module>
         <module>pig</module>
@@ -65,7 +63,6 @@
         <module>jdbc</module>
         <module>ajax</module>
         <module>netty</module>
-        <module>rabbitmq</module>
         <module>flume</module>
         <module>opencv</module>
         <module>mycat</module>
@@ -101,7 +98,6 @@
         <module>oauth2</module>
         <module>redisson</module>
         <module>skywalking</module>
-        <module>rocketmq-console</module>
         <module>linux</module>
         <module>gaussdb</module>
         <module>interceptor</module>
