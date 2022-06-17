@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d670f713-ca4e-4561-abdf-901ef2c04c75" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/crudapi/crudapi-example/src/main/resources/crudapi-mysql.sql" beforeDir="false" />
     </list>
     <list id="dc2dba8c-663c-4987-a4d0-dae89c4c37b2" name="not push" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -274,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655435360186</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="8008">
+      <created>1655449284627</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1655449284627</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
