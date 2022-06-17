@@ -51,8 +51,6 @@
     <file url="file://$PROJECT_DIR$/example/database/oracle/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/database/sqlite/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/database/sqlserver/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/datasource-switch/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/datasource-switch/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/design-pattern/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/design-pattern/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/diamond/diamond-client/src/main/java" charset="UTF-8" />
@@ -68,8 +66,6 @@
     <file url="file://$PROJECT_DIR$/example/docx4j/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/drools/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/drools/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/druid/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/druid/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/dubbo/dubbo-admin/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/dubbo/dubbo-admin/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/dubbo/dubbo-client/src/main/java" charset="UTF-8" />
@@ -146,8 +142,6 @@
     <file url="file://$PROJECT_DIR$/example/javascript/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/jboss/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/jboss/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jdbc/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jdbc/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-cloud-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-local-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-core/src/main/java" charset="UTF-8" />
@@ -228,12 +222,6 @@
     <file url="file://$PROJECT_DIR$/example/mq/rabbitmq/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/mq/rocketmq-console/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/mq/rocketmq/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/mybatis-plus/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/mybatis-plus/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/mybatis/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/mybatis/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/mycat/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/mycat/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/nacos-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/nacos-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/nacos/src/main/java" charset="UTF-8" />
@@ -260,6 +248,18 @@
     <file url="file://$PROJECT_DIR$/example/opencv/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/opennlp/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/opennlp/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/orm/datasource-switch/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/orm/druid/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/orm/jdbc/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/orm/mybatis-plus/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/orm/mybatis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/orm/mycat/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/orm/seata/seata-account/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/orm/seata/seata-business/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/orm/seata/seata-eureka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/orm/seata/seata-order/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/orm/seata/seata-storage/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/orm/sharding-jdbc/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/pdf/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/pdf/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/pig/src/main/java" charset="UTF-8" />
@@ -288,20 +288,8 @@
     <file url="file://$PROJECT_DIR$/example/ruoyi/ruoyi-quartz/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/ruoyi/ruoyi-system/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/ruoyi/ruoyi-system/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/seata/seata-account/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/seata/seata-account/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/seata/seata-business/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/seata/seata-business/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/seata/seata-eureka/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/seata/seata-eureka/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/seata/seata-order/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/seata/seata-order/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/seata/seata-storage/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/seata/seata-storage/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/servlet/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/servlet/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/sharding-jdbc/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/sharding-jdbc/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/shell/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/shell/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/shiro/src/main/java" charset="UTF-8" />

@@ -9,17 +9,19 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.seata</groupId>
-    <artifactId>seata</artifactId>
-    <version>1.3.0</version>
+    <artifactId>orm</artifactId>
+    <groupId>com.orm</groupId>
+    <version>1.0.0</version>
 
     <modules>
-        <module>seata-account</module>
-        <module>seata-business</module>
-        <module>seata-order</module>
-        <module>seata-storage</module>
-        <module>seata-eureka</module>
+        <module>datasource-switch</module>
+        <module>druid</module>
+        <module>jdbc</module>
+        <module>mybatis</module>
+        <module>mybatis-plus</module>
+        <module>mycat</module>
+        <module>seata</module>
+        <module>sharding-jdbc</module>
     </modules>
     <packaging>pom</packaging>
-
 </project>

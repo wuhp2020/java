@@ -26,7 +26,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/cxf/cxf.iml" filepath="$PROJECT_DIR$/example/cxf/cxf.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/d3js/d3js.iml" filepath="$PROJECT_DIR$/example/d3js/d3js.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/database/database.iml" filepath="$PROJECT_DIR$/example/database/database.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/datasource-switch/datasource-switch.iml" filepath="$PROJECT_DIR$/example/datasource-switch/datasource-switch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/orm/datasource-switch/datasource-switch.iml" filepath="$PROJECT_DIR$/example/orm/datasource-switch/datasource-switch.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/design-pattern/design-pattern.iml" filepath="$PROJECT_DIR$/example/design-pattern/design-pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/diamond/diamond.iml" filepath="$PROJECT_DIR$/example/diamond/diamond.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/diamond/diamond-client/diamond-client.iml" filepath="$PROJECT_DIR$/example/diamond/diamond-client/diamond-client.iml" />
@@ -37,7 +37,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/docker/docker.iml" filepath="$PROJECT_DIR$/example/docker/docker.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/docx4j/docx4j.iml" filepath="$PROJECT_DIR$/example/docx4j/docx4j.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/drools/drools.iml" filepath="$PROJECT_DIR$/example/drools/drools.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/druid/druid.iml" filepath="$PROJECT_DIR$/example/druid/druid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/orm/druid/druid.iml" filepath="$PROJECT_DIR$/example/orm/druid/druid.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/dubbo/dubbo.iml" filepath="$PROJECT_DIR$/example/dubbo/dubbo.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/dubbo/dubbo-admin/dubbo-admin.iml" filepath="$PROJECT_DIR$/example/dubbo/dubbo-admin/dubbo-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/dubbo/dubbo-client/dubbo-client.iml" filepath="$PROJECT_DIR$/example/dubbo/dubbo-client/dubbo-client.iml" />
@@ -85,7 +85,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/javafaker/javafaker.iml" filepath="$PROJECT_DIR$/example/javafaker/javafaker.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/javascript/javascript.iml" filepath="$PROJECT_DIR$/example/javascript/javascript.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/jboss/jboss.iml" filepath="$PROJECT_DIR$/example/jboss/jboss.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jdbc/jdbc.iml" filepath="$PROJECT_DIR$/example/jdbc/jdbc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/orm/jdbc/jdbc.iml" filepath="$PROJECT_DIR$/example/orm/jdbc/jdbc.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-boot-base-api.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-boot-base-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-core/jeecg-boot-base-core.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-core/jeecg-boot-base-core.iml" />
@@ -137,9 +137,9 @@
       <module fileurl="file://$PROJECT_DIR$/example/mockito/mockito.iml" filepath="$PROJECT_DIR$/example/mockito/mockito.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/database/mongodb/mongodb.iml" filepath="$PROJECT_DIR$/example/database/mongodb/mongodb.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mq/mq.iml" filepath="$PROJECT_DIR$/example/mq/mq.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/mybatis/mybatis.iml" filepath="$PROJECT_DIR$/example/mybatis/mybatis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/mybatis-plus/mybatis-plus.iml" filepath="$PROJECT_DIR$/example/mybatis-plus/mybatis-plus.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/mycat/mycat.iml" filepath="$PROJECT_DIR$/example/mycat/mycat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/orm/mybatis/mybatis.iml" filepath="$PROJECT_DIR$/example/orm/mybatis/mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/orm/mybatis-plus/mybatis-plus.iml" filepath="$PROJECT_DIR$/example/orm/mybatis-plus/mybatis-plus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/orm/mycat/mycat.iml" filepath="$PROJECT_DIR$/example/orm/mycat/mycat.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/database/mysql/mysql.iml" filepath="$PROJECT_DIR$/example/database/mysql/mysql.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/nacos/nacos.iml" filepath="$PROJECT_DIR$/example/nacos/nacos.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/nacos-server/nacos-server.iml" filepath="$PROJECT_DIR$/example/nacos-server/nacos-server.iml" />
@@ -157,6 +157,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/opencv/opencv.iml" filepath="$PROJECT_DIR$/example/opencv/opencv.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/opennlp/opennlp.iml" filepath="$PROJECT_DIR$/example/opennlp/opennlp.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/database/oracle/oracle.iml" filepath="$PROJECT_DIR$/example/database/oracle/oracle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/orm/orm.iml" filepath="$PROJECT_DIR$/example/orm/orm.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/pdf/pdf.iml" filepath="$PROJECT_DIR$/example/pdf/pdf.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/pig/pig.iml" filepath="$PROJECT_DIR$/example/pig/pig.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/poi/poi.iml" filepath="$PROJECT_DIR$/example/poi/poi.iml" />
@@ -176,14 +177,14 @@
       <module fileurl="file://$PROJECT_DIR$/example/ruoyi/ruoyi-generator/ruoyi-generator.iml" filepath="$PROJECT_DIR$/example/ruoyi/ruoyi-generator/ruoyi-generator.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/ruoyi/ruoyi-quartz/ruoyi-quartz.iml" filepath="$PROJECT_DIR$/example/ruoyi/ruoyi-quartz/ruoyi-quartz.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/ruoyi/ruoyi-system/ruoyi-system.iml" filepath="$PROJECT_DIR$/example/ruoyi/ruoyi-system/ruoyi-system.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/seata/seata.iml" filepath="$PROJECT_DIR$/example/seata/seata.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/seata/seata-account/seata-account.iml" filepath="$PROJECT_DIR$/example/seata/seata-account/seata-account.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/seata/seata-business/seata-business.iml" filepath="$PROJECT_DIR$/example/seata/seata-business/seata-business.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/seata/seata-eureka/seata-eureka.iml" filepath="$PROJECT_DIR$/example/seata/seata-eureka/seata-eureka.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/seata/seata-order/seata-order.iml" filepath="$PROJECT_DIR$/example/seata/seata-order/seata-order.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/seata/seata-storage/seata-storage.iml" filepath="$PROJECT_DIR$/example/seata/seata-storage/seata-storage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/orm/seata/seata.iml" filepath="$PROJECT_DIR$/example/orm/seata/seata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/orm/seata/seata-account/seata-account.iml" filepath="$PROJECT_DIR$/example/orm/seata/seata-account/seata-account.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/orm/seata/seata-business/seata-business.iml" filepath="$PROJECT_DIR$/example/orm/seata/seata-business/seata-business.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/orm/seata/seata-eureka/seata-eureka.iml" filepath="$PROJECT_DIR$/example/orm/seata/seata-eureka/seata-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/orm/seata/seata-order/seata-order.iml" filepath="$PROJECT_DIR$/example/orm/seata/seata-order/seata-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/orm/seata/seata-storage/seata-storage.iml" filepath="$PROJECT_DIR$/example/orm/seata/seata-storage/seata-storage.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/servlet/servlet.iml" filepath="$PROJECT_DIR$/example/servlet/servlet.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/sharding-jdbc/sharding-jdbc.iml" filepath="$PROJECT_DIR$/example/sharding-jdbc/sharding-jdbc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/orm/sharding-jdbc/sharding-jdbc.iml" filepath="$PROJECT_DIR$/example/orm/sharding-jdbc/sharding-jdbc.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/shell/shell.iml" filepath="$PROJECT_DIR$/example/shell/shell.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/shiro/shiro.iml" filepath="$PROJECT_DIR$/example/shiro/shiro.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/skywalking/skywalking.iml" filepath="$PROJECT_DIR$/example/skywalking/skywalking.iml" />

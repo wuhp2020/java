@@ -78,10 +78,10 @@
         <module name="jeecg-cloud-test-seata" />
         <module name="jeecg-system-local-api" />
         <module name="flink" />
-        <module name="seata-business" />
         <module name="curator" />
-        <module name="druid" />
+        <module name="seata-business" />
         <module name="diamond-client" />
+        <module name="druid" />
         <module name="shell" />
         <module name="consul" />
         <module name="seata-storage" />
@@ -364,6 +364,7 @@
       <module name="opencv" target="1.8" />
       <module name="opennlp" target="1.8" />
       <module name="oracle" target="1.8" />
+      <module name="orm" target="1.8" />
       <module name="pdf" target="1.8" />
       <module name="pig" target="1.8" />
       <module name="poi" target="1.8" />

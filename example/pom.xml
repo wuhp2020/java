@@ -11,12 +11,10 @@
     <modules>
         <module>database</module>
         <module>manage</module>
-        <module>mybatis</module>
-        <module>mybatis-plus</module>
+        <module>orm</module>
         <module>redis</module>
         <module>mq</module>
         <module>zookeeper</module>
-        <module>sharding-jdbc</module>
         <module>java8</module>
         <module>jni</module>
         <module>io-client</module>
@@ -56,19 +54,15 @@
         <module>storm</module>
         <module>nginx</module>
         <module>shell</module>
-        <module>jdbc</module>
         <module>ajax</module>
         <module>netty</module>
         <module>flume</module>
         <module>opencv</module>
-        <module>mycat</module>
         <module>mail</module>
-        <module>druid</module>
         <module>jmeter</module>
         <module>opennlp</module>
         <module>prometheus</module>
         <module>elk</module>
-        <module>seata</module>
         <module>nacos</module>
         <module>etcd</module>
         <module>swagger</module>
@@ -110,7 +104,6 @@
         <module>javafaker</module>
         <module>jmockdata</module>
         <module>global-handler</module>
-        <module>datasource-switch</module>
         <module>curator</module>
         <module>open-ele-me</module>
         <module>snow-flake</module>
