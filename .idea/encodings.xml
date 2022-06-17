@@ -41,6 +41,16 @@
     <file url="file://$PROJECT_DIR$/example/cxf/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/d3js/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/d3js/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/database/elasticsearch/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/database/gaussdb/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/database/hbase/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/database/hive/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/database/mongodb/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/database/mysql/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/database/neo4j/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/database/oracle/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/database/sqlite/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/database/sqlserver/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/datasource-switch/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/datasource-switch/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/design-pattern/src/main/java" charset="UTF-8" />
@@ -80,8 +90,6 @@
     <file url="file://$PROJECT_DIR$/example/easypoi/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/easyui/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/easyui/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/elasticsearch/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/elasticsearch/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/elk/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/elk/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/esri-geometry/src/main/java" charset="UTF-8" />
@@ -100,8 +108,6 @@
     <file url="file://$PROJECT_DIR$/example/flume/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/freemarker/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/freemarker/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/gaussdb/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/gaussdb/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/git/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/git/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/gitlab/src/main/java" charset="UTF-8" />
@@ -122,10 +128,6 @@
     <file url="file://$PROJECT_DIR$/example/guava/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/hadoop/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/hadoop/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/hbase/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/hbase/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/hive/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/hive/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/httpclient/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/httpclient/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/interceptor/src/main/java" charset="UTF-8" />
@@ -221,8 +223,6 @@
     <file url="file://$PROJECT_DIR$/example/maven/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/mockito/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/mockito/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/mongodb/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/mongodb/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/mq/activemq/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/mq/kafka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/mq/rabbitmq/src/main/java" charset="UTF-8" />
@@ -234,14 +234,10 @@
     <file url="file://$PROJECT_DIR$/example/mybatis/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/mycat/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/mycat/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/mysql/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/mysql/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/nacos-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/nacos-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/nacos/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/nacos/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/neo4j/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/neo4j/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/netty/netty-client/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/netty/netty-client/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/netty/netty-server/src/main/java" charset="UTF-8" />
@@ -264,8 +260,6 @@
     <file url="file://$PROJECT_DIR$/example/opencv/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/opennlp/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/opennlp/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/oracle/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/oracle/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/pdf/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/pdf/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/pig/src/main/java" charset="UTF-8" />
@@ -348,10 +342,6 @@
     <file url="file://$PROJECT_DIR$/example/springcloud/springcloud-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/springcloud/springcloud-sleuth/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/springcloud/springcloud-sleuth/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/sqlite/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/sqlite/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/sqlserver/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/sqlserver/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/storm/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/storm/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/struts2/src/main/java" charset="UTF-8" />

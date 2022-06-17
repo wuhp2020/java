@@ -96,8 +96,8 @@
         <module name="nacos" />
         <module name="docker" />
         <module name="caffeine" />
-        <module name="sqlserver" />
         <module name="jboss" />
+        <module name="sqlserver" />
         <module name="linux" />
         <module name="springcloud-netflix" />
         <module name="ruoyi-common" />
@@ -122,8 +122,8 @@
         <module name="jeecg-boot-module-demo" />
         <module name="redis" />
         <module name="ruoyi-framework" />
-        <module name="elasticsearch" />
         <module name="jeecg-cloud-system-start" />
+        <module name="elasticsearch" />
         <module name="okhttp" />
         <module name="canal-deployer" />
         <module name="ansible-agent" />
@@ -233,6 +233,7 @@
       <module name="curator" target="1.8" />
       <module name="cxf" target="1.8" />
       <module name="d3js" target="1.8" />
+      <module name="database" target="1.8" />
       <module name="datasource-switch" target="1.8" />
       <module name="design-pattern" target="1.8" />
       <module name="diamond" target="1.8" />
@@ -525,7 +526,7 @@
       <module name="jeecg-cloud-nacos" options="-parameters" />
       <module name="jeecg-cloud-sentinel" options="-parameters" />
       <module name="jeecg-cloud-system-start" options="-parameters" />
-      <module name="jeecg-cloud-test" options="-parameters" />
+      <module name="jeecg-cloud-test" options="" />
       <module name="jeecg-cloud-test-more" options="-parameters" />
       <module name="jeecg-cloud-test-rabbitmq" options="-parameters" />
       <module name="jeecg-cloud-test-seata" options="-parameters" />

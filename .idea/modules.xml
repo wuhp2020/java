@@ -25,6 +25,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/curator/curator.iml" filepath="$PROJECT_DIR$/example/curator/curator.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/cxf/cxf.iml" filepath="$PROJECT_DIR$/example/cxf/cxf.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/d3js/d3js.iml" filepath="$PROJECT_DIR$/example/d3js/d3js.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/database/database.iml" filepath="$PROJECT_DIR$/example/database/database.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/datasource-switch/datasource-switch.iml" filepath="$PROJECT_DIR$/example/datasource-switch/datasource-switch.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/design-pattern/design-pattern.iml" filepath="$PROJECT_DIR$/example/design-pattern/design-pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/diamond/diamond.iml" filepath="$PROJECT_DIR$/example/diamond/diamond.iml" />
@@ -48,7 +49,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/easymock/easymock.iml" filepath="$PROJECT_DIR$/example/easymock/easymock.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/easypoi/easypoi.iml" filepath="$PROJECT_DIR$/example/easypoi/easypoi.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/easyui/easyui.iml" filepath="$PROJECT_DIR$/example/easyui/easyui.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/elasticsearch/elasticsearch.iml" filepath="$PROJECT_DIR$/example/elasticsearch/elasticsearch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/database/elasticsearch/elasticsearch.iml" filepath="$PROJECT_DIR$/example/database/elasticsearch/elasticsearch.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/elk/elk.iml" filepath="$PROJECT_DIR$/example/elk/elk.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/esri-geometry/esri-geometry.iml" filepath="$PROJECT_DIR$/example/esri-geometry/esri-geometry.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/etcd/etcd.iml" filepath="$PROJECT_DIR$/example/etcd/etcd.iml" />
@@ -59,7 +60,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/flink/flink.iml" filepath="$PROJECT_DIR$/example/flink/flink.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/flume/flume.iml" filepath="$PROJECT_DIR$/example/flume/flume.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/freemarker/freemarker.iml" filepath="$PROJECT_DIR$/example/freemarker/freemarker.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/gaussdb/gaussdb.iml" filepath="$PROJECT_DIR$/example/gaussdb/gaussdb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/database/gaussdb/gaussdb.iml" filepath="$PROJECT_DIR$/example/database/gaussdb/gaussdb.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/git/git.iml" filepath="$PROJECT_DIR$/example/git/git.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/gitlab/gitlab.iml" filepath="$PROJECT_DIR$/example/gitlab/gitlab.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/global-handler/global-handler.iml" filepath="$PROJECT_DIR$/example/global-handler/global-handler.iml" />
@@ -71,9 +72,9 @@
       <module fileurl="file://$PROJECT_DIR$/example/gson/gson.iml" filepath="$PROJECT_DIR$/example/gson/gson.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/guava/guava.iml" filepath="$PROJECT_DIR$/example/guava/guava.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/hadoop/hadoop.iml" filepath="$PROJECT_DIR$/example/hadoop/hadoop.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/hbase/hbase.iml" filepath="$PROJECT_DIR$/example/hbase/hbase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/database/hbase/hbase.iml" filepath="$PROJECT_DIR$/example/database/hbase/hbase.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/manage/hibernate/hibernate.iml" filepath="$PROJECT_DIR$/example/manage/hibernate/hibernate.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/hive/hive.iml" filepath="$PROJECT_DIR$/example/hive/hive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/database/hive/hive.iml" filepath="$PROJECT_DIR$/example/database/hive/hive.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/httpclient/httpclient.iml" filepath="$PROJECT_DIR$/example/httpclient/httpclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/interceptor/interceptor.iml" filepath="$PROJECT_DIR$/example/interceptor/interceptor.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/io-client/io-client.iml" filepath="$PROJECT_DIR$/example/io-client/io-client.iml" />
@@ -134,15 +135,15 @@
       <module fileurl="file://$PROJECT_DIR$/example/mapstruct/mapstruct.iml" filepath="$PROJECT_DIR$/example/mapstruct/mapstruct.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/maven/maven.iml" filepath="$PROJECT_DIR$/example/maven/maven.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mockito/mockito.iml" filepath="$PROJECT_DIR$/example/mockito/mockito.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/mongodb/mongodb.iml" filepath="$PROJECT_DIR$/example/mongodb/mongodb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/database/mongodb/mongodb.iml" filepath="$PROJECT_DIR$/example/database/mongodb/mongodb.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mq/mq.iml" filepath="$PROJECT_DIR$/example/mq/mq.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mybatis/mybatis.iml" filepath="$PROJECT_DIR$/example/mybatis/mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mybatis-plus/mybatis-plus.iml" filepath="$PROJECT_DIR$/example/mybatis-plus/mybatis-plus.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mycat/mycat.iml" filepath="$PROJECT_DIR$/example/mycat/mycat.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/mysql/mysql.iml" filepath="$PROJECT_DIR$/example/mysql/mysql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/database/mysql/mysql.iml" filepath="$PROJECT_DIR$/example/database/mysql/mysql.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/nacos/nacos.iml" filepath="$PROJECT_DIR$/example/nacos/nacos.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/nacos-server/nacos-server.iml" filepath="$PROJECT_DIR$/example/nacos-server/nacos-server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/neo4j/neo4j.iml" filepath="$PROJECT_DIR$/example/neo4j/neo4j.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/database/neo4j/neo4j.iml" filepath="$PROJECT_DIR$/example/database/neo4j/neo4j.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/netty/netty.iml" filepath="$PROJECT_DIR$/example/netty/netty.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/netty/netty-client/netty-client.iml" filepath="$PROJECT_DIR$/example/netty/netty-client/netty-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/netty/netty-server/netty-server.iml" filepath="$PROJECT_DIR$/example/netty/netty-server/netty-server.iml" />
@@ -155,7 +156,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/open-meituan/open-meituan.iml" filepath="$PROJECT_DIR$/example/open-meituan/open-meituan.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/opencv/opencv.iml" filepath="$PROJECT_DIR$/example/opencv/opencv.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/opennlp/opennlp.iml" filepath="$PROJECT_DIR$/example/opennlp/opennlp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/oracle/oracle.iml" filepath="$PROJECT_DIR$/example/oracle/oracle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/database/oracle/oracle.iml" filepath="$PROJECT_DIR$/example/database/oracle/oracle.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/pdf/pdf.iml" filepath="$PROJECT_DIR$/example/pdf/pdf.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/pig/pig.iml" filepath="$PROJECT_DIR$/example/pig/pig.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/poi/poi.iml" filepath="$PROJECT_DIR$/example/poi/poi.iml" />
@@ -204,8 +205,8 @@
       <module fileurl="file://$PROJECT_DIR$/example/springcloud/springcloud-ribbon/springcloud-ribbon.iml" filepath="$PROJECT_DIR$/example/springcloud/springcloud-ribbon/springcloud-ribbon.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/springcloud/springcloud-server/springcloud-server.iml" filepath="$PROJECT_DIR$/example/springcloud/springcloud-server/springcloud-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/springcloud/springcloud-sleuth/springcloud-sleuth.iml" filepath="$PROJECT_DIR$/example/springcloud/springcloud-sleuth/springcloud-sleuth.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/sqlite/sqlite.iml" filepath="$PROJECT_DIR$/example/sqlite/sqlite.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/sqlserver/sqlserver.iml" filepath="$PROJECT_DIR$/example/sqlserver/sqlserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/database/sqlite/sqlite.iml" filepath="$PROJECT_DIR$/example/database/sqlite/sqlite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/database/sqlserver/sqlserver.iml" filepath="$PROJECT_DIR$/example/database/sqlserver/sqlserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/storm/storm.iml" filepath="$PROJECT_DIR$/example/storm/storm.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/struts2/struts2.iml" filepath="$PROJECT_DIR$/example/struts2/struts2.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/swagger/swagger.iml" filepath="$PROJECT_DIR$/example/swagger/swagger.iml" />
