@@ -34,35 +34,27 @@
         <module>hadoop</module>
         <module>pig</module>
         <module>httpclient</module>
-        <module>docker</module>
-        <module>kubernetes</module>
+        <module>tools</module>
         <module>springboot</module>
         <module>spark</module>
-        <module>ffmpeg</module>
         <module>activiti</module>
         <module>weblogic</module>
         <module>junit</module>
         <module>struts2</module>
         <module>easyexcel</module>
         <module>cxf</module>
-        <module>easyui</module>
-        <module>bootstrap</module>
-        <module>jquery</module>
-        <module>javascript</module>
+        <module>frontend</module>
         <module>flink</module>
-        <module>drools</module>
         <module>storm</module>
         <module>nginx</module>
         <module>shell</module>
-        <module>ajax</module>
+        <module>rule</module>
         <module>netty</module>
         <module>flume</module>
         <module>opencv</module>
         <module>mail</module>
         <module>jmeter</module>
         <module>opennlp</module>
-        <module>prometheus</module>
-        <module>elk</module>
         <module>nacos</module>
         <module>etcd</module>
         <module>swagger</module>
@@ -72,13 +64,9 @@
         <module>xxl-job</module>
         <module>war</module>
         <module>ansible-agent</module>
-        <module>git</module>
-        <module>nodejs</module>
         <module>xml</module>
         <module>socket</module>
         <module>axure</module>
-        <module>jenkins</module>
-        <module>postman</module>
         <module>design-pattern</module>
         <module>springboot-auto-config</module>
         <module>spring-security</module>
@@ -91,7 +79,7 @@
         <module>jboss</module>
         <module>fastjson</module>
         <module>asm</module>
-        <module>checkstyle</module>
+        <module>low-code</module>
         <module>esri-geometry</module>
         <module>commons-codec</module>
         <module>snakeyaml</module>
@@ -107,9 +95,7 @@
         <module>curator</module>
         <module>open-ele-me</module>
         <module>snow-flake</module>
-        <module>gitlab</module>
         <module>caffeine</module>
-        <module>maven</module>
         <module>open-meituan</module>
         <module>java11</module>
         <module>thrift-server</module>
@@ -121,23 +107,14 @@
         <module>joda-time</module>
         <module>mockito</module>
         <module>okhttp</module>
-        <module>jsp</module>
         <module>canal</module>
-        <module>easy-rules</module>
         <module>mapstruct</module>
         <module>sofaboot</module>
         <module>jwt</module>
         <module>springcloud</module>
         <module>nacos-server</module>
         <module>api-manager</module>
-        <module>magic-api</module>
         <module>easypoi</module>
-        <module>ruoyi</module>
-        <module>dynamic-interface</module>
-        <module>jeecg-boot-parent</module>
-        <module>rocket-api</module>
-        <module>diboot</module>
-        <module>crudapi</module>
     </modules>
 
     <!-- 父级依赖 -->

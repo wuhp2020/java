@@ -4,24 +4,24 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/example/mq/activemq/activemq.iml" filepath="$PROJECT_DIR$/example/mq/activemq/activemq.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/activiti/activiti.iml" filepath="$PROJECT_DIR$/example/activiti/activiti.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/ajax/ajax.iml" filepath="$PROJECT_DIR$/example/ajax/ajax.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/frontend/ajax/ajax.iml" filepath="$PROJECT_DIR$/example/frontend/ajax/ajax.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/ansible-agent/ansible-agent.iml" filepath="$PROJECT_DIR$/example/ansible-agent/ansible-agent.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/api-manager/api-manager.iml" filepath="$PROJECT_DIR$/example/api-manager/api-manager.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/apollo/apollo.iml" filepath="$PROJECT_DIR$/example/apollo/apollo.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/asm/asm.iml" filepath="$PROJECT_DIR$/example/asm/asm.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/axure/axure.iml" filepath="$PROJECT_DIR$/example/axure/axure.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/bootstrap/bootstrap.iml" filepath="$PROJECT_DIR$/example/bootstrap/bootstrap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/frontend/bootstrap/bootstrap.iml" filepath="$PROJECT_DIR$/example/frontend/bootstrap/bootstrap.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/caffeine/caffeine.iml" filepath="$PROJECT_DIR$/example/caffeine/caffeine.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/canal/canal.iml" filepath="$PROJECT_DIR$/example/canal/canal.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/canal/canal-admin/canal-admin.iml" filepath="$PROJECT_DIR$/example/canal/canal-admin/canal-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/canal/canal-client/canal-client.iml" filepath="$PROJECT_DIR$/example/canal/canal-client/canal-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/canal/canal-deployer/canal-deployer.iml" filepath="$PROJECT_DIR$/example/canal/canal-deployer/canal-deployer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/checkstyle/checkstyle.iml" filepath="$PROJECT_DIR$/example/checkstyle/checkstyle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/tools/checkstyle/checkstyle.iml" filepath="$PROJECT_DIR$/example/tools/checkstyle/checkstyle.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/command/command.iml" filepath="$PROJECT_DIR$/example/command/command.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/commons-codec/commons-codec.iml" filepath="$PROJECT_DIR$/example/commons-codec/commons-codec.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/consul/consul.iml" filepath="$PROJECT_DIR$/example/consul/consul.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/crudapi/crudapi.iml" filepath="$PROJECT_DIR$/example/crudapi/crudapi.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/crudapi/crudapi-example/crudapi-example.iml" filepath="$PROJECT_DIR$/example/crudapi/crudapi-example/crudapi-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/crudapi/crudapi.iml" filepath="$PROJECT_DIR$/example/low-code/crudapi/crudapi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/crudapi/crudapi-example/crudapi-example.iml" filepath="$PROJECT_DIR$/example/low-code/crudapi/crudapi-example/crudapi-example.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/curator/curator.iml" filepath="$PROJECT_DIR$/example/curator/curator.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/cxf/cxf.iml" filepath="$PROJECT_DIR$/example/cxf/cxf.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/d3js/d3js.iml" filepath="$PROJECT_DIR$/example/d3js/d3js.iml" />
@@ -33,36 +33,38 @@
       <module fileurl="file://$PROJECT_DIR$/example/diamond/diamond-sdk/diamond-sdk.iml" filepath="$PROJECT_DIR$/example/diamond/diamond-sdk/diamond-sdk.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/diamond/diamond-server/diamond-server.iml" filepath="$PROJECT_DIR$/example/diamond/diamond-server/diamond-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/diamond/diamond-utils/diamond-utils.iml" filepath="$PROJECT_DIR$/example/diamond/diamond-utils/diamond-utils.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/diboot/diboot.iml" filepath="$PROJECT_DIR$/example/diboot/diboot.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/docker/docker.iml" filepath="$PROJECT_DIR$/example/docker/docker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/diboot/diboot.iml" filepath="$PROJECT_DIR$/example/low-code/diboot/diboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/tools/docker/docker.iml" filepath="$PROJECT_DIR$/example/tools/docker/docker.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/docx4j/docx4j.iml" filepath="$PROJECT_DIR$/example/docx4j/docx4j.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/drools/drools.iml" filepath="$PROJECT_DIR$/example/drools/drools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/rule/drools/drools.iml" filepath="$PROJECT_DIR$/example/rule/drools/drools.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/orm/druid/druid.iml" filepath="$PROJECT_DIR$/example/orm/druid/druid.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/dubbo/dubbo.iml" filepath="$PROJECT_DIR$/example/dubbo/dubbo.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/dubbo/dubbo-admin/dubbo-admin.iml" filepath="$PROJECT_DIR$/example/dubbo/dubbo-admin/dubbo-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/dubbo/dubbo-client/dubbo-client.iml" filepath="$PROJECT_DIR$/example/dubbo/dubbo-client/dubbo-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/dubbo/dubbo-interface/dubbo-interface.iml" filepath="$PROJECT_DIR$/example/dubbo/dubbo-interface/dubbo-interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/dubbo/dubbo-server/dubbo-server.iml" filepath="$PROJECT_DIR$/example/dubbo/dubbo-server/dubbo-server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/dynamic-interface/dynamic-interface.iml" filepath="$PROJECT_DIR$/example/dynamic-interface/dynamic-interface.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/easy-rules/easy-rules.iml" filepath="$PROJECT_DIR$/example/easy-rules/easy-rules.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/dynamic-interface/dynamic-interface.iml" filepath="$PROJECT_DIR$/example/low-code/dynamic-interface/dynamic-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/rule/easy-rules/easy-rules.iml" filepath="$PROJECT_DIR$/example/rule/easy-rules/easy-rules.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/easyexcel/easyexcel.iml" filepath="$PROJECT_DIR$/example/easyexcel/easyexcel.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/easymock/easymock.iml" filepath="$PROJECT_DIR$/example/easymock/easymock.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/easypoi/easypoi.iml" filepath="$PROJECT_DIR$/example/easypoi/easypoi.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/easyui/easyui.iml" filepath="$PROJECT_DIR$/example/easyui/easyui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/frontend/easyui/easyui.iml" filepath="$PROJECT_DIR$/example/frontend/easyui/easyui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/frontend/echarts/echarts.iml" filepath="$PROJECT_DIR$/example/frontend/echarts/echarts.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/database/elasticsearch/elasticsearch.iml" filepath="$PROJECT_DIR$/example/database/elasticsearch/elasticsearch.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/elk/elk.iml" filepath="$PROJECT_DIR$/example/elk/elk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/tools/elk/elk.iml" filepath="$PROJECT_DIR$/example/tools/elk/elk.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/esri-geometry/esri-geometry.iml" filepath="$PROJECT_DIR$/example/esri-geometry/esri-geometry.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/etcd/etcd.iml" filepath="$PROJECT_DIR$/example/etcd/etcd.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/example.iml" filepath="$PROJECT_DIR$/example/example.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/fastjson/fastjson.iml" filepath="$PROJECT_DIR$/example/fastjson/fastjson.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/ffmpeg/ffmpeg.iml" filepath="$PROJECT_DIR$/example/ffmpeg/ffmpeg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/tools/ffmpeg/ffmpeg.iml" filepath="$PROJECT_DIR$/example/tools/ffmpeg/ffmpeg.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/filter/filter.iml" filepath="$PROJECT_DIR$/example/filter/filter.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/flink/flink.iml" filepath="$PROJECT_DIR$/example/flink/flink.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/flume/flume.iml" filepath="$PROJECT_DIR$/example/flume/flume.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/freemarker/freemarker.iml" filepath="$PROJECT_DIR$/example/freemarker/freemarker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/frontend/frontend.iml" filepath="$PROJECT_DIR$/example/frontend/frontend.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/database/gaussdb/gaussdb.iml" filepath="$PROJECT_DIR$/example/database/gaussdb/gaussdb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/git/git.iml" filepath="$PROJECT_DIR$/example/git/git.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/gitlab/gitlab.iml" filepath="$PROJECT_DIR$/example/gitlab/gitlab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/tools/git/git.iml" filepath="$PROJECT_DIR$/example/tools/git/git.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/tools/gitlab/gitlab.iml" filepath="$PROJECT_DIR$/example/tools/gitlab/gitlab.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/global-handler/global-handler.iml" filepath="$PROJECT_DIR$/example/global-handler/global-handler.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/grpc/grpc.iml" filepath="$PROJECT_DIR$/example/grpc/grpc.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/grpc/grpc-client/grpc-client.iml" filepath="$PROJECT_DIR$/example/grpc/grpc-client/grpc-client.iml" />
@@ -83,57 +85,59 @@
       <module fileurl="file://$PROJECT_DIR$/example/java11/java11.iml" filepath="$PROJECT_DIR$/example/java11/java11.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/java8/java8.iml" filepath="$PROJECT_DIR$/example/java8/java8.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/javafaker/javafaker.iml" filepath="$PROJECT_DIR$/example/javafaker/javafaker.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/javascript/javascript.iml" filepath="$PROJECT_DIR$/example/javascript/javascript.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/frontend/javascript/javascript.iml" filepath="$PROJECT_DIR$/example/frontend/javascript/javascript.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/jboss/jboss.iml" filepath="$PROJECT_DIR$/example/jboss/jboss.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/orm/jdbc/jdbc.iml" filepath="$PROJECT_DIR$/example/orm/jdbc/jdbc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-boot-base-api.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-boot-base-api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-core/jeecg-boot-base-core.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-core/jeecg-boot-base-core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-tools/jeecg-boot-base-tools.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-tools/jeecg-boot-base-tools.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-module-demo/jeecg-boot-module-demo.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-module-demo/jeecg-boot-module-demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-module-system/jeecg-boot-module-system.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-module-system/jeecg-boot-module-system.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-parent.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-parent.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-cloud/jeecg-boot-starter-cloud.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-cloud/jeecg-boot-starter-cloud.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-job/jeecg-boot-starter-job.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-job/jeecg-boot-starter-job.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-lock/jeecg-boot-starter-lock.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-lock/jeecg-boot-starter-lock.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-rabbitmq/jeecg-boot-starter-rabbitmq.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-rabbitmq/jeecg-boot-starter-rabbitmq.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-seata/jeecg-boot-starter-seata.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-seata/jeecg-boot-starter-seata.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-shardingsphere/jeecg-boot-starter-shardingsphere.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-shardingsphere/jeecg-boot-starter-shardingsphere.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-gateway/jeecg-cloud-gateway.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-gateway/jeecg-cloud-gateway.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-module.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-module.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-monitor/jeecg-cloud-monitor.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-monitor/jeecg-cloud-monitor.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-nacos/jeecg-cloud-nacos.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-nacos/jeecg-cloud-nacos.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-sentinel/jeecg-cloud-sentinel.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-sentinel/jeecg-cloud-sentinel.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-system-start/jeecg-cloud-system-start.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-system-start/jeecg-cloud-system-start.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-more/jeecg-cloud-test-more.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-more/jeecg-cloud-test-more.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-rabbitmq/jeecg-cloud-test-rabbitmq.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-rabbitmq/jeecg-cloud-test-rabbitmq.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-seata/jeecg-cloud-test-seata.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-seata/jeecg-cloud-test-seata.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-shardingsphere/jeecg-cloud-test-shardingsphere.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-shardingsphere/jeecg-cloud-test-shardingsphere.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-xxljob/jeecg-cloud-xxljob.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-xxljob/jeecg-cloud-xxljob.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-cloud-api/jeecg-system-cloud-api.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-cloud-api/jeecg-system-cloud-api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-local-api/jeecg-system-local-api.iml" filepath="$PROJECT_DIR$/example/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-local-api/jeecg-system-local-api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jenkins/jenkins.iml" filepath="$PROJECT_DIR$/example/jenkins/jenkins.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-boot-base-api.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-boot-base-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-core/jeecg-boot-base-core.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-core/jeecg-boot-base-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-tools/jeecg-boot-base-tools.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-tools/jeecg-boot-base-tools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-module-demo/jeecg-boot-module-demo.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-module-demo/jeecg-boot-module-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-module-system/jeecg-boot-module-system.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-module-system/jeecg-boot-module-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-parent.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-cloud/jeecg-boot-starter-cloud.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-cloud/jeecg-boot-starter-cloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-job/jeecg-boot-starter-job.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-job/jeecg-boot-starter-job.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-lock/jeecg-boot-starter-lock.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-lock/jeecg-boot-starter-lock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-rabbitmq/jeecg-boot-starter-rabbitmq.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-rabbitmq/jeecg-boot-starter-rabbitmq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-seata/jeecg-boot-starter-seata.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-seata/jeecg-boot-starter-seata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-shardingsphere/jeecg-boot-starter-shardingsphere.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-shardingsphere/jeecg-boot-starter-shardingsphere.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-gateway/jeecg-cloud-gateway.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-gateway/jeecg-cloud-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-module.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-monitor/jeecg-cloud-monitor.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-monitor/jeecg-cloud-monitor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-nacos/jeecg-cloud-nacos.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-nacos/jeecg-cloud-nacos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-sentinel/jeecg-cloud-sentinel.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-sentinel/jeecg-cloud-sentinel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-system-start/jeecg-cloud-system-start.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-system-start/jeecg-cloud-system-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-more/jeecg-cloud-test-more.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-more/jeecg-cloud-test-more.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-rabbitmq/jeecg-cloud-test-rabbitmq.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-rabbitmq/jeecg-cloud-test-rabbitmq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-seata/jeecg-cloud-test-seata.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-seata/jeecg-cloud-test-seata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-shardingsphere/jeecg-cloud-test-shardingsphere.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-shardingsphere/jeecg-cloud-test-shardingsphere.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-xxljob/jeecg-cloud-xxljob.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-xxljob/jeecg-cloud-xxljob.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-cloud-api/jeecg-system-cloud-api.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-cloud-api/jeecg-system-cloud-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-local-api/jeecg-system-local-api.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-local-api/jeecg-system-local-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/tools/jenkins/jenkins.iml" filepath="$PROJECT_DIR$/example/tools/jenkins/jenkins.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/jetty/jetty.iml" filepath="$PROJECT_DIR$/example/jetty/jetty.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/jmeter/jmeter.iml" filepath="$PROJECT_DIR$/example/jmeter/jmeter.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/jmockdata/jmockdata.iml" filepath="$PROJECT_DIR$/example/jmockdata/jmockdata.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/jni/jni.iml" filepath="$PROJECT_DIR$/example/jni/jni.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/joda-time/joda-time.iml" filepath="$PROJECT_DIR$/example/joda-time/joda-time.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jquery/jquery.iml" filepath="$PROJECT_DIR$/example/jquery/jquery.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jsp/jsp.iml" filepath="$PROJECT_DIR$/example/jsp/jsp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/frontend/jquery/jquery.iml" filepath="$PROJECT_DIR$/example/frontend/jquery/jquery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/frontend/jsp/jsp.iml" filepath="$PROJECT_DIR$/example/frontend/jsp/jsp.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/junit/junit.iml" filepath="$PROJECT_DIR$/example/junit/junit.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/jvm/jvm.iml" filepath="$PROJECT_DIR$/example/jvm/jvm.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/jwt/jwt.iml" filepath="$PROJECT_DIR$/example/jwt/jwt.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mq/kafka/kafka.iml" filepath="$PROJECT_DIR$/example/mq/kafka/kafka.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/kubernetes/kubernetes.iml" filepath="$PROJECT_DIR$/example/kubernetes/kubernetes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/tools/kubernetes/kubernetes.iml" filepath="$PROJECT_DIR$/example/tools/kubernetes/kubernetes.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/linux/linux.iml" filepath="$PROJECT_DIR$/example/linux/linux.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/low-code.iml" filepath="$PROJECT_DIR$/example/low-code/low-code.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/lz4/lz4.iml" filepath="$PROJECT_DIR$/example/lz4/lz4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/magic-api/magic-api.iml" filepath="$PROJECT_DIR$/example/magic-api/magic-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/magic-api/magic-api.iml" filepath="$PROJECT_DIR$/example/low-code/magic-api/magic-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mail/mail.iml" filepath="$PROJECT_DIR$/example/mail/mail.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/manage/manage.iml" filepath="$PROJECT_DIR$/example/manage/manage.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mapstruct/mapstruct.iml" filepath="$PROJECT_DIR$/example/mapstruct/mapstruct.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/maven/maven.iml" filepath="$PROJECT_DIR$/example/maven/maven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/tools/maven/maven.iml" filepath="$PROJECT_DIR$/example/tools/maven/maven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/frontend/mini-program/mini-program.iml" filepath="$PROJECT_DIR$/example/frontend/mini-program/mini-program.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mockito/mockito.iml" filepath="$PROJECT_DIR$/example/mockito/mockito.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/database/mongodb/mongodb.iml" filepath="$PROJECT_DIR$/example/database/mongodb/mongodb.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mq/mq.iml" filepath="$PROJECT_DIR$/example/mq/mq.iml" />
@@ -149,7 +153,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/netty/netty-server/netty-server.iml" filepath="$PROJECT_DIR$/example/netty/netty-server/netty-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/netty/netty-websocket/netty-websocket.iml" filepath="$PROJECT_DIR$/example/netty/netty-websocket/netty-websocket.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/nginx/nginx.iml" filepath="$PROJECT_DIR$/example/nginx/nginx.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/nodejs/nodejs.iml" filepath="$PROJECT_DIR$/example/nodejs/nodejs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/frontend/nodejs/nodejs.iml" filepath="$PROJECT_DIR$/example/frontend/nodejs/nodejs.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/oauth2/oauth2.iml" filepath="$PROJECT_DIR$/example/oauth2/oauth2.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/okhttp/okhttp.iml" filepath="$PROJECT_DIR$/example/okhttp/okhttp.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/open-ele-me/open-ele-me.iml" filepath="$PROJECT_DIR$/example/open-ele-me/open-ele-me.iml" />
@@ -161,22 +165,23 @@
       <module fileurl="file://$PROJECT_DIR$/example/pdf/pdf.iml" filepath="$PROJECT_DIR$/example/pdf/pdf.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/pig/pig.iml" filepath="$PROJECT_DIR$/example/pig/pig.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/poi/poi.iml" filepath="$PROJECT_DIR$/example/poi/poi.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/postman/postman.iml" filepath="$PROJECT_DIR$/example/postman/postman.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/prometheus/prometheus.iml" filepath="$PROJECT_DIR$/example/prometheus/prometheus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/tools/postman/postman.iml" filepath="$PROJECT_DIR$/example/tools/postman/postman.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/tools/prometheus/prometheus.iml" filepath="$PROJECT_DIR$/example/tools/prometheus/prometheus.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/quartz/quartz.iml" filepath="$PROJECT_DIR$/example/quartz/quartz.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mq/rabbitmq/rabbitmq.iml" filepath="$PROJECT_DIR$/example/mq/rabbitmq/rabbitmq.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/redis/redis.iml" filepath="$PROJECT_DIR$/example/redis/redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/redisson/redisson.iml" filepath="$PROJECT_DIR$/example/redisson/redisson.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/rocket-api/rocket-api.iml" filepath="$PROJECT_DIR$/example/rocket-api/rocket-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/rocket-api/rocket-api.iml" filepath="$PROJECT_DIR$/example/low-code/rocket-api/rocket-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mq/rocketmq/rocketmq.iml" filepath="$PROJECT_DIR$/example/mq/rocketmq/rocketmq.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mq/rocketmq-console/rocketmq-console.iml" filepath="$PROJECT_DIR$/example/mq/rocketmq-console/rocketmq-console.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/ruoyi/ruoyi.iml" filepath="$PROJECT_DIR$/example/ruoyi/ruoyi.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/ruoyi/ruoyi-admin/ruoyi-admin.iml" filepath="$PROJECT_DIR$/example/ruoyi/ruoyi-admin/ruoyi-admin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/ruoyi/ruoyi-common/ruoyi-common.iml" filepath="$PROJECT_DIR$/example/ruoyi/ruoyi-common/ruoyi-common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/ruoyi/ruoyi-framework/ruoyi-framework.iml" filepath="$PROJECT_DIR$/example/ruoyi/ruoyi-framework/ruoyi-framework.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/ruoyi/ruoyi-generator/ruoyi-generator.iml" filepath="$PROJECT_DIR$/example/ruoyi/ruoyi-generator/ruoyi-generator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/ruoyi/ruoyi-quartz/ruoyi-quartz.iml" filepath="$PROJECT_DIR$/example/ruoyi/ruoyi-quartz/ruoyi-quartz.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/ruoyi/ruoyi-system/ruoyi-system.iml" filepath="$PROJECT_DIR$/example/ruoyi/ruoyi-system/ruoyi-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/rule/rule.iml" filepath="$PROJECT_DIR$/example/rule/rule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/ruoyi/ruoyi.iml" filepath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-admin/ruoyi-admin.iml" filepath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-admin/ruoyi-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-common/ruoyi-common.iml" filepath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-common/ruoyi-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-framework/ruoyi-framework.iml" filepath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-framework/ruoyi-framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-generator/ruoyi-generator.iml" filepath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-generator/ruoyi-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-quartz/ruoyi-quartz.iml" filepath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-quartz/ruoyi-quartz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-system/ruoyi-system.iml" filepath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-system/ruoyi-system.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/orm/seata/seata.iml" filepath="$PROJECT_DIR$/example/orm/seata/seata.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/orm/seata/seata-account/seata-account.iml" filepath="$PROJECT_DIR$/example/orm/seata/seata-account/seata-account.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/orm/seata/seata-business/seata-business.iml" filepath="$PROJECT_DIR$/example/orm/seata/seata-business/seata-business.iml" />
@@ -214,7 +219,8 @@
       <module fileurl="file://$PROJECT_DIR$/example/thrift-client/thrift-client.iml" filepath="$PROJECT_DIR$/example/thrift-client/thrift-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/thrift-server/thrift-server.iml" filepath="$PROJECT_DIR$/example/thrift-server/thrift-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/tomcat/tomcat.iml" filepath="$PROJECT_DIR$/example/tomcat/tomcat.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/manage/manage-web/vue.iml" filepath="$PROJECT_DIR$/example/manage/manage-web/vue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/tools/tools.iml" filepath="$PROJECT_DIR$/example/tools/tools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/frontend/vue/vue.iml" filepath="$PROJECT_DIR$/example/frontend/vue/vue.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/war/war.iml" filepath="$PROJECT_DIR$/example/war/war.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/weblogic/weblogic.iml" filepath="$PROJECT_DIR$/example/weblogic/weblogic.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/websocket/websocket.iml" filepath="$PROJECT_DIR$/example/websocket/websocket.iml" />

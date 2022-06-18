@@ -10,8 +10,8 @@
         <module name="thrift-client" />
         <module name="servlet" />
         <module name="sofaboot" />
-        <module name="ajax" />
         <module name="jeecg-cloud-xxljob" />
+        <module name="ajax" />
         <module name="grpc-client" />
         <module name="jeecg-boot-starter-shardingsphere" />
         <module name="postman" />
@@ -103,8 +103,8 @@
         <module name="ruoyi-common" />
         <module name="jeecg-boot-base-tools" />
         <module name="jetty" />
-        <module name="prometheus" />
         <module name="hadoop" />
+        <module name="prometheus" />
         <module name="hbase" />
         <module name="junit" />
         <module name="io-server" />
@@ -122,8 +122,8 @@
         <module name="jeecg-boot-module-demo" />
         <module name="redis" />
         <module name="ruoyi-framework" />
-        <module name="jeecg-cloud-system-start" />
         <module name="elasticsearch" />
+        <module name="jeecg-cloud-system-start" />
         <module name="okhttp" />
         <module name="canal-deployer" />
         <module name="ansible-agent" />
@@ -135,6 +135,7 @@
         <module name="magic-api" />
         <module name="kafka" />
         <module name="seata-order" />
+        <module name="mini-program" />
         <module name="word" />
         <module name="hive" />
         <module name="jeecg-boot-starter-cloud" />
@@ -143,6 +144,7 @@
         <module name="bootstrap" />
         <module name="springboot" />
         <module name="datasource-switch" />
+        <module name="echarts" />
         <module name="jenkins" />
         <module name="opennlp" />
         <module name="esri-geometry" />
@@ -156,6 +158,7 @@
         <module name="etcd" />
         <module name="mail" />
         <module name="jeecg-cloud-monitor" />
+        <module name="vue" />
         <module name="jeecg-cloud-test-rabbitmq" />
         <module name="redisson" />
         <module name="nacos-server" />
@@ -257,6 +260,7 @@
       <module name="easymock" target="1.8" />
       <module name="easypoi" target="1.8" />
       <module name="easyui" target="1.8" />
+      <module name="echarts" target="1.8" />
       <module name="elasticsearch" target="1.8" />
       <module name="elk" target="1.8" />
       <module name="esri-geometry" target="1.8" />
@@ -268,6 +272,7 @@
       <module name="flink" target="1.8" />
       <module name="flume" target="1.8" />
       <module name="freemarker" target="1.8" />
+      <module name="frontend" target="1.8" />
       <module name="gaussdb" target="1.8" />
       <module name="git" target="1.8" />
       <module name="gitlab" target="1.8" />
@@ -335,12 +340,14 @@
       <module name="kafka" target="1.8" />
       <module name="kubernetes" target="1.8" />
       <module name="linux" target="1.8" />
+      <module name="low-code" target="1.8" />
       <module name="lz4" target="1.8" />
       <module name="magic-api" target="1.8" />
       <module name="mail" target="1.8" />
       <module name="manage" target="1.8" />
       <module name="mapstruct" target="1.8" />
       <module name="maven" target="1.8" />
+      <module name="mini-program" target="1.8" />
       <module name="mockito" target="1.8" />
       <module name="mongodb" target="1.8" />
       <module name="mq" target="1.8" />
@@ -377,6 +384,7 @@
       <module name="rocket-api" target="1.8" />
       <module name="rocketmq" target="1.8" />
       <module name="rocketmq-console" target="1.8" />
+      <module name="rule" target="1.8" />
       <module name="ruoyi" target="1.8" />
       <module name="ruoyi-admin" target="1.8" />
       <module name="ruoyi-common" target="1.8" />
@@ -421,6 +429,7 @@
       <module name="thrift-client" target="1.8" />
       <module name="thrift-server" target="1.8" />
       <module name="tomcat" target="1.8" />
+      <module name="tools" target="1.8" />
       <module name="vue" target="1.8" />
       <module name="war" target="1.8" />
       <module name="weblogic" target="1.8" />
@@ -478,6 +487,7 @@
       <module name="easymock" options="-parameters" />
       <module name="easypoi" options="-parameters" />
       <module name="easyui" options="-parameters" />
+      <module name="echarts" options="-parameters" />
       <module name="elasticsearch" options="-parameters" />
       <module name="elk" options="-parameters" />
       <module name="esri-geometry" options="-parameters" />
@@ -554,6 +564,7 @@
       <module name="mail" options="-parameters" />
       <module name="mapstruct" options="-parameters" />
       <module name="maven" options="-parameters" />
+      <module name="mini-program" options="-parameters" />
       <module name="mockito" options="-parameters" />
       <module name="mongodb" options="-parameters" />
       <module name="mybatis" options="-parameters" />
