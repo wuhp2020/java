@@ -96,15 +96,15 @@
         <module name="nacos" />
         <module name="docker" />
         <module name="caffeine" />
-        <module name="jboss" />
         <module name="sqlserver" />
+        <module name="jboss" />
         <module name="linux" />
         <module name="springcloud-netflix" />
         <module name="ruoyi-common" />
         <module name="jeecg-boot-base-tools" />
-        <module name="jetty" />
         <module name="hadoop" />
         <module name="prometheus" />
+        <module name="jetty" />
         <module name="hbase" />
         <module name="junit" />
         <module name="io-server" />
@@ -266,6 +266,7 @@
       <module name="esri-geometry" target="1.8" />
       <module name="etcd" target="1.8" />
       <module name="example" target="1.8" />
+      <module name="excel" target="1.8" />
       <module name="fastjson" target="1.8" />
       <module name="ffmpeg" target="1.8" />
       <module name="filter" target="1.8" />
@@ -432,6 +433,7 @@
       <module name="tools" target="1.8" />
       <module name="vue" target="1.8" />
       <module name="war" target="1.8" />
+      <module name="web-server" target="1.8" />
       <module name="weblogic" target="1.8" />
       <module name="websocket" target="1.8" />
       <module name="word" target="1.8" />

@@ -9,24 +9,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.tools</groupId>
-    <artifactId>tools</artifactId>
+    <groupId>com.excel</groupId>
+    <artifactId>excel</artifactId>
     <version>1.0.0</version>
 
     <modules>
-        <module>checkstyle</module>
-        <module>docker</module>
-        <module>elk</module>
-        <module>ffmpeg</module>
-        <module>git</module>
-        <module>gitlab</module>
-        <module>jenkins</module>
-        <module>kubernetes</module>
-        <module>maven</module>
-        <module>postman</module>
-        <module>prometheus</module>
-        <module>jmeter</module>
-        <module>ansible-agent</module>
+        <module>easyexcel</module>
+        <module>easypoi</module>
+        <module>poi</module>
     </modules>
     <packaging>pom</packaging>
 </project>

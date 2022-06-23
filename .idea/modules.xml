@@ -5,7 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/mq/activemq/activemq.iml" filepath="$PROJECT_DIR$/example/mq/activemq/activemq.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/activiti/activiti.iml" filepath="$PROJECT_DIR$/example/activiti/activiti.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/frontend/ajax/ajax.iml" filepath="$PROJECT_DIR$/example/frontend/ajax/ajax.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/ansible-agent/ansible-agent.iml" filepath="$PROJECT_DIR$/example/ansible-agent/ansible-agent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/tools/ansible-agent/ansible-agent.iml" filepath="$PROJECT_DIR$/example/tools/ansible-agent/ansible-agent.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/api-manager/api-manager.iml" filepath="$PROJECT_DIR$/example/api-manager/api-manager.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/apollo/apollo.iml" filepath="$PROJECT_DIR$/example/apollo/apollo.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/asm/asm.iml" filepath="$PROJECT_DIR$/example/asm/asm.iml" />
@@ -45,9 +45,9 @@
       <module fileurl="file://$PROJECT_DIR$/example/dubbo/dubbo-server/dubbo-server.iml" filepath="$PROJECT_DIR$/example/dubbo/dubbo-server/dubbo-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/low-code/dynamic-interface/dynamic-interface.iml" filepath="$PROJECT_DIR$/example/low-code/dynamic-interface/dynamic-interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/rule/easy-rules/easy-rules.iml" filepath="$PROJECT_DIR$/example/rule/easy-rules/easy-rules.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/easyexcel/easyexcel.iml" filepath="$PROJECT_DIR$/example/easyexcel/easyexcel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/excel/easyexcel/easyexcel.iml" filepath="$PROJECT_DIR$/example/excel/easyexcel/easyexcel.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/easymock/easymock.iml" filepath="$PROJECT_DIR$/example/easymock/easymock.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/easypoi/easypoi.iml" filepath="$PROJECT_DIR$/example/easypoi/easypoi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/excel/easypoi/easypoi.iml" filepath="$PROJECT_DIR$/example/excel/easypoi/easypoi.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/frontend/easyui/easyui.iml" filepath="$PROJECT_DIR$/example/frontend/easyui/easyui.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/frontend/echarts/echarts.iml" filepath="$PROJECT_DIR$/example/frontend/echarts/echarts.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/database/elasticsearch/elasticsearch.iml" filepath="$PROJECT_DIR$/example/database/elasticsearch/elasticsearch.iml" />
@@ -55,6 +55,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/esri-geometry/esri-geometry.iml" filepath="$PROJECT_DIR$/example/esri-geometry/esri-geometry.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/etcd/etcd.iml" filepath="$PROJECT_DIR$/example/etcd/etcd.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/example.iml" filepath="$PROJECT_DIR$/example/example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/excel/excel.iml" filepath="$PROJECT_DIR$/example/excel/excel.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/fastjson/fastjson.iml" filepath="$PROJECT_DIR$/example/fastjson/fastjson.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/tools/ffmpeg/ffmpeg.iml" filepath="$PROJECT_DIR$/example/tools/ffmpeg/ffmpeg.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/filter/filter.iml" filepath="$PROJECT_DIR$/example/filter/filter.iml" />
@@ -86,7 +87,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/java8/java8.iml" filepath="$PROJECT_DIR$/example/java8/java8.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/javafaker/javafaker.iml" filepath="$PROJECT_DIR$/example/javafaker/javafaker.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/frontend/javascript/javascript.iml" filepath="$PROJECT_DIR$/example/frontend/javascript/javascript.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jboss/jboss.iml" filepath="$PROJECT_DIR$/example/jboss/jboss.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/web-server/jboss/jboss.iml" filepath="$PROJECT_DIR$/example/web-server/jboss/jboss.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/orm/jdbc/jdbc.iml" filepath="$PROJECT_DIR$/example/orm/jdbc/jdbc.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-boot-base-api.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-boot-base-api.iml" />
@@ -117,8 +118,8 @@
       <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-cloud-api/jeecg-system-cloud-api.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-cloud-api/jeecg-system-cloud-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-local-api/jeecg-system-local-api.iml" filepath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-local-api/jeecg-system-local-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/tools/jenkins/jenkins.iml" filepath="$PROJECT_DIR$/example/tools/jenkins/jenkins.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jetty/jetty.iml" filepath="$PROJECT_DIR$/example/jetty/jetty.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/jmeter/jmeter.iml" filepath="$PROJECT_DIR$/example/jmeter/jmeter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/web-server/jetty/jetty.iml" filepath="$PROJECT_DIR$/example/web-server/jetty/jetty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/tools/jmeter/jmeter.iml" filepath="$PROJECT_DIR$/example/tools/jmeter/jmeter.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/jmockdata/jmockdata.iml" filepath="$PROJECT_DIR$/example/jmockdata/jmockdata.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/jni/jni.iml" filepath="$PROJECT_DIR$/example/jni/jni.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/joda-time/joda-time.iml" filepath="$PROJECT_DIR$/example/joda-time/joda-time.iml" />
@@ -164,7 +165,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/orm/orm.iml" filepath="$PROJECT_DIR$/example/orm/orm.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/pdf/pdf.iml" filepath="$PROJECT_DIR$/example/pdf/pdf.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/pig/pig.iml" filepath="$PROJECT_DIR$/example/pig/pig.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/poi/poi.iml" filepath="$PROJECT_DIR$/example/poi/poi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/excel/poi/poi.iml" filepath="$PROJECT_DIR$/example/excel/poi/poi.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/tools/postman/postman.iml" filepath="$PROJECT_DIR$/example/tools/postman/postman.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/tools/prometheus/prometheus.iml" filepath="$PROJECT_DIR$/example/tools/prometheus/prometheus.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/quartz/quartz.iml" filepath="$PROJECT_DIR$/example/quartz/quartz.iml" />
@@ -218,11 +219,12 @@
       <module fileurl="file://$PROJECT_DIR$/example/swagger/swagger.iml" filepath="$PROJECT_DIR$/example/swagger/swagger.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/thrift-client/thrift-client.iml" filepath="$PROJECT_DIR$/example/thrift-client/thrift-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/thrift-server/thrift-server.iml" filepath="$PROJECT_DIR$/example/thrift-server/thrift-server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/tomcat/tomcat.iml" filepath="$PROJECT_DIR$/example/tomcat/tomcat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/web-server/tomcat/tomcat.iml" filepath="$PROJECT_DIR$/example/web-server/tomcat/tomcat.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/tools/tools.iml" filepath="$PROJECT_DIR$/example/tools/tools.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/frontend/vue/vue.iml" filepath="$PROJECT_DIR$/example/frontend/vue/vue.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/war/war.iml" filepath="$PROJECT_DIR$/example/war/war.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/weblogic/weblogic.iml" filepath="$PROJECT_DIR$/example/weblogic/weblogic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/web-server/web-server.iml" filepath="$PROJECT_DIR$/example/web-server/web-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/web-server/weblogic/weblogic.iml" filepath="$PROJECT_DIR$/example/web-server/weblogic/weblogic.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/websocket/websocket.iml" filepath="$PROJECT_DIR$/example/websocket/websocket.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/word/word.iml" filepath="$PROJECT_DIR$/example/word/word.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/xjar/xjar.iml" filepath="$PROJECT_DIR$/example/xjar/xjar.iml" />

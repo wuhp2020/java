@@ -9,24 +9,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.tools</groupId>
-    <artifactId>tools</artifactId>
+    <groupId>com.web-server</groupId>
+    <artifactId>web-server</artifactId>
     <version>1.0.0</version>
 
     <modules>
-        <module>checkstyle</module>
-        <module>docker</module>
-        <module>elk</module>
-        <module>ffmpeg</module>
-        <module>git</module>
-        <module>gitlab</module>
-        <module>jenkins</module>
-        <module>kubernetes</module>
-        <module>maven</module>
-        <module>postman</module>
-        <module>prometheus</module>
-        <module>jmeter</module>
-        <module>ansible-agent</module>
+        <module>jboss</module>
+        <module>jetty</module>
+        <module>tomcat</module>
+        <module>weblogic</module>
     </modules>
     <packaging>pom</packaging>
 </project>

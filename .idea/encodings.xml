@@ -3,8 +3,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/example/activiti/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/activiti/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/ansible-agent/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/ansible-agent/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/api-manager/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/api-manager/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/apollo/src/main/java" charset="UTF-8" />
@@ -60,16 +58,15 @@
     <file url="file://$PROJECT_DIR$/example/dubbo/dubbo-interface/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/dubbo/dubbo-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/dubbo/dubbo-server/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/easyexcel/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/easyexcel/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/easymock/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/easymock/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/easypoi/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/easypoi/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/esri-geometry/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/esri-geometry/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/etcd/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/etcd/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/excel/easyexcel/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/excel/easypoi/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/excel/poi/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/fastjson/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/fastjson/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/filter/src/main/java" charset="UTF-8" />
@@ -118,12 +115,6 @@
     <file url="file://$PROJECT_DIR$/example/java8/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/javafaker/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/javafaker/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jboss/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jboss/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jetty/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jetty/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jmeter/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/jmeter/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/jmockdata/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/jmockdata/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/jni/src/main/java" charset="UTF-8" />
@@ -224,8 +215,6 @@
     <file url="file://$PROJECT_DIR$/example/pdf/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/pig/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/pig/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/poi/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/poi/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/quartz/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/quartz/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/redis/src/main/java" charset="UTF-8" />
@@ -286,8 +275,7 @@
     <file url="file://$PROJECT_DIR$/example/thrift-client/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/thrift-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/thrift-server/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/tomcat/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/tomcat/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/tools/ansible-agent/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/tools/checkstyle/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/tools/docker/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/tools/elk/src/main/java" charset="UTF-8" />
@@ -295,14 +283,17 @@
     <file url="file://$PROJECT_DIR$/example/tools/git/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/tools/gitlab/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/tools/jenkins/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/tools/jmeter/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/tools/kubernetes/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/tools/maven/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/tools/postman/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/tools/prometheus/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/war/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/war/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/weblogic/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/weblogic/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/web-server/jboss/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/web-server/jetty/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/web-server/tomcat/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/web-server/weblogic/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/websocket/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/websocket/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/word/src/main/java" charset="UTF-8" />
