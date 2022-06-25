@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/example/api-manager" />
+    <file type="web" url="file://$PROJECT_DIR$/example/diamond/diamond-server" />
+    <file type="web" url="file://$PROJECT_DIR$/example/frontend/jsp" />
+    <file type="web" url="file://$PROJECT_DIR$/example/war" />
+    <type id="Spring" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>

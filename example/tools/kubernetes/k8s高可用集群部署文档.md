@@ -85,7 +85,7 @@ hostnamectl set-hostname node2
 
 #### （2）添加hosts
 
-所有的节点都要添加hosts解析记录
+所有的节点都要添加hosts解析记录，由于coredns可能无限重启，因此网卡配置DNS1信息
 
 ```go
 cat >>/etc/hosts <<EOF
@@ -216,7 +216,7 @@ sysctl --system
 
 #### （8）配置yum源
 
-若有本地的image和rpm包，可以配置本地yum源，后续的yum源就不需要配置了
+配置本地yum源，修改rpms包路径
 
 ```
 mv /etc/yum.repos.d/* /tmp/
@@ -234,13 +234,6 @@ yum clean all
 
 
 
-若可以连外网，所有的节点均采用阿里云官网的epel源和CentOS默认源
-
-```go
-curl -o /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
-yum clean all
-```
-
 
 
 #### （9）时区与时间同步
@@ -248,44 +241,16 @@ yum clean all
 ```go
 yum install epel-release -y
 yum install ntpdate -y
-ntpdate ntp.aliyun.com
+ntpdate 192.168.10.201
 ```
 
 
 
 ### 2.2、安装docker
 
-#### （1）添加docker软件yum源
+#### （1）安装docker-ce组件
 
-方法：浏览器打开mirrors.aliyun.com网站，找到docker-ce，即可看到镜像仓库源
-
-```go
-curl -o /etc/yum.repos.d/docker-ce.repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-yum clean all
-```
-
-
-
-#### （2）安装docker-ce组件
-
-列出所有可以安装的版本
-
-```go
-yum list docker-ce --showduplicates
-docker-ce.x86_64       3:18.09.6-3.el7               docker-ce-stable
-docker-ce.x86_64       3:18.09.7-3.el7               docker-ce-stable
-docker-ce.x86_64       3:18.09.8-3.el7               docker-ce-stable
-docker-ce.x86_64       3:18.09.9-3.el7               docker-ce-stable
-docker-ce.x86_64       3:19.03.0-3.el7               docker-ce-stable
-docker-ce.x86_64       3:19.03.1-3.el7               docker-ce-stable
-docker-ce.x86_64       3:19.03.2-3.el7               docker-ce-stable
-docker-ce.x86_64       3:19.03.3-3.el7               docker-ce-stable
-docker-ce.x86_64       3:19.03.4-3.el7               docker-ce-stable
-docker-ce.x86_64       3:19.03.5-3.el7               docker-ce-stable
-.....
-```
-
-这里我们安装最新版本的docker，所有的节点都需要安装docker服务
+所有的节点都需要安装docker服务
 
 ```go
 yum install -y  docker-ce docker-ce-cli
@@ -293,7 +258,7 @@ yum install -y  docker-ce docker-ce-cli
 
 
 
-#### （3）启动docker并设置开机自启动
+#### （2）启动docker并设置开机自启动
 
 ```go
 systemctl enable --now docker
@@ -307,14 +272,14 @@ docker --version
 
 
 
-#### （4）更换docker的镜像仓库源
+#### （3）更换docker的镜像仓库源
 
-默认的镜像仓库地址是docker官方的，国内访问异常缓慢，因此更换为个人阿里云的源
+默认的镜像仓库地址是docker官方的，国内访问异常缓慢，因此更换为个人的镜像源
 
 ```go
 cat > /etc/docker/daemon.json << EOF
 {
-  "registry-mirrors": ["https://f1bhsuge.mirror.aliyuncs.com"],
+  "registry-mirrors": ["https://my.mirror.com"],
   "graph": "/home/k8s",
   "default-shm-size": "64g"
 }
@@ -331,50 +296,9 @@ systemctl restart docker
 
 ### 2.3、安装kubernetes
 
-
-
-#### （1）添加kubernetes软件yum源
-
-方法：浏览器打开mirrors.aliyun.com网站，找到kubernetes，即可看到镜像仓库源
-
-```go
-cat > /etc/yum.repos.d/kubernetes.repo << EOF
-[kubernetes]
-name=Kubernetes
-baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
-enabled=1
-gpgcheck=0
-repo_gpgcheck=0
-gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
-EOF
-
-yum clean all
-```
-
-
-
-#### （2）安装kubeadm、kubelet和kubectl组件
+#### （1）安装kubeadm、kubelet和kubectl组件
 
 所有的节点都需要安装这几个组件
-
-```go
-yum list kubeadm --showduplicates
-kubeadm.x86_64                       1.17.7-0                     kubernetes
-kubeadm.x86_64                       1.17.7-1                     kubernetes
-kubeadm.x86_64                       1.17.8-0                     kubernetes
-kubeadm.x86_64                       1.17.9-0                     kubernetes
-kubeadm.x86_64                       1.18.0-0                     kubernetes
-kubeadm.x86_64                       1.18.1-0                     kubernetes
-kubeadm.x86_64                       1.18.2-0                     kubernetes
-kubeadm.x86_64                       1.18.3-0                     kubernetes
-kubeadm.x86_64                       1.18.4-0                     kubernetes
-kubeadm.x86_64                       1.18.4-1                     kubernetes
-kubeadm.x86_64                       1.18.5-0                     kubernetes
-kubeadm.x86_64                       1.18.6-0                     kubernetes
-.....
-```
-
-由于kubernetes版本变更非常快，因此列出有哪些版本，选择一个合适的
 
 ```go
 yum install -y kubelet-1.20.0 kubeadm-1.20.0 kubectl-1.20.0
@@ -382,7 +306,7 @@ yum install -y kubelet-1.20.0 kubeadm-1.20.0 kubectl-1.20.0
 
 
 
-#### （3）设置开机自启动
+#### （2）设置开机自启动
 
 我们先设置开机自启，但是kubelet服务暂时先不启动
 
@@ -474,7 +398,7 @@ EOF
 
 keepalived中使用track_script机制来配置脚本进行探测kubernetes的master节点是否宕机，并以此切换节点实现高可用
 
-master1节点的keepalived配置文件如下所示，配置文件所在的位置/etc/keepalived/keepalived.conf
+master1节点的keepalived配置文件如下所示，配置文件所在的位置/etc/keepalived/keepalived.conf，修改vip地址
 
 ```go
 cat > /etc/keepalived/keepalived.conf << EOF
@@ -556,7 +480,7 @@ EOF
 systemctl enable --now keepalived haproxy
 ```
 
-确保万一，查看一下服务状态
+确保万一，查看一下服务状态，查看vip是否通
 
 ```go
 systemctl status keepalived haproxy
@@ -567,9 +491,9 @@ ping 192.168.10.33
 
 ### 2.5、部署master节点
 
+#### （1）加载镜像
 
-
-若采用本地镜像部署，解压后进入目录，直接加载本地镜像即可，后续拉去镜像就不用操作了
+解压后进入镜像目录，直接加载本地镜像即可，所有机器都需要加载
 
 ```
 for i in `ll | grep -v grep | awk '{print $9}'`;do docker load -i $i; done
@@ -577,52 +501,7 @@ for i in `ll | grep -v grep | awk '{print $9}'`;do docker load -i $i; done
 
 
 
-
-
-#### （1）生成预处理文件
-
-在master节点执行如下指令：
-
-```go
-kubeadm config print init-defaults > kubeadm-init.yaml
-```
-
-
-
-#### （2）提前拉取镜像
-
-如果直接采用kubeadm init来初始化，中间会有系统自动拉取镜像的这一步骤，这是比较慢的，我建议分开来做，所以这里就先提前拉取镜像
-
-```go
-kubeadm config images pull --config kubeadm-init.yaml
-```
-
-
-
-其他master节点提前拉取镜像
-
-其他两个master节点在初始化之前也尽量先把镜像拉取下来，这样子减少初始化时间
-
-```go
-scp kubeadm-init.yaml root@192.168.10.202:~
-scp kubeadm-init.yaml root@192.168.10.203:~
-```
-
-master2节点
-
-```go
-kubeadm config images pull --config kubeadm-init.yaml
-```
-
-master3节点
-
-```go
-kubeadm config images pull --config kubeadm-init.yaml
-```
-
-
-
-#### （3）初始化kubenetes的master1节点
+#### （2）初始化kubenetes的master1节点
 
 执行如下命令，--control-plane-endpoint是vip和端口
 

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="diamond-server:war">
+    <output-path>$PROJECT_DIR$/example/diamond/diamond-server/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>diamond-server</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="diamond-server.war">
+      <element id="artifact" artifact-name="diamond-server:war exploded" />
+    </root>
+  </artifact>
+</component>

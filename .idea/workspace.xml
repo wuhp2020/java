@@ -4,98 +4,216 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d670f713-ca4e-4561-abdf-901ef2c04c75" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="d670f713-ca4e-4561-abdf-901ef2c04c75" name="Changes" comment="8008">
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ansible-agent/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ansible-agent/ansible-agent.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ansible-agent/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ansible-agent/src/main/java/com/AnsibleAgentApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ansible-agent/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ansible-agent/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ansible-agent/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ansible-agent/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ansible-agent/src/main/resources/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/easyexcel/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/easyexcel/easyexcel.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/easyexcel/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/easyexcel/src/main/java/com/EasyExcelApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/easyexcel/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/easyexcel/src/main/java/com/web/controller/DeviceController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/easyexcel/src/main/java/com/web/service/DeviceService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/easyexcel/src/main/java/com/web/util/ExcelUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/easyexcel/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/easyexcel/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/easyexcel/src/main/java/com/web/vo/device/DeviceVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/easyexcel/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/easypoi/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/easypoi/easypoi.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/easypoi/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/easypoi/src/main/java/com/EasyPoiApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/easypoi/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/easypoi/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/easypoi/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/easypoi/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jboss/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jboss/jboss.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jboss/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jboss/src/main/java/com/JBossApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jboss/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jboss/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jboss/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jboss/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jetty/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jetty/jetty.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jetty/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jetty/src/main/java/com/JettyApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jetty/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jetty/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jetty/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jetty/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jmeter/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jmeter/jmeter.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jmeter/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jmeter/src/main/java/com/JMeterApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jmeter/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jmeter/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jmeter/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/jmeter/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/poi/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/poi/poi.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/poi/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/poi/src/main/java/com/POIApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/poi/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/poi/src/main/java/com/web/controller/DeviceController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/poi/src/main/java/com/web/service/DeviceService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/poi/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/poi/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/poi/src/main/java/com/web/vo/device/DeviceVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/poi/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/poi/src/main/resources/temp.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/tomcat/Connector的结构图.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/tomcat/Container架构分析.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/tomcat/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/tomcat/Server处理HTTP请求.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/tomcat/Tomcat的顶层结构图.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/tomcat/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/tomcat/src/main/java/com/TomcatApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/tomcat/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/tomcat/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/tomcat/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/tomcat/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/tomcat/tomcat.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/tools/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/tools/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/weblogic/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/weblogic/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/weblogic/src/main/java/com/WebLogicApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/weblogic/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/weblogic/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/weblogic/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/weblogic/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/weblogic/weblogic.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/activiti/activiti.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/activiti/activiti.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/api-manager/api-manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/api-manager/api-manager.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/apollo/apollo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/apollo/apollo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/asm/asm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/asm/asm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/axure/axure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/axure/axure.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/caffeine/caffeine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/caffeine/caffeine.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/canal/canal-admin/canal-admin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/canal/canal-admin/canal-admin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/canal/canal-client/canal-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/canal/canal-client/canal-client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/canal/canal-deployer/canal-deployer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/canal/canal-deployer/canal-deployer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/command/command.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/command/command.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/commons-codec/commons-codec.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/commons-codec/commons-codec.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/consul/consul.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/consul/consul.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/curator/curator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/curator/curator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/cxf/cxf.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/cxf/cxf.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/d3js/d3js.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/d3js/d3js.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/database/elasticsearch/elasticsearch.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/database/elasticsearch/elasticsearch.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/database/gaussdb/gaussdb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/database/gaussdb/gaussdb.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/database/hbase/hbase.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/database/hbase/hbase.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/database/hive/hive.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/database/hive/hive.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/database/mongodb/mongodb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/database/mongodb/mongodb.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/database/mysql/mysql.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/database/mysql/mysql.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/database/neo4j/neo4j.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/database/neo4j/neo4j.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/database/oracle/oracle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/database/oracle/oracle.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/database/sqlite/sqlite.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/database/sqlite/sqlite.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/database/sqlserver/sqlserver.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/database/sqlserver/sqlserver.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/design-pattern/design-pattern.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/design-pattern/design-pattern.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/diamond/diamond-client/diamond-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/diamond/diamond-client/diamond-client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/diamond/diamond-sdk/diamond-sdk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/diamond/diamond-sdk/diamond-sdk.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/diamond/diamond-server/diamond-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/diamond/diamond-server/diamond-server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/diamond/diamond-utils/diamond-utils.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/diamond/diamond-utils/diamond-utils.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/docx4j/docx4j.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/docx4j/docx4j.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/dubbo/dubbo-admin/dubbo-admin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/dubbo/dubbo-admin/dubbo-admin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/dubbo/dubbo-client/dubbo-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/dubbo/dubbo-client/dubbo-client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/dubbo/dubbo-interface/dubbo-interface.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/dubbo/dubbo-interface/dubbo-interface.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/dubbo/dubbo-server/dubbo-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/dubbo/dubbo-server/dubbo-server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/easymock/easymock.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/easymock/easymock.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/esri-geometry/esri-geometry.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/esri-geometry/esri-geometry.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/etcd/etcd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/etcd/etcd.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/excel/easyexcel/easyexcel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/excel/easyexcel/easyexcel.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/excel/easypoi/easypoi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/excel/easypoi/easypoi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/excel/poi/poi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/excel/poi/poi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/fastjson/fastjson.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/fastjson/fastjson.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/filter/filter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/filter/filter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flink/flink.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/flink/flink.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flume/flume.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/flume/flume.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/freemarker/freemarker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/freemarker/freemarker.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/frontend/ajax/ajax.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/frontend/ajax/ajax.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/frontend/bootstrap/bootstrap.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/frontend/bootstrap/bootstrap.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/frontend/easyui/easyui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/frontend/easyui/easyui.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/frontend/echarts/echarts.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/frontend/echarts/echarts.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/frontend/javascript/javascript.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/frontend/javascript/javascript.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/frontend/jquery/jquery.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/frontend/jquery/jquery.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/frontend/jsp/jsp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/frontend/jsp/jsp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/frontend/mini-program/mini-program.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/frontend/mini-program/mini-program.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/frontend/nodejs/nodejs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/frontend/nodejs/nodejs.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/frontend/vue/vue.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/frontend/vue/vue.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/global-handler/global-handler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/global-handler/global-handler.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/grpc/grpc-client/grpc-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/grpc/grpc-client/grpc-client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/grpc/grpc-eureka/grpc-eureka.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/grpc/grpc-eureka/grpc-eureka.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/grpc/grpc-interface/grpc-interface.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/grpc/grpc-interface/grpc-interface.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/grpc/grpc-server/grpc-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/grpc/grpc-server/grpc-server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/gson/gson.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/gson/gson.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/guava/guava.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/guava/guava.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/hadoop/hadoop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/hadoop/hadoop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/httpclient/httpclient.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/httpclient/httpclient.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/interceptor/interceptor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/interceptor/interceptor.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/io-client/io-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/io-client/io-client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/io-server/io-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/io-server/io-server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/java11/java11.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/java11/java11.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/java8/java8.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/java8/java8.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/javafaker/javafaker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/javafaker/javafaker.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/jmockdata/jmockdata.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/jmockdata/jmockdata.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/jni/jni.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/jni/jni.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/joda-time/joda-time.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/joda-time/joda-time.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/junit/junit.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/junit/junit.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/jvm/jvm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/jvm/jvm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/jwt/jwt.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/jwt/jwt.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/linux/linux.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/linux/linux.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/crudapi/crudapi-example/crudapi-example.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/crudapi/crudapi-example/crudapi-example.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/diboot/diboot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/diboot/diboot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/dynamic-interface/dynamic-interface.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/dynamic-interface/dynamic-interface.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-cloud-api/jeecg-system-cloud-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-cloud-api/jeecg-system-cloud-api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-local-api/jeecg-system-local-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-local-api/jeecg-system-local-api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-core/jeecg-boot-base-core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-core/jeecg-boot-base-core.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-tools/jeecg-boot-base-tools.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-tools/jeecg-boot-base-tools.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-module-demo/jeecg-boot-module-demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-module-demo/jeecg-boot-module-demo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-module-system/jeecg-boot-module-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-module-system/jeecg-boot-module-system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-cloud/jeecg-boot-starter-cloud.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-cloud/jeecg-boot-starter-cloud.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-job/jeecg-boot-starter-job.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-job/jeecg-boot-starter-job.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-lock/jeecg-boot-starter-lock.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-lock/jeecg-boot-starter-lock.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-rabbitmq/jeecg-boot-starter-rabbitmq.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-rabbitmq/jeecg-boot-starter-rabbitmq.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-seata/jeecg-boot-starter-seata.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-seata/jeecg-boot-starter-seata.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-shardingsphere/jeecg-boot-starter-shardingsphere.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-shardingsphere/jeecg-boot-starter-shardingsphere.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-gateway/jeecg-cloud-gateway.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-gateway/jeecg-cloud-gateway.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-monitor/jeecg-cloud-monitor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-monitor/jeecg-cloud-monitor.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-nacos/jeecg-cloud-nacos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-nacos/jeecg-cloud-nacos.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-sentinel/jeecg-cloud-sentinel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-sentinel/jeecg-cloud-sentinel.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-system-start/jeecg-cloud-system-start.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-system-start/jeecg-cloud-system-start.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-more/jeecg-cloud-test-more.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-more/jeecg-cloud-test-more.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-rabbitmq/jeecg-cloud-test-rabbitmq.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-rabbitmq/jeecg-cloud-test-rabbitmq.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-seata/jeecg-cloud-test-seata.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-seata/jeecg-cloud-test-seata.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-shardingsphere/jeecg-cloud-test-shardingsphere.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-shardingsphere/jeecg-cloud-test-shardingsphere.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-xxljob/jeecg-cloud-xxljob.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-xxljob/jeecg-cloud-xxljob.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/magic-api/magic-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/magic-api/magic-api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/rocket-api/rocket-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/rocket-api/rocket-api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-admin/ruoyi-admin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-admin/ruoyi-admin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-common/ruoyi-common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-common/ruoyi-common.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-framework/ruoyi-framework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-framework/ruoyi-framework.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-generator/ruoyi-generator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-generator/ruoyi-generator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-quartz/ruoyi-quartz.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-quartz/ruoyi-quartz.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-system/ruoyi-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-system/ruoyi-system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lz4/lz4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/lz4/lz4.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mail/mail.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/mail/mail.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/manage/hibernate/hibernate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/manage/hibernate/hibernate.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mapstruct/mapstruct.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/mapstruct/mapstruct.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mockito/mockito.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/mockito/mockito.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mq/activemq/activemq.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/mq/activemq/activemq.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mq/kafka/kafka.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/mq/kafka/kafka.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mq/rabbitmq/rabbitmq.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/mq/rabbitmq/rabbitmq.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mq/rocketmq-console/rocketmq-console.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/mq/rocketmq-console/rocketmq-console.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mq/rocketmq/rocketmq.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/mq/rocketmq/rocketmq.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/nacos-server/nacos-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/nacos-server/nacos-server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/nacos/nacos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/nacos/nacos.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/netty/netty-client/netty-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/netty/netty-client/netty-client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/netty/netty-server/netty-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/netty/netty-server/netty-server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/netty/netty-websocket/netty-websocket.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/netty/netty-websocket/netty-websocket.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/nginx/nginx.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/nginx/nginx.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/oauth2/oauth2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/oauth2/oauth2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/okhttp/okhttp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/okhttp/okhttp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/open-ele-me/open-ele-me.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/open-ele-me/open-ele-me.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/open-meituan/open-meituan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/open-meituan/open-meituan.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/opencv/opencv.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/opencv/opencv.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/opennlp/opennlp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/opennlp/opennlp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/orm/datasource-switch/datasource-switch.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/orm/datasource-switch/datasource-switch.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/orm/druid/druid.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/orm/druid/druid.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/orm/jdbc/jdbc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/orm/jdbc/jdbc.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/orm/mybatis-plus/mybatis-plus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/orm/mybatis-plus/mybatis-plus.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/orm/mybatis/mybatis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/orm/mybatis/mybatis.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/orm/mycat/mycat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/orm/mycat/mycat.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/orm/seata/seata-account/seata-account.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/orm/seata/seata-account/seata-account.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/orm/seata/seata-business/seata-business.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/orm/seata/seata-business/seata-business.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/orm/seata/seata-eureka/seata-eureka.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/orm/seata/seata-eureka/seata-eureka.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/orm/seata/seata-order/seata-order.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/orm/seata/seata-order/seata-order.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/orm/seata/seata-storage/seata-storage.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/orm/seata/seata-storage/seata-storage.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/orm/sharding-jdbc/sharding-jdbc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/orm/sharding-jdbc/sharding-jdbc.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pdf/pdf.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pdf/pdf.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pig/pig.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pig/pig.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/quartz/quartz.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/quartz/quartz.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/redis/redis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/redis/redis.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/redisson/redisson.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/redisson/redisson.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/rule/drools/drools.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/rule/drools/drools.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/rule/easy-rules/easy-rules.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/rule/easy-rules/easy-rules.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/servlet/servlet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/servlet/servlet.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/shell/shell.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/shell/shell.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/shiro/shiro.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/shiro/shiro.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/skywalking/skywalking.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/skywalking/skywalking.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/snakeyaml/snakeyaml.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/snakeyaml/snakeyaml.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/snow-flake/snow-flake.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/snow-flake/snow-flake.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/socket/socket.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/socket/socket.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/sofaboot/sofaboot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/sofaboot/sofaboot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/spark/spark.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/spark/spark.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/spring-security/spring-security.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/spring-security/spring-security.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/spring/spring.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/spring/spring.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/springboot-auto-config/springboot-auto-config.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/springboot-auto-config/springboot-auto-config.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/springboot/springboot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/springboot/springboot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/springcloud/springcloud-eureka/springcloud-eureka.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/springcloud/springcloud-eureka/springcloud-eureka.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/springcloud/springcloud-feign-client/springcloud-feign-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/springcloud/springcloud-feign-client/springcloud-feign-client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/springcloud/springcloud-gateway/springcloud-gateway.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/springcloud/springcloud-gateway/springcloud-gateway.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/springcloud/springcloud-hystrix/springcloud-hystrix.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/springcloud/springcloud-hystrix/springcloud-hystrix.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/springcloud/springcloud-netflix/springcloud-netflix.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/springcloud/springcloud-netflix/springcloud-netflix.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/springcloud/springcloud-ribbon/springcloud-ribbon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/springcloud/springcloud-ribbon/springcloud-ribbon.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/springcloud/springcloud-server/springcloud-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/springcloud/springcloud-server/springcloud-server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/springcloud/springcloud-sleuth/springcloud-sleuth.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/springcloud/springcloud-sleuth/springcloud-sleuth.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/storm/storm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/storm/storm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/struts2/struts2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/struts2/struts2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/swagger/swagger.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/swagger/swagger.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/thrift-client/thrift-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/thrift-client/thrift-client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/thrift-server/thrift-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/thrift-server/thrift-server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tools/ansible-agent/ansible-agent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/tools/ansible-agent/ansible-agent.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tools/checkstyle/checkstyle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/tools/checkstyle/checkstyle.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tools/docker/docker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/tools/docker/docker.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tools/elk/elk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/tools/elk/elk.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tools/ffmpeg/ffmpeg.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/tools/ffmpeg/ffmpeg.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tools/git/git.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/tools/git/git.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tools/gitlab/gitlab.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/tools/gitlab/gitlab.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tools/jenkins/jenkins.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/tools/jenkins/jenkins.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tools/jmeter/jmeter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/tools/jmeter/jmeter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tools/kubernetes/kubernetes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/tools/kubernetes/kubernetes.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tools/maven/maven.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/tools/maven/maven.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tools/postman/postman.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/tools/postman/postman.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tools/prometheus/prometheus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/tools/prometheus/prometheus.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/war/war.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/war/war.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/web-server/jboss/jboss.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/web-server/jboss/jboss.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/web-server/jetty/jetty.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/web-server/jetty/jetty.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/web-server/tomcat/tomcat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/web-server/tomcat/tomcat.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/web-server/weblogic/weblogic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/web-server/weblogic/weblogic.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/websocket/websocket.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/websocket/websocket.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/word/word.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/word/word.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/xjar/xjar.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/xjar/xjar.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/xml/xml.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/xml/xml.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/xxl-job/xxl-job-admin/xxl-job-admin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/xxl-job/xxl-job-admin/xxl-job-admin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/xxl-job/xxl-job-executor/xxl-job-executor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/xxl-job/xxl-job-executor/xxl-job-executor.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/zookeeper/zookeeper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/zookeeper/zookeeper.iml" afterDir="false" />
     </list>
     <list id="dc2dba8c-663c-4987-a4d0-dae89c4c37b2" name="not push" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,6 +240,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -144,8 +265,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/example/dynamic-interface/src/main/java/com/web/mapper" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.ignored.files" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -226,6 +349,1154 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <configuration name="ASMApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="asm" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ASMApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ActiveMQApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="activemq" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ActiveMQApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ActivitiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="activiti" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ActivitiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AjaxApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ajax" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.AjaxApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnsibleAgentApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ansible-agent" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.AnsibleAgentApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApolloApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="apollo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ApolloApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AxureApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="axure" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.AxureApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BootStrapApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="bootstrap" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.BootStrapApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CXFApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="cxf" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.CXFApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CaffeineApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="caffeine" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.CaffeineApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CanalAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="canal-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.alibaba.otter.canal.admin.CanalAdminApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CanalClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="canal-client" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.CanalClientApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CheckStyleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="checkstyle" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.CheckStyleApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommandApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="command" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.CommandApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommonsCodecApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="commons-codec" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.CommonsCodecApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConsulApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="consul" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ConsulApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CrudapiExampleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="crudapi-example" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.crudapi.example.CrudapiExampleApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CuratorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="curator" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.CuratorApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="D3jsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="d3js" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.D3jsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataSourceSwitchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="datasource-switch" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.DataSourceSwitchApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DesignPatternApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="design-pattern" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.DesignPatternApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiBootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="diboot" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.DiBootApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DockerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="docker" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.DockerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Docx4jApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="docx4j" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.Docx4jApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DroolsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="drools" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.DroolsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DruidApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="druid" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.DruidApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DubboAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="dubbo-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.apache.dubbo.admin.DubboAdminApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DubboClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="dubbo-client" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.DubboClientApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DubboServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="dubbo-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.DubboServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DynamicInterfaceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="dynamic-interface" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.DynamicInterfaceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ELKApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="elk" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ELKApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EasyExcelApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="easyexcel" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.EasyExcelApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EasyMockApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="easymock" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.EasyMockApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EasyPoiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="easypoi" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.EasyPoiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EasyRulesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="easy-rules" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.EasyRulesApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EasyUIApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="easyui" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.EasyUIApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ElasticSearchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="elasticsearch" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ElasticSearchApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EsriGeometryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="esri-geometry" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.EsriGeometryApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EtcdApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="etcd" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.EtcdApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FFmpegApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ffmpeg" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.FFmpegApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FastJsonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="fastjson" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.FastJsonApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FilterApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="filter" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.FilterApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FlinkApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="flink" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.FlinkApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FlumeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="flume" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.FlumeApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FreeMarkerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="freemarker" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.FreeMarkerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GaussDBApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gaussdb" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.GaussDBApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GitApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="git" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.GitApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GitLabApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gitlab" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.GitLabApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GlobalHandlerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="global-handler" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.GlobalHandlerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GrpcClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="grpc-client" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.GrpcClientApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GrpcEurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="grpc-eureka" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.GrpcEurekaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GrpcServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="grpc-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.GrpcServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GsonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gson" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.GsonApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GuavaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="guava" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.GuavaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HBaseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="hbase" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.HBaseApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HadoopApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="hadoop" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.HadoopApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HibernateApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="hibernate" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.HibernateApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HiveApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="hive" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.HiveApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="httpclient" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.HttpClientApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InterceptorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="interceptor" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.InterceptorApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JBossApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jboss" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.JBossApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JDBCApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jdbc" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.JDBCApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JMeterApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jmeter" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.JMeterApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JMockDataApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jmockdata" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.JMockDataApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JNIApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jni" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.JNIApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JQueryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jquery" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.JQueryApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JVMApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jvm" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.JVMApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JWTApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jwt" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.JWTApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Java11Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="java11" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.Java11Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Java8Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="java8" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.Java8Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JavaFakerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="javafaker" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.JavaFakerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JavaScriptApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="javascript" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.JavaScriptApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JeecgGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jeecg-cloud-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.jeecg.JeecgGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JeecgMonitorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jeecg-cloud-monitor" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.jeecg.monitor.JeecgMonitorApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JeecgNacosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jeecg-cloud-nacos" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.alibaba.nacos.JeecgNacosApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JeecgSentinelDashboardApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jeecg-cloud-sentinel" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.alibaba.csp.sentinel.dashboard.JeecgSentinelDashboardApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JeecgSystemCloudApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jeecg-cloud-system-start" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.jeecg.JeecgSystemCloudApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JenkinsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jenkins" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.JenkinsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JettyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jetty" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.JettyApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JodaTimeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="joda-time" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.JodaTimeApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JspApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jsp" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.JspApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JunitApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="junit" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.JunitApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KafkaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="kafka" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.KafkaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KubernetesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="kubernetes" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.KubernetesApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinuxApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="linux" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.LinuxApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Lz4Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="lz4" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.Lz4Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MagicApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="magic-api" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.MagicApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MailApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="mail" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.MailApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MapStructApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="mapstruct" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.MapStructApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MavenApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="maven" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.MavenApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MeiTuanOpenApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="open-meituan" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.MeiTuanOpenApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MockitoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="mockito" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.MockitoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MongoDBApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="mongodb" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.MongoDBApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBatisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="mybatis" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.MyBatisApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBatisPlusApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="mybatis-plus" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.MyBatisPlusApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyCatApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="mycat" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.MyCatApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySQLApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="mysql" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.MySQLApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NacosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="nacos" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.NacosApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NacosServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="nacos-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.NacosServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Neo4jApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="neo4j" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.Neo4jApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NettyClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="netty-client" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.NettyClientApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NettyServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="netty-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.NettyServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NettyWebSocketApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="netty-websocket" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.NettyWebSocketApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NginxApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="nginx" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.NginxApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NodeJSApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="nodejs" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.NodeJSApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OAuth2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="oauth2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.OAuth2Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OkHttpApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="okhttp" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.OkHttpApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OpenCVApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="opencv" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.OpenCVApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OpenEleMeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="open-ele-me" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.OpenEleMeApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OpenNLPApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="opennlp" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.OpenNLPApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OracleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="oracle" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.OracleApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PDFApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="pdf" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.PDFApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="POIApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="poi" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.POIApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PigApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="pig" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.PigApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostManApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="postman" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.PostManApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PrometheusApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="prometheus" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.PrometheusApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QuartzApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="quartz" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.QuartzApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RabbitMQApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="rabbitmq" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.RabbitMQApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RedisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="redis" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.RedisApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RedissonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="redisson" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.RedissonApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RocketApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="rocket-api" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.RocketApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RocketMQApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="rocketmq" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.RocketMQApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RuoYiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ruoyi-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ruoyi.RuoYiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SOFABootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="sofaboot" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SOFABootApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SQLServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="sqlserver" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SQLServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SQLiteApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="sqlite" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SQLiteApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SeataBusinessApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="seata-business" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SeataBusinessApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SeataEurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="seata-eureka" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SeataEurekaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SeataOrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="seata-order" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SeataOrderApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SeataStorageApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="seata-storage" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SeataStorageApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServletApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="servlet" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ServletApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShellApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="shell" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ShellApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShiroApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="shiro" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ShiroApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SkyWalkingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="skywalking" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SkyWalkingApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SnakeYamlApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="snakeyaml" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SnakeYamlApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SnowFlakeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="snow-flake" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SnowFlakeApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SocketApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="socket" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SocketApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SparkApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="spark" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SparkApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringBootFWApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springboot" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SpringBootFWApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringCloudEurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springcloud-eureka" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SpringCloudEurekaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringCloudFeignClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springcloud-feign-client" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SpringCloudFeignClientApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringCloudGateWayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springcloud-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SpringCloudGateWayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringCloudHystrixApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springcloud-hystrix" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SpringCloudHystrixApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringCloudNetFlixApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springcloud-netflix" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SpringCloudNetFlixApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringCloudRibbonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springcloud-ribbon" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SpringCloudRibbonApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringCloudServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springcloud-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SpringCloudServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringCloudSleuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springcloud-sleuth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SpringCloudSleuthApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringFWApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="spring" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SpringFWApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringSecurityApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="spring-security" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SpringSecurityApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StormApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="storm" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.StormApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Struts2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="struts2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.Struts2Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SwaggerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="swagger" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SwaggerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ThriftClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="thrift-client" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ThriftClientApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ThriftServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="thrift-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ThriftServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TomcatApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="tomcat" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.TomcatApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebLogicApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="weblogic" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.WebLogicApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebSocketApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="websocket" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.WebSocketApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WordApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="word" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.WordApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XMLApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="xml" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.XMLApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XjarApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="xjar" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.XjarApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XxlJobAdminApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="xxl-job-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xxl.job.admin.XxlJobAdminApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XxlJobAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jeecg-cloud-xxljob" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xxl.job.admin.XxlJobAdminApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XxlJobExecutorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="xxl-job-executor" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.XxlJobExecutorApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ZookeeperApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="zookeeper" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ZookeeperApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MyBatisPlusApplication" />
@@ -243,6 +1514,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654867644985</updated>
+      <workItem from="1656036953544" duration="863000" />
+      <workItem from="1656038255440" duration="45000" />
+      <workItem from="1656044971185" duration="7000" />
+      <workItem from="1656052813974" duration="776000" />
+      <workItem from="1656074085660" duration="571000" />
+      <workItem from="1656114902480" duration="168000" />
+      <workItem from="1656140720173" duration="78000" />
     </task>
     <task id="LOCAL-00001" summary="8008">
       <created>1654868428789</created>
@@ -384,8 +1662,25 @@
       <option name="project" value="LOCAL" />
       <updated>1655560510829</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="8008">
+      <created>1655982409711</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1655982409711</updated>
+    </task>
+    <task id="LOCAL-00022" summary="8008">
+      <created>1655982417283</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1655982417283</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -397,7 +1692,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="8008" />
