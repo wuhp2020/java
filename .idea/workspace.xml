@@ -5,27 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d670f713-ca4e-4561-abdf-901ef2c04c75" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/java/com/web/controller/XmlController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/java/com/web/util/FreemarkerUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/java/com/web/vo/xml/InterfaceObjectParamRelationVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/java/com/web/vo/xml/InterfaceParamEngineVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/java/com/web/vo/xml/InterfaceParamVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/resources/templates/create.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/resources/templates/delete.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/resources/templates/select.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/resources/templates/update.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/templet/velocity/src/main/resources/application.peroperties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_annotation_3_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_core_3_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_extension_3_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_generator_3_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_velocity_velocity_engine_core_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/orm/mybatis-plus/src/main/java/generator/MyBatisPlusGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/templet/freemarker/freemarker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/templet/freemarker/freemarker.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/templet/freemarker/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/templet/freemarker/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/templet/freemarker/src/main/java/com/FreeMarkerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/java/com/FreeMarkerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/templet/freemarker/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/templet/themleaf/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/templet/themleaf/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/templet/velocity/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/templet/velocity/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/templet/velocity/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/templet/velocity/velocity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/templet/velocity/velocity.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/orm/mybatis-plus/mybatis-plus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/orm/mybatis-plus/mybatis-plus.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/orm/mybatis-plus/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/orm/mybatis-plus/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/templet/themleaf/themleaf.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/templet/themleaf/themleaf.iml" afterDir="false" />
     </list>
-    <list id="dc2dba8c-663c-4987-a4d0-dae89c4c37b2" name="not push" comment="" />
+    <list id="dc2dba8c-663c-4987-a4d0-dae89c4c37b2" name="not push" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_chain_commons_chain_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_digester_commons_digester_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_validator_commons_validator_1_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_struts_struts_core_1_3_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_struts_struts_taglib_1_3_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_struts_struts_tiles_1_3_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_velocity_velocity_tools_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_freemarker_2_5_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_6_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_velocity_1_4_7_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__sslext_sslext_1_2_0.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,10 +92,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="ReaderModeSettings">
     <option name="enabled" value="false" />
@@ -105,13 +112,26 @@
       <recent name="com.web.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.MagicApiApplication">
+  <component name="RunManager" selected="Application.MyBatisPlusGenerator">
     <configuration name="CrudapiExampleApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.crudapi.example.CrudapiExampleApplication" />
       <module name="crudapi-example" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cn.crudapi.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneratorApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="generator.GeneratorApplication" />
+      <module name="mybatis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="generator.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -138,6 +158,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBatisPlusGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="generator.MyBatisPlusGenerator" />
+      <module name="mybatis-plus" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="generator.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1336,8 +1369,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MyBatisPlusGenerator" />
         <item itemvalue="Application.MyBatisPlusApplication" />
         <item itemvalue="Application.MyBatisApplication" />
+        <item itemvalue="Application.GeneratorApplication" />
         <item itemvalue="Application.CrudapiExampleApplication" />
       </list>
     </recent_temporary>
@@ -1364,7 +1399,9 @@
       <workItem from="1656296096301" duration="1974000" />
       <workItem from="1656298566310" duration="2811000" />
       <workItem from="1656377891480" duration="1389000" />
-      <workItem from="1656386203298" duration="4845000" />
+      <workItem from="1656386203298" duration="5606000" />
+      <workItem from="1656403304509" duration="1488000" />
+      <workItem from="1656404810179" duration="261000" />
     </task>
     <task id="LOCAL-00001" summary="8008">
       <created>1654868428789</created>
@@ -1534,7 +1571,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656378721052</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="8008">
+      <created>1656392704843</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1656392704843</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
