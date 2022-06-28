@@ -61,7 +61,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/filter/filter.iml" filepath="$PROJECT_DIR$/example/filter/filter.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/flink/flink.iml" filepath="$PROJECT_DIR$/example/flink/flink.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/flume/flume.iml" filepath="$PROJECT_DIR$/example/flume/flume.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/freemarker/freemarker.iml" filepath="$PROJECT_DIR$/example/freemarker/freemarker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/templet/freemarker/freemarker.iml" filepath="$PROJECT_DIR$/example/templet/freemarker/freemarker.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/frontend/frontend.iml" filepath="$PROJECT_DIR$/example/frontend/frontend.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/database/gaussdb/gaussdb.iml" filepath="$PROJECT_DIR$/example/database/gaussdb/gaussdb.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/tools/git/git.iml" filepath="$PROJECT_DIR$/example/tools/git/git.iml" />
@@ -217,10 +217,13 @@
       <module fileurl="file://$PROJECT_DIR$/example/storm/storm.iml" filepath="$PROJECT_DIR$/example/storm/storm.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/struts2/struts2.iml" filepath="$PROJECT_DIR$/example/struts2/struts2.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/swagger/swagger.iml" filepath="$PROJECT_DIR$/example/swagger/swagger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/templet/templet.iml" filepath="$PROJECT_DIR$/example/templet/templet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/templet/themleaf/themleaf.iml" filepath="$PROJECT_DIR$/example/templet/themleaf/themleaf.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/thrift-client/thrift-client.iml" filepath="$PROJECT_DIR$/example/thrift-client/thrift-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/thrift-server/thrift-server.iml" filepath="$PROJECT_DIR$/example/thrift-server/thrift-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/web-server/tomcat/tomcat.iml" filepath="$PROJECT_DIR$/example/web-server/tomcat/tomcat.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/tools/tools.iml" filepath="$PROJECT_DIR$/example/tools/tools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/templet/velocity/velocity.iml" filepath="$PROJECT_DIR$/example/templet/velocity/velocity.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/frontend/vue/vue.iml" filepath="$PROJECT_DIR$/example/frontend/vue/vue.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/war/war.iml" filepath="$PROJECT_DIR$/example/war/war.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/web-server/web-server.iml" filepath="$PROJECT_DIR$/example/web-server/web-server.iml" />

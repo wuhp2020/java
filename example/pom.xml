@@ -22,7 +22,7 @@
         <module>dubbo</module>
         <module>spring</module>
         <module>shiro</module>
-        <module>freemarker</module>
+        <module>templet</module>
         <module>excel</module>
         <module>websocket</module>
         <module>jvm</module>

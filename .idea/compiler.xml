@@ -36,8 +36,8 @@
         <module name="hibernate" />
         <module name="jmeter" />
         <module name="netty-server" />
-        <module name="freemarker" />
         <module name="commons-codec" />
+        <module name="freemarker" />
         <module name="java8" />
         <module name="open-meituan" />
         <module name="spark" />
@@ -149,6 +149,7 @@
         <module name="opennlp" />
         <module name="esri-geometry" />
         <module name="netty-websocket" />
+        <module name="themleaf" />
         <module name="weblogic" />
         <module name="rabbitmq" />
         <module name="filter" />
@@ -201,6 +202,7 @@
         <module name="springcloud-server" />
         <module name="quartz" />
         <module name="drools" />
+        <module name="velocity" />
         <module name="command" />
         <module name="easyui" />
         <module name="springcloud-ribbon" />
@@ -427,10 +429,13 @@
       <module name="storm" target="1.8" />
       <module name="struts2" target="1.8" />
       <module name="swagger" target="1.8" />
+      <module name="templet" target="1.8" />
+      <module name="themleaf" target="1.8" />
       <module name="thrift-client" target="1.8" />
       <module name="thrift-server" target="1.8" />
       <module name="tomcat" target="1.8" />
       <module name="tools" target="1.8" />
+      <module name="velocity" target="1.8" />
       <module name="vue" target="1.8" />
       <module name="war" target="1.8" />
       <module name="web-server" target="1.8" />
@@ -483,7 +488,7 @@
       <module name="dubbo-client" options="-parameters" />
       <module name="dubbo-interface" options="-parameters" />
       <module name="dubbo-server" options="-parameters" />
-      <module name="dynamic-interface" options="-parameters -verbose -bootclasspath /Library/Java/JavaVirtualMachines/jdk-11.0.13.jdk/Contents/Home/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk-11.0.13.jdk/Contents/Home/lib/jce.jar" />
+      <module name="dynamic-interface" options="-parameters -verbose -bootclasspath /Library/Java/JavaVirtualMachines/jdk1.8.0_311.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_311.jdk/Contents/Home/jre/lib/jce.jar" />
       <module name="easy-rules" options="-parameters" />
       <module name="easyexcel" options="-parameters" />
       <module name="easymock" options="-parameters" />
@@ -638,9 +643,11 @@
       <module name="storm" options="-parameters" />
       <module name="struts2" options="-parameters" />
       <module name="swagger" options="-parameters" />
+      <module name="themleaf" options="-parameters" />
       <module name="thrift-client" options="-parameters" />
       <module name="thrift-server" options="-parameters" />
       <module name="tomcat" options="-parameters" />
+      <module name="velocity" options="-parameters" />
       <module name="vue" options="-parameters" />
       <module name="war" options="-parameters" />
       <module name="weblogic" options="-parameters" />

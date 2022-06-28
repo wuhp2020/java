@@ -316,6 +316,11 @@
     <file url="file://$PROJECT_DIR$/example/struts2/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/swagger/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/swagger/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/templet/freemarker/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/templet/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/templet/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/templet/themleaf/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/templet/velocity/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/thrift-client/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/thrift-client/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/thrift-server/src/main/java" charset="UTF-8" />
