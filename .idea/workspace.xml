@@ -5,71 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d670f713-ca4e-4561-abdf-901ef2c04c75" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_javax_activation_1_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_core_2_3_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_impl_2_3_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_messaging_saaj_saaj_impl_1_5_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_soap_jakarta_xml_soap_api_1_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_soap_javax_xml_soap_api_1_4_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_ws_jaxws_api_2_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_geronimo_specs_geronimo_ws_metadata_2_0_spec_1_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jacorb_jacorb_omgapi_3_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_rmi_jboss_rmi_api_1_0_spec_1_0_6_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_mac_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/java/com/web/controller/XmlController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/java/com/web/util/FreemarkerUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/java/com/web/vo/xml/InterfaceObjectParamRelationVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/java/com/web/vo/xml/InterfaceParamEngineVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/java/com/web/vo/xml/InterfaceParamVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/resources/templates/create.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/resources/templates/delete.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/resources/templates/select.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/resources/templates/update.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/templet/velocity/src/main/resources/application.peroperties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/activiti/activiti.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/activiti/activiti.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/api-manager/api-manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/api-manager/api-manager.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/canal/canal-admin/canal-admin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/canal/canal-admin/canal-admin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/canal/canal-client/canal-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/canal/canal-client/canal-client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/canal/canal-deployer/canal-deployer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/canal/canal-deployer/canal-deployer.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/cxf/cxf.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/cxf/cxf.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/database/hbase/hbase.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/database/hbase/hbase.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/database/sqlite/sqlite.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/database/sqlite/sqlite.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/dubbo/dubbo-admin/dubbo-admin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/dubbo/dubbo-admin/dubbo-admin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/freemarker/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/freemarker/freemarker.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/freemarker/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/freemarker/src/main/java/com/FreeMarkerApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/freemarker/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/freemarker/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/freemarker/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/freemarker/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/low-code/crudapi/crudapi-example/crudapi-example.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/crudapi/crudapi-example/crudapi-example.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-boot-base-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-boot-base-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-cloud-api/jeecg-system-cloud-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-cloud-api/jeecg-system-cloud-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-local-api/jeecg-system-local-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-api/jeecg-system-local-api/jeecg-system-local-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-core/jeecg-boot-base-core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-base/jeecg-boot-base-core/jeecg-boot-base-core.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-module-demo/jeecg-boot-module-demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-module-demo/jeecg-boot-module-demo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-module-system/jeecg-boot-module-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-module-system/jeecg-boot-module-system.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-cloud/jeecg-boot-starter-cloud.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-cloud/jeecg-boot-starter-cloud.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-rabbitmq/jeecg-boot-starter-rabbitmq.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-rabbitmq/jeecg-boot-starter-rabbitmq.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-shardingsphere/jeecg-boot-starter-shardingsphere.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-boot-starter/jeecg-boot-starter-shardingsphere/jeecg-boot-starter-shardingsphere.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-system-start/jeecg-cloud-system-start.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-system-start/jeecg-cloud-system-start.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-more/jeecg-cloud-test-more.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-more/jeecg-cloud-test-more.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-rabbitmq/jeecg-cloud-test-rabbitmq.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-rabbitmq/jeecg-cloud-test-rabbitmq.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-seata/jeecg-cloud-test-seata.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-seata/jeecg-cloud-test-seata.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-shardingsphere/jeecg-cloud-test-shardingsphere.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test-shardingsphere/jeecg-cloud-test-shardingsphere.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/jeecg-boot-parent/jeecg-cloud-module/jeecg-cloud-test/jeecg-cloud-test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/low-code/magic-api/magic-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/magic-api/magic-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-admin/ruoyi-admin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-admin/ruoyi-admin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-framework/ruoyi-framework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-framework/ruoyi-framework.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-generator/ruoyi-generator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/low-code/ruoyi/ruoyi-generator/ruoyi-generator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/manage/hibernate/hibernate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/manage/hibernate/hibernate.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/opencv/opencv.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/opencv/opencv.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/orm/seata/seata-account/seata-account.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/orm/seata/seata-account/seata-account.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/orm/seata/seata-order/seata-order.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/orm/seata/seata-order/seata-order.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/orm/seata/seata-storage/seata-storage.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/orm/seata/seata-storage/seata-storage.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/orm/sharding-jdbc/sharding-jdbc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/orm/sharding-jdbc/sharding-jdbc.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/quartz/quartz.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/quartz/quartz.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/tools/ffmpeg/ffmpeg.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/tools/ffmpeg/ffmpeg.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/templet/freemarker/freemarker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/templet/freemarker/freemarker.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/templet/freemarker/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/templet/freemarker/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/templet/freemarker/src/main/java/com/FreeMarkerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/java/com/FreeMarkerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/templet/freemarker/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/example/templet/freemarker/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/templet/themleaf/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/templet/themleaf/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/templet/velocity/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/templet/velocity/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/templet/velocity/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/templet/velocity/velocity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/templet/velocity/velocity.iml" afterDir="false" />
     </list>
     <list id="dc2dba8c-663c-4987-a4d0-dae89c4c37b2" name="not push" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -146,9 +100,9 @@
       <recent name="$PROJECT_DIR$/example/dynamic-interface/src/main/java/com/web/entity" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.web.controller" />
       <recent name="com.web.mapper" />
       <recent name="com.web.service" />
-      <recent name="com.web.controller" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.MagicApiApplication">
@@ -1409,7 +1363,8 @@
       <workItem from="1656246608485" duration="75000" />
       <workItem from="1656296096301" duration="1974000" />
       <workItem from="1656298566310" duration="2811000" />
-      <workItem from="1656377891480" duration="625000" />
+      <workItem from="1656377891480" duration="1389000" />
+      <workItem from="1656386203298" duration="4845000" />
     </task>
     <task id="LOCAL-00001" summary="8008">
       <created>1654868428789</created>
@@ -1572,7 +1527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656158033762</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="8008">
+      <created>1656378721052</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1656378721052</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
