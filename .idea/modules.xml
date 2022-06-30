@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/api-manager/api-manager.iml" filepath="$PROJECT_DIR$/example/api-manager/api-manager.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/apollo/apollo.iml" filepath="$PROJECT_DIR$/example/apollo/apollo.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/asm/asm.iml" filepath="$PROJECT_DIR$/example/asm/asm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/rule/aviator/aviator.iml" filepath="$PROJECT_DIR$/example/rule/aviator/aviator.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/axure/axure.iml" filepath="$PROJECT_DIR$/example/axure/axure.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/frontend/bootstrap/bootstrap.iml" filepath="$PROJECT_DIR$/example/frontend/bootstrap/bootstrap.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/caffeine/caffeine.iml" filepath="$PROJECT_DIR$/example/caffeine/caffeine.iml" />

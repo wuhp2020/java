@@ -76,6 +76,7 @@
         <module name="sqlite" />
         <module name="dubbo-server" />
         <module name="elk" />
+        <module name="aviator" />
         <module name="jeecg-cloud-test-seata" />
         <module name="jeecg-system-local-api" />
         <module name="flink" />
@@ -223,6 +224,7 @@
       <module name="api-manager" target="1.8" />
       <module name="apollo" target="1.8" />
       <module name="asm" target="1.8" />
+      <module name="aviator" target="1.8" />
       <module name="axure" target="1.8" />
       <module name="bootstrap" target="1.8" />
       <module name="caffeine" target="1.8" />
@@ -460,6 +462,7 @@
       <module name="api-manager" options="-parameters" />
       <module name="apollo" options="-parameters" />
       <module name="asm" options="-parameters" />
+      <module name="aviator" options="-parameters" />
       <module name="axure" options="-parameters" />
       <module name="bootstrap" options="-parameters" />
       <module name="caffeine" options="-parameters" />

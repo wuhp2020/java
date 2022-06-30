@@ -15,6 +15,7 @@
 
     <modules>
         <module>drools</module>
+        <module>aviator</module>
         <module>easy-rules</module>
     </modules>
     <packaging>pom</packaging>
