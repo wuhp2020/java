@@ -41,7 +41,7 @@ public class MyBatisPlusGenerator {
 
         // 2.设置数据源
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://192.168.221.129:3306/wafer");
+        dsc.setUrl("jdbc:mysql://192.168.221.129:3306/test");
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("123");
@@ -51,14 +51,14 @@ public class MyBatisPlusGenerator {
         // 3.配置生成包的路径
         PackageConfig pc = new PackageConfig();
         // 设置模块存放位置
-        pc.setParent("com.sugon.wafer");
+        pc.setParent("com.web");
         // 设置该模块包的路径
-        pc.setEntity("api.entity");
-        pc.setMapper("provider.mapper");
-        pc.setService("provider.service");
-        pc.setServiceImpl("provider.service.impl");
-        pc.setController("provider.controller");
-        pc.setXml("provider.mapper");
+        pc.setEntity("entity");
+        pc.setMapper("mapper");
+        pc.setService("service");
+        pc.setServiceImpl("service.impl");
+        pc.setController("controller");
+        pc.setXml("mapper");
         mpg.setPackageInfo(pc);
 
         // 4.策略配置
@@ -76,8 +76,8 @@ public class MyBatisPlusGenerator {
         // strategy.setLogicDeleteFieldName("delete_flag");
 
         // 5.自动填充 (表中如果有创建时间、修改时间话, 可以使用自动填充)
-        TableFill createTime = new TableFill("created_date", FieldFill.INSERT);
-        TableFill updateTime = new TableFill("modified_date", FieldFill.INSERT_UPDATE);
+        TableFill createTime = new TableFill("create_time", FieldFill.INSERT);
+        TableFill updateTime = new TableFill("update_time", FieldFill.INSERT_UPDATE);
         ArrayList<TableFill> tableFills = new ArrayList<>();
         tableFills.add(createTime);
         tableFills.add(updateTime);
