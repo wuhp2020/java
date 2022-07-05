@@ -37,7 +37,7 @@
         <module>springboot</module>
         <module>spark</module>
         <module>activiti</module>
-        <module>junit</module>
+        <module>util</module>
         <module>struts2</module>
         <module>cxf</module>
         <module>frontend</module>
@@ -61,7 +61,6 @@
         <module>war</module>
         <module>xml</module>
         <module>socket</module>
-        <module>axure</module>
         <module>design-pattern</module>
         <module>springboot-auto-config</module>
         <module>spring-security</module>
@@ -71,18 +70,13 @@
         <module>linux</module>
         <module>interceptor</module>
         <module>filter</module>
-        <module>fastjson</module>
         <module>asm</module>
         <module>low-code</module>
         <module>esri-geometry</module>
-        <module>commons-codec</module>
         <module>snakeyaml</module>
         <module>grpc</module>
         <module>d3js</module>
-        <module>easymock</module>
         <module>lz4</module>
-        <module>gson</module>
-        <module>xjar</module>
         <module>javafaker</module>
         <module>jmockdata</module>
         <module>global-handler</module>
@@ -96,13 +90,9 @@
         <module>thrift-client</module>
         <module>diamond</module>
         <module>apollo</module>
-        <module>guava</module>
         <module>docx4j</module>
-        <module>joda-time</module>
-        <module>mockito</module>
         <module>okhttp</module>
         <module>canal</module>
-        <module>mapstruct</module>
         <module>sofaboot</module>
         <module>jwt</module>
         <module>springcloud</module>

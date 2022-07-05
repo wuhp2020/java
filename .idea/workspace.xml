@@ -5,10 +5,159 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d670f713-ca4e-4561-abdf-901ef2c04c75" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_xiaoymin_swagger_bootstrap_ui_1_9_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_core_lib_loadkit_v1_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_core_lib_xjar_4_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_11_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_31_1_jre.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_15.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__joda_time_joda_time_2_10_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_12_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_easymock_easymock_4_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_all_1_10_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/swagger/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/swagger/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/swagger/swagger.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/swagger/swagger.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/axure/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/axure/axure.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/axure/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/axure/src/main/java/com/AxureApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/axure/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/axure/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/axure/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/axure/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/commons-codec/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/commons-codec/commons-codec.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/commons-codec/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/commons-codec/src/main/java/com/CommonsCodecApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/commons-codec/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/commons-codec/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/commons-codec/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/commons-codec/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/easymock/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/easymock/easymock.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/easymock/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/easymock/src/main/java/com/EasyMockApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/easymock/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/easymock/src/main/java/com/web/controller/DocController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/easymock/src/main/java/com/web/service/DocService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/easymock/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/easymock/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/easymock/src/main/java/com/web/vo/doc/DocVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/easymock/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/fastjson/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/fastjson/fastjson.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/fastjson/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/fastjson/src/main/java/com/FastJsonApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/fastjson/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/fastjson/src/main/java/com/web/controller/JsonController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/fastjson/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/fastjson/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/fastjson/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/assets/bootstrap-3.3.7/css/bootstrap-theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/assets/bootstrap-3.3.7/css/bootstrap-theme.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/assets/bootstrap-3.3.7/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/assets/bootstrap-3.3.7/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/assets/bootstrap-3.3.7/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/assets/bootstrap-3.3.7/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/assets/bootstrap-3.3.7/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/assets/bootstrap-3.3.7/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/assets/bootstrap-3.3.7/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/assets/bootstrap-3.3.7/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/assets/bootstrap-3.3.7/js/npm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/assets/css/bootstrap-reset.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/assets/js/common-scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/assets/select2/css/select2.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/assets/select2/js/select2.full.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/assets/select2/js/select2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/components/Index-col.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/components/Index-row.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/components/Login.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/components/common/Global.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/components/common/Pageable.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/components/dict/DictAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/components/dict/DictList.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/components/doc/DocAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/components/doc/DocList.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/components/doc/DocStatistics.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/components/operationlog/OperationLogList.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/components/operationlog/OperationLogSetup.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/components/role/RoleAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/components/role/RoleList.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/components/user/UserAdd.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/components/user/UserList.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/flv/webpack.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/gson/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/gson/gson.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/gson/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/gson/src/main/java/com/GsonApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/gson/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/gson/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/gson/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/gson/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/guava/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/guava/guava.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/guava/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/guava/src/main/java/com/GuavaApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/guava/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/guava/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/guava/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/guava/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/joda-time/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/joda-time/joda-time.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/joda-time/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/joda-time/src/main/java/com/JodaTimeApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/joda-time/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/joda-time/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/joda-time/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/joda-time/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/junit/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/junit/junit.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/junit/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/junit/src/main/java/com/JunitApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/junit/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/junit/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/junit/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/junit/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mapstruct/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mapstruct/mapstruct.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mapstruct/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mapstruct/src/main/java/com/MapStructApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mapstruct/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mapstruct/src/main/java/com/web/controller/OrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mapstruct/src/main/java/com/web/convert/OrderDataMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mapstruct/src/main/java/com/web/entity/OrderDO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mapstruct/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mapstruct/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mapstruct/src/main/java/com/web/vo/order/OrderVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mapstruct/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mockito/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mockito/mockito.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mockito/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mockito/src/main/java/com/MockitoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mockito/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mockito/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mockito/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/mockito/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/xjar/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/xjar/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/xjar/src/main/java/com/XjarApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/xjar/src/main/java/com/spring/config/SwaggerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/xjar/src/main/java/com/web/util/XjarUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/xjar/src/main/java/com/web/vo/common/PageQueryVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/xjar/src/main/java/com/web/vo/common/ResponseVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/xjar/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/xjar/xjar.iml" beforeDir="false" />
     </list>
     <list id="dc2dba8c-663c-4987-a4d0-dae89c4c37b2" name="not push" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +222,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.ignored.files" />
   </component>
   <component name="ReaderModeSettings">
     <option name="enabled" value="false" />

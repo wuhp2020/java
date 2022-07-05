@@ -341,6 +341,30 @@
     <file url="file://$PROJECT_DIR$/example/tools/prometheus/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/tools/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/tools/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/commons-codec/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/commons-codec/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/easymock/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/easymock/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/fastjson/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/fastjson/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/flv/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/flv/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/gson/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/gson/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/guava/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/guava/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/joda-time/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/joda-time/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/junit/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/junit/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/mapstruct/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/mapstruct/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/mockito/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/mockito/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/xjar/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example/util/xjar/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/war/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/war/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/web-server/jboss/src/main/java" charset="UTF-8" />

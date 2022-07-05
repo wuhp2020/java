@@ -37,13 +37,12 @@
         <module name="hibernate" />
         <module name="jmeter" />
         <module name="netty-server" />
-        <module name="commons-codec" />
         <module name="freemarker" />
+        <module name="commons-codec" />
         <module name="java8" />
         <module name="open-meituan" />
         <module name="spark" />
         <module name="jeecg-cloud-nacos" />
-        <module name="axure" />
         <module name="activemq" />
         <module name="storm" />
         <module name="rocketmq" />
@@ -52,6 +51,7 @@
         <module name="io-client" />
         <module name="diboot" />
         <module name="dubbo-interface" />
+        <module name="flv" />
         <module name="neo4j" />
         <module name="asm" />
         <module name="kubernetes" />
@@ -68,8 +68,8 @@
         <module name="mysql" />
         <module name="xjar" />
         <module name="thrift-server" />
-        <module name="easymock" />
         <module name="jvm" />
+        <module name="easymock" />
         <module name="jeecg-boot-starter-job" />
         <module name="oracle" />
         <module name="springcloud-hystrix" />
@@ -210,9 +210,9 @@
         <module name="springcloud-ribbon" />
         <module name="open-ele-me" />
         <module name="d3js" />
-        <module name="gson" />
         <module name="socket" />
         <module name="ruoyi-quartz" />
+        <module name="gson" />
         <module name="opencv" />
       </profile>
     </annotationProcessing>
@@ -277,6 +277,7 @@
       <module name="filter" target="1.8" />
       <module name="flink" target="1.8" />
       <module name="flume" target="1.8" />
+      <module name="flv" target="1.8" />
       <module name="freemarker" target="1.8" />
       <module name="frontend" target="1.8" />
       <module name="gaussdb" target="1.8" />
@@ -438,6 +439,8 @@
       <module name="thrift-server" target="1.8" />
       <module name="tomcat" target="1.8" />
       <module name="tools" target="1.8" />
+      <module name="tools (1) (com.util)" target="1.8" />
+      <module name="util" target="1.8" />
       <module name="velocity" target="1.8" />
       <module name="vue" target="1.8" />
       <module name="war" target="1.8" />
@@ -508,6 +511,7 @@
       <module name="filter" options="-parameters" />
       <module name="flink" options="-parameters" />
       <module name="flume" options="-parameters" />
+      <module name="flv" options="-parameters" />
       <module name="freemarker" options="-parameters" />
       <module name="gaussdb" options="-parameters" />
       <module name="git" options="-parameters" />
@@ -610,6 +614,7 @@
       <module name="rocket-api" options="-parameters" />
       <module name="rocketmq" options="-parameters" />
       <module name="rocketmq-console" options="-parameters" />
+      <module name="ruoyi" options="-parameters" />
       <module name="ruoyi-admin" options="-parameters" />
       <module name="ruoyi-common" options="-parameters" />
       <module name="ruoyi-framework" options="-parameters" />
@@ -652,6 +657,7 @@
       <module name="thrift-client" options="-parameters" />
       <module name="thrift-server" options="-parameters" />
       <module name="tomcat" options="-parameters" />
+      <module name="util" options="" />
       <module name="velocity" options="-parameters" />
       <module name="vue" options="-parameters" />
       <module name="war" options="-parameters" />
