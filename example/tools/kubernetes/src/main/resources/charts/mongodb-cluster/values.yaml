@@ -1,0 +1,45 @@
+image: "mongo"
+imageTag: "3.6"
+
+mongodb_mongos:
+  servicename: mongo-service
+  replicas: 3
+  port: 8017
+  affinity: |
+    #command
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchLabels:
+              app: "mongodb-mongos"
+          topologyKey: kubernetes.io/hostname
+
+# 一个分片时, 通过用户给定的亲和策略控制
+# 两个及以上分片时, 会强制通过内置的亲和策略及nodeList控制
+mongodb_shard:
+  replicas: 3
+  nodeList:
+  - 127.0.0.1
+  - 127.0.0.1
+  - 127.0.0.1
+  port: 27018
+  affinity: {}
+  slave:
+    enable: true
+    port: 27028
+    affinity: {}
+    arbiter:
+      port: 27038
+      affinity: {}
+
+mongodb_config_server:
+  replicas: 3
+  port: 27019
+  affinity: |
+    #command
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchLabels:
+              app: "mongodb-config-server"
+          topologyKey: kubernetes.io/hostname

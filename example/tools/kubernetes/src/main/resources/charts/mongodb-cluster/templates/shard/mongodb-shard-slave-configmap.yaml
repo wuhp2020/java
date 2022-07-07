@@ -1,0 +1,59 @@
+{{- if .Values.mongodb_shard.slave.enable }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongodb-shard-slave-configmap
+data:
+  run.sh: |
+
+    #!/bin/bash
+
+    set -x
+
+    echo "starting mongodb-shard-slave ..."
+    mkdir -p /mongodb-shard-slave/conf
+    mkdir -p /mongodb-shard-slave/logs
+    mkdir -p /mongodb-shard-slave/pid
+    rm -rf /mongodb-shard-slave/data/mongod.lock
+    mongod --repair
+
+    sleep 10
+
+    echo '1'
+
+    index=$(echo echo $POD_NAME | egrep -o "[0-9]+" | head -1)
+    if [[ {{ .Values.mongodb_shard.replicas }} -eq 1 ]]; then
+      mongod --port {{ .Values.mongodb_shard.slave.port }} --bind_ip 0.0.0.0 --shardsvr --replSet mongodb-shard-master-statefulset-0 --dbpath /mongodb-shard-slave/data --pidfilepath /mongodb-shard-slave/pid/mongodb-shard-slave.pid --logpath /mongodb-shard-slave/logs/mongodb-shard-slave.log --config /mongodb-shard-slave/conf/mongod.conf &
+    elif [[ {{ .Values.mongodb_shard.replicas }} -eq 2 ]]; then
+      if [[ $index -eq 0 ]]; then
+        mongod --port {{ .Values.mongodb_shard.slave.port }} --bind_ip 0.0.0.0 --shardsvr --replSet mongodb-shard-master-statefulset-1 --dbpath /mongodb-shard-slave/data --pidfilepath /mongodb-shard-slave/pid/mongodb-shard-slave.pid --logpath /mongodb-shard-slave/logs/mongodb-shard-slave.log --config /mongodb-shard-slave/conf/mongod.conf &
+      else
+        mongod --port {{ .Values.mongodb_shard.slave.port }} --bind_ip 0.0.0.0 --shardsvr --replSet mongodb-shard-master-statefulset-0 --dbpath /mongodb-shard-slave/data --pidfilepath /mongodb-shard-slave/pid/mongodb-shard-slave.pid --logpath /mongodb-shard-slave/logs/mongodb-shard-slave.log --config /mongodb-shard-slave/conf/mongod.conf &
+      fi
+    else
+      if [[ $index -eq 0 ]]; then
+        mongod --port {{ .Values.mongodb_shard.slave.port }} --bind_ip 0.0.0.0 --shardsvr --replSet mongodb-shard-master-statefulset-$(({{ .Values.mongodb_shard.replicas }}-1)) --dbpath /mongodb-shard-slave/data --pidfilepath /mongodb-shard-slave/pid/mongodb-shard-slave.pid --logpath /mongodb-shard-slave/logs/mongodb-shard-slave.log --config /mongodb-shard-slave/conf/mongod.conf &
+      else
+        mongod --port {{ .Values.mongodb_shard.slave.port }} --bind_ip 0.0.0.0 --shardsvr --replSet mongodb-shard-master-statefulset-$(($index-1)) --dbpath /mongodb-shard-slave/data --pidfilepath /mongodb-shard-slave/pid/mongodb-shard-slave.pid --logpath /mongodb-shard-slave/logs/mongodb-shard-slave.log --config /mongodb-shard-slave/conf/mongod.conf &
+      fi
+    fi
+
+    echo "started mongodb-shard-slave ..."
+    tail -f /dev/null
+
+  mongod.conf: |
+
+    systemLog:
+        logAppend: true
+        logRotate: rename
+        timeStampFormat: ctime
+    storage:
+        journal:
+            enabled: false
+            commitIntervalMs: 100
+        syncPeriodSecs: 60
+        engine: wiredTiger
+        wiredTiger:
+            engineConfig:
+                cacheSizeGB: 16
+{{- end }}

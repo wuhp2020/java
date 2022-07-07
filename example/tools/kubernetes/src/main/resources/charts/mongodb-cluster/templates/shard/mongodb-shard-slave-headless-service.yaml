@@ -1,0 +1,14 @@
+{{- if .Values.mongodb_shard.slave.enable }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-shard-slave-service
+spec:
+  type: ClusterIP
+  clusterIP: None
+  ports:
+    - name: mongodb-shard-slave
+      port: {{ .Values.mongodb_shard.slave.port }}
+  selector:
+    app: "mongodb-shard-slave"
+{{- end }}

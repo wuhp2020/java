@@ -1,0 +1,14 @@
+server:
+  port: 8008
+
+spring:
+  application:
+    name: rocket-api
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.221.129:3306/test?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123
+  data:
+    mongodb:
+      uri: mongodb://192.168.221.129:27017/wuhp

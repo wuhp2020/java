@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: consul-configmap
+data:
+  run.sh: |
+
+    #!/bin/bash
+
+    set -x
+
+    echo "starting consul ..."
+    index=$(echo echo $POD_NAME | egrep -o "[0-9]+")
+    while true; do
+      sleep 1
+      temp=$((ping consul-statefulset-$index.consul-headless-service.default.svc.cluster.local -c 1 | head -1) 2>&1)
+      if [[ $temp == *"Name or service not known"* ]]; then
+        echo 'service not known == wait'
+      else
+        node=$(ping consul-statefulset-$index.consul-headless-service.default.svc.cluster.local -c 1 | head -1 | awk -F\( '{print $2}' | awk -F\) '{print $1}')
+        if [[ $node == "" ]]; then
+          echo 'null == wait'
+        else
+          if [[ $index -gt 0 ]]; then
+            node0=$(ping consul-statefulset-0.consul-headless-service.default.svc.cluster.local -c 1 | head -1 | awk -F\( '{print $2}' | awk -F\) '{print $1}')
+            consul agent -server -node=$node -client=0.0.0.0 -bind=0.0.0.0 -data-dir=/consul/data -config-dir=/consul/conf -datacenter=ist -advertise=$node -retry-join=$node0
+          else
+            consul agent -server -bootstrap-expect={{ .Values.consul.replicas }} -node=$node -client=0.0.0.0 -bind=0.0.0.0 -data-dir=/consul/data -config-dir=/consul/conf -datacenter=ist -advertise=$node
+          fi
+          break
+        fi
+      fi
+    done
+
+    echo "started consul ..."
+    tail -f /dev/null
+
+  agent.json: |
+
+    {
+        {{- if .Values.consul.saslEnable }}
+        "ui": true,
+        "acl":{
+            "enabled" : true,
+            "default_policy" : "deny",
+            "enable_token_persistence":true,
+            "enable_key_list_policy":true,
+            "down_policy" : "extend-cache",
+            "tokens" :{
+                "master": "666"
+            }
+        }
+        {{- else }}
+        "ui": true
+        {{- end }}
+    }

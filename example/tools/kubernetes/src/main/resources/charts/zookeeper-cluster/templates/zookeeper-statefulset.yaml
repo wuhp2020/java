@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: zookeeper-statefulset
+  labels:
+    app: "zookeeper"
+    release: "{{ .Release.Name }}"
+spec:
+  serviceName: "zookeeper-headless-service"
+  replicas: {{ .Values.zookeeper.replicas | default 1 }}
+  selector:
+    matchLabels:
+      app: "zookeeper"
+      release: "{{ .Release.Name }}"
+  updateStrategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: "zookeeper"
+        release: "{{ .Release.Name }}"
+    spec:
+      dnsPolicy: ClusterFirstWithHostNet
+      hostNetwork: true
+      restartPolicy: Always
+      {{- if .Values.zookeeper.affinity }}
+      affinity:
+      {{ tpl .Values.zookeeper.affinity . | indent 8 }}
+      {{- end }}
+      containers:
+      - name: zookeeper
+        image: "{{ .Values.image }}:{{ .Values.imageTag }}"
+        imagePullPolicy: IfNotPresent
+        command: ['/bin/bash', '-c', '/bin/bash /run.sh']
+        env:
+          - name: POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+        resources:
+          requests:
+            cpu: 100m
+            memory: 1Gi
+          limits:
+            cpu: 4
+            memory: 8Gi
+        livenessProbe:
+          tcpSocket:
+            port: {{.Values.zookeeper.port}}
+          initialDelaySeconds: 120
+          periodSeconds: 15
+          timeoutSeconds: 60
+          failureThreshold: 8
+          successThreshold: 1
+        volumeMounts:
+          - name: ro
+            mountPath: /etc/localtime:ro
+          - name: data
+            mountPath: /zookeeper/data
+          - name: zookeeper-configmap
+            mountPath: /run.sh
+            subPath: run.sh
+          - name: zookeeper-configmap
+            mountPath: /zookeeper/conf/zoo.cfg.bak
+            subPath: zoo.cfg.bak
+          - name: zookeeper-configmap
+            mountPath: /zookeeper/conf/zk_server_jaas.conf
+            subPath: zk_server_jaas.conf
+      volumes:
+        - name: ro
+          hostPath:
+            path: /etc/localtime
+        - name: zookeeper-configmap
+          configMap:
+            name: zookeeper-configmap
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
+      storageClassName: "local-path"

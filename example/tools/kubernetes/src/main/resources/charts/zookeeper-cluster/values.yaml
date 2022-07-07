@@ -1,0 +1,16 @@
+image: "zookeeper"
+imageTag: "3.4.10"
+
+zookeeper:
+  servicename: zookeeper-service
+  saslEnable: false
+  replicas: 1
+  port: 8121
+  affinity: |
+    #command
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchLabels:
+              app: "zookeeper"
+          topologyKey: kubernetes.io/hostname

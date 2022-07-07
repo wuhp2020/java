@@ -1,0 +1,14 @@
+server:
+  port: 8008
+spring:
+  datasource:
+    url: jdbc:sqlite::resource:static/sqlite/xy.db
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    username:
+    password:
+
+logging:
+  level: debug
+  level.com.dalianpai: debug
+  file:
+    path: logs:/

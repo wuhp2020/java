@@ -1,0 +1,21 @@
+{{- if .Values.mysql_slave.enable }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-ha-configmap
+data:
+  run.sh: |
+
+    #!/bin/bash
+
+    set -x
+
+    sleep 10
+
+    echo "starting mysql-ha ..."
+
+
+
+    echo "started mysql-ha ..."
+
+{{- end }}
