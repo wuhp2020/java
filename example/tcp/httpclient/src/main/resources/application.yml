@@ -1,0 +1,8 @@
+server:
+  port: 8008
+
+order:
+  url: http://127.0.0.1:8032/api/v1/order
+
+dict:
+  url: http://127.0.0.1:8037/api/v1/dict/save

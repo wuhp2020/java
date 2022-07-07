@@ -14,90 +14,31 @@
         <module>orm</module>
         <module>redis</module>
         <module>mq</module>
-        <module>zookeeper</module>
-        <module>java8</module>
-        <module>jni</module>
-        <module>io-client</module>
-        <module>io-server</module>
-        <module>dubbo</module>
+        <module>big-data</module>
+        <module>config-center</module>
+        <module>flow-engine</module>
+        <module>java-se</module>
+        <module>mvc</module>
+        <module>power</module>
         <module>spring</module>
-        <module>shiro</module>
+        <module>register-center</module>
         <module>templet</module>
         <module>excel</module>
-        <module>websocket</module>
-        <module>jvm</module>
+        <module>task</module>
+        <module>tcp</module>
         <module>web-server</module>
-        <module>consul</module>
-        <module>servlet</module>
-        <module>quartz</module>
-        <module>hadoop</module>
-        <module>pig</module>
-        <module>httpclient</module>
+        <module>text-graph</module>
         <module>tools</module>
-        <module>springboot</module>
-        <module>spark</module>
-        <module>activiti</module>
         <module>util</module>
-        <module>struts2</module>
-        <module>cxf</module>
         <module>frontend</module>
-        <module>flink</module>
-        <module>storm</module>
-        <module>nginx</module>
-        <module>shell</module>
         <module>rule</module>
-        <module>netty</module>
-        <module>flume</module>
-        <module>opencv</module>
-        <module>mail</module>
-        <module>opennlp</module>
-        <module>nacos</module>
-        <module>etcd</module>
-        <module>swagger</module>
-        <module>pdf</module>
-        <module>word</module>
-        <module>command</module>
-        <module>xxl-job</module>
-        <module>war</module>
-        <module>xml</module>
-        <module>socket</module>
         <module>design-pattern</module>
-        <module>springboot-auto-config</module>
-        <module>spring-security</module>
-        <module>oauth2</module>
         <module>redisson</module>
-        <module>skywalking</module>
-        <module>linux</module>
-        <module>interceptor</module>
-        <module>filter</module>
-        <module>asm</module>
         <module>low-code</module>
-        <module>esri-geometry</module>
-        <module>snakeyaml</module>
-        <module>grpc</module>
-        <module>d3js</module>
-        <module>lz4</module>
-        <module>javafaker</module>
-        <module>jmockdata</module>
         <module>global-handler</module>
-        <module>curator</module>
         <module>open-ele-me</module>
-        <module>snow-flake</module>
-        <module>caffeine</module>
         <module>open-meituan</module>
-        <module>java11</module>
-        <module>thrift-server</module>
-        <module>thrift-client</module>
-        <module>diamond</module>
-        <module>apollo</module>
-        <module>docx4j</module>
-        <module>okhttp</module>
-        <module>canal</module>
-        <module>sofaboot</module>
-        <module>jwt</module>
         <module>springcloud</module>
-        <module>nacos-server</module>
-        <module>api-manager</module>
     </modules>
 
     <!-- 父级依赖 -->

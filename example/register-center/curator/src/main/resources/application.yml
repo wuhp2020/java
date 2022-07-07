@@ -1,0 +1,5 @@
+server:
+  port: 8008
+
+zookeeper:
+  nodes: 192.168.221.129:2181

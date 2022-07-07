@@ -1,8 +1,0 @@
-server:
-  port: 8008
-
-spring:
-  security:
-    user:
-      name: admin
-      password: 123

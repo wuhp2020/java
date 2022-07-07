@@ -25,6 +25,22 @@
         <module>mapstruct</module>
         <module>mockito</module>
         <module>xjar</module>
+        <module>asm</module>
+        <module>caffeine</module>
+        <module>canal</module>
+        <module>command</module>
+        <module>javafaker</module>
+        <module>jmockdata</module>
+        <module>lz4</module>
+        <module>mail</module>
+        <module>opencv</module>
+        <module>opennlp</module>
+        <module>skywalking</module>
+        <module>snakeyaml</module>
+        <module>snow-flake</module>
+        <module>swagger</module>
+        <module>war</module>
+        <module>xml</module>
     </modules>
     <packaging>pom</packaging>
 </project>

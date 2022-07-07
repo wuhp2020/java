@@ -18,6 +18,7 @@
         <module>jetty</module>
         <module>tomcat</module>
         <module>weblogic</module>
+        <module>nginx</module>
     </modules>
     <packaging>pom</packaging>
 </project>

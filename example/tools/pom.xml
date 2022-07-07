@@ -26,6 +26,9 @@
         <module>postman</module>
         <module>prometheus</module>
         <module>jmeter</module>
+        <module>axure</module>
+        <module>linux</module>
+        <module>shell</module>
         <module>ansible-agent</module>
     </modules>
     <packaging>pom</packaging>
