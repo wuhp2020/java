@@ -1,4 +1,0 @@
-server:
-  port: 8008
-  rpchost: 127.0.0.1
-  rpcport: 9031

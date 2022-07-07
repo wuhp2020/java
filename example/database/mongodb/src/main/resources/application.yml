@@ -1,8 +1,0 @@
-server:
-  port: 8008
-
-spring:
-  data:
-    mongodb:
-      uri: mongodb://192.168.221.129:27017/wuhp
-

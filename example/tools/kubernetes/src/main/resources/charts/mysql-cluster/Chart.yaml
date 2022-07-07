@@ -1,5 +1,0 @@
-apiVersion: v1
-appVersion: "5.7.34"
-description: A Helm chart for Kubernetes
-name: mysql
-version: 5.7.34

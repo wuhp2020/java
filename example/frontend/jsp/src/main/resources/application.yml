@@ -1,8 +1,0 @@
-server:
-  port: 8008
-
-spring:
-  mvc:
-    view:
-      prefix: /WEB-INF/jsp/
-      suffix: .jsp
