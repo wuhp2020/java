@@ -1,6 +1,6 @@
 package com.web.mapper;
 
-import com.web.entity.DynamicEasypoiEntity;
+import com.web.entity.OrderInfoEntity;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author wuheping
- * @since 2022-06-29
+ * @since 2022-07-08
  */
-public interface DynamicEasypoiMapper extends BaseMapper<DynamicEasypoiEntity> {
+public interface OrderInfoMapper extends BaseMapper<OrderInfoEntity> {
 
 }
