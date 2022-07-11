@@ -41,6 +41,7 @@
         <module>swagger</module>
         <module>war</module>
         <module>xml</module>
+        <module>hutool</module>
     </modules>
     <packaging>pom</packaging>
 </project>
