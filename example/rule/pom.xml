@@ -13,6 +13,14 @@
     <artifactId>rule</artifactId>
     <version>1.0.0</version>
 
+    <dependencies>
+        <dependency>
+            <artifactId>global-handler</artifactId>
+            <groupId>com.global-handler</groupId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+
     <modules>
         <module>drools</module>
         <module>aviator</module>

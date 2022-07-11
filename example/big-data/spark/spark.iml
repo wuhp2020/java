@@ -163,6 +163,8 @@
     <orderEntry type="library" name="Maven: net.sf.py4j:py4j:0.10.9" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-crypto:1.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.12.13" level="project" />
+    <orderEntry type="module" module-name="global-handler" />
+    <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.79" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-web:2.2.13.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter:2.2.13.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.2.13.RELEASE" level="project" />

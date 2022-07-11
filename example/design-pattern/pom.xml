@@ -11,6 +11,14 @@
 
     <artifactId>design-pattern</artifactId>
 
+    <dependencies>
+        <dependency>
+            <artifactId>global-handler</artifactId>
+            <groupId>com.global-handler</groupId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <!-- 加载配置文件 -->
         <resources>

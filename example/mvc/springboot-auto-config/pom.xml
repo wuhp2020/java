@@ -11,6 +11,8 @@
     <packaging>jar</packaging>
 
     <artifactId>springboot-auto-config</artifactId>
+    <groupId>com.springboot-auto-config</groupId>
+    <version>1.0.0</version>
 
     <build>
         <!-- 加载配置文件 -->

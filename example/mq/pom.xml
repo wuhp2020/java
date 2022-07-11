@@ -13,6 +13,14 @@
     <groupId>com.mq</groupId>
     <version>1.0.0</version>
 
+    <dependencies>
+        <dependency>
+            <artifactId>global-handler</artifactId>
+            <groupId>com.global-handler</groupId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+
     <modules>
         <module>activemq</module>
         <module>kafka</module>

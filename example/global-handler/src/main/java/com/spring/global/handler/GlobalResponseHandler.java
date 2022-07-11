@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.web.vo.common.ResponseVO;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.MethodParameter;
 import org.springframework.core.annotation.AnnotatedElementUtils;
 import org.springframework.http.MediaType;
@@ -18,6 +17,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -25,8 +25,18 @@ import java.util.List;
 @RestControllerAdvice
 public class GlobalResponseHandler implements ResponseBodyAdvice<Object> {
 
-    @Value("${swagger.urls}")
-    private List<String> swaggerUrls;
+    private static List<String> swaggerUrls;
+
+    static {
+        swaggerUrls = new ArrayList<>();
+        swaggerUrls.add("/doc.html");
+        swaggerUrls.add("/v2/**");
+        swaggerUrls.add("/v2/api-docs");
+        swaggerUrls.add("/swagger-resources");
+        swaggerUrls.add("/swagger-resources/configuration/security");
+        swaggerUrls.add("/swagger-resources/configuration/ui");
+        swaggerUrls.add("/swagger-ui.html");
+    }
 
     @Override
     public boolean supports(MethodParameter returnType, Class<? extends HttpMessageConverter<?>> converterType) {
@@ -50,7 +60,11 @@ public class GlobalResponseHandler implements ResponseBodyAdvice<Object> {
         }
         // 可以统一处理
         log.info("=====>>>>> 返回报文: {}", JSON.toJSONString(body));
-        return body;
+        if (body instanceof ResponseVO) {
+            ResponseVO responseVO = (ResponseVO)body;
+            return responseVO;
+        }
+        return ResponseVO.SUCCESS(body);
     }
 
 
@@ -61,21 +75,8 @@ public class GlobalResponseHandler implements ResponseBodyAdvice<Object> {
 
     protected ResponseVO handleException(Exception exception, HttpServletRequest request) {
 
-        String message = "成功";
-        String code = "200";
-        if (exception instanceof ClassCastException) {
-            message = "类型转换异常";
-            code = "501";
-        } else if (exception instanceof NullPointerException) {
-            message = "空指针异常";
-            code = "502";
-        } else if (exception instanceof ArrayIndexOutOfBoundsException) {
-            message = "数组越界异常";
-            code = "503";
-        } else if (exception instanceof Exception) {
-            message = "未知异常: " + exception.getMessage();
-            code = "505";
-        }
+        String message = exception.getMessage();
+        String code = "500";
         log.error("异常堆栈: ", exception);
         return ResponseVO.FAIL(code, message);
     }

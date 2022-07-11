@@ -3,7 +3,6 @@ package com.spring.global.handler;
 import com.alibaba.fastjson.JSON;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.HttpInputMessage;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -20,6 +19,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -27,8 +27,18 @@ import java.util.Objects;
 @RestControllerAdvice
 public class GlobalRequestHandler implements RequestBodyAdvice {
 
-    @Value("${swagger.urls}")
-    private List<String> swaggerUrls;
+    private static List<String> swaggerUrls;
+
+    static {
+        swaggerUrls = new ArrayList<>();
+        swaggerUrls.add("/doc.html");
+        swaggerUrls.add("/v2/**");
+        swaggerUrls.add("/v2/api-docs");
+        swaggerUrls.add("/swagger-resources");
+        swaggerUrls.add("/swagger-resources/configuration/security");
+        swaggerUrls.add("/swagger-resources/configuration/ui");
+        swaggerUrls.add("/swagger-ui.html");
+    }
 
     /**
      * 该方法用于判断当前请求, 是否要执行beforeBodyRead, afterBodyRead方法

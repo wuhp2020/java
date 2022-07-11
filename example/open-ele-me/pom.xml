@@ -12,6 +12,12 @@
     <artifactId>open-ele-me</artifactId>
 
     <dependencies>
+        <dependency>
+            <artifactId>global-handler</artifactId>
+            <groupId>com.global-handler</groupId>
+            <version>1.0.0</version>
+        </dependency>
+
         <!-- httpclient -->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
