@@ -21,8 +21,7 @@
         <module>netty</module>
         <module>okhttp</module>
         <module>socket</module>
-        <module>thrift-client</module>
-        <module>thrift-server</module>
+        <module>thrift</module>
         <module>websocket</module>
     </modules>
     <packaging>pom</packaging>
