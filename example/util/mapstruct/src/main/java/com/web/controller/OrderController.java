@@ -19,14 +19,9 @@ public class OrderController {
 
     @GetMapping("convert")
     @ApiOperation(value = "转换")
-    public ResponseVO convert() {
-        try {
-            OrderVO orderVO = OrderDataMapper.INSTANCES.orderDO2OrderVO(new OrderDO());
-            return ResponseVO.SUCCESS(orderVO);
-        } catch (Exception e) {
-            log.error("method:findOne 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public OrderVO convert() {
+        OrderVO orderVO = OrderDataMapper.INSTANCES.orderDO2OrderVO(new OrderDO());
+        return orderVO;
     }
 
 }

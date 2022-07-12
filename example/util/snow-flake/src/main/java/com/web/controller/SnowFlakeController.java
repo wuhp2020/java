@@ -26,12 +26,7 @@ public class SnowFlakeController {
 
     @PostMapping("nextId")
     @ApiOperation(value = "雪花算法")
-    public ResponseVO nextId() {
-        try {
-            return ResponseVO.SUCCESS(snowFlake.nextId());
-        } catch (Exception e) {
-            log.error("nextId 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void nextId() {
+        snowFlake.nextId();
     }
 }
