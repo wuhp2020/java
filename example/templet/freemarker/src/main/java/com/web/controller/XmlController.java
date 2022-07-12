@@ -16,8 +16,8 @@ public class XmlController {
 
     @PostMapping("select")
     @ApiOperation(value = "生成select的xml")
-    public ResponseVO select(InterfaceParamVO paramVO) throws Exception {
-        return ResponseVO.SUCCESS(FreemarkerUtil.xml("select.ftl", paramVO));
+    public void select(InterfaceParamVO paramVO) throws Exception {
+        FreemarkerUtil.xml("select.ftl", paramVO);
     }
 
 }
