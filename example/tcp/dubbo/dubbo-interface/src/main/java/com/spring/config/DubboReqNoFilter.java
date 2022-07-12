@@ -1,7 +1,6 @@
 package com.spring.config;
 
 import com.alibaba.dubbo.common.Constants;
-import com.api.dto.common.RequestDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.common.extension.Activate;
 import org.apache.dubbo.rpc.Filter;
@@ -26,8 +25,7 @@ public class DubboReqNoFilter implements Filter {
         try {
             Object[] arguments = invocation.getArguments();
             if (arguments != null && arguments.length > 0) {
-                RequestDTO requestDTO = (RequestDTO)arguments[0];
-                requestDTO.setReqNo(UUID.randomUUID().toString().replace("-", ""));
+                Object obj = arguments[0];
             }
         } catch (Exception e) {
             log.error("链路失败, 不影响业务: ", e);
