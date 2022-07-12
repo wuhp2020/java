@@ -11,6 +11,8 @@
     <packaging>jar</packaging>
 
     <artifactId>dubbo-interface</artifactId>
+    <groupId>com.dubbo-interface</groupId>
+    <version>2.7.15</version>
 
     <dependencies>
         <!-- dubbo -->

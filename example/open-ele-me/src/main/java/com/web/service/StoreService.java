@@ -1,7 +1,7 @@
 package com.web.service;
 
 import com.spring.config.OpenEleConfig;
-import com.web.vo.common.PageResVO;
+import com.web.vo.PageResVO;
 import com.web.vo.store.ChainStoreCreateReqVO;
 import com.web.vo.store.ChainStoreCreateResVO;
 import com.web.vo.store.ChainStoreQueryListReqVO;

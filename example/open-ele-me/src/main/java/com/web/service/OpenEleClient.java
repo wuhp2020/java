@@ -2,8 +2,8 @@ package com.web.service;
 
 import com.google.gson.Gson;
 import com.spring.config.OpenEleConfig;
-import com.web.vo.common.OpenEleReqVO;
-import com.web.vo.common.OpenEleResVO;
+import com.web.vo.OpenEleReqVO;
+import com.web.vo.OpenEleResVO;
 import com.web.vo.token.OpenEleTokenReqVO;
 import com.web.util.HttpClientUtil;
 import com.web.util.SignatureUtil;

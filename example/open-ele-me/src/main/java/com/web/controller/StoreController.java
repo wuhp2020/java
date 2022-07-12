@@ -1,7 +1,7 @@
 package com.web.controller;
 
 import com.web.service.StoreService;
-import com.web.vo.common.PageResVO;
+import com.web.vo.PageResVO;
 import com.web.vo.store.ChainStoreCreateReqVO;
 import com.web.vo.store.ChainStoreCreateResVO;
 import com.web.vo.store.ChainStoreQueryListReqVO;

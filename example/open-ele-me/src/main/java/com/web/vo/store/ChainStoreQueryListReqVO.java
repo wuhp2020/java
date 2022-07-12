@@ -1,6 +1,6 @@
 package com.web.vo.store;
 
-import com.web.vo.common.PageReqVO;
+import com.web.vo.PageReqVO;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.experimental.Accessors;

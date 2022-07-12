@@ -2,8 +2,6 @@ package com.api.service.impl;
 
 import com.alibaba.dubbo.rpc.RpcException;
 import com.alibaba.fastjson.JSON;
-import com.api.dto.common.RequestDTO;
-import com.api.dto.common.ResponseDTO;
 import com.api.service.DetectApiService;
 import com.api.dto.response.FeatureResponse;
 import lombok.extern.slf4j.Slf4j;

@@ -1,11 +1,8 @@
 package com.web.controller;
 
-import com.api.dto.common.RequestDTO;
-import com.api.dto.common.ResponseDTO;
 import com.api.service.DetectApiService;
 import com.api.dto.response.FeatureResponse;
 import com.web.service.DetectService;
-import com.web.vo.common.ResponseVO;
 import com.web.vo.detect.DetectVO;
 import com.web.vo.detect.FeatureVO;
 import io.swagger.annotations.Api;
