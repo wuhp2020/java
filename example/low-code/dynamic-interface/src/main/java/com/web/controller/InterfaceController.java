@@ -3,7 +3,6 @@ package com.web.controller;
 import com.web.service.InterfaceService;
 import com.web.vo.InterfaceReqVO;
 import com.web.vo.InterfaceResVO;
-import com.web.vo.common.ResponseVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
