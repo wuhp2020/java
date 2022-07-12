@@ -37,50 +37,34 @@ public class AlertController {
 
     @ApiOperation(value = "发送消息")
     @PostMapping("send")
-    public ResponseVO send(@RequestBody AlertVO alertVO) {
-        try {
-            alertService.send(alertVO);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("error ", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void send(@RequestBody AlertVO alertVO) throws Exception {
+        alertService.send(alertVO);
     }
 
     @ApiOperation(value = "分布式事务生产")
     @PostMapping("transactionProducer")
-    public ResponseVO transactionProducer(@RequestBody AlertVO alertVO) {
-        try {
-            TransactionExecuterImpl executer = new TransactionExecuterImpl();
-            Message message = new Message("topic-transaction", alertVO.getMessage().getBytes(StandardCharsets.UTF_8));
-            transactionMQProducer.sendMessageInTransaction(message, executer, null);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void transactionProducer(@RequestBody AlertVO alertVO) throws Exception {
+        TransactionExecuterImpl executer = new TransactionExecuterImpl();
+        Message message = new Message("topic-transaction", alertVO.getMessage().getBytes(StandardCharsets.UTF_8));
+        transactionMQProducer.sendMessageInTransaction(message, executer, null);
     }
 
     @ApiOperation(value = "分布式事务消费")
     @GetMapping("transactionConsumer")
-    public ResponseVO transactionConsumer() {
-        try {
-            defaultMQPushConsumer.registerMessageListener(new MessageListenerConcurrently() {
-                @Override
-                public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list, ConsumeConcurrentlyContext consumeConcurrentlyContext) {
-                    for (MessageExt ext: list) {
-                        try {
-                            log.info("成功消息: " + new String(ext.getBody(),"UTF-8"));
-                        } catch (Exception e) {
-                            log.info("失败消息: " + new String(ext.getBody()));
-                        }
+    public void transactionConsumer() throws Exception {
+        defaultMQPushConsumer.registerMessageListener(new MessageListenerConcurrently() {
+            @Override
+            public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list, ConsumeConcurrentlyContext consumeConcurrentlyContext) {
+                for (MessageExt ext: list) {
+                    try {
+                        log.info("成功消息: " + new String(ext.getBody(),"UTF-8"));
+                    } catch (Exception e) {
+                        log.info("失败消息: " + new String(ext.getBody()));
                     }
-                    return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
                 }
-            });
-            defaultMQPushConsumer.start();
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            return ResponseVO.FAIL(e.getMessage());
-        }
+                return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
+            }
+        });
+        defaultMQPushConsumer.start();
     }
 }

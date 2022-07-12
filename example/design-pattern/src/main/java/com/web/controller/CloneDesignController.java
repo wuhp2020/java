@@ -22,13 +22,9 @@ public class CloneDesignController {
 
     @ApiOperation(value = "克隆模式")
     @GetMapping("clone")
-    public ResponseVO cloneT() {
-        try {
-            FruitVO fruitVO = new FruitVO().setName("apple");
-            return ResponseVO.SUCCESS(fruitVO.clone());
-        } catch (Exception e) {
-            log.error("失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public FruitVO cloneT() throws Exception {
+        FruitVO fruitVO = new FruitVO().setName("apple");
+        FruitVO fruitVOClone = (FruitVO)fruitVO.clone();
+        return fruitVOClone;
     }
 }

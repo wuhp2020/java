@@ -23,61 +23,33 @@ public class DocController {
 
     @ApiOperation(value = "创建文章索引")
     @PostMapping("index/create")
-    public ResponseVO createIndex(){
-        try {
-            docService.createIndex();
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("创建文章索引失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void createIndex() throws Exception {
+        docService.createIndex();
     }
 
     @ApiOperation(value = "添加文章")
     @PostMapping("add")
-    public ResponseVO addDoc(@RequestBody DocAddVO docAddVO) {
-        try {
-            docService.addDoc(docAddVO);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("添加文章失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void addDoc(@RequestBody DocAddVO docAddVO) throws Exception {
+        docService.addDoc(docAddVO);
     }
 
     @ApiOperation(value = "根据关键字模糊搜索文章")
     @GetMapping("keywords/search/{keywords}")
-    public ResponseVO searchByKeyWords(@PathVariable("keywords") String keyWords){
-        try {
-            List<DocVO> docVOs = docService.searchByKeyWords(keyWords);
-            return ResponseVO.SUCCESS(docVOs);
-        } catch (Exception e) {
-            log.error("根据关键字模糊搜索文章失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public List<DocVO> searchByKeyWords(@PathVariable("keywords") String keyWords) throws Exception {
+        List<DocVO> docVOs = docService.searchByKeyWords(keyWords);
+        return docVOs;
     }
 
     @ApiOperation(value = "按文章类型精确搜索文章")
     @GetMapping("types/search/{types}")
-    public ResponseVO searchByTypes(@PathVariable("types") List<String> types){
-        try {
-            List<DocVO> docVOS = docService.searchByTypes(types);
-            return ResponseVO.SUCCESS(docVOS);
-        } catch (Exception e) {
-            log.error("按文章类型精确搜索文章失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public List<DocVO> searchByTypes(@PathVariable("types") List<String> types) throws Exception {
+        List<DocVO> docVOS = docService.searchByTypes(types);
+        return docVOS;
     }
 
     @ApiOperation(value = "删除文章")
     @DeleteMapping("delete/{ids}")
-    public ResponseVO deleteDocs(@PathVariable("ids") List<String> ids){
-        try {
-            docService.deleteDocs(ids);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("删除文章失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void deleteDocs(@PathVariable("ids") List<String> ids) throws Exception {
+        docService.deleteDocs(ids);
     }
 }

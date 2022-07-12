@@ -33,18 +33,11 @@ public class DetectController {
 
     @ApiOperation(value = "图片base64")
     @PostMapping("base64")
-    public ResponseVO detectBase64(@RequestBody DetectVO detectVO) {
-        try {
-            FeatureVO featureVO = new FeatureVO();
-            RequestDTO<String> requestDTO = new RequestDTO<>();
-            requestDTO.setBody(detectVO.getBase64());
-            ResponseDTO<FeatureResponse> responseDTO = detectApiService.detect(requestDTO);
-            BeanUtils.copyProperties(responseDTO.getBody(), featureVO);
-            return ResponseVO.SUCCESS(featureVO);
-        } catch (Exception e) {
-            log.error("检测失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public FeatureVO detectBase64(@RequestBody DetectVO detectVO) throws Exception {
+        FeatureVO featureVO = new FeatureVO();
+        FeatureResponse responseDTO = detectApiService.detect(detectVO.getBase64());
+        BeanUtils.copyProperties(responseDTO, featureVO);
+        return featureVO;
     }
 
 

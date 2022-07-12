@@ -2,6 +2,7 @@ package com.web.controller;
 
 import com.web.service.DetectService;
 import com.web.vo.common.ResponseVO;
+import com.web.vo.detect.FeatureResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -22,13 +23,8 @@ public class DetectController {
 
     @PostMapping("detect")
     @ApiOperation(value = "提取特征")
-    public ResponseVO detect(@RequestBody String base64) {
-        try {
-            return ResponseVO.SUCCESS(detectService.detect(base64));
-        } catch (Exception e) {
-            log.error("method:save 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public FeatureResponse detect(@RequestBody String base64) {
+        return detectService.detect(base64);
     }
 
 }

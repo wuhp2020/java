@@ -83,61 +83,31 @@ public class LockController {
 
     @ApiOperation(value = "ReentrantReadWriteLock")
     @PostMapping("reentrantReadWriteLock")
-    public ResponseVO reentrantReadWriteLock() {
-        try {
-            lockService.reentrantReadWriteLock();
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:printABC() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void reentrantReadWriteLock() throws Exception {
+        lockService.reentrantReadWriteLock();
     }
 
     @ApiOperation(value = "reentrantLock")
     @PostMapping("reentrantLock")
-    public ResponseVO reentrantLock() {
-        try {
-            lockService.reentrantLock();
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void reentrantLock() throws Exception {
+        lockService.reentrantLock();
     }
 
     @ApiOperation(value = "闭锁")
     @GetMapping("countDownLatch")
-    public ResponseVO countDownLatch() {
-        try {
-            lockService.countDownLatch();
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:countDownLatch() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void countDownLatch() throws Exception {
+        lockService.countDownLatch();
     }
 
     @ApiOperation(value = "栅栏")
     @GetMapping("cyclicBarrier")
-    public ResponseVO cyclicBarrier() {
-        try {
-            lockService.cyclicBarrier();
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:countDownLatch() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void cyclicBarrier() throws Exception {
+        lockService.cyclicBarrier();
     }
 
     @ApiOperation(value = "信号量")
     @GetMapping("semaphore")
-    public ResponseVO semaphore() {
-        try {
-            lockService.semaphore();
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:semaphore() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void semaphore() throws Exception {
+        lockService.semaphore();
     }
 }

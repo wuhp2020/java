@@ -29,83 +29,49 @@ public class StringController {
 
     @PostMapping("save")
     @ApiOperation(value = "增加string")
-    public ResponseVO save(@RequestBody StringSaveVO stringSaveVO) {
-        try {
-            new Thread() {
-                @Override
-                public void run() {
-                    for (int i = 0;i < 1000000;i++) {
-                        log.info(i + "");
-                    }
+    public void save(@RequestBody StringSaveVO stringSaveVO) throws Exception {
+        new Thread() {
+            @Override
+            public void run() {
+                for (int i = 0;i < 1000000;i++) {
+                    log.info(i + "");
                 }
-            }.start();
-            stringService.save(stringSaveVO.getKey(), stringSaveVO.getValue());
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:save 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+            }
+        }.start();
+        stringService.save(stringSaveVO.getKey(), stringSaveVO.getValue());
     }
 
     @DeleteMapping("delete/{keys}")
     @ApiOperation(value = "删除string")
-    public ResponseVO delete(@PathVariable("keys") List<String> keys) {
-        try {
-            Pair<Boolean, String> result = stringService.delete(keys);
-            if (result.getFirst()) {
-                return ResponseVO.SUCCESS(result.getSecond());
-            } else {
-                return ResponseVO.FAIL(result.getSecond());
-            }
-        } catch (Exception e) {
-            log.error("method:delete 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
+    public void delete(@PathVariable("keys") List<String> keys) {
+        Pair<Boolean, String> result = stringService.delete(keys);
+        if (!result.getFirst()) {
+            throw new RuntimeException(result.getSecond());
         }
     }
 
     @GetMapping("findOne/{key}")
     @ApiOperation(value = "查询单个string")
-    public ResponseVO findOne(@PathVariable("key") String key) {
-        try {
-            return ResponseVO.SUCCESS(stringService.findOne(key));
-        } catch (Exception e) {
-            log.error("method:findOne 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void findOne(@PathVariable("key") String key) throws Exception {
+        stringService.findOne(key);
     }
 
     @PostMapping("increment")
     @ApiOperation(value = "加一")
-    public ResponseVO increment(@RequestBody String key) {
-        try {
-            return ResponseVO.SUCCESS(stringService.increment(key));
-        } catch (Exception e) {
-            log.error("method:increment 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void increment(@RequestBody String key) throws Exception {
+        stringService.increment(key);
     }
 
     @PostMapping("decrement")
     @ApiOperation(value = "减一")
-    public ResponseVO decrement(@RequestBody String key) {
-        try {
-            return ResponseVO.SUCCESS(stringService.decrement(key));
-        } catch (Exception e) {
-            log.error("method:decrement 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void decrement(@RequestBody String key) throws Exception {
+        stringService.decrement(key);
     }
 
     @PostMapping("topic")
     @ApiOperation(value = "发布订阅")
-    public ResponseVO topic(@RequestBody String message) {
-        try {
-            stringService.topic(message);
-            return ResponseVO.SUCCESS("ok");
-        } catch (Exception e) {
-            log.error("method:decrement 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void topic(@RequestBody String message) throws Exception {
+        stringService.topic(message);
     }
 
 }

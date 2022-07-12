@@ -1,6 +1,5 @@
 package com.web.waybill.controller;
 
-import com.web.common.vo.ResponseVO;
 import com.web.waybill.service.WaybillService;
 import com.web.waybill.vo.waybill.WaybillBatchVO;
 import com.web.waybill.vo.waybill.WaybillUpdateStatusVO;
@@ -27,40 +26,27 @@ public class WaybillController {
 
     @PostMapping("save")
     @ApiOperation(value = "批量增加订单")
-    public ResponseVO save(WaybillBatchVO waybillBatchVO) {
-        try {
-
-            for (int i = waybillBatchVO.getBegin();i < waybillBatchVO.getEnd(); i++) {
-                final int j = i;
-                log.info("提交任务: " + j);
-                poolExecutor.submit(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            waybillService.save(j);
-                        } catch (Exception e) {
-                            log.error("错误: ", e);
-                        }
+    public void save(WaybillBatchVO waybillBatchVO) {
+        for (int i = waybillBatchVO.getBegin();i < waybillBatchVO.getEnd(); i++) {
+            final int j = i;
+            log.info("提交任务: " + j);
+            poolExecutor.submit(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        waybillService.save(j);
+                    } catch (Exception e) {
+                        log.error("错误: ", e);
                     }
-                });
-            }
-            return ResponseVO.SUCCESS("ok");
-        } catch (Exception e) {
-            log.error("method:save 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
+                }
+            });
         }
     }
 
     @PutMapping("updateStatus")
     @ApiOperation(value = "更新状态")
-    public ResponseVO updateStatus(@RequestBody WaybillUpdateStatusVO statusVO) {
-        try {
-            waybillService.updateStatus(statusVO);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:findOne 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void updateStatus(@RequestBody WaybillUpdateStatusVO statusVO) {
+        waybillService.updateStatus(statusVO);
     }
 
 }

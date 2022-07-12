@@ -28,20 +28,18 @@ public class AtomicController {
 
     @PostMapping("atomicLong")
     @ApiOperation(value = "分布式AtomicLong")
-    public ResponseVO atomicLong() throws Exception {
+    public void atomicLong() throws Exception {
         RAtomicLong atomicLong = redissonClient.getAtomicLong("myAtomicLong");
         atomicLong.set(3);
         atomicLong.incrementAndGet();
         atomicLong.get();
-        return ResponseVO.SUCCESS(atomicLong.get());
     }
 
     @PostMapping("atomicDouble")
     @ApiOperation(value = "分布式AtomicDouble")
-    public ResponseVO atomicDouble() throws Exception {
+    public void atomicDouble() throws Exception {
         RAtomicDouble atomicDouble = redissonClient.getAtomicDouble("myAtomicDouble");
         atomicDouble.set(2.81);
         atomicDouble.addAndGet(4.11);
-        return ResponseVO.SUCCESS(atomicDouble.get());
     }
 }

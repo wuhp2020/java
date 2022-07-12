@@ -21,49 +21,25 @@ public class EmployeeController {
 
     @PostMapping("batch/save")
     @ApiOperation(value = "批量增加10w员工")
-    public ResponseVO batchSave() {
-        try {
+    public void batchSave() {
 
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:batchSave 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
     }
 
     @PostMapping("index/over")
     @ApiOperation(value = "覆盖索引")
-    public ResponseVO overIndex() {
-        try {
+    public void overIndex() {
 
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:overIndex 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
     }
 
     @PostMapping("index/oneColumn")
     @ApiOperation(value = "单列索引")
-    public ResponseVO oneColumnIndex() {
-        try {
+    public void oneColumnIndex() {
 
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:oneColumnIndex 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
     }
 
     @PostMapping("index/manyColumn")
     @ApiOperation(value = "组合索引")
-    public ResponseVO manyColumnIndex() {
-        try {
+    public void manyColumnIndex() {
 
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:manyColumnIndex 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
     }
 }

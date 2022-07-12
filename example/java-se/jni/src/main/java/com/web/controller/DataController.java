@@ -22,13 +22,7 @@ public class DataController {
 
     @PostMapping("search")
     @ApiOperation(value = "获取系统类型")
-    public ResponseVO search() {
-        try {
-            String result = dataService.search();
-            return ResponseVO.SUCCESS(result);
-        } catch (Exception e) {
-            log.error("method:add 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void search() throws Exception {
+        String result = dataService.search();
     }
 }

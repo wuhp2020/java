@@ -25,8 +25,8 @@ public class DepartmentController {
 
     @PostMapping("selectAll")
     @ApiOperation(value = "查询部门")
-    public ResponseVO selectAll() {
+    public List<DepartmentDO> selectAll() {
         List<DepartmentDO> data = departmentService.selectAll();
-        return ResponseVO.SUCCESS(data);
+        return data;
     }
 }

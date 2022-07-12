@@ -24,13 +24,8 @@ public class DetectController {
 
     @PostMapping("detect")
     @ApiOperation(value = "提取特征")
-    public ResponseVO detect(@RequestBody String base64) {
-        try {
-            return ResponseVO.SUCCESS(restTemplate.postForObject(REST_URL_PREFIX + "/api/v1/detect/detect", base64, ResponseVO.class));
-        } catch (Exception e) {
-            log.error("method:detect() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public Object detect(@RequestBody String base64) {
+        return restTemplate.postForObject(REST_URL_PREFIX + "/api/v1/detect/detect", base64, ResponseVO.class);
     }
 
 }

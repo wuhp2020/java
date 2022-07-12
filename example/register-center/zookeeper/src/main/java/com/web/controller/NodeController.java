@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/node")
 @Api(tags = "节点管理")
@@ -24,60 +26,31 @@ public class NodeController {
 
     @ApiOperation(value = "添加持久节点")
     @PostMapping("add/persistent")
-    public ResponseVO addPersistent(@RequestBody NodeVO nodeVO) {
-        try {
-            nodeService.addPersistent(nodeVO);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("添加节点失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void addPersistent(@RequestBody NodeVO nodeVO) throws Exception {
+        nodeService.addPersistent(nodeVO);
     }
 
     @ApiOperation(value = "添加持久有序节点")
     @PostMapping("add/persistent/sequential")
-    public ResponseVO addPersistentSequential(@RequestBody NodeVO nodeVO) {
-        try {
-            nodeService.addPersistentSequential(nodeVO);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("添加节点失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void addPersistentSequential(@RequestBody NodeVO nodeVO) throws Exception {
+        nodeService.addPersistentSequential(nodeVO);
     }
 
     @ApiOperation(value = "添加临时节点")
     @PostMapping("add/ephemeral")
-    public ResponseVO addEphemeral(@RequestBody NodeVO nodeVO) {
-        try {
-            nodeService.addEphemeral(nodeVO);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("添加节点失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void addEphemeral(@RequestBody NodeVO nodeVO) throws Exception {
+        nodeService.addEphemeral(nodeVO);
     }
 
     @ApiOperation(value = "添加临时有序节点")
     @PostMapping("add/ephemeral/sequential")
-    public ResponseVO addEphemeralSequential(@RequestBody NodeVO nodeVO) {
-        try {
-            nodeService.addEphemeralSequential(nodeVO);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("添加节点失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void addEphemeralSequential(@RequestBody NodeVO nodeVO) throws Exception {
+        nodeService.addEphemeralSequential(nodeVO);
     }
 
     @ApiOperation(value = "获取节点")
     @PostMapping("findOne")
-    public ResponseVO findOne(@RequestBody NodeQueryVO nodeQueryVO) {
-        try {
-            return ResponseVO.SUCCESS(nodeService.findOne(nodeQueryVO));
-        } catch (Exception e) {
-            log.error("method:findOne 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public List<String> findOne(@RequestBody NodeQueryVO nodeQueryVO) throws Exception {
+        return nodeService.findOne(nodeQueryVO);
     }
 }

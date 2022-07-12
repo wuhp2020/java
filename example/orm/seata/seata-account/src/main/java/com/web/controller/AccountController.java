@@ -23,13 +23,7 @@ public class AccountController {
 
     @PostMapping(value = "debit")
     @ApiOperation(value = "从用户账户中借出")
-    public ResponseVO debit(@RequestBody AccountRequestVO accountRequestVO) {
-        try {
-            accountService.debit(accountRequestVO);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:debit 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void debit(@RequestBody AccountRequestVO accountRequestVO) {
+        accountService.debit(accountRequestVO);
     }
 }

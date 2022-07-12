@@ -22,37 +22,19 @@ public class TaskController {
 
     @PostMapping("create")
     @ApiOperation(value = "创建任务")
-    public ResponseVO create(TaskVO taskVO) {
-        try {
-            taskService.create(taskVO);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:create() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void create(TaskVO taskVO) throws Exception {
+        taskService.create(taskVO);
     }
 
     @PostMapping("start")
     @ApiOperation(value = "启动任务")
-    public ResponseVO start(String id) {
-        try {
-            taskService.start(id);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:start() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void start(String id) throws Exception {
+        taskService.start(id);
     }
 
     @PostMapping("stop")
     @ApiOperation(value = "停止任务")
-    public ResponseVO stop(String id) {
-        try {
-            taskService.stop(id);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:stop() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void stop(String id) throws Exception {
+        taskService.stop(id);
     }
 }

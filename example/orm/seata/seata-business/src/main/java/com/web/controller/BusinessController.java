@@ -27,18 +27,12 @@ public class BusinessController {
      */
     @PostMapping("commit")
     @ApiOperation(value = "提交")
-    public ResponseVO commit() {
-        try {
-            BusinessRequestVO businessRequestVO = new BusinessRequestVO();
-            businessRequestVO.setCommodityCode("2001");
-            businessRequestVO.setUserId("1001");
-            businessRequestVO.setOrderCount(1);
-            businessService.purchase(businessRequestVO);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:commit() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void commit() {
+        BusinessRequestVO businessRequestVO = new BusinessRequestVO();
+        businessRequestVO.setCommodityCode("2001");
+        businessRequestVO.setUserId("1001");
+        businessRequestVO.setOrderCount(1);
+        businessService.purchase(businessRequestVO);
     }
 
     /**
@@ -48,18 +42,11 @@ public class BusinessController {
      */
     @PostMapping("rollback")
     @ApiOperation(value = "回滚")
-    public ResponseVO rollback() {
-
-        try {
-            BusinessRequestVO businessRequestVO = new BusinessRequestVO();
-            businessRequestVO.setCommodityCode("2001");
-            businessRequestVO.setUserId("1002");
-            businessRequestVO.setOrderCount(1);
-            businessService.purchase(businessRequestVO);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:rollback() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void rollback() {
+        BusinessRequestVO businessRequestVO = new BusinessRequestVO();
+        businessRequestVO.setCommodityCode("2001");
+        businessRequestVO.setUserId("1002");
+        businessRequestVO.setOrderCount(1);
+        businessService.purchase(businessRequestVO);
     }
 }

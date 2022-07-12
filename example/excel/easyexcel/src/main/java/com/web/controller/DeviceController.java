@@ -33,14 +33,9 @@ public class DeviceController {
 
     @PostMapping("load")
     @ApiOperation(value = "导入设备数据")
-    public ResponseVO load(@RequestParam MultipartFile file) {
-        try {
-            List<DeviceVO> deviceVOs = deviceService.load(file);
-            return ResponseVO.SUCCESS(deviceVOs);
-        } catch (Exception e) {
-            log.error("method:add 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public List<DeviceVO> load(@RequestParam MultipartFile file) throws Exception {
+        List<DeviceVO> deviceVOs = deviceService.load(file);
+        return deviceVOs;
     }
 
     @PostMapping("export")

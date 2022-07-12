@@ -23,13 +23,7 @@ public class AlertController {
 
     @ApiOperation(value = "发送消息")
     @PostMapping("send")
-    public ResponseVO send(@RequestBody AlertVO alertVO) {
-        try {
-            alertService.send(alertVO);
-            return ResponseVO.SUCCESS("");
-        } catch (Exception e) {
-            log.error("method:send 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void send(@RequestBody AlertVO alertVO) throws Exception {
+        alertService.send(alertVO);
     }
 }

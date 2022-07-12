@@ -25,71 +25,42 @@ public class UserController {
 
     @PostMapping("save")
     @ApiOperation(value = "增加用户")
-    public ResponseVO save(UserVO userVO) {
-        try {
-            // 校验
-            Pair<Boolean, String> result = userService.checkRepeat(userVO);
-            if (!result.getFirst()) {
-                return ResponseVO.FAIL(result.getSecond());
-            }
-            userVO = userService.save(userVO);
-            return ResponseVO.SUCCESS(userVO);
-        } catch (Exception e) {
-            log.error("class:UserController, method:save 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
+    public void save(UserVO userVO) throws Exception {
+        // 校验
+        Pair<Boolean, String> result = userService.checkRepeat(userVO);
+        if (!result.getFirst()) {
+            throw new RuntimeException(result.getSecond());
         }
+        userVO = userService.save(userVO);
     }
 
     @DeleteMapping("delete/{ids}")
     @ApiOperation(value = "删除用户")
-    public ResponseVO delete(@PathVariable("ids") List<String> ids) {
-        try {
-            Pair<Boolean, String> result = userService.delete(ids);
-            if (result.getFirst()) {
-                return ResponseVO.SUCCESS(result.getSecond());
-            } else {
-                return ResponseVO.FAIL(result.getSecond());
-            }
-        } catch (Exception e) {
-            log.error("class:UserController, method:delete 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
+    public void delete(@PathVariable("ids") List<String> ids) {
+        Pair<Boolean, String> result = userService.delete(ids);
+        if (!result.getFirst()) {
+            throw new RuntimeException(result.getSecond());
         }
     }
 
     @PutMapping("update")
     @ApiOperation(value = "修改用户")
-    public ResponseVO update(UserVO userVO) {
-        try {
-            userVO = userService.update(userVO);
-            return ResponseVO.SUCCESS(userVO);
-        } catch (Exception e) {
-            log.error("class:UserController, method:update 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void update(UserVO userVO) throws Exception {
+        userVO = userService.update(userVO);
     }
 
     @GetMapping("findOne/{id}")
     @ApiOperation(value = "查询单个用户")
-    public ResponseVO findOne(@PathVariable("id") String id) {
-        try {
-            UserVO userVO = userService.findOne(id);
-            return ResponseVO.SUCCESS(userVO);
-        } catch (Exception e) {
-            log.error("class:UserController, method:findOne 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public UserVO findOne(@PathVariable("id") String id) throws Exception {
+        UserVO userVO = userService.findOne(id);
+        return userVO;
     }
 
     @PostMapping("findByPage")
     @ApiOperation(value = "分页查询用户")
-    public ResponseVO findByPage(UserQueryVO userQueryVO) {
-        try {
-            Page<UserVO> page = userService.findByPage(userQueryVO);
-            return ResponseVO.SUCCESS(page);
-        } catch (Exception e) {
-            log.error("class:UserController, method:findByPage 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public Page<UserVO> findByPage(UserQueryVO userQueryVO) throws Exception {
+        Page<UserVO> page = userService.findByPage(userQueryVO);
+        return page;
     }
 
 }

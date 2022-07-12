@@ -23,14 +23,8 @@ public class OrderController {
 
     @PostMapping("create")
     @ApiOperation(value = "生成订单")
-    public ResponseVO create(@RequestBody OrderRequestVO orderRequestVO) {
-        try {
-            orderService.create(orderRequestVO);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:create 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void create(@RequestBody OrderRequestVO orderRequestVO) {
+        orderService.create(orderRequestVO);
     }
 
 }

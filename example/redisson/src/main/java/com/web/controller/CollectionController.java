@@ -32,7 +32,7 @@ public class CollectionController {
 
     @PostMapping("map")
     @ApiOperation(value = "分布式Map")
-    public ResponseVO map() throws Exception {
+    public void map() throws Exception {
         RMap<String, Object> map = redissonClient.getMap("anyMap");
         map.put("123", new Object());
         map.putIfAbsent("323", new Object());
@@ -43,36 +43,32 @@ public class CollectionController {
         RFuture<Boolean> fastPutAsyncFuture = map.fastPutAsync("321", new Object());
         map.fastPutAsync("321", new Object());
         map.fastRemoveAsync("321");
-        return ResponseVO.SUCCESS("ok");
     }
 
     @PostMapping("set")
     @ApiOperation(value = "分布式Set")
-    public ResponseVO set() throws Exception {
+    public void set() throws Exception {
         RSet<Object> set = redissonClient.getSet("anySet");
         set.add(new Object());
         set.remove(new Object());
-        return ResponseVO.SUCCESS("ok");
     }
 
     @PostMapping("list")
     @ApiOperation(value = "分布式List")
-    public ResponseVO list() throws Exception {
+    public void list() throws Exception {
         RList<Object> list = redissonClient.getList("anyList");
         list.add(new Object());
         list.get(0);
         list.remove(new Object());
-        return ResponseVO.SUCCESS("ok");
     }
 
     @PostMapping("blockingQueue")
     @ApiOperation(value = "分布式Blocking Queue")
-    public ResponseVO blockingQueue() throws Exception {
+    public void blockingQueue() throws Exception {
         RBlockingQueue<Object> queue = redissonClient.getBlockingQueue("anyQueue");
         queue.offer(new Object());
         Object obj = queue.peek();
         Object someObj = queue.poll();
         Object ob = queue.poll(10, TimeUnit.MINUTES);
-        return ResponseVO.SUCCESS("ok");
     }
 }

@@ -18,19 +18,14 @@ public class LogController {
     @GetMapping("normalPrint")
     @ApiOperation(value = "正常打印切面日志")
     @Log
-    public ResponseVO normalPrint() {
-        try {
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:print() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void normalPrint() {
+
     }
 
     @GetMapping("errorPrint")
     @ApiOperation(value = "错误打印切面日志")
     @Log
-    public ResponseVO errorPrint() throws Exception{
+    public void errorPrint() throws Exception{
         throw new Exception("test抛异常");
     }
 }

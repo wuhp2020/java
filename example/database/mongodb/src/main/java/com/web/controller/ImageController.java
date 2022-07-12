@@ -26,56 +26,34 @@ public class ImageController {
 
     @PostMapping("save")
     @ApiOperation(value = "增加图片")
-    public ResponseVO save(@RequestBody ImageSaveVO imageSaveVO) {
-        try {
-            // 保存
-            ImageVO imageVO = imageService.save(imageSaveVO);
-            return ResponseVO.SUCCESS(imageVO);
-        } catch (Exception e) {
-            log.error("method:save 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public ImageVO save(@RequestBody ImageSaveVO imageSaveVO) throws Exception {
+        // 保存
+        ImageVO imageVO = imageService.save(imageSaveVO);
+        return imageVO;
     }
 
     @DeleteMapping("delete/{imageIds}")
     @ApiOperation(value = "删除字典")
-    public ResponseVO delete(@PathVariable("imageIds") List<String> imageIds) {
-        try {
-            Pair<Boolean, String> result = imageService.delete(imageIds);
-            if (result.getFirst()) {
-                return ResponseVO.SUCCESS(result.getSecond());
-            } else {
-                return ResponseVO.FAIL(result.getSecond());
-            }
-        } catch (Exception e) {
-            log.error("method:delete 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
+    public void delete(@PathVariable("imageIds") List<String> imageIds) {
+        Pair<Boolean, String> result = imageService.delete(imageIds);
+        if (!result.getFirst()) {
+            throw new RuntimeException(result.getSecond());
         }
     }
 
 
     @GetMapping("findOne/{imageId}")
     @ApiOperation(value = "查询单个字典")
-    public ResponseVO findOne(@PathVariable("imageId") String imageId) {
-        try {
-            ImageVO imageVO = imageService.findByImageId(imageId);
-            return ResponseVO.SUCCESS(imageVO);
-        } catch (Exception e) {
-            log.error("method:findOne 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public ImageVO findOne(@PathVariable("imageId") String imageId) throws Exception {
+        ImageVO imageVO = imageService.findByImageId(imageId);
+        return imageVO;
     }
 
     @PostMapping("findByPage")
     @ApiOperation(value = "分页查询字典")
-    public ResponseVO findByPage(ImageQueryVO imageQueryVO) {
-        try {
-            Page<ImageVO> page = imageService.findByPage(imageQueryVO);
-            return ResponseVO.SUCCESS(page);
-        } catch (Exception e) {
-            log.error("method:findByPage 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public Page<ImageVO> findByPage(ImageQueryVO imageQueryVO) throws Exception {
+        Page<ImageVO> page = imageService.findByPage(imageQueryVO);
+        return page;
     }
 
 }

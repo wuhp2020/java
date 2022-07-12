@@ -24,26 +24,14 @@ public class LockController {
 
     @PostMapping("lock")
     @ApiOperation(value = "获取锁")
-    public ResponseVO lock(@RequestBody LockVO lockVO) {
-        try {
-            lockService.lock(lockVO);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:lock 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void lock(@RequestBody LockVO lockVO) throws Exception {
+        lockService.lock(lockVO);
     }
 
     @DeleteMapping("unlock")
     @ApiOperation(value = "释放锁")
-    public ResponseVO unlock(@RequestBody LockVO lockVO) {
-        try {
-            lockService.unlock(lockVO);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:unlock 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void unlock(@RequestBody LockVO lockVO) {
+        lockService.unlock(lockVO);
     }
 
 }

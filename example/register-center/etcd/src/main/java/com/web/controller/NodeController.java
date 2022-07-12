@@ -24,36 +24,19 @@ public class NodeController {
 
     @ApiOperation(value = "添加节点")
     @PostMapping("add")
-    public ResponseVO add(@RequestBody NodeVO nodeVO) {
-        try {
-            nodeService.add(nodeVO);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("添加节点失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void add(@RequestBody NodeVO nodeVO) throws Exception {
+        nodeService.add(nodeVO);
     }
 
     @ApiOperation(value = "获取节点")
     @PostMapping("findOne")
-    public ResponseVO findOne(@RequestBody NodeQueryVO nodeQueryVO) {
-        try {
-
-            return ResponseVO.SUCCESS(nodeService.findOne(nodeQueryVO));
-        } catch (Exception e) {
-            log.error("异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public Object findOne(@RequestBody NodeQueryVO nodeQueryVO) throws Exception {
+        return nodeService.findOne(nodeQueryVO);
     }
 
     @ApiOperation(value = "获取所有节点")
     @PostMapping("findAll")
-    public ResponseVO findAll() {
-        try {
-            return ResponseVO.SUCCESS(nodeService.findAll());
-        } catch (Exception e) {
-            log.error("异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public Object findAll() throws Exception {
+        return nodeService.findAll();
     }
 }

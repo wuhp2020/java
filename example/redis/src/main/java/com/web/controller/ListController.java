@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/api/v1/list")
@@ -27,40 +29,22 @@ public class ListController {
 
     @PostMapping("save")
     @ApiOperation(value = "增加list")
-    public ResponseVO save(@RequestBody ListSaveVO listSaveVO) {
-        try {
-            listService.save(listSaveVO.getKey(), listSaveVO.getValue());
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:save 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void save(@RequestBody ListSaveVO listSaveVO) throws Exception {
+        listService.save(listSaveVO.getKey(), listSaveVO.getValue());
     }
 
     @DeleteMapping("delete/{key}")
     @ApiOperation(value = "删除list")
-    public ResponseVO delete(@PathVariable("key") String key) {
-        try {
-            Pair<Boolean, Object> result = listService.delete(key);
-            if (result.getFirst()) {
-                return ResponseVO.SUCCESS(result.getSecond());
-            } else {
-                return ResponseVO.FAIL("fail");
-            }
-        } catch (Exception e) {
-            log.error("method:delete 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
+    public void delete(@PathVariable("key") String key) {
+        Pair<Boolean, Object> result = listService.delete(key);
+        if (!result.getFirst()) {
+            throw new RuntimeException(result.getSecond() + "");
         }
     }
 
     @GetMapping("findOne/{key}")
     @ApiOperation(value = "查询单个list")
-    public ResponseVO findOne(@PathVariable("key") String key) {
-        try {
-            return ResponseVO.SUCCESS(listService.findAll(key));
-        } catch (Exception e) {
-            log.error("method:findOne 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public List<String> findOne(@PathVariable("key") String key) throws Exception {
+            return listService.findAll(key);
     }
 }

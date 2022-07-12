@@ -27,32 +27,21 @@ public class WorkOrderController {
 
     @PostMapping("save")
     @ApiOperation(value = "增加工单")
-    public ResponseVO save(WorkOrderBatchVO workOrderBatchVO) {
-        try {
-            for (int i = workOrderBatchVO.getBegin();i < workOrderBatchVO.getEnd(); i++) {
-                WorkOrderDO workOrderDO = new WorkOrderDO();
-                workOrderDO.setId(i);
-                workOrderDO.setWorkOrderId(UUID.randomUUID().toString());
-                workOrderDO.setRelatedSize(5);
-                workOrderService.save(workOrderDO);
-            }
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:save 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
+    public void save(WorkOrderBatchVO workOrderBatchVO) {
+        for (int i = workOrderBatchVO.getBegin();i < workOrderBatchVO.getEnd(); i++) {
+            WorkOrderDO workOrderDO = new WorkOrderDO();
+            workOrderDO.setId(i);
+            workOrderDO.setWorkOrderId(UUID.randomUUID().toString());
+            workOrderDO.setRelatedSize(5);
+            workOrderService.save(workOrderDO);
         }
     }
 
     @GetMapping("findAll")
     @ApiOperation(value = "所有数据")
-    public ResponseVO findAll() {
-        try {
-            Map<String, Integer> map = workOrderService.findAll();
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:findOne 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public Map<String, Integer> findAll() {
+        Map<String, Integer> map = workOrderService.findAll();
+        return map;
     }
 
 }

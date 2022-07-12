@@ -22,34 +22,19 @@ public class KeysController {
 
     @PostMapping("exists")
     @ApiOperation(value = "是否存在")
-    public ResponseVO exists(@RequestBody String key) {
-        try {
-            return ResponseVO.SUCCESS(keysService.exists(key));
-        } catch (Exception e) {
-            log.error("method:save 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void exists(@RequestBody String key) {
+        keysService.exists(key);
     }
 
     @PostMapping("move")
     @ApiOperation(value = "移动")
-    public ResponseVO move(@RequestBody String key, @RequestBody Integer index) {
-        try {
-            return ResponseVO.SUCCESS(keysService.move(key, index));
-        } catch (Exception e) {
-            log.error("method:save 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void move(@RequestBody String key, @RequestBody Integer index) {
+        keysService.move(key, index);
     }
 
     @PostMapping("type")
     @ApiOperation(value = "类型")
-    public ResponseVO type(@RequestBody String key) {
-        try {
-            return ResponseVO.SUCCESS(keysService.type(key));
-        } catch (Exception e) {
-            log.error("method:save 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void type(@RequestBody String key) {
+        keysService.type(key);
     }
 }

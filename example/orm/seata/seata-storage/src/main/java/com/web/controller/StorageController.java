@@ -23,13 +23,7 @@ public class StorageController {
 
     @PostMapping("deduct")
     @ApiOperation(value = "扣除存储数量")
-    public ResponseVO deduct(@RequestBody StorageRequestVO storageRequestVO) {
-        try {
-            storageService.deduct(storageRequestVO);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:save 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void deduct(@RequestBody StorageRequestVO storageRequestVO) {
+        storageService.deduct(storageRequestVO);
     }
 }

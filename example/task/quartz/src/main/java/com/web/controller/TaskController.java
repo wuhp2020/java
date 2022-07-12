@@ -23,13 +23,7 @@ public class TaskController {
 
     @PostMapping(value = "start")
     @ApiOperation(value = "开启任务")
-    public ResponseVO start(@RequestBody StartTaskVO startTaskVO) {
-        try {
-            taskService.start(startTaskVO);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:start 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void start(@RequestBody StartTaskVO startTaskVO) {
+        taskService.start(startTaskVO);
     }
 }

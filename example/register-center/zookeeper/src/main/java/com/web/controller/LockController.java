@@ -21,14 +21,8 @@ public class LockController {
 
     @PostMapping("queue/lock")
     @ApiOperation(value = "队列获取锁")
-    public ResponseVO queueLock() {
-        try {
-            lockService.queueLock();
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:lock 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void queueLock() throws Exception {
+        lockService.queueLock();
     }
 
 }

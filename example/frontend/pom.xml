@@ -28,10 +28,8 @@
         <module>echarts</module>
         <module>javascript</module>
         <module>jquery</module>
-        <module>mini-program</module>
         <module>jsp</module>
         <module>nodejs</module>
-        <module>vue</module>
     </modules>
     <packaging>pom</packaging>
 </project>

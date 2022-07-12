@@ -24,45 +24,27 @@ public class ReflectController {
 
     @ApiOperation(value = "reflectClass")
     @PostMapping("reflectClass")
-    public ResponseVO reflectClass() {
-        try {
-            Class.forName("com.web.controller.ReflectController");
-            Class cls = ReflectController.class;
-            new ReflectController().getClass();
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:threeWay() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void reflectClass() throws Exception {
+        Class.forName("com.web.controller.ReflectController");
+        Class cls = ReflectController.class;
+        new ReflectController().getClass();
     }
 
     @ApiOperation(value = "reflectMethod")
     @PostMapping("reflectMethod")
-    public ResponseVO reflectMethod() {
-        try {
-            Class cls = Class.forName("com.web.controller.ReflectController");
-            Constructor cons = cls.getConstructor(new Class[]{});
-            Object obj = cons.newInstance(new Object[]{});
-            Method method = cls.getMethod("reflectClass",new Class[]{});
-            method.invoke(obj,new Object[]{});
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:threeWay() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void reflectMethod() throws Exception {
+        Class cls = Class.forName("com.web.controller.ReflectController");
+        Constructor cons = cls.getConstructor(new Class[]{});
+        Object obj = cons.newInstance(new Object[]{});
+        Method method = cls.getMethod("reflectClass",new Class[]{});
+        method.invoke(obj,new Object[]{});
     }
 
     @ApiOperation(value = "reflectConstructor")
     @PostMapping("reflectConstructor")
-    public ResponseVO reflectConstructor() {
-        try {
-            Class cls = Class.forName("com.web.controller.ReflectController");
-            Constructor cons = cls.getConstructor(new Class[]{});
-            Object obj = cons.newInstance(new Object[]{});
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:threeWay() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void reflectConstructor() throws Exception {
+        Class cls = Class.forName("com.web.controller.ReflectController");
+        Constructor cons = cls.getConstructor(new Class[]{});
+        Object obj = cons.newInstance(new Object[]{});
     }
 }

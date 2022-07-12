@@ -26,21 +26,20 @@ public class DepartmentController {
 
     @GetMapping("select")
     @ApiOperation(value = "查询部门关联员工")
-    public ResponseVO select() {
-        return ResponseVO.SUCCESS(departmentService.select());
+    public Map<String, Object> select() {
+        return departmentService.select();
     }
 
     @GetMapping("selectObject")
     @ApiOperation(value = "查询部门和员工")
-    public ResponseVO selectObject() {
+    public Map<String, Object> selectObject() {
         Map<String, Object> data = departmentService.selectObject();
-        return ResponseVO.SUCCESS(data);
+        return data;
     }
 
     @PostMapping("insert")
     @ApiOperation(value = "添加部门、员工和工时")
-    public ResponseVO insert(@RequestBody Map<String, Object> paramMap) {
+    public void insert(@RequestBody Map<String, Object> paramMap) {
         departmentService.insert(paramMap);
-        return ResponseVO.SUCCESS("ok");
     }
 }

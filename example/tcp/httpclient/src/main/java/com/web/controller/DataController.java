@@ -2,6 +2,7 @@ package com.web.controller;
 
 import com.web.service.DataService;
 import com.web.vo.common.ResponseVO;
+import com.web.vo.order.OrderVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -22,24 +23,13 @@ public class DataController {
 
     @ApiOperation(value = "查询订单")
     @PostMapping("order/find")
-    public ResponseVO findOrder(){
-        try {
-            return ResponseVO.SUCCESS(dataService.findOrder());
-        } catch (Exception e) {
-            log.error("查询订单失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public OrderVO findOrder() throws Exception {
+        return dataService.findOrder();
     }
 
     @ApiOperation(value = "保存字典")
     @PostMapping("dict/save")
-    public ResponseVO saveDict(){
-        try {
-            dataService.saveDict();
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("保存字典失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void saveDict() throws Exception {
+        dataService.saveDict();
     }
 }

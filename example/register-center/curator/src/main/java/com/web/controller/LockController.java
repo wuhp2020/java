@@ -24,31 +24,22 @@ public class LockController {
 
     @PostMapping("reentrantLock")
     @ApiOperation(value = "可重入锁")
-    public ResponseVO reentrantLock() {
+    public void reentrantLock() throws Exception {
+        InterProcessMutex lock = new InterProcessMutex(client, "/lock/1");
         try {
-            InterProcessMutex lock = new InterProcessMutex(client, "/lock/1");
-            try {
-                if (lock.acquire(10, TimeUnit.SECONDS)) {
-                    Thread.sleep(5000);
-                    log.info("=========== 获取锁成功");
-                    if (client.checkExists().forPath("/lock/1") != null) {
-                        client.delete().deletingChildrenIfNeeded().forPath("/lock/1");
-                    }
-                    return ResponseVO.SUCCESS("获取锁成功");
-                } else {
-                    return ResponseVO.FAIL("获取锁失败");
-                }
-            } catch (Exception e) {
-                log.error("异常", e);
-                return ResponseVO.FAIL(e.getMessage());
-            } finally {
-                if (lock.isAcquiredInThisProcess()) {
-                    lock.release();
+            if (lock.acquire(10, TimeUnit.SECONDS)) {
+                Thread.sleep(5000);
+                log.info("=========== 获取锁成功");
+                if (client.checkExists().forPath("/lock/1") != null) {
+                    client.delete().deletingChildrenIfNeeded().forPath("/lock/1");
                 }
             }
         } catch (Exception e) {
             log.error("异常", e);
-            return ResponseVO.FAIL(e.getMessage());
+        } finally {
+            if (lock.isAcquiredInThisProcess()) {
+                lock.release();
+            }
         }
     }
 }

@@ -22,12 +22,8 @@ public class AgentDesignController {
 
     @ApiOperation(value = "代理模式")
     @GetMapping("agent")
-    public ResponseVO agent() {
-        try {
-            return ResponseVO.SUCCESS(UserVO.builder().age(28).name("wuhp").password("123").nickName("wuheping").build());
-        } catch (Exception e) {
-            log.error("失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public UserVO agent() {
+        UserVO userVO = UserVO.builder().age(28).name("wuhp").password("123").nickName("wuheping").build();
+        return userVO;
     }
 }

@@ -32,39 +32,27 @@ public class FreeManController {
 
     @ApiOperation(value = "批量添加用户")
     @PostMapping("batchAdd")
-    public ResponseVO batchAddUser(@RequestBody FreeManBetchAddVO freeManBetchAddVO) {
-        try {
-            for (long i = freeManBetchAddVO.getBeginId(); i < freeManBetchAddVO.getEndId(); i++) {
-                log.info("执行到: " + i);
-                final long j = i;
-                poolExecutor.submit(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            freemanService.addFreeMan(j);
-                        } catch (Exception e) {
-                            log.error("添加失败", e);
-                        }
+    public void batchAddUser(@RequestBody FreeManBetchAddVO freeManBetchAddVO) {
+        for (long i = freeManBetchAddVO.getBeginId(); i < freeManBetchAddVO.getEndId(); i++) {
+            log.info("执行到: " + i);
+            final long j = i;
+            poolExecutor.submit(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        freemanService.addFreeMan(j);
+                    } catch (Exception e) {
+                        log.error("添加失败", e);
                     }
-                });
-            }
-
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("添加用户失败", e);
-            return ResponseVO.FAIL(e.getMessage());
+                }
+            });
         }
     }
 
     @ApiOperation(value = "身份证")
     @PostMapping("findByIdentity")
-    public ResponseVO findByIdentity(@RequestBody FreeManQueryVO freeManQueryVO) {
-        try {
-            FreeManVO freeManVO = freemanService.findByIdentity(freeManQueryVO);
-            return ResponseVO.SUCCESS(freeManVO);
-        } catch (Exception e) {
-            log.error("添加用户失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public FreeManVO findByIdentity(@RequestBody FreeManQueryVO freeManQueryVO) throws Exception {
+        FreeManVO freeManVO = freemanService.findByIdentity(freeManQueryVO);
+        return freeManVO;
     }
 }

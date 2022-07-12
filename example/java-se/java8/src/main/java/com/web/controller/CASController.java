@@ -25,53 +25,40 @@ public class CASController {
 
     @ApiOperation(value = "atomicStampedReference测试")
     @PostMapping("atomicStampedReference")
-    public ResponseVO atomicStampedReference() {
-        try {
-            casService.atomicStampedReference();
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:atomicStampedReference() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void atomicStampedReference() {
+        casService.atomicStampedReference();
     }
 
 
     public volatile int index = 0;
     @ApiOperation(value = "unsafe测试")
     @GetMapping("unsafe")
-    public ResponseVO unsafe() {
-        try {
-            CountDownLatch latch = new CountDownLatch(30);
+    public void unsafe() throws Exception {
+        CountDownLatch latch = new CountDownLatch(30);
 
-            Class unsafeClass = Class.forName("sun.misc.Unsafe");
-            Field theUnsafeField = unsafeClass.getDeclaredField("theUnsafe");
-            theUnsafeField.setAccessible(true);
-            Unsafe unsafe = (Unsafe)theUnsafeField.get(null);
-            long offset = unsafe.objectFieldOffset(CASController.class.getField("index"));
+        Class unsafeClass = Class.forName("sun.misc.Unsafe");
+        Field theUnsafeField = unsafeClass.getDeclaredField("theUnsafe");
+        theUnsafeField.setAccessible(true);
+        Unsafe unsafe = (Unsafe)theUnsafeField.get(null);
+        long offset = unsafe.objectFieldOffset(CASController.class.getField("index"));
 
-            for (int i = 0; i < 30; i++) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        while (true) {
-                            int temp = index + 1;
-                            if (unsafe.compareAndSwapInt(Java8Application.applicationContext()
-                                    .getBean("CASController"), offset, index, temp)) {
-                                latch.countDown();
-                                break;
-                            }
+        for (int i = 0; i < 30; i++) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    while (true) {
+                        int temp = index + 1;
+                        if (unsafe.compareAndSwapInt(Java8Application.applicationContext()
+                                .getBean("CASController"), offset, index, temp)) {
+                            latch.countDown();
+                            break;
                         }
                     }
-                }).start();
-            }
-            latch.await();
-
-            log.info(index + " ==========");
-
-            return ResponseVO.SUCCESS(index);
-        } catch (Exception e) {
-            log.error("method:cas() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
+                }
+            }).start();
         }
+        latch.await();
+
+        log.info(index + " ==========");
     }
 }

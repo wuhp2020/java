@@ -23,13 +23,7 @@ public class PublishSubscriptionController {
 
     @PostMapping("alert")
     @ApiOperation(value = "告警")
-    public ResponseVO alert(@RequestBody String message) {
-        try {
-            publishSubscriptionService.alert(message);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:alert 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void alert(@RequestBody String message) {
+        publishSubscriptionService.alert(message);
     }
 }

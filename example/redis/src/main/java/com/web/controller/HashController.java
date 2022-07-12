@@ -26,40 +26,22 @@ public class HashController {
 
     @PostMapping("save")
     @ApiOperation(value = "增加hash")
-    public ResponseVO save(@RequestBody HashSaveVO hashSaveVO) {
-        try {
-            hashService.save(hashSaveVO);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:save 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void save(@RequestBody HashSaveVO hashSaveVO) throws Exception {
+        hashService.save(hashSaveVO);
     }
 
     @DeleteMapping("delete/{id}/{key}")
     @ApiOperation(value = "删除hash")
-    public ResponseVO delete(@PathVariable("id") String id, @PathVariable("key") String key) {
-        try {
-            Pair<Boolean, String> result = hashService.delete(id, key);
-            if (result.getFirst()) {
-                return ResponseVO.SUCCESS(result.getSecond());
-            } else {
-                return ResponseVO.FAIL("fail");
-            }
-        } catch (Exception e) {
-            log.error("method:delete 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
+    public void delete(@PathVariable("id") String id, @PathVariable("key") String key) {
+        Pair<Boolean, String> result = hashService.delete(id, key);
+        if (!result.getFirst()) {
+            throw new RuntimeException(result.getSecond());
         }
     }
 
     @GetMapping("findOne/{id}/{key}")
     @ApiOperation(value = "查询单个hash")
-    public ResponseVO findOne(@PathVariable("id") String id, @PathVariable("key") String key) {
-        try {
-            return ResponseVO.SUCCESS(hashService.findOne(id, key));
-        } catch (Exception e) {
-            log.error("method:findOne 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public Object findOne(@PathVariable("id") String id, @PathVariable("key") String key) throws Exception {
+        return hashService.findOne(id, key);
     }
 }

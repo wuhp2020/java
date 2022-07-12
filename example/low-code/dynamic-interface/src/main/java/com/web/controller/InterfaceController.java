@@ -2,6 +2,7 @@ package com.web.controller;
 
 import com.web.service.InterfaceService;
 import com.web.vo.InterfaceReqVO;
+import com.web.vo.InterfaceResVO;
 import com.web.vo.common.ResponseVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -26,21 +27,19 @@ public class InterfaceController {
 
     @ApiOperation(value = "创建接口")
     @PostMapping(value = "/save")
-    public ResponseVO saveInterface(@RequestBody InterfaceReqVO reqVO) {
+    public void saveInterface(@RequestBody InterfaceReqVO reqVO) {
         interfaceService.saveInterface(reqVO);
-        return ResponseVO.SUCCESS("ok");
     }
 
     @ApiOperation(value = "删除接口")
     @DeleteMapping(value = "/delete/{id}")
-    public ResponseVO deleteInterface(@PathVariable String id) {
+    public void deleteInterface(@PathVariable String id) {
         interfaceService.deleteInterface(id);
-        return ResponseVO.SUCCESS("ok");
     }
 
     @ApiOperation(value = "查看单个接口")
     @GetMapping(value = "/getById/{id}")
-    public ResponseVO findInterfaceById(@PathVariable String id) {
-        return ResponseVO.SUCCESS(interfaceService.findInterfaceById(id));
+    public InterfaceResVO findInterfaceById(@PathVariable String id) {
+        return interfaceService.findInterfaceById(id);
     }
 }

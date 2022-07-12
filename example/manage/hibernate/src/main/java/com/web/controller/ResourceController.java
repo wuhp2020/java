@@ -24,13 +24,8 @@ public class ResourceController {
 
     @GetMapping("findResource")
     @ApiOperation(value = "查询资源")
-    public ResponseVO findResource() {
-        try {
-            List<ResourceVO> resourceVOs = resourceService.findResource();
-            return ResponseVO.SUCCESS(resourceVOs);
-        } catch (Exception e) {
-            log.error("class:ResourceController, method:findResource() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public List<ResourceVO> findResource() throws Exception {
+        List<ResourceVO> resourceVOs = resourceService.findResource();
+        return resourceVOs;
     }
 }

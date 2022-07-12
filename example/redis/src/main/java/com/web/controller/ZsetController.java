@@ -26,40 +26,22 @@ public class ZsetController {
 
     @PostMapping("save")
     @ApiOperation(value = "增加zset")
-    public ResponseVO save(@RequestBody ZsetSaveVO zsetSaveVO) {
-        try {
-            zsetService.save(zsetSaveVO);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void save(@RequestBody ZsetSaveVO zsetSaveVO) throws Exception {
+        zsetService.save(zsetSaveVO);
     }
 
     @DeleteMapping("delete/{key}")
     @ApiOperation(value = "删除zset")
-    public ResponseVO delete(@PathVariable("key") String key) {
-        try {
-            Pair<Boolean, String> result = zsetService.delete(key);
-            if (result.getFirst()) {
-                return ResponseVO.SUCCESS(result.getSecond());
-            } else {
-                return ResponseVO.FAIL("fail");
-            }
-        } catch (Exception e) {
-            log.error("method:delete 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
+    public void delete(@PathVariable("key") String key) throws Exception {
+        Pair<Boolean, String> result = zsetService.delete(key);
+        if (!result.getFirst()) {
+            throw new RuntimeException(result.getSecond() + "");
         }
     }
 
     @GetMapping("find/{key}")
     @ApiOperation(value = "查询zset")
-    public ResponseVO findOne(@PathVariable("key") String key) {
-        try {
-            return ResponseVO.SUCCESS(zsetService.find(key));
-        } catch (Exception e) {
-            log.error("method:findOne 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void findOne(@PathVariable("key") String key) throws Exception {
+        zsetService.find(key);
     }
 }

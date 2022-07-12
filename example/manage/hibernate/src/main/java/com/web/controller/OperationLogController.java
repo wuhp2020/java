@@ -23,50 +23,29 @@ public class OperationLogController {
 
     @GetMapping("findOne/{id}")
     @ApiOperation(value = "查询单个日志")
-    public ResponseVO findOne(@PathVariable("id") String id) {
-        try {
-            OperationLogVO operationLogVO = operationLogService.findOne(id);
-            return ResponseVO.SUCCESS(operationLogVO);
-        } catch (Exception e) {
-            log.error("class:OperationLogController, method:findOne 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public OperationLogVO findOne(@PathVariable("id") String id) throws Exception {
+        OperationLogVO operationLogVO = operationLogService.findOne(id);
+        return operationLogVO;
     }
 
     @PostMapping("saveLogSetup")
     @ApiOperation(value = "设置日志保存时间")
-    public ResponseVO saveLogSetup(OperationLogSetupVO operationLogSetupVO) {
-        try {
-            operationLogSetupVO = operationLogService.saveLogSetup(operationLogSetupVO);
-            return ResponseVO.SUCCESS(operationLogSetupVO);
-        } catch (Exception e) {
-            log.error("class:OperationLogController, method:saveLogSetup 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void saveLogSetup(OperationLogSetupVO operationLogSetupVO) throws Exception {
+        operationLogSetupVO = operationLogService.saveLogSetup(operationLogSetupVO);
     }
 
     @GetMapping("findLogSetup")
     @ApiOperation(value = "查询日志保存时间")
-    public ResponseVO findLogSetup() {
-        try {
-            OperationLogSetupVO operationLogSetupVO = operationLogService.findLogSetup();
-            return ResponseVO.SUCCESS(operationLogSetupVO);
-        } catch (Exception e) {
-            log.error("class:OperationLogController, method:findLogSetup 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public OperationLogSetupVO findLogSetup() throws Exception {
+        OperationLogSetupVO operationLogSetupVO = operationLogService.findLogSetup();
+        return operationLogSetupVO;
     }
 
     @PostMapping("findByPage")
     @ApiOperation(value = "分页查询日志")
-    public ResponseVO findByPage(OperationLogQueryVO operationLogQueryVO) {
-        try {
-            Page<OperationLogVO> page = operationLogService.findByPage(operationLogQueryVO);
-            return ResponseVO.SUCCESS(page);
-        } catch (Exception e) {
-            log.error("class:OperationLogController, method:findByPage 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public Page<OperationLogVO> findByPage(OperationLogQueryVO operationLogQueryVO) throws Exception {
+        Page<OperationLogVO> page = operationLogService.findByPage(operationLogQueryVO);
+        return page;
     }
 
 }

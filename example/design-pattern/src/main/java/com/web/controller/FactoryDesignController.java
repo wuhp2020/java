@@ -28,13 +28,8 @@ public class FactoryDesignController {
 
     @ApiOperation(value = "工厂")
     @GetMapping("factory/{name}")
-    public ResponseVO simpleFactory(@PathVariable("name") String name) {
-        try {
-            Food food = factoryDesignService.makeFood(name);
-            return ResponseVO.SUCCESS("name: " + name + ", price: " + food.price());
-        } catch (Exception e) {
-            log.error("失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void simpleFactory(@PathVariable("name") String name) {
+        Food food = factoryDesignService.makeFood(name);
+        String a = "name: " + name + ", price: " + food.price();
     }
 }

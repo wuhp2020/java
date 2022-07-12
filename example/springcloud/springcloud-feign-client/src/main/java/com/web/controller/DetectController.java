@@ -28,12 +28,7 @@ public class DetectController {
     @PostMapping("detect")
     @ApiOperation(value = "提取特征")
     public ResponseVO detect(@RequestBody String base64) {
-        try {
-            return ResponseVO.SUCCESS(detectApiService.detect(base64));
-        } catch (Exception e) {
-            log.error("method:detect() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+        return detectApiService.detect(base64);
     }
 
 }

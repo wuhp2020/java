@@ -33,80 +33,75 @@ public class GraphController {
 
     @ApiOperation(value = "添加节点")
     @PostMapping(path = "/create")
-    public ResponseVO addNode(
+    public void addNode(
             @RequestParam(name = "city", defaultValue = "北京") String city,
             @RequestParam(name = "direction", defaultValue = "N") String direction) {
         graphService.addNode(city, direction);
-        return ResponseVO.SUCCESS(null);
     }
 
     @ApiOperation(value = "添加关系")
     @PostMapping(path = "/addRelation")
-    public ResponseVO addRelation(
+    public void addRelation(
             @RequestParam(name = "cityId", defaultValue = "1") Long cityId,
             @RequestParam(name = "cityToId", defaultValue = "2") Long cityToId,
             @RequestParam(name = "distance", defaultValue = "100200.58") double distance) {
         graphService.addRelation(cityId, cityToId, distance);
-        return ResponseVO.SUCCESS(null);
     }
 
     @ApiOperation(value = "删除节点")
     @DeleteMapping(path = "/delete")
-    public ResponseVO deleteNode(
+    public void deleteNode(
             @RequestParam(name = "id", required = false)Long id) {
         graphService.deleteNodeById(id);
-        return ResponseVO.SUCCESS(null);
     }
 
     @ApiOperation(value = "删除关系")
     @DeleteMapping(path = "/deleteRelation")
-    public ResponseVO deleteRelation(
+    public void deleteRelation(
             @RequestParam(name = "id", required = false)Long id) {
         graphService.deleteRelationById(id);
-        return ResponseVO.SUCCESS(null);
     }
 
     @ApiOperation(value = "更新节点")
     @PutMapping(path = "/update")
-    public ResponseVO updateNode(
+    public void updateNode(
             @RequestParam(name = "id", required = false) Long id,
             @RequestParam(name = "name", required = false) String name,
             @RequestParam(name = "direction", defaultValue = "N") String direction) {
         graphService.updateNode(id, name, direction);
-        return ResponseVO.SUCCESS(null);
     }
 
     @ApiOperation(value = "根据名字、方向查找相关的所有相邻节点")
     @GetMapping(path = "/findRelation")
-    public ResponseVO findRelation(
+    public List<CityNodeRelation> findRelation(
             @RequestParam(name = "name", required = true) String name,
             @RequestParam(name = "direction", defaultValue = "N") String direction) {
         List<CityNodeRelation> cityNodeRelations = graphService.findRelation(name, direction);
-        return ResponseVO.SUCCESS(cityNodeRelations);
+        return cityNodeRelations;
     }
 
     @ApiOperation(value = "查询两个节点的最短路径")
     @GetMapping(path = "/findShortRelation")
-    public ResponseVO findShortRelation(
+    public List<CityNodeRelation> findShortRelation(
             @RequestParam(name = "name", required = true) String name,
             @RequestParam(name = "nameTo", required = true) String nameTo) {
         List<CityNodeRelation> cityNodeRelations = graphService.findShortRelation(name, nameTo);
-        return ResponseVO.SUCCESS(cityNodeRelations);
+        return cityNodeRelations;
     }
 
     @ApiOperation(value = "根据name查找节点")
     @GetMapping(path = "/findByName")
-    public ResponseVO findByName(
+    public List<CityNode> findByName(
             @RequestParam(name = "name", required = true) String name) {
         List<CityNode> cityNodes = graphService.findByName(name);
-        return ResponseVO.SUCCESS(cityNodes);
+        return cityNodes;
     }
 
     @ApiOperation(value = "根据id查找节点")
     @GetMapping(path = "/findById")
-    public ResponseVO findById(
+    public CityNode findById(
             @RequestParam(name = "id", required = true) Long id) {
         CityNode cityNode = graphService.findNodeById(id);
-        return ResponseVO.SUCCESS(cityNode);
+        return cityNode;
     }
 }

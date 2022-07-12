@@ -25,75 +25,46 @@ public class RoleController {
 
     @PostMapping("save")
     @ApiOperation(value = "增加角色")
-    public ResponseVO save(RoleVO roleVO) {
-        try {
-            // 校验
-            Pair<Boolean, String> result = roleService.checkRepeat(roleVO);
-            if (!result.getFirst()) {
-                return ResponseVO.FAIL(result.getSecond());
-            }
-            roleVO = roleService.save(roleVO);
-            return ResponseVO.SUCCESS(roleVO);
-        } catch (Exception e) {
-            log.error("class:RoleController, method:save 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
+    public void save(RoleVO roleVO) throws Exception {
+        // 校验
+        Pair<Boolean, String> result = roleService.checkRepeat(roleVO);
+        if (!result.getFirst()) {
+            throw  new RuntimeException(result.getSecond());
         }
+        roleVO = roleService.save(roleVO);
     }
 
     @DeleteMapping("delete/{ids}")
     @ApiOperation(value = "删除角色")
-    public ResponseVO delete(@PathVariable("ids") List<String> ids) {
-        try {
-            Pair<Boolean, String> result = roleService.delete(ids);
-            if (result.getFirst()) {
-                return ResponseVO.SUCCESS(result.getSecond());
-            } else {
-                return ResponseVO.FAIL(result.getSecond());
-            }
-        } catch (Exception e) {
-            log.error("class:RoleController, method:delete 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
+    public void delete(@PathVariable("ids") List<String> ids) {
+        Pair<Boolean, String> result = roleService.delete(ids);
+        if (!result.getFirst()) {
+            throw new RuntimeException(result.getSecond());
         }
     }
 
     @PutMapping("update")
     @ApiOperation(value = "修改角色")
-    public ResponseVO update(RoleVO roleVO) {
-        try {
-            Pair<Boolean, String> result = roleService.roleIdNull(roleVO);
-            if (!result.getFirst()) {
-                return ResponseVO.FAIL(result.getSecond());
-            }
-            roleVO = roleService.update(roleVO);
-            return ResponseVO.SUCCESS(roleVO);
-        } catch (Exception e) {
-            log.error("class:RoleController, method:update 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
+    public void update(RoleVO roleVO) throws Exception {
+        Pair<Boolean, String> result = roleService.roleIdNull(roleVO);
+        if (!result.getFirst()) {
+            throw new RuntimeException(result.getSecond());
         }
+        roleVO = roleService.update(roleVO);
     }
 
     @GetMapping("findOne/{id}")
     @ApiOperation(value = "查询单个角色")
-    public ResponseVO findOne(@PathVariable("id") String id) {
-        try {
-            RoleVO roleVO = roleService.findOne(id);
-            return ResponseVO.SUCCESS(roleVO);
-        } catch (Exception e) {
-            log.error("class:RoleController, method:findOne 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public RoleVO findOne(@PathVariable("id") String id) throws Exception {
+        RoleVO roleVO = roleService.findOne(id);
+        return roleVO;
     }
 
     @PostMapping("findByPage")
     @ApiOperation(value = "分页查询角色")
-    public ResponseVO findByPage(RoleQueryVO roleQueryVO) {
-        try {
-            Page<RoleVO> page = roleService.findByPage(roleQueryVO);
-            return ResponseVO.SUCCESS(page);
-        } catch (Exception e) {
-            log.error("class:RoleController, method:findByPage 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public Page<RoleVO> findByPage(RoleQueryVO roleQueryVO) throws Exception {
+        Page<RoleVO> page = roleService.findByPage(roleQueryVO);
+        return page;
     }
 
 }

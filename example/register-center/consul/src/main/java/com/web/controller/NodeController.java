@@ -27,25 +27,14 @@ public class NodeController {
 
     @ApiOperation(value = "添加配置")
     @PostMapping("add")
-    public ResponseVO add(@RequestBody ConfigVO configVO) {
-        try {
-            nodeService.add(configVO);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("添加节点失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void add(@RequestBody ConfigVO configVO) throws Exception {
+        nodeService.add(configVO);
     }
 
     @ApiOperation(value = "获取节点")
     @PostMapping("findOne")
-    public ResponseVO findOne(@RequestBody NodeQueryVO nodeQueryVO) {
-        try {
-            List<ServiceInstance> instances = nodeService.findOne(nodeQueryVO);
-            return ResponseVO.SUCCESS(instances);
-        } catch (Exception e) {
-            log.error("method:findOne 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public List<ServiceInstance> findOne(@RequestBody NodeQueryVO nodeQueryVO) throws Exception {
+        List<ServiceInstance> instances = nodeService.findOne(nodeQueryVO);
+        return instances;
     }
 }

@@ -15,9 +15,9 @@ import org.springframework.util.StringUtils;
 public class DetectApiServiceImpl implements DetectApiService {
 
     @Override
-    public ResponseDTO<FeatureResponse> detect(RequestDTO<String> request)  throws Exception {
+    public FeatureResponse detect(String request)  throws Exception {
         log.info("detect ==>> " + JSON.toJSONString(request));
-        if (StringUtils.isEmpty(request.getBody())) {
+        if (StringUtils.isEmpty(request)) {
             throw new RpcException("异常啦, 启动降级");
         }
         FeatureResponse feature = new FeatureResponse();
@@ -25,9 +25,6 @@ public class DetectApiServiceImpl implements DetectApiService {
         feature.setLeft(1.5D);
         feature.setLength(100.2D);
         feature.setWidth(50.5D);
-
-        ResponseDTO<FeatureResponse> responseDTO = new ResponseDTO<>();
-        responseDTO.setCode("200").setBody(feature);
-        return responseDTO;
+        return feature;
     }
 }

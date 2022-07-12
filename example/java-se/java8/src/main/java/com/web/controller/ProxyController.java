@@ -21,29 +21,17 @@ public class ProxyController {
 
     @ApiOperation(value = "jdkProxy")
     @GetMapping("jdkProxy")
-    public ResponseVO jdkProxy() {
-        try {
-            StringBuffer sb1 = new StringBuffer();
-            StringBuilder sb2 = new StringBuilder();
-            sb1.append("a");
-            sb2.append("b");
-            proxyService.jdkProxy();
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:jdkProxy() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void jdkProxy() {
+        StringBuffer sb1 = new StringBuffer();
+        StringBuilder sb2 = new StringBuilder();
+        sb1.append("a");
+        sb2.append("b");
+        proxyService.jdkProxy();
     }
 
     @ApiOperation(value = "cglib")
     @GetMapping("cglib")
-    public ResponseVO cglib() {
-        try {
-            proxyService.cglib();
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:cglib() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void cglib() {
+        proxyService.cglib();
     }
 }

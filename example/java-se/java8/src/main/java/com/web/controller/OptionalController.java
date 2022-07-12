@@ -27,70 +27,44 @@ public class OptionalController {
 
     @ApiOperation(value = "避免空指针1")
     @PostMapping("opt1")
-    public ResponseVO opt1() {
-        try {
-
-            List<String> list1 = null;
-            List<String> list2 = Lists.newArrayList("1", "2", "3", "4");
-            Optional.ofNullable(list1).orElseGet(() -> list2).stream().filter(s -> "1".equals(s)).forEach(s -> log.info(s));
-            Optional.ofNullable(list1).orElse(list2).stream().filter(s -> "2".equals(s)).forEach(s -> log.info(s));
-            Optional.ofNullable(list1).ifPresent(list -> list.stream().filter(s -> "3".equals(s)).forEach(s -> log.info(s)));
-            Optional.ofNullable(list2).ifPresent(list -> list.stream().filter(s -> "4".equals(s)).forEach(s -> log.info(s)));
-
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void opt1() {
+        List<String> list1 = null;
+        List<String> list2 = Lists.newArrayList("1", "2", "3", "4");
+        Optional.ofNullable(list1).orElseGet(() -> list2).stream().filter(s -> "1".equals(s)).forEach(s -> log.info(s));
+        Optional.ofNullable(list1).orElse(list2).stream().filter(s -> "2".equals(s)).forEach(s -> log.info(s));
+        Optional.ofNullable(list1).ifPresent(list -> list.stream().filter(s -> "3".equals(s)).forEach(s -> log.info(s)));
+        Optional.ofNullable(list2).ifPresent(list -> list.stream().filter(s -> "4".equals(s)).forEach(s -> log.info(s)));
     }
 
     @ApiOperation(value = "避免空指针2")
     @PostMapping("opt2")
-    public ResponseVO opt2() {
-        try {
-            ResponseVO<List<String>> responseVO = null;
-            Optional.ofNullable(responseVO)
-                    .flatMap(res -> Optional.ofNullable(res.getData()))
-                    .orElse(Collections.emptyList()).stream().forEach(s -> log.info(s));
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void opt2() {
+        ResponseVO<List<String>> responseVO = null;
+        Optional.ofNullable(responseVO)
+                .flatMap(res -> Optional.ofNullable(res.getData()))
+                .orElse(Collections.emptyList()).stream().forEach(s -> log.info(s));
     }
 
     @ApiOperation(value = "避免空指针3")
     @PostMapping("opt3")
-    public ResponseVO opt3() {
-        try {
-            List<String> list = Lists.newArrayList("1", "2", "3", "4");
-            ResponseVO<List<String>> responseVO = new ResponseVO("200", "ok", list);
-            Optional.ofNullable(responseVO)
-                    .flatMap(res -> Optional.ofNullable(res.getData()))
-                    .orElse(Collections.emptyList()).stream().forEach(s -> log.info(s));
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void opt3() {
+        List<String> list = Lists.newArrayList("1", "2", "3", "4");
+        ResponseVO<List<String>> responseVO = new ResponseVO("200", "ok", list);
+        Optional.ofNullable(responseVO)
+                .flatMap(res -> Optional.ofNullable(res.getData()))
+                .orElse(Collections.emptyList()).stream().forEach(s -> log.info(s));
     }
 
     @ApiOperation(value = "避免空指针4")
     @PostMapping("opt4")
-    public ResponseVO opt4() {
-        try {
-            List<String> list = Lists.newArrayList("1", "2", "3", "4");
-            ResponseVO<List<String>> responseVO = new ResponseVO("200", "ok", list);
-            Optional.ofNullable(responseVO)
-                    .flatMap(res -> Optional.ofNullable(res.getData()))
-                    .ifPresent(ls -> {
-                        List<String> ss = ls.stream().filter(s -> "1".equals(s)).collect(Collectors.toList());
-                        Optional.ofNullable(ss).orElse(Collections.emptyList()).stream().forEach(s -> log.info(s));
-                    });
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void opt4() {
+        List<String> list = Lists.newArrayList("1", "2", "3", "4");
+        ResponseVO<List<String>> responseVO = new ResponseVO("200", "ok", list);
+        Optional.ofNullable(responseVO)
+                .flatMap(res -> Optional.ofNullable(res.getData()))
+                .ifPresent(ls -> {
+                    List<String> ss = ls.stream().filter(s -> "1".equals(s)).collect(Collectors.toList());
+                    Optional.ofNullable(ss).orElse(Collections.emptyList()).stream().forEach(s -> log.info(s));
+                });
     }
 }

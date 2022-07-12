@@ -1,6 +1,5 @@
 package com.web.controller;
 
-import com.web.vo.common.ResponseVO;
 import com.web.vo.singleton.AfterSingletonVO;
 import com.web.vo.singleton.BeforeSingletonVO;
 import io.swagger.annotations.Api;
@@ -21,23 +20,13 @@ public class SingletonDesignController {
 
     @ApiOperation(value = "before单例模式")
     @GetMapping("beforeSingleton")
-    public ResponseVO beforeSingleton() {
-        try {
-            return ResponseVO.SUCCESS(BeforeSingletonVO.getInstance());
-        } catch (Exception e) {
-            log.error("失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public BeforeSingletonVO beforeSingleton() {
+        return BeforeSingletonVO.getInstance();
     }
 
     @ApiOperation(value = "after单例模式")
     @GetMapping("afterSingleton")
-    public ResponseVO afterSingleton() {
-        try {
-            return ResponseVO.SUCCESS(AfterSingletonVO.getInstance());
-        } catch (Exception e) {
-            log.error("失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public AfterSingletonVO afterSingleton() {
+        return AfterSingletonVO.getInstance();
     }
 }

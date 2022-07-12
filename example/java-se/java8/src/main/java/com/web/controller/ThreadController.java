@@ -22,60 +22,32 @@ public class ThreadController {
 
     @ApiOperation(value = "ABC循环打印")
     @PostMapping("abc/print")
-    public ResponseVO printABC() {
-        try {
-            threadService.printABC();
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:printABC() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void printABC() throws Exception {
+        threadService.printABC();
     }
 
     @ApiOperation(value = "创建线程池")
     @GetMapping("createThreadPool")
-    public ResponseVO createThreadPool() {
-        try {
-            threadService.createThreadPool();
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:createThreadPool() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void createThreadPool() throws Exception {
+        threadService.createThreadPool();
     }
 
     @ApiOperation(value = "线程封闭工具")
     @GetMapping("threadLocal")
-    public ResponseVO threadLocal() {
-        try {
-            threadService.threadLocal();
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:threadLocal() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void threadLocal() throws Exception {
+        threadService.threadLocal();
     }
 
     @ApiOperation(value = "线程ID")
     @GetMapping("threadID")
-    public ResponseVO threadID() {
-        try {
-            return ResponseVO.SUCCESS(Thread.currentThread().getId());
-        } catch (Exception e) {
-            log.error("method:threadID() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void threadID() {
+        log.info("=====>>>>> " + Thread.currentThread().getId());
     }
 
     @ApiOperation(value = "线程合并")
     @GetMapping("join")
-    public ResponseVO join() {
-        try {
-            threadService.join();
-            return ResponseVO.SUCCESS(Thread.currentThread().getId());
-        } catch (Exception e) {
-            log.error("method:threadID() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void join() throws Exception {
+        threadService.join();
+        log.info("=====>>>>> " + Thread.currentThread().getId());
     }
 }

@@ -21,26 +21,14 @@ public class LambdaController {
 
     @ApiOperation(value = "判断是否是有效的lambda")
     @PostMapping("isLambda")
-    public ResponseVO isLambda() {
-        try {
-            lambdaService.isLambda();
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:isLambda() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void isLambda() {
+        lambdaService.isLambda();
     }
 
     @ApiOperation(value = "lambda案例")
     @PostMapping("lambdaExample")
-    public ResponseVO lambdaExample() {
-        try {
-            lambdaService.lambdaExample();
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:lambdaExample() 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void lambdaExample() {
+        lambdaService.lambdaExample();
     }
 
 }

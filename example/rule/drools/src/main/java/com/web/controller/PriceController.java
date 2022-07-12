@@ -1,6 +1,5 @@
 package com.web.controller;
 
-import com.web.vo.common.ResponseVO;
 import com.web.vo.price.PriceVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -25,15 +24,10 @@ public class PriceController {
 
     @ApiOperation(value = "汽车价格查询")
     @PostMapping("car/find")
-    public ResponseVO findCar(@RequestBody PriceVO priceVO) {
-        try {
-            KieSession kieSession = kieSessionMap.get(priceVO.getFileName());
-            kieSession.insert(priceVO);
-            kieSession.fireAllRules();
-            return ResponseVO.SUCCESS(priceVO);
-        } catch (Exception e) {
-            log.error("查询汽车价格失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public PriceVO findCar(@RequestBody PriceVO priceVO) {
+        KieSession kieSession = kieSessionMap.get(priceVO.getFileName());
+        kieSession.insert(priceVO);
+        kieSession.fireAllRules();
+        return priceVO;
     }
 }

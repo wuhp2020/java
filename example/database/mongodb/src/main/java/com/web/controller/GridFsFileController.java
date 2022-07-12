@@ -27,39 +27,21 @@ public class GridFsFileController {
 
     @PostMapping("save")
     @ApiOperation(value = "增加图片")
-    public ResponseVO save(@RequestBody String imagebase64) {
-        try {
-            // 保存
-            gridFsFileService.save(imagebase64);
-            return ResponseVO.SUCCESS("");
-        } catch (Exception e) {
-            log.error("method:save 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void save(@RequestBody String imagebase64) {
+        // 保存
+        gridFsFileService.save(imagebase64);
     }
 
     @DeleteMapping("delete/{imageIds}")
     @ApiOperation(value = "删除图片")
-    public ResponseVO delete(@PathVariable("imageIds") List<String> imageIds) {
-        try {
-            gridFsFileService.delete(imageIds);
-            return ResponseVO.SUCCESS("");
-        } catch (Exception e) {
-            log.error("method:delete 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void delete(@PathVariable("imageIds") List<String> imageIds) {
+        gridFsFileService.delete(imageIds);
     }
 
 
     @GetMapping("findOne/{imageId}")
     @ApiOperation(value = "查询单个图片")
-    public ResponseVO findOne(@PathVariable("imageId") String imageId) {
-        try {
-            String imageBase64 = gridFsFileService.get(imageId);
-            return ResponseVO.SUCCESS(imageBase64);
-        } catch (Exception e) {
-            log.error("method:findOne 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void findOne(@PathVariable("imageId") String imageId) throws Exception {
+        String imageBase64 = gridFsFileService.get(imageId);
     }
 }

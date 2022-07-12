@@ -30,7 +30,7 @@ public class TopicController {
 
     @PostMapping("topic")
     @ApiOperation(value = "Topic")
-    public ResponseVO topic() throws Exception {
+    public void topic() throws Exception {
         RTopic topic1 = redissonClient.getTopic("anyTopic");
 
         topic1.addListener(Object.class , new MessageListener<Object>() {
@@ -45,12 +45,11 @@ public class TopicController {
         // in other thread or JVM
         RTopic topic2 = redissonClient.getTopic("anyTopic");
         topic2.publish(new Object());
-        return ResponseVO.SUCCESS("ok");
     }
 
     @PostMapping("topicPatttern")
     @ApiOperation(value = "Topic patttern")
-    public ResponseVO topicPatttern() throws Exception {
+    public void topicPatttern() throws Exception {
 
         // subscribe to all topics by `topic1.*` pattern
         RPatternTopic topic1 = redissonClient.getPatternTopic("topic1.*");
@@ -61,7 +60,5 @@ public class TopicController {
 
             }
         });
-
-        return ResponseVO.SUCCESS("ok");
     }
 }
