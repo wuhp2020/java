@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.po.TableFill;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
+import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
 import java.util.ArrayList;
 
@@ -41,7 +42,7 @@ public class MyBatisPlusGenerator {
 
         // 2.设置数据源
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://192.168.221.129:3306/wafer");
+        dsc.setUrl("jdbc:mysql://192.168.211.129:3306/address");
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("123");
@@ -51,7 +52,7 @@ public class MyBatisPlusGenerator {
         // 3.配置生成包的路径
         PackageConfig pc = new PackageConfig();
         // 设置模块存放位置
-        pc.setParent("com.sugon.wafer");
+        pc.setParent("com.sugon.address");
         // 设置该模块包的路径
         pc.setEntity("api.entity");
         pc.setMapper("provider.mapper");
@@ -91,12 +92,14 @@ public class MyBatisPlusGenerator {
         // 如果setXxxxx(null) 不会生成Xxxx实体类相关代码
         // 因此如果只生成dao层代码
         // 可以在这里控制
-        // templateConfig.setController(null);
-        // templateConfig.setMapper(null);
-        // templateConfig.setService(null);
-        // templateConfig.setServiceImpl(null);
-        // templateConfig.setXml(null);
+         templateConfig.setController("/templates/controller.java");
+         templateConfig.setMapper("/templates/mapper.java");
+         templateConfig.setService("/templates/service.java");
+         templateConfig.setServiceImpl("/templates/serviceImpl.java");
+         templateConfig.setXml("/templates/mapper.xml");
+         templateConfig.setEntity("/templates/entity.java");
         mpg.setTemplate(templateConfig);
+        mpg.setTemplateEngine(new FreemarkerTemplateEngine());
 
         // 7.执行代码生成操作
         mpg.execute();
