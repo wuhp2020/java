@@ -25,14 +25,9 @@ public class DictController {
 
     @PostMapping("findByPage")
     @ApiOperation(value = "分页查询字典")
-    public ResponseVO findByPage(@RequestBody DictQueryVO dictQueryVO) {
-        try {
-            Page<DictVO> page = dictService.findByPage(dictQueryVO);
-            return ResponseVO.SUCCESS(page);
-        } catch (Exception e) {
-            log.error("class:DictController, method:findByPage 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public Page<DictVO> findByPage(@RequestBody DictQueryVO dictQueryVO) throws Exception {
+        Page<DictVO> page = dictService.findByPage(dictQueryVO);
+        return page;
     }
 
 }

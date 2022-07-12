@@ -25,7 +25,6 @@
         <module>commons-codec</module>
         <module>easymock</module>
         <module>fastjson</module>
-        <module>flv</module>
         <module>gson</module>
         <module>guava</module>
         <module>joda-time</module>

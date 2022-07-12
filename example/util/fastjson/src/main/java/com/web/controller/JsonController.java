@@ -17,13 +17,7 @@ public class JsonController {
 
     @ApiOperation(value = "转换")
     @GetMapping("json")
-    public ResponseVO json(){
-        try {
-            JSON.parseObject("{'name': 'wuhp'}", Object.class);
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("转换失败", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void json(){
+        JSON.parseObject("{'name': 'wuhp'}", Object.class);
     }
 }

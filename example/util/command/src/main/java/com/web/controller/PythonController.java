@@ -21,13 +21,7 @@ public class PythonController {
 
     @PostMapping("print")
     @ApiOperation(value = "打印")
-    public ResponseVO execPrint() {
-        try {
-            pythonService.execPrint();
-            return ResponseVO.SUCCESS(null);
-        } catch (Exception e) {
-            log.error("method:add 异常", e);
-            return ResponseVO.FAIL(e.getMessage());
-        }
+    public void execPrint() throws Exception {
+        pythonService.execPrint();
     }
 }
