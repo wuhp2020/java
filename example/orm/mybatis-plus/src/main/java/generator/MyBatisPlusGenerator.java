@@ -9,21 +9,45 @@ import com.baomidou.mybatisplus.generator.config.po.TableFill;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 
+@Slf4j
 public class MyBatisPlusGenerator {
+
+    // 生成代码路径
+    // 作者
+    // 数据库地址
+    // 数据库用户
+    // 数据库密码
+    private static String dbUrl = "jdbc:mysql://192.168.221.129:3306/address";
+    private static String dbUsername = "root";
+    private static String dbPassword = "123";
+    private static String author = "wuheping";
+    private static String outputDir = "/Users/mac/Desktop/aa/src/main/java";
+
+
     public static void main(String[] args) {
+        // 1.配置生成包的路径
+        PackageConfig pc = new PackageConfig();
+        pc.setParent("com.sugon.address");
+        pc.setEntity("api.entity");
+        pc.setMapper("provider.mapper");
+        pc.setService("provider.service");
+        pc.setServiceImpl("provider.service.impl");
+        pc.setController("provider.controller");
+        pc.setXml("provider.mapper");
+        String voPackage = "api.vo";
+
         // 构建一个代码生成器对象
         AutoGenerator mpg = new AutoGenerator();
-        // 1.全局配置
+        // 2.全局配置
         GlobalConfig gc = new GlobalConfig();
-        // 当前项目路径
-        String proPath = "/Users/mac/Desktop/aa";
         // 设置代码生成路径
-        gc.setOutputDir(proPath + "/src/main/java");
+        gc.setOutputDir(outputDir);
         // 生成的类的注释中作者信息
-        gc.setAuthor("wuheping");
+        gc.setAuthor(author);
         // 生成后是否打开文件夹
         gc.setOpen(false);
         // 是否覆盖
@@ -40,26 +64,16 @@ public class MyBatisPlusGenerator {
         gc.setEntityName("%sEntity");
         mpg.setGlobalConfig(gc);
 
-        // 2.设置数据源
+        // 3.设置数据源
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://192.168.211.129:3306/address");
+        dsc.setUrl(dbUrl);
         dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("root");
-        dsc.setPassword("123");
+        dsc.setUsername(dbUsername);
+        dsc.setPassword(dbPassword);
         dsc.setDbType(DbType.MYSQL);
         mpg.setDataSource(dsc);
 
-        // 3.配置生成包的路径
-        PackageConfig pc = new PackageConfig();
-        // 设置模块存放位置
-        pc.setParent("com.sugon.address");
-        // 设置该模块包的路径
-        pc.setEntity("api.entity");
-        pc.setMapper("provider.mapper");
-        pc.setService("provider.service");
-        pc.setServiceImpl("provider.service.impl");
-        pc.setController("provider.controller");
-        pc.setXml("provider.mapper");
+        // 加载包信息
         mpg.setPackageInfo(pc);
 
         // 4.策略配置
@@ -92,12 +106,90 @@ public class MyBatisPlusGenerator {
         // 如果setXxxxx(null) 不会生成Xxxx实体类相关代码
         // 因此如果只生成dao层代码
         // 可以在这里控制
-         templateConfig.setController("/templates/controller.java");
-         templateConfig.setMapper("/templates/mapper.java");
-         templateConfig.setService("/templates/service.java");
-         templateConfig.setServiceImpl("/templates/serviceImpl.java");
-         templateConfig.setXml("/templates/mapper.xml");
-         templateConfig.setEntity("/templates/entity.java");
+        templateConfig.setController("/templates/controller.java");
+        templateConfig.setMapper("/templates/mapper.java");
+        templateConfig.setService("/templates/service.java");
+        templateConfig.setServiceImpl("/templates/serviceImpl.java");
+        templateConfig.setXml("/templates/mapper.xml");
+        templateConfig.setEntity("/templates/entity.java");
+        mpg.setTemplate(templateConfig);
+        mpg.setTemplateEngine(new FreemarkerTemplateEngine());
+
+        // 7.执行代码生成操作
+        mpg.execute();
+
+        // 8.生成vo
+        createVO(pc.getParent(), voPackage, "FindByPageReqVO");
+        createVO(pc.getParent(), voPackage, "FindListReqVO");
+        createVO(pc.getParent(), voPackage, "CreateReqVO");
+        createVO(pc.getParent(), voPackage, "UpdateReqVO");
+        createVO(pc.getParent(), voPackage, "IdReqVO");
+        createVO(pc.getParent(), voPackage, "ReqVO");
+        createVO(pc.getParent(), voPackage, "ResVO");
+    }
+
+    /**
+     * 生成vo类
+     * @param parentPackage
+     * @param voPackage
+     * @param voName
+     */
+    public static void createVO(String parentPackage, String voPackage, String voName) {
+        // 1.配置生成包的路径
+        PackageConfig pc = new PackageConfig();
+        pc.setParent(parentPackage);
+        pc.setEntity(voPackage);
+
+        // 构建一个代码生成器对象
+        AutoGenerator mpg = new AutoGenerator();
+        // 2.全局配置
+        GlobalConfig gc = new GlobalConfig();
+        // 设置代码生成路径
+        gc.setOutputDir(outputDir);
+        // 生成的类的注释中作者信息
+        gc.setAuthor(author);
+        // 生成后是否打开文件夹
+        gc.setOpen(false);
+        // 是否覆盖
+        gc.setFileOverride(true);
+        // 设置日期类型
+        gc.setDateType(DateType.ONLY_DATE);
+        // 是否生成Swagger
+        gc.setSwagger2(true);
+        // 生成entity类的后缀
+        gc.setEntityName("%s"+ voName);
+        mpg.setGlobalConfig(gc);
+
+        // 3.设置数据源
+        DataSourceConfig dsc = new DataSourceConfig();
+        dsc.setUrl(dbUrl);
+        dsc.setDriverName("com.mysql.jdbc.Driver");
+        dsc.setUsername(dbUsername);
+        dsc.setPassword(dbPassword);
+        dsc.setDbType(DbType.MYSQL);
+        mpg.setDataSource(dsc);
+
+        // 加载包信息
+        mpg.setPackageInfo(pc);
+
+        // 4.策略配置
+        StrategyConfig strategy = new StrategyConfig();
+        // 表名中下划线转驼峰命名
+        strategy.setNaming(NamingStrategy.underline_to_camel);
+        // 表中字段如果有下划线，转驼峰命名
+        strategy.setColumnNaming(NamingStrategy.underline_to_camel);
+        //自动生成Lombok
+        strategy.setEntityLombokModel(true);
+        mpg.setStrategy(strategy);
+
+        // 6.配置vo类模板
+        TemplateConfig templateConfig = new TemplateConfig();
+        templateConfig.setController(null);
+        templateConfig.setMapper(null);
+        templateConfig.setService(null);
+        templateConfig.setServiceImpl(null);
+        templateConfig.setXml(null);
+        templateConfig.setEntity("/templates/vo.java");
         mpg.setTemplate(templateConfig);
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
 

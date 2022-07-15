@@ -2,6 +2,10 @@ package ${package.Service};
 
 import ${package.Entity}.${entity};
 import ${superServiceClassPackage};
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import java.util.List;
+import com.sugon.address.api.vo.*;
 
 /**
  * ${table.comment!}
@@ -12,14 +16,17 @@ import ${superServiceClassPackage};
 interface ${table.serviceName} : ${superServiceClass}<${entity}>
 <#else>
 public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
-    public IPage<${entity}> findByPage(${entity} ${entity?uncap_first});
 
-    public ${entity} find(Long id);
+    public IPage<${entity?replace('Entity', 'ResVO')}> findByPage(${entity?replace('Entity', 'FindByPageReqVO')} reqVO);
 
-    public void add(${entity} ${entity?uncap_first});
+    public ${entity?replace('Entity', 'ResVO')} findById(Long id);
 
-    public void delete(Long id);
+    public List<${entity?replace('Entity', 'ResVO')}> findList(${entity?replace('Entity', 'FindListReqVO')} reqVO);
 
-    public void update(${entity} ${entity?uncap_first});
+    public void create(${entity?replace('Entity', 'CreateReqVO')} reqVO);
+
+    public void delete(${entity?replace('Entity', 'IdReqVO')} reqVO);
+
+    public void update(${entity?replace('Entity', 'UpdateReqVO')} reqVO);
 }
 </#if>

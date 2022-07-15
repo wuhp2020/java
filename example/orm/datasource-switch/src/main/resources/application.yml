@@ -3,9 +3,13 @@ server:
 
 mybatis:
   mapper-locations: classpath:com/web/mapper/*.xml
-  type-aliases-package: com.web.*.entity
+  type-aliases-package: com.web.entity
   configuration:
     cache-enabled: true
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 db:
   default:
