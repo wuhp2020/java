@@ -119,7 +119,7 @@ public class MyBatisPlusGenerator {
         mpg.execute();
 
         // 8.生成vo
-        createVO(pc.getParent(), voPackage, "FindByPageReqVO");
+        createVO(pc.getParent(), voPackage, "FindPageReqVO");
         createVO(pc.getParent(), voPackage, "FindListReqVO");
         createVO(pc.getParent(), voPackage, "CreateReqVO");
         createVO(pc.getParent(), voPackage, "UpdateReqVO");
