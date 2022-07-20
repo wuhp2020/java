@@ -17,7 +17,7 @@ interface ${table.serviceName} : ${superServiceClass}<${entity}>
 <#else>
 public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
 
-    public IPage<${entity?replace('Entity', 'ResVO')}> findByPage(${entity?replace('Entity', 'FindByPageReqVO')} reqVO);
+    public IPage<${entity?replace('Entity', 'ResVO')}> findPage(${entity?replace('Entity', 'FindPageReqVO')} reqVO);
 
     public ${entity?replace('Entity', 'ResVO')} findById(Long id);
 

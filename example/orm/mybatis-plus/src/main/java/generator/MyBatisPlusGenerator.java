@@ -21,7 +21,7 @@ public class MyBatisPlusGenerator {
     // 数据库地址
     // 数据库用户
     // 数据库密码
-    private static String dbUrl = "jdbc:mysql://192.168.221.129:3306/address";
+    private static String dbUrl = "jdbc:mysql://192.168.221.129:3306/a";
     private static String dbUsername = "root";
     private static String dbPassword = "123";
     private static String author = "wuheping";

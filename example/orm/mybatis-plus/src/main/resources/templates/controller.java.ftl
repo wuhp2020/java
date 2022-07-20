@@ -44,9 +44,9 @@ public class ${table.controllerName} {
     private ${table.serviceName} ${table.serviceName?uncap_first};
 
     @ApiOperation(value = "查询分页数据")
-    @PostMapping("findByPage")
-    public IPage<${entity?replace('Entity', 'ResVO')}> findByPage(@RequestBody ${entity?replace('Entity', 'FindByPageReqVO')} reqVO) {
-        return ${table.serviceName?uncap_first}.findByPage(reqVO);
+    @PostMapping("findPage")
+    public IPage<${entity?replace('Entity', 'ResVO')}> findPage(@RequestBody ${entity?replace('Entity', 'FindPageReqVO')} reqVO) {
+        return ${table.serviceName?uncap_first}.findPage(reqVO);
     }
 
     @ApiOperation(value = "查询单个数据")

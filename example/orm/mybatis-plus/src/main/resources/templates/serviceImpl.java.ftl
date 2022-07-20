@@ -27,12 +27,24 @@ open class ${table.serviceImplName} : ${superServiceImplClass}<${table.mapperNam
 public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.mapperName}, ${entity}> implements ${table.serviceName} {
 
     @Override
-    public IPage<${entity?replace('Entity', 'ResVO')}> findByPage(${entity?replace('Entity', 'FindByPageReqVO')} reqVO) {
+    public IPage<${entity?replace('Entity', 'ResVO')}> findPage(${entity?replace('Entity', 'FindPageReqVO')} reqVO) {
         IPage<${entity}> wherePage = new Page(reqVO.getPageNum(), reqVO.getPageSize());
         ${entity} where = new ${entity}();
         IPage<${entity}> iPage = this.page(wherePage, Wrappers.query(where));
-        // TODO 转换
-        return null;
+        // 转换
+        Page page = new Page(reqVO.getPageNum(), reqVO.getPageSize());
+        List<${entity?replace('Entity', 'ResVO')}> result = Optional.ofNullable(iPage.getRecords()).orElse(Collections.emptyList())
+                .stream().map(entity -> {
+                    ${entity?replace('Entity', 'ResVO')} resVO = new ${entity?replace('Entity', 'ResVO')}();
+                    BeanUtils.copyProperties(entity, resVO);
+                    return resVO;
+                }).collect(Collectors.toList());
+        // 转换
+        page.setRecords(result);
+        page.setCurrent(iPage.getCurrent());
+        page.setSize(iPage.getSize());
+        page.setTotal(iPage.getTotal());
+        return page;
     }
 
     @Override
@@ -49,7 +61,14 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
         BeanUtils.copyProperties(reqVO, ${entity?uncap_first});
         Wrapper wrapperQuery = Wrappers.<${entity}>query(${entity?uncap_first}).lambda();
         List<${entity}> entitys = this.list(wrapperQuery);
-        return null;
+        // 转换
+        List<${entity?replace('Entity', 'ResVO')}> result = Optional.ofNullable(entitys).orElse(Collections.emptyList())
+                .stream().map(entity -> {
+                    ${entity?replace('Entity', 'ResVO')} resVO = new ${entity?replace('Entity', 'ResVO')}();
+                    BeanUtils.copyProperties(entity, resVO);
+                    return resVO;
+                }).collect(Collectors.toList());
+        return result;
     }
 
     @Override
