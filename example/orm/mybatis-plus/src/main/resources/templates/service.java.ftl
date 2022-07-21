@@ -5,7 +5,7 @@ import ${superServiceClassPackage};
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import java.util.List;
-import com.sugon.address.api.vo.*;
+import ${package.Entity}.api.vo.*;
 
 /**
  * ${table.comment!}

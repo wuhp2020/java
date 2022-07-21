@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
-import com.sugon.address.api.vo.*;
+import ${package.Entity}.api.vo.*;
 <#if restControllerStyle>
 import org.springframework.web.bind.annotation.RestController;
 <#else>
