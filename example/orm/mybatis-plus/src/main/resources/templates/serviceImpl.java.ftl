@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import org.springframework.beans.BeanUtils;
-import ${package.Entity}.api.vo.*;
+import ${package.Entity?replace('api.entity', 'api.vo.*')};
 
 /**
  * ${table.comment!}
@@ -59,6 +59,16 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
     }
 
     @Override
+    public ${entity?replace('Entity', 'ResVO')} findByCode(${entity?replace('Entity', 'CodeReqVO')} reqVO) {
+        // 唯一编码
+        Wrapper<${entity}> wrapper = Wrappers.<${entity}>query().lambda();
+        ${entity} entity = this.getOne(wrapper);
+        ${entity?replace('Entity', 'ResVO')} resVO = new ${entity?replace('Entity', 'ResVO')}();
+        BeanUtils.copyProperties(entity, resVO);
+        return resVO;
+    }
+
+    @Override
     public List<${entity?replace('Entity', 'ResVO')}> findList(${entity?replace('Entity', 'FindListReqVO')} reqVO) {
         ${entity} ${entity?uncap_first} = new ${entity}();
         BeanUtils.copyProperties(reqVO, ${entity?uncap_first});
@@ -84,8 +94,8 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
     }
 
     @Override
-    public void delete(${entity?replace('Entity', 'IdReqVO')} reqVO) {
-        this.removeById(reqVO.getId());
+    public void deleteById(Long id) {
+        this.removeById(id);
     }
 
     @Override

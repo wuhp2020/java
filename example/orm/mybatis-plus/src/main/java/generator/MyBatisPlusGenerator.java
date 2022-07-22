@@ -124,6 +124,7 @@ public class MyBatisPlusGenerator {
         createVO(pc.getParent(), voPackage, "CreateReqVO");
         createVO(pc.getParent(), voPackage, "UpdateReqVO");
         createVO(pc.getParent(), voPackage, "IdReqVO");
+        createVO(pc.getParent(), voPackage, "CodeReqVO");
         createVO(pc.getParent(), voPackage, "ReqVO");
         createVO(pc.getParent(), voPackage, "ResVO");
     }

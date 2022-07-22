@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
-import ${package.Entity}.api.vo.*;
+import ${package.Entity?replace('api.entity', 'api.vo.*')};
 <#if restControllerStyle>
 import org.springframework.web.bind.annotation.RestController;
 <#else>
@@ -43,38 +43,62 @@ public class ${table.controllerName} {
     @Autowired
     private ${table.serviceName} ${table.serviceName?uncap_first};
 
-    @ApiOperation(value = "查询分页数据")
+    @ApiOperation(value = "分页查询")
     @PostMapping("findPage")
     public IPage<${entity?replace('Entity', 'ResVO')}> findPage(@RequestBody ${entity?replace('Entity', 'FindPageReqVO')} reqVO) {
         return ${table.serviceName?uncap_first}.findPage(reqVO);
     }
 
-    @ApiOperation(value = "查询单个数据")
+    @ApiOperation(value = "单个查询")
     @PostMapping("findById")
     public ${entity?replace('Entity', 'ResVO')} findById(@RequestBody ${entity?replace('Entity', 'IdReqVO')} reqVO) {
         return ${table.serviceName?uncap_first}.findById(reqVO.getId());
     }
 
-    @ApiOperation(value = "查询数据集")
+    @ApiOperation(value = "restful单个查询")
+    @GetMapping("find/{id}")
+    public ${entity?replace('Entity', 'ResVO')} find(@PathVariable("id") Long id) {
+        return ${table.serviceName?uncap_first}.findById(id);
+    }
+
+    @ApiOperation(value = "唯一标识单个查询")
+    @PostMapping("findByCode")
+    public ${entity?replace('Entity', 'ResVO')} findByCode(@RequestBody ${entity?replace('Entity', 'CodeReqVO')} reqVO) {
+        return ${table.serviceName?uncap_first}.findByCode(reqVO);
+    }
+
+    @ApiOperation(value = "查询list")
     @PostMapping("findList")
     public List<${entity?replace('Entity', 'ResVO')}> findList(@RequestBody ${entity?replace('Entity', 'FindListReqVO')} reqVO) {
         return ${table.serviceName?uncap_first}.findList(reqVO);
     }
 
-    @ApiOperation(value = "新增数据")
+    @ApiOperation(value = "新增")
     @PostMapping("create")
     public void create(@RequestBody ${entity?replace('Entity', 'CreateReqVO')} reqVO) {
         ${table.serviceName?uncap_first}.create(reqVO);
     }
 
-    @ApiOperation(value = "删除数据")
+    @ApiOperation(value = "删除")
     @PostMapping("deleteById")
-    public void delete(@RequestBody ${entity?replace('Entity', 'IdReqVO')} reqVO) {
-        ${table.serviceName?uncap_first}.delete(reqVO);
+    public void deleteById(@RequestBody ${entity?replace('Entity', 'IdReqVO')} reqVO) {
+        ${table.serviceName?uncap_first}.deleteById(reqVO);
     }
 
-    @ApiOperation(value = "更新数据")
+    @ApiOperation(value = "restful删除")
+    @DeleteMapping("delete/{id}")
+    public void delete(@PathVariable("id") Long id) {
+        ${table.serviceName?uncap_first}.deleteById(id);
+    }
+
+    @ApiOperation(value = "更新")
     @PostMapping("updateById")
+    public void updateById(@RequestBody ${entity?replace('Entity', 'UpdateReqVO')} reqVO) {
+        ${table.serviceName?uncap_first}.update(reqVO);
+    }
+
+    @ApiOperation(value = "restful更新")
+    @PutMapping("update")
     public void update(@RequestBody ${entity?replace('Entity', 'UpdateReqVO')} reqVO) {
         ${table.serviceName?uncap_first}.update(reqVO);
     }
