@@ -82,7 +82,7 @@ public class ${table.controllerName} {
     @ApiOperation(value = "删除")
     @PostMapping("deleteById")
     public void deleteById(@RequestBody ${entity?replace('Entity', 'IdReqVO')} reqVO) {
-        ${table.serviceName?uncap_first}.deleteById(reqVO);
+        ${table.serviceName?uncap_first}.deleteById(reqVO.getId());
     }
 
     @ApiOperation(value = "restful删除")
