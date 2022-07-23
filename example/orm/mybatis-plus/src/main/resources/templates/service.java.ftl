@@ -17,7 +17,7 @@ interface ${table.serviceName} : ${superServiceClass}<${entity}>
 <#else>
 public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
 
-    public IPage<${entity?replace('Entity', 'ResVO')}> findPage(${entity?replace('Entity', 'FindPageReqVO')} reqVO);
+    public IPage<${entity?replace('Entity', 'ResVO')}> findByPage(${entity?replace('Entity', 'FindPageReqVO')} reqVO);
 
     public ${entity?replace('Entity', 'ResVO')} findById(Long id);
 
@@ -27,8 +27,12 @@ public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
 
     public void create(${entity?replace('Entity', 'CreateReqVO')} reqVO);
 
+    public void createByList(List<${entity?replace('Entity', 'CreateReqVO')}> reqVOs);
+
     public void deleteById(Long id);
 
     public void update(${entity?replace('Entity', 'UpdateReqVO')} reqVO);
+
+    public void updateByList(List<${entity?replace('Entity', 'UpdateReqVO')}> reqVOs);
 }
 </#if>

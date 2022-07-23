@@ -44,9 +44,9 @@ public class ${table.controllerName} {
     private ${table.serviceName} ${table.serviceName?uncap_first};
 
     @ApiOperation(value = "分页查询")
-    @PostMapping("findPage")
-    public IPage<${entity?replace('Entity', 'ResVO')}> findPage(@RequestBody ${entity?replace('Entity', 'FindPageReqVO')} reqVO) {
-        return ${table.serviceName?uncap_first}.findPage(reqVO);
+    @PostMapping("findByPage")
+    public IPage<${entity?replace('Entity', 'ResVO')}> findByPage(@RequestBody ${entity?replace('Entity', 'FindPageReqVO')} reqVO) {
+        return ${table.serviceName?uncap_first}.findByPage(reqVO);
     }
 
     @ApiOperation(value = "单个查询")
@@ -79,6 +79,12 @@ public class ${table.controllerName} {
         ${table.serviceName?uncap_first}.create(reqVO);
     }
 
+    @ApiOperation(value = "新增list")
+    @PostMapping("createByList")
+    public void createByList(@RequestBody List<${entity?replace('Entity', 'CreateReqVO')}> reqVOs) {
+        ${table.serviceName?uncap_first}.createByList(reqVOs);
+    }
+
     @ApiOperation(value = "删除")
     @PostMapping("deleteById")
     public void deleteById(@RequestBody ${entity?replace('Entity', 'IdReqVO')} reqVO) {
@@ -101,6 +107,12 @@ public class ${table.controllerName} {
     @PutMapping("update")
     public void update(@RequestBody ${entity?replace('Entity', 'UpdateReqVO')} reqVO) {
         ${table.serviceName?uncap_first}.update(reqVO);
+    }
+
+    @ApiOperation(value = "更新list")
+    @PostMapping("updateByList")
+    public void updateByList(@RequestBody List<${entity?replace('Entity', 'UpdateReqVO')}> reqVOs) {
+        ${table.serviceName?uncap_first}.updateByList(reqVOs);
     }
 }
 </#if>

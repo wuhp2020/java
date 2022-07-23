@@ -10,8 +10,10 @@ import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 @Slf4j
 public class MyBatisPlusGenerator {
@@ -31,7 +33,7 @@ public class MyBatisPlusGenerator {
     public static void main(String[] args) {
         // 1.配置生成包的路径
         PackageConfig pc = new PackageConfig();
-        pc.setParent("com.sugon.address");
+        pc.setParent("com");
         pc.setEntity("api.entity");
         pc.setMapper("provider.mapper");
         pc.setService("provider.service");
@@ -79,7 +81,7 @@ public class MyBatisPlusGenerator {
         // 4.策略配置
         StrategyConfig strategy = new StrategyConfig();
         // 设置要映射的表名 不配置默认处理全部表
-        // strategy.setInclude("user");
+        // strategy.setInclude("sys_record_flow_node");
         // 表名中下划线转驼峰命名
         strategy.setNaming(NamingStrategy.underline_to_camel);
         // 表中字段如果有下划线，转驼峰命名
@@ -119,14 +121,14 @@ public class MyBatisPlusGenerator {
         mpg.execute();
 
         // 8.生成vo
-        createVO(pc.getParent(), voPackage, "FindPageReqVO");
-        createVO(pc.getParent(), voPackage, "FindListReqVO");
-        createVO(pc.getParent(), voPackage, "CreateReqVO");
-        createVO(pc.getParent(), voPackage, "UpdateReqVO");
-        createVO(pc.getParent(), voPackage, "IdReqVO");
-        createVO(pc.getParent(), voPackage, "CodeReqVO");
-        createVO(pc.getParent(), voPackage, "ReqVO");
-        createVO(pc.getParent(), voPackage, "ResVO");
+        createVO(pc.getParent(), strategy.getInclude(), voPackage, "FindPageReqVO");
+        createVO(pc.getParent(), strategy.getInclude(), voPackage, "FindListReqVO");
+        createVO(pc.getParent(), strategy.getInclude(), voPackage, "CreateReqVO");
+        createVO(pc.getParent(), strategy.getInclude(), voPackage, "UpdateReqVO");
+        createVO(pc.getParent(), strategy.getInclude(), voPackage, "IdReqVO");
+        createVO(pc.getParent(), strategy.getInclude(), voPackage, "CodeReqVO");
+        createVO(pc.getParent(), strategy.getInclude(), voPackage, "ReqVO");
+        createVO(pc.getParent(), strategy.getInclude(), voPackage, "ResVO");
     }
 
     /**
@@ -135,7 +137,7 @@ public class MyBatisPlusGenerator {
      * @param voPackage
      * @param voName
      */
-    public static void createVO(String parentPackage, String voPackage, String voName) {
+    public static void createVO(String parentPackage, Set<String> tableNames, String voPackage, String voName) {
         // 1.配置生成包的路径
         PackageConfig pc = new PackageConfig();
         pc.setParent(parentPackage);
@@ -175,6 +177,12 @@ public class MyBatisPlusGenerator {
 
         // 4.策略配置
         StrategyConfig strategy = new StrategyConfig();
+        if (!CollectionUtils.isEmpty(tableNames)) {
+            String[] include = new String[tableNames.size()];
+            tableNames.toArray(include);
+            strategy.setInclude(include);
+        }
+        // strategy.setInclude("sys_record_flow_node");
         // 表名中下划线转驼峰命名
         strategy.setNaming(NamingStrategy.underline_to_camel);
         // 表中字段如果有下划线，转驼峰命名

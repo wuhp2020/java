@@ -30,7 +30,7 @@ open class ${table.serviceImplName} : ${superServiceImplClass}<${table.mapperNam
 public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.mapperName}, ${entity}> implements ${table.serviceName} {
 
     @Override
-    public IPage<${entity?replace('Entity', 'ResVO')}> findPage(${entity?replace('Entity', 'FindPageReqVO')} reqVO) {
+    public IPage<${entity?replace('Entity', 'ResVO')}> findByPage(${entity?replace('Entity', 'FindPageReqVO')} reqVO) {
         IPage<${entity}> wherePage = new Page(reqVO.getPageNum(), reqVO.getPageSize());
         ${entity} where = new ${entity}();
         IPage<${entity}> iPage = this.page(wherePage, Wrappers.query(where));
@@ -94,6 +94,18 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
     }
 
     @Override
+    public void createByList(List<${entity?replace('Entity', 'CreateReqVO')}> reqVOs) {
+        Optional.ofNullable(reqVOs).orElse(Collections.emptyList())
+            .stream().forEach(reqVO -> {
+                ${entity} ${entity?uncap_first} = new ${entity}();
+                BeanUtils.copyProperties(reqVO, ${entity?uncap_first});
+                // TODO 增加ID
+
+                this.save(${entity?uncap_first});
+        });
+    }
+
+    @Override
     public void deleteById(Long id) {
         this.removeById(id);
     }
@@ -103,6 +115,16 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
         ${entity} ${entity?uncap_first} = new ${entity}();
         BeanUtils.copyProperties(reqVO, ${entity?uncap_first});
         this.updateById(${entity?uncap_first});
+    }
+
+    @Override
+    public void updateByList(List<${entity?replace('Entity', 'UpdateReqVO')}> reqVOs) {
+        Optional.ofNullable(reqVOs).orElse(Collections.emptyList())
+            .stream().forEach(reqVO -> {
+                ${entity} ${entity?uncap_first} = new ${entity}();
+                BeanUtils.copyProperties(reqVO, ${entity?uncap_first});
+                this.updateById(${entity?uncap_first});
+        });
     }
 }
 </#if>
