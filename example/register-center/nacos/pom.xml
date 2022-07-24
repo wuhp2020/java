@@ -10,37 +10,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>nacos</artifactId>
+    <groupId>com.nacos</groupId>
+    <version>2.1.0</version>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-            <version>2021.1</version>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <!-- 加载配置文件 -->
-        <resources>
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.xml</include>
-                </includes>
-            </resource>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/*</include>
-                </includes>
-            </resource>
-        </resources>
-
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+    <modules>
+        <module>nacos-client</module>
+        <module>nacos-server</module>
+    </modules>
+    <packaging>pom</packaging>
 </project>

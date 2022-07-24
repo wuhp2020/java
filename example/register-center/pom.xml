@@ -26,7 +26,6 @@
         <module>curator</module>
         <module>etcd</module>
         <module>nacos</module>
-        <module>nacos-server</module>
         <module>zookeeper</module>
     </modules>
     <packaging>pom</packaging>
