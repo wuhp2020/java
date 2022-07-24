@@ -20,7 +20,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>nacos</artifactId>
-        <groupId>com.alibaba.nacos</groupId>
+        <groupId>com.nacos</groupId>
         <version>2.1.0</version>
     </parent>
 
@@ -34,7 +34,7 @@
     
     <dependencies>
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>com.nacos</groupId>
             <artifactId>nacos-config</artifactId>
         </dependency>
         <dependency>
@@ -42,17 +42,17 @@
             <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>com.nacos</groupId>
             <artifactId>nacos-naming</artifactId>
         </dependency>
     
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>com.nacos</groupId>
             <artifactId>nacos-plugin-default-impl</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>com.nacos</groupId>
             <artifactId>nacos-istio</artifactId>
         </dependency>
         

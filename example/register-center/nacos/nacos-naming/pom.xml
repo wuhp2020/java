@@ -20,7 +20,7 @@
     
     <parent>
         <artifactId>nacos</artifactId>
-        <groupId>com.alibaba.nacos</groupId>
+        <groupId>com.nacos</groupId>
         <version>2.1.0</version>
     </parent>
     
@@ -39,12 +39,12 @@
     
     <dependencies>
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>com.nacos</groupId>
             <artifactId>nacos-core</artifactId>
         </dependency>
         
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>com.nacos</groupId>
             <artifactId>nacos-api</artifactId>
         </dependency>
         
@@ -132,7 +132,7 @@
         </dependency>
         
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>com.nacos</groupId>
             <artifactId>nacos-cmdb</artifactId>
         </dependency>
         <dependency>

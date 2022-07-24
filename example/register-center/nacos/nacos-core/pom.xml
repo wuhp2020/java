@@ -20,7 +20,7 @@
 
     <parent>
         <artifactId>nacos</artifactId>
-        <groupId>com.alibaba.nacos</groupId>
+        <groupId>com.nacos</groupId>
         <version>2.1.0</version>
     </parent>
 
@@ -49,16 +49,16 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>com.nacos</groupId>
             <artifactId>nacos-common</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>com.nacos</groupId>
             <artifactId>nacos-consistency</artifactId>
         </dependency>
         
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
+            <groupId>com.nacos</groupId>
             <artifactId>nacos-auth</artifactId>
         </dependency>
         

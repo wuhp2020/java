@@ -82,7 +82,6 @@
     <orderEntry type="library" name="Maven: org.slf4j:log4j-over-slf4j:1.7.30" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:jcl-over-slf4j:1.7.30" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:jul-to-slf4j:1.7.30" level="project" />
-    <orderEntry type="module" module-name="nacos-cmdb" />
     <orderEntry type="library" name="Maven: io.micrometer:micrometer-registry-prometheus:1.1.18" level="project" />
     <orderEntry type="library" name="Maven: io.micrometer:micrometer-core:1.1.18" level="project" />
     <orderEntry type="library" name="Maven: org.hdrhistogram:HdrHistogram:2.1.9" level="project" />
