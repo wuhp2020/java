@@ -29,6 +29,7 @@ open class ${table.serviceImplName} : ${superServiceImplClass}<${table.mapperNam
 <#else>
 public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.mapperName}, ${entity}> implements ${table.serviceName} {
 
+    // 查询
     @Override
     public IPage<${entity?replace('Entity', 'ResVO')}> findByPage(${entity?replace('Entity', 'FindPageReqVO')} reqVO) {
         IPage<${entity}> wherePage = new Page(reqVO.getPageNum(), reqVO.getPageSize());
@@ -49,7 +50,6 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
         page.setTotal(iPage.getTotal());
         return page;
     }
-
     @Override
     public ${entity?replace('Entity', 'ResVO')} findById(Long id) {
         ${entity} entity = this.getById(id);
@@ -57,7 +57,6 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
         BeanUtils.copyProperties(entity, resVO);
         return resVO;
     }
-
     @Override
     public ${entity?replace('Entity', 'ResVO')} findByCode(${entity?replace('Entity', 'CodeReqVO')} reqVO) {
         // 唯一编码
@@ -67,7 +66,6 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
         BeanUtils.copyProperties(entity, resVO);
         return resVO;
     }
-
     @Override
     public List<${entity?replace('Entity', 'ResVO')}> findList(${entity?replace('Entity', 'FindListReqVO')} reqVO) {
         ${entity} ${entity?uncap_first} = new ${entity}();
@@ -84,6 +82,8 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
         return result;
     }
 
+
+    // 新增
     @Override
     public void create(${entity?replace('Entity', 'CreateReqVO')} reqVO) {
         ${entity} ${entity?uncap_first} = new ${entity}();
@@ -92,7 +92,6 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
 
         this.save(${entity?uncap_first});
     }
-
     @Override
     public void createByList(List<${entity?replace('Entity', 'CreateReqVO')}> reqVOs) {
         Optional.ofNullable(reqVOs).orElse(Collections.emptyList())
@@ -105,18 +104,21 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
         });
     }
 
+
+    // 删除
     @Override
     public void deleteById(Long id) {
         this.removeById(id);
     }
 
+
+    // 修改
     @Override
     public void update(${entity?replace('Entity', 'UpdateReqVO')} reqVO) {
         ${entity} ${entity?uncap_first} = new ${entity}();
         BeanUtils.copyProperties(reqVO, ${entity?uncap_first});
         this.updateById(${entity?uncap_first});
     }
-
     @Override
     public void updateByList(List<${entity?replace('Entity', 'UpdateReqVO')}> reqVOs) {
         Optional.ofNullable(reqVOs).orElse(Collections.emptyList())
@@ -125,6 +127,25 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
                 BeanUtils.copyProperties(reqVO, ${entity?uncap_first});
                 this.updateById(${entity?uncap_first});
         });
+    }
+
+
+    //新增或修改
+    @Override
+    public void createOrUpdate(${entity?replace('Entity', 'CreateOrUpdateReqVO')} reqVO) {
+        Wrapper<${entity}> wrapper = Wrappers.<${entity}>query()
+                        .lambda().eq(${entity}::getId(), reqVO.getId()());
+        ${entity} entity = this.getOne(wrapper);
+        if (entity == null) {
+            ${entity} ${entity?uncap_first} = new ${entity}();
+            BeanUtils.copyProperties(reqVO, ${entity?uncap_first});
+            // TODO 增加ID
+
+            this.save(${entity?uncap_first});
+        } else {
+            BeanUtils.copyProperties(reqVO, entity);
+            this.updateById(entity);
+        }
     }
 }
 </#if>

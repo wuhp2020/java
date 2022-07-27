@@ -125,6 +125,7 @@ public class MyBatisPlusGenerator {
         createVO(pc.getParent(), strategy.getInclude(), voPackage, "FindListReqVO");
         createVO(pc.getParent(), strategy.getInclude(), voPackage, "CreateReqVO");
         createVO(pc.getParent(), strategy.getInclude(), voPackage, "UpdateReqVO");
+        createVO(pc.getParent(), strategy.getInclude(), voPackage, "CreateOrUpdateReqVO");
         createVO(pc.getParent(), strategy.getInclude(), voPackage, "IdReqVO");
         createVO(pc.getParent(), strategy.getInclude(), voPackage, "CodeReqVO");
         createVO(pc.getParent(), strategy.getInclude(), voPackage, "ReqVO");

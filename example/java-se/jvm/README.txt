@@ -342,7 +342,7 @@ java
 -Xloggc:/app/logs/gc.log
 -XX:+PrintGCDetails
 -XX:+PrintGCDateStamps
--jar java8-1.0-SNAPSHOT.jar
+-jar java8-1.0.jar
 
 #####################################
 

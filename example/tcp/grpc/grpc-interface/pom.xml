@@ -11,6 +11,8 @@
     <packaging>jar</packaging>
 
     <artifactId>grpc-interface</artifactId>
+    <groupId>com.grpc.interface</groupId>
+    <version>2.13.1</version>
 
     <dependencies>
         <dependency>

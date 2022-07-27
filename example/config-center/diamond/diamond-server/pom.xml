@@ -16,7 +16,7 @@
 		<dependency>
 			<groupId>org.example</groupId>
 			<artifactId>example</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<version>1.0</version>
 			<type>pom</type>
 			<exclusions>
 				<exclusion>
@@ -47,9 +47,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.example</groupId>
 			<artifactId>diamond-utils</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<groupId>com.diamond.utils</groupId>
+			<version>3.2.4</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>

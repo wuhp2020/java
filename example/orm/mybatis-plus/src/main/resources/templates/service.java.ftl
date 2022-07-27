@@ -17,22 +17,28 @@ interface ${table.serviceName} : ${superServiceClass}<${entity}>
 <#else>
 public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
 
+    // 查询
     public IPage<${entity?replace('Entity', 'ResVO')}> findByPage(${entity?replace('Entity', 'FindPageReqVO')} reqVO);
-
     public ${entity?replace('Entity', 'ResVO')} findById(Long id);
-
     public ${entity?replace('Entity', 'ResVO')} findByCode(${entity?replace('Entity', 'CodeReqVO')} reqVO);
-
     public List<${entity?replace('Entity', 'ResVO')}> findList(${entity?replace('Entity', 'FindListReqVO')} reqVO);
 
-    public void create(${entity?replace('Entity', 'CreateReqVO')} reqVO);
 
+    // 新增
+    public void create(${entity?replace('Entity', 'CreateReqVO')} reqVO);
     public void createByList(List<${entity?replace('Entity', 'CreateReqVO')}> reqVOs);
 
+
+    // 删除
     public void deleteById(Long id);
 
-    public void update(${entity?replace('Entity', 'UpdateReqVO')} reqVO);
 
+    // 修改
+    public void update(${entity?replace('Entity', 'UpdateReqVO')} reqVO);
     public void updateByList(List<${entity?replace('Entity', 'UpdateReqVO')}> reqVOs);
+
+
+    //新增或修改
+    public void createOrUpdate(${entity?replace('Entity', 'CreateOrUpdateReqVO')} reqVO);
 }
 </#if>

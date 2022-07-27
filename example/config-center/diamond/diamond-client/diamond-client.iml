@@ -11,7 +11,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.example:diamond-utils:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="diamond-utils" />
     <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-core-lgpl:1.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-mapper-lgpl:1.4.0" level="project" />
     <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.1" level="project" />

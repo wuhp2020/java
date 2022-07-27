@@ -10,6 +10,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>diamond-utils</artifactId>
+	<groupId>com.diamond.utils</groupId>
+	<version>3.2.4</version>
 
 	<dependencies>
 		<dependency>
