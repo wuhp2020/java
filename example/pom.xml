@@ -39,6 +39,7 @@
         <module>open-ele-me</module>
         <module>open-meituan</module>
         <module>springcloud</module>
+        <module>spring-cloud-alibaba-starters</module>
     </modules>
 
     <!-- 父级依赖 -->
