@@ -27,7 +27,7 @@ public class MyBatisPlusGenerator {
     private static String dbUsername = "root";
     private static String dbPassword = "123";
     private static String author = "wuheping";
-    private static String outputDir = "/Users/mac/Desktop/aa/src/main/java";
+    private static String outputDir = "/Users/wuheping/Desktop/aa/src/main/java";
 
 
     public static void main(String[] args) {

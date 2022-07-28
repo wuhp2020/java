@@ -133,6 +133,15 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
     //新增或修改
     @Override
     public void createOrUpdate(${entity?replace('Entity', 'CreateOrUpdateReqVO')} reqVO) {
+        if (reqVO.getId() == null || "".equals(reqVO.getId())) {
+            ${entity} ${entity?uncap_first} = new ${entity}();
+            BeanUtils.copyProperties(reqVO, ${entity?uncap_first});
+            // TODO 增加ID
+
+            this.save(${entity?uncap_first});
+            return;
+        }
+
         Wrapper<${entity}> wrapper = Wrappers.<${entity}>query()
                         .lambda().eq(${entity}::getId(), reqVO.getId()());
         ${entity} entity = this.getOne(wrapper);
