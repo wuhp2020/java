@@ -50,9 +50,48 @@
 
     <repositories>
         <repository>
-            <id>aliyun-maven</id>
-            <name>aliyun-maven</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+            <id>aliyun-central</id>
+            <url>https://maven.aliyun.com/repository/central</url>
+        </repository>
+
+        <repository>
+            <id>aliyun-jcenter</id>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+
+        <repository>
+            <id>aliyun-public</id>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+
+        <repository>
+            <id>aliyun-google</id>
+            <url>https://maven.aliyun.com/repository/google</url>
+        </repository>
+
+        <repository>
+            <id>aliyun-gradle-plugin</id>
+            <url>https://maven.aliyun.com/repository/gradle-plugin</url>
+        </repository>
+
+        <repository>
+            <id>aliyun-spring</id>
+            <url>https://maven.aliyun.com/repository/spring</url>
+        </repository>
+
+        <repository>
+            <id>aliyun-spring-plugin</id>
+            <url>https://maven.aliyun.com/repository/spring-plugin</url>
+        </repository>
+
+        <repository>
+            <id>aliyun-grails-core</id>
+            <url>https://maven.aliyun.com/repository/grails-core</url>
+        </repository>
+
+        <repository>
+            <id>aliyun-apache-snapshots</id>
+            <url>https://maven.aliyun.com/repository/apache-snapshots</url>
         </repository>
     </repositories>
 

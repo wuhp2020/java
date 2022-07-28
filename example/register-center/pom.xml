@@ -25,7 +25,7 @@
         <module>consul</module>
         <module>curator</module>
         <module>etcd</module>
-<!--        <module>nacos</module>-->
+        <module>nacos</module>
         <module>zookeeper</module>
     </modules>
     <packaging>pom</packaging>

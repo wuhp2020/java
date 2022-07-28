@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>cn.crudapi</groupId>
 		<artifactId>crudapi</artifactId>
-		<version>1.6.0</version>
+		<version>1.6.1</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
@@ -15,6 +15,14 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 	</properties>
+
+	<distributionManagement>
+		<repository>
+			<id>aliyun-public</id>
+			<url>https://maven.aliyun.com/repository/public</url>
+		</repository>
+	</distributionManagement>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -149,27 +157,27 @@
 	    <dependency>
 	        <groupId>cn.crudapi</groupId>
 	        <artifactId>crudapi-core</artifactId>
-	        <version>1.6.0</version>
+	        <version>1.6.1</version>
 	    </dependency>
 	    <dependency>
 	        <groupId>cn.crudapi</groupId>
 	        <artifactId>crudapi-api</artifactId>
-	        <version>1.6.0</version>
+			<version>1.6.1</version>
 	    </dependency>
 		<dependency>
             <groupId>cn.crudapi</groupId>
             <artifactId>crudapi-security</artifactId>
-            <version>1.6.0</version>
+            <version>1.6.1</version>
         </dependency>
 	    <dependency>
 	        <groupId>cn.crudapi</groupId>
 	        <artifactId>crudapi-rest</artifactId>
-	        <version>1.6.0</version>
+	        <version>1.6.1</version>
 	    </dependency>
 	    <dependency>
 	        <groupId>cn.crudapi</groupId>
 	        <artifactId>crudapi-weixin</artifactId>
-	        <version>1.6.0</version>
+	        <version>1.6.1</version>
 	    </dependency>
 	</dependencies>
 	<build>

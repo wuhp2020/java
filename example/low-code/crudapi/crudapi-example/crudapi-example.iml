@@ -151,11 +151,11 @@
     <orderEntry type="library" name="Maven: org.apache.pdfbox:pdfbox:2.0.22" level="project" />
     <orderEntry type="library" name="Maven: org.apache.pdfbox:fontbox:2.0.22" level="project" />
     <orderEntry type="library" name="Maven: org.freemarker:freemarker:2.3.31" level="project" />
-    <orderEntry type="library" name="Maven: cn.crudapi:crudapi-core:1.6.0" level="project" />
-    <orderEntry type="library" name="Maven: cn.crudapi:crudapi-api:1.6.0" level="project" />
-    <orderEntry type="library" name="Maven: cn.crudapi:crudapi-security:1.6.0" level="project" />
-    <orderEntry type="library" name="Maven: cn.crudapi:crudapi-rest:1.6.0" level="project" />
-    <orderEntry type="library" name="Maven: cn.crudapi:crudapi-weixin:1.6.0" level="project" />
+    <orderEntry type="library" name="Maven: cn.crudapi:crudapi-core:1.6.1" level="project" />
+    <orderEntry type="library" name="Maven: cn.crudapi:crudapi-api:1.6.1" level="project" />
+    <orderEntry type="library" name="Maven: cn.crudapi:crudapi-security:1.6.1" level="project" />
+    <orderEntry type="library" name="Maven: cn.crudapi:crudapi-rest:1.6.1" level="project" />
+    <orderEntry type="library" name="Maven: cn.crudapi:crudapi-weixin:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.12" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.7" level="project" />
   </component>
