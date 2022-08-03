@@ -59,7 +59,7 @@ public class GlobalResponseHandler implements ResponseBodyAdvice<Object> {
             return body;
         }
         // 可以统一处理
-        log.info("=====>>>>> 返回报文: {}", JSON.toJSONString(body));
+        log.info("=====>>>>> 返回报文: {}", body instanceof String ? body: JSON.toJSONString(body));
         if (body instanceof ResponseVO) {
             ResponseVO responseVO = (ResponseVO)body;
             return responseVO;
