@@ -143,7 +143,7 @@ public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.m
         }
 
         Wrapper<${entity}> wrapper = Wrappers.<${entity}>query()
-                        .lambda().eq(${entity}::getId(), reqVO.getId()());
+                        .lambda().eq(${entity}::getId, reqVO.getId()());
         ${entity} entity = this.getOne(wrapper);
         if (entity == null) {
             ${entity} ${entity?uncap_first} = new ${entity}();
