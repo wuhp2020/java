@@ -27,6 +27,7 @@
         <module>camunda</module>
         <module>jbpm</module>
         <module>osworkflow</module>
+        <module>jeesite</module>
     </modules>
     <packaging>pom</packaging>
 </project>

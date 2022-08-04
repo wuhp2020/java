@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<artifactId>example</artifactId>
+		<groupId>org.example</groupId>
+		<version>1.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>jeesite</artifactId>
+	<groupId>com.jeesite</groupId>
+	<version>5.0.2-SNAPSHOT</version>
+
+	<properties>
+		<project.version>5.0.2-SNAPSHOT</project.version>
+		<commons-io.version>2.11.0</commons-io.version>
+		<commons-text.version>1.9</commons-text.version>
+		<commons-beanutils.version>1.9.4</commons-beanutils.version>
+		<commons-email.version>1.5</commons-email.version>
+		<fst.version>2.57</fst.version>
+		<fastjson.version>1.2.83</fastjson.version>
+		<UserAgentUtils.version>1.21</UserAgentUtils.version>
+		<thumbnailator.version>0.4.17</thumbnailator.version>
+		<twelvemonkeys.version>3.8.2</twelvemonkeys.version>
+		<blade-patchca.version>1.1.2</blade-patchca.version>
+		<jmimemagic.version>0.1.5</jmimemagic.version>
+		<zxing.version>3.4.1</zxing.version>
+		<poi.version>4.1.2</poi.version>
+		<pinyin4j.version>2.5.1</pinyin4j.version>
+		<groovy.version>3.0.10</groovy.version>
+
+		<mybatis.version>3.5.9</mybatis.version>
+		<mybatis-spring.version>2.0.7</mybatis-spring.version>
+		<jsqlparser.version>4.4</jsqlparser.version>
+		<druid.version>1.2.10</druid.version>
+		<shiro.version>1.9.0</shiro.version>
+		<j2cache.version>2.8.0-release</j2cache.version>
+		<swagger.version>1.6.0</swagger.version>
+		<log4j2.version>2.17.0</log4j2.version>
+
+		<mysql.version>8.0.29</mysql.version>
+
+		<java.version>1.8</java.version>
+		<maven.test.skip>true</maven.test.skip>
+		<maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
+
+	</properties>
+
+	<modules>
+		<module>jeesite-common</module>
+		<module>jeesite-module-cms</module>
+		<module>jeesite-module-core</module>
+		<module>jeesite-web</module>
+	</modules>
+	<packaging>pom</packaging>
+</project>

@@ -2,18 +2,8 @@ server:
   port: 8008
 
 spring:
-  activiti:
-    # 自动检查、部署流程定义文件
-    check-process-definitions: true
-    # 自动更新数据库结构
-    database-schema-update: true
-    # 流程定义文件存放目录
-#    process-definition-location-prefix: classpath:/bpmn/
-#    process-definition-location-suffixes: #流程文件格式
-#    history-level: full
-
   datasource:
-    url: jdbc:mysql://192.168.221.129:3306/at?useunicode=true&characterEncoding=utf8
+    url: jdbc:mysql://192.168.221.129:3306/a?useunicode=true&characterEncoding=utf8
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 123
@@ -23,3 +13,9 @@ spring:
       ddl-auto: update
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
+
+flowable:
+  # 关闭定时任务JOB
+  async-executor-activate: false
+  #  将databaseSchemaUpdate设置为true, 当Flowable发现库与数据库表结构不一致时, 会自动将数据库表结构升级至新版本
+  database-schema-update: true
