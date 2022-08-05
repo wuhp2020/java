@@ -4,39 +4,16 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<parent>
-		<artifactId>jeesite</artifactId>
 		<groupId>com.jeesite</groupId>
+		<artifactId>jeesite</artifactId>
 		<version>5.0.2-SNAPSHOT</version>
 	</parent>
 	
 	<artifactId>jeesite-web</artifactId>
-	<groupId>com.jeesite</groupId>
-	<version>5.0.2-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<repositories>
-		<repository>
-			<id>aliyun-repos</id>
-			<url>https://maven.aliyun.com/repository/public</url>
-		</repository>
-		<repository>
-			<id>jeesite-repos</id>
-			<url>http://maven.jeesite.net/repository/maven-public</url>
-		</repository>
-	</repositories>
-
 	<properties>
-		
-		<finalName>web</finalName><!-- war or jar 包的名称 -->
 		<start-class>com.jeesite.modules.Application</start-class>
-		
-		<!-- environment setting -->
-		<eclipse-plugin-download-sources>false</eclipse-plugin-download-sources>
-		<eclipse-plugin-download-javadocs>false</eclipse-plugin-download-javadocs>
-		
-		<!-- docker setting -->
-        <docker.run.port>8980:8980</docker.run.port>
-		
 	</properties>
 
 	<dependencies>
@@ -49,24 +26,24 @@
 		</dependency>
 
 		<!-- 在线文档接口 -->
-		<dependency>
-			<groupId>com.jeesite</groupId>
-			<artifactId>jeesite-module-swagger</artifactId>
-			<version>${project.version}</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.jeesite</groupId>-->
+<!--			<artifactId>jeesite-module-swagger</artifactId>-->
+<!--			<version>${project.parent.version}</version>-->
+<!--		</dependency>-->
 
 		<!-- 内容管理模块 -->
 		<dependency>
 			<groupId>com.jeesite</groupId>
 			<artifactId>jeesite-module-cms</artifactId>
-			<version>${project.version}</version>
+			<version>${project.parent.version}</version>
 		</dependency>
 
 		<!-- 移动端模块 -->
 		<dependency>
 			<groupId>com.jeesite</groupId>
 			<artifactId>jeesite-module-app</artifactId>
-			<version>${project.version}</version>
+			<version>${project.parent.version}</version>
 		</dependency>
 		
 		<!-- 文件管理共享（标准版）
@@ -91,7 +68,6 @@
 		</dependency> -->
 
 	</dependencies>
-
 
 	<build>
 		<!-- 加载配置文件 -->
@@ -120,4 +96,6 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
 </project>

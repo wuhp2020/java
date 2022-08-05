@@ -13,6 +13,12 @@
 
     <dependencies>
         <dependency>
+            <artifactId>global-handler</artifactId>
+            <groupId>com.global-handler</groupId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
             <version>1.4.7.RELEASE</version>

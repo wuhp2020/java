@@ -17,7 +17,7 @@
 package com.alibaba.cloud.commons.lang;
 
 /**
- * StringUtils. copy from apache common-lang3.
+ * StringUtils. copy from apache ng3.
  *
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
  */

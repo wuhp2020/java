@@ -13,13 +13,12 @@
     <artifactId>springcloud</artifactId>
     <version>2.2.8</version>
 
-    <dependencies>
-        <dependency>
-            <artifactId>global-handler</artifactId>
-            <groupId>com.global-handler</groupId>
-            <version>1.0.0</version>
-        </dependency>
-    </dependencies>
+    <properties>
+        <revision>2.2.8.RELEASE</revision>
+        <nacos.version>2.0.3</nacos.version><!-- 默认 gRPC 旧版切换到 1.4.2 -->
+        <seata.version>1.4.2</seata.version>
+        <xstream.version>1.4.19</xstream.version>
+    </properties>
 
     <modules>
         <module>springcloud-feign-client</module>
@@ -30,6 +29,8 @@
         <module>springcloud-ribbon</module>
         <module>springcloud-sleuth</module>
         <module>springcloud-netflix</module>
+        <module>springcloud-sentinel</module>
+        <module>springcloud-zipkin</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -4,29 +4,21 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<artifactId>jeesite</artifactId>
 		<groupId>com.jeesite</groupId>
+		<artifactId>jeesite</artifactId>
 		<version>5.0.2-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>jeesite-module-cms</artifactId>
-	<groupId>com.jeesite</groupId>
-	<version>5.0.2-SNAPSHOT</version>
 
 	<dependencies>
 
 		<dependency>
 			<groupId>com.jeesite</groupId>
 			<artifactId>jeesite-module-core</artifactId>
-			<version>${project.version}</version>
+			<version>${project.parent.version}</version>
 		</dependency>
 		
 	</dependencies>
 
-	<repositories>
-		<repository>
-			<id>aliyun-repos</id>
-			<url>https://maven.aliyun.com/repository/public</url>
-		</repository>
-	</repositories>
 </project>

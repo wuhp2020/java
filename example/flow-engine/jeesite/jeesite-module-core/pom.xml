@@ -4,17 +4,16 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<parent>
-		<artifactId>jeesite</artifactId>
 		<groupId>com.jeesite</groupId>
+		<artifactId>jeesite</artifactId>
 		<version>5.0.2-SNAPSHOT</version>
 	</parent>
 	
 	<artifactId>jeesite-module-core</artifactId>
-	<groupId>com.jeesite</groupId>
-	<version>5.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	
 	<dependencies>
+		
 		<!-- MySQL -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -68,14 +67,14 @@
 		<dependency>
 			<groupId>com.jeesite</groupId>
 			<artifactId>jeesite-common</artifactId>
-			<version>${project.version}</version>
+			<version>${project.parent.version}</version>
 		</dependency>
 		
 		<!-- Framework -->
 		<dependency>
 			<groupId>com.jeesite</groupId>
 			<artifactId>jeesite-framework</artifactId>
-			<version>${project.version}</version>
+			<version>${project.parent.version}</version>
 		</dependency>
 		
 		<!-- Core Extend
@@ -86,4 +85,5 @@
 		</dependency> -->
 		
 	</dependencies>
+
 </project>
