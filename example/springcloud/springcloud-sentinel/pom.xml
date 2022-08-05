@@ -12,6 +12,9 @@
     <artifactId>springcloud-sentinel</artifactId>
 
 	<properties>
+        <revision>2.2.8.RELEASE</revision>
+        <!-- 默认 gRPC 旧版切换到 1.4.2 -->
+        <nacos.version>1.4.2</nacos.version>
 		<!-- version setting -->
 		<sentinel.version>1.8.4</sentinel.version>
         <curator.version>4.0.1</curator.version>
@@ -25,6 +28,11 @@
     </repositories>
 	
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+        </dependency>
 		
 		<dependency>
             <groupId>com.alibaba.csp</groupId>

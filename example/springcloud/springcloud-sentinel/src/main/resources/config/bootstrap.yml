@@ -37,7 +37,7 @@ spring:
   
   # 应用程序名称
   application:
-    name: jeesite-cloud-sentinel
+    name: springcloud-sentinel
 
   # 当前环境名称（注意：不可设置为 test 它是单元测试专用的名称）
   profiles:
@@ -48,7 +48,7 @@ spring:
     config:
       discovery:
         enabled: true
-        serviceId: jeesite-cloud-config
+        serviceId: springcloud-sentinel
         
     # Consul 服务发现
     consul:
@@ -62,10 +62,14 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+        accessKey: nacos
+        secretKey: nacos
       config:
         server-addr: 127.0.0.1:8848
         file-extension: yml
         group: jeesite-cloud-50
+        accessKey: nacos
+        secretKey: nacos
       
   # 打印横幅
   main:
