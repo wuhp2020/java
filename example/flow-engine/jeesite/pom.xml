@@ -56,6 +56,20 @@
         <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version><!-- 降级到该版本，新版本可能会出现VM崩溃 -->
     </properties>
 
+    <repositories>
+        <repository>
+            <id>jeesite-repos</id>
+            <url>http://maven.jeesite.net/repository/maven-public</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>jeesite-repos</id>
+            <url>http://maven.jeesite.net/repository/maven-public</url>
+        </pluginRepository>
+    </pluginRepositories>
+
     <modules>
         <module>jeesite-web</module>
         <module>jeesite-module-core</module>

@@ -96,6 +96,60 @@
         </repository>
     </repositories>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>aliyun-central</id>
+            <url>https://maven.aliyun.com/repository/central</url>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>aliyun-jcenter</id>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>aliyun-public</id>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>aliyun-google</id>
+            <url>https://maven.aliyun.com/repository/google</url>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>aliyun-gradle-plugin</id>
+            <url>https://maven.aliyun.com/repository/gradle-plugin</url>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>aliyun-spring</id>
+            <url>https://maven.aliyun.com/repository/spring</url>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>aliyun-spring-plugin</id>
+            <url>https://maven.aliyun.com/repository/spring-plugin</url>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>aliyun-grails-core</id>
+            <url>https://maven.aliyun.com/repository/grails-core</url>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>aliyun-apache-snapshots</id>
+            <url>https://maven.aliyun.com/repository/apache-snapshots</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <distributionManagement>
+        <repository>
+            <id>aliyun-public</id>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+    </distributionManagement>
+
     <dependencies>
         <!-- web -->
         <dependency>

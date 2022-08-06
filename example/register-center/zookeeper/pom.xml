@@ -12,6 +12,11 @@
     <artifactId>zookeeper</artifactId>
 
     <dependencies>
+        <dependency>
+            <artifactId>global-handler</artifactId>
+            <groupId>com.global-handler</groupId>
+            <version>1.0.0</version>
+        </dependency>
         <!-- zookeeper -->
         <dependency>
             <groupId>org.apache.zookeeper</groupId>

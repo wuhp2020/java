@@ -14,7 +14,7 @@
     <version>1.0.0</version>
 
     <modules>
-        <module>crudapi</module>
+<!--        <module>crudapi</module>-->
         <module>diboot</module>
         <module>dynamic-interface</module>
         <module>jeecg-boot-parent</module>

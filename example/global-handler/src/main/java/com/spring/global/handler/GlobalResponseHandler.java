@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,10 +77,15 @@ public class GlobalResponseHandler implements ResponseBodyAdvice<Object> {
 
     protected ResponseVO handleException(Exception exception, HttpServletRequest request) {
 
-        String message = exception.getMessage();
+        StringBuilder message = new StringBuilder();
+        StringWriter sw = new StringWriter();
+        PrintWriter pw = new PrintWriter(sw);
+        exception.printStackTrace(pw);
+        message.append("未知异常: ");
+        message.append(sw.toString());
         String code = "500";
         log.error("异常堆栈: ", exception);
-        return ResponseVO.FAIL(code, message);
+        return ResponseVO.FAIL(code, message.toString());
     }
 }
 
