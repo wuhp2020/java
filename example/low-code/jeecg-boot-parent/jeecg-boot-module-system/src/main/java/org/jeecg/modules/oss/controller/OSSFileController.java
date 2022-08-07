@@ -5,8 +5,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.jeecg.common.api.vo.Result;
 import org.jeecg.common.system.query.QueryGenerator;
-import org.jeecg.modules.oss.entity.OSSFile;
-import org.jeecg.modules.oss.service.IOSSFileService;
+import org.jeecg.modules.oss.entity.OssFile;
+import org.jeecg.modules.oss.service.IOssFileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -20,24 +20,25 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * 云存储示例 DEMO
+ * @author: jeecg-boot
  */
 @Slf4j
 @Controller
 @RequestMapping("/sys/oss/file")
-public class OSSFileController {
+public class OssFileController {
 
 	@Autowired
-	private IOSSFileService ossFileService;
+	private IOssFileService ossFileService;
 
 	@ResponseBody
 	@GetMapping("/list")
-	public Result<IPage<OSSFile>> queryPageList(OSSFile file,
-			@RequestParam(name = "pageNo", defaultValue = "1") Integer pageNo,
-			@RequestParam(name = "pageSize", defaultValue = "10") Integer pageSize, HttpServletRequest req) {
-		Result<IPage<OSSFile>> result = new Result<>();
-		QueryWrapper<OSSFile> queryWrapper = QueryGenerator.initQueryWrapper(file, req.getParameterMap());
-		Page<OSSFile> page = new Page<>(pageNo, pageSize);
-		IPage<OSSFile> pageList = ossFileService.page(page, queryWrapper);
+	public Result<IPage<OssFile>> queryPageList(OssFile file,
+                                                @RequestParam(name = "pageNo", defaultValue = "1") Integer pageNo,
+                                                @RequestParam(name = "pageSize", defaultValue = "10") Integer pageSize, HttpServletRequest req) {
+		Result<IPage<OssFile>> result = new Result<>();
+		QueryWrapper<OssFile> queryWrapper = QueryGenerator.initQueryWrapper(file, req.getParameterMap());
+		Page<OssFile> page = new Page<>(pageNo, pageSize);
+		IPage<OssFile> pageList = ossFileService.page(page, queryWrapper);
 		result.setSuccess(true);
 		result.setResult(pageList);
 		return result;
@@ -63,15 +64,12 @@ public class OSSFileController {
 	@DeleteMapping("/delete")
 	public Result delete(@RequestParam(name = "id") String id) {
 		Result result = new Result();
-		OSSFile file = ossFileService.getById(id);
+		OssFile file = ossFileService.getById(id);
 		if (file == null) {
 			result.error500("未找到对应实体");
-		}
-		else {
+		}else {
 			boolean ok = ossFileService.delete(file);
-			if (ok) {
-				result.success("删除成功!");
-			}
+			result.success("删除成功!");
 		}
 		return result;
 	}
@@ -81,9 +79,9 @@ public class OSSFileController {
 	 */
 	@ResponseBody
 	@GetMapping("/queryById")
-	public Result<OSSFile> queryById(@RequestParam(name = "id") String id) {
-		Result<OSSFile> result = new Result<>();
-		OSSFile file = ossFileService.getById(id);
+	public Result<OssFile> queryById(@RequestParam(name = "id") String id) {
+		Result<OssFile> result = new Result<>();
+		OssFile file = ossFileService.getById(id);
 		if (file == null) {
 			result.error500("未找到对应实体");
 		}

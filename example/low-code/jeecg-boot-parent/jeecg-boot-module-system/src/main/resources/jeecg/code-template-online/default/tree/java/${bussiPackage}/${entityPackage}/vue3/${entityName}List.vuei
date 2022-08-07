@@ -1,5 +1,26 @@
+<#assign pidFieldName = "">
+<#assign hasChildrenField = "">
+<#assign bpm_flag=false>
+<#list originalColumns as po>
+  <#if po.fieldDbName == tableVo.extendParams.pidField>
+    <#assign pidFieldName = po.fieldName>
+  </#if>
+  <#if po.fieldDbName == tableVo.extendParams.hasChildren>
+    <#assign hasChildrenField = po.fieldName>
+  </#if>
+</#list>
+<#assign list_need_pca=false>
+<#-- 开始循环 -->
+<#list columns as po>
+  <#if po.fieldDbName=='bpm_status'>
+    <#assign bpm_flag=true>
+  </#if>
+<#if po.classType=='pca'>
+<#assign list_need_pca=true>
+</#if>
+</#list>
 <template>
-  <div class="p-4">
+  <div>
     <!--引用表格-->
     <BasicTable @register="registerTable" :rowSelection="rowSelection" :expandedRowKeys="expandedRowKeys" @expand="handleExpand" @fetch-success="onFetchSuccess">
       <!--插槽:table标题-->
@@ -24,8 +45,20 @@
       </template>
       <!--操作栏-->
       <template #action="{ record }">
-        <TableAction :actions="getTableAction(record)"/>
+        <TableAction :actions="getTableAction(record)" :dropDownActions="getDropDownAction(record)"/>
       </template>
+       <!--字段回显插槽-->
+    <template #htmlSlot="{text}">
+       <div v-html="text"></div>
+    </template>
+    <!--省市区字段回显插槽-->
+    <template #pcaSlot="{text}">
+       {{ getAreaTextByCode(text) }}
+    </template>
+    <template #fileSlot="{text}">
+       <span v-if="!text" style="font-size: 12px;font-style: italic;">无文件</span>
+       <a-button v-else :ghost="true" type="primary" preIcon="ant-design:download-outlined" size="small" @click="downloadFile(text)">下载</a-button>
+    </template>
     </BasicTable>
     <!--字典弹窗-->
     <${entityName}Modal @register="registerModal" @success="handleSuccess"/>
@@ -35,25 +68,63 @@
 <script lang="ts" name="${entityPackage}-${entityName?uncap_first}" setup>
   //ts语法
   import {ref, computed, unref, toRaw, nextTick} from 'vue';
-  import {BasicTable, useTable, TableAction} from '/src/components/Table';
-  import {useModal} from '/src/components/Modal';
+  import {BasicTable, TableAction} from '/@/components/Table';
+  import {useModal} from '/@/components/Modal';
   import { useListPage } from '/@/hooks/system/useListPage'
   import ${entityName}Modal from './components/${entityName}Modal.vue';
-  import {columns} from './${entityName}.data';
+  import {columns,searchFormSchema} from './${entityName}.data';
+  import { downloadFile } from '/@/utils/common/renderUtils';
   import {list, delete${entityName}, batchDelete${entityName}, getExportUrl,getImportUrl, getChildList,getChildListBatch} from './${entityName}.api';
-
+  <#if list_need_pca>
+  import { getAreaTextByCode } from '/@/components/Form/src/utils/Area';
+  </#if>
+  <#if bpm_flag==true>
+  import { startProcess } from '/@/api/common/api';
+  </#if>
   const expandedRowKeys = ref([]);
   //字典model
   const [registerModal, {openModal}] = useModal();
    //注册table数据
   const { prefixCls,tableContext,onExportXls,onImportXls } = useListPage({
     tableProps:{
+         api: list,
          title: '${tableVo.ftlDescription}',
          columns,
          canResize:false,
+         formConfig: {
+           labelWidth: 120,
+           schemas: searchFormSchema,
+           autoSubmitOnEnter:true,
+           showAdvancedButton:true,
+           fieldMapToNumber: [
+           <#list columns as po>
+           <#if po.isQuery=='Y'>
+           <#if po.queryMode!='single'>
+           <#if po.fieldDbType=='int' || po.fieldDbType=='double' || po.fieldDbType=='BigDecimal'>
+              ['${po.fieldName}', ['${po.fieldName}_begin', '${po.fieldName}_end']],
+           </#if>
+           </#if>
+           </#if>
+           </#list>
+           ],
+           fieldMapToTime: [
+           <#list columns as po>
+           <#if po.isQuery=='Y'>
+           <#if po.queryMode!='single'>
+           <#if po.classType=='date'>
+              ['${po.fieldName}', ['${po.fieldName}_begin', '${po.fieldName}_end'], 'YYYY-MM-DD'],
+           <#elseif po.classType=='datetime'>
+              ['${po.fieldName}', ['${po.fieldName}_begin', '${po.fieldName}_end'], 'YYYY-MM-DD HH:mm:ss'],
+           </#if>
+           </#if>
+           </#if>
+           </#list>
+           ],
+         },
          actionColumn: {
-             width: 120,
-          },
+           width: 240,
+           fixed:'right'
+         },
     },
      exportConfig: {
           name:"${tableVo.ftlDescription}",
@@ -109,13 +180,13 @@
    */
   async function batchHandleDelete() {
     const ids = selectedRowKeys.value.filter(item => !item.includes('loading'))
-    await batchDelete${entityName}({ids: ids}, importSuccess);
+    await batchDelete${entityName}({id: ids}, importSuccess);
   }
   /**
    * 导入
    */
    function importSuccess() {
-    reload() && (expandedRowKeys.value = []);
+    (selectedRowKeys.value = []) && reload();
   }
   /**
    * 添加下级
@@ -129,12 +200,16 @@
   /**
    * 成功回调
    */
-  async function handleSuccess({isUpdate, values, expandedArr}) {
+  async function handleSuccess({isUpdate, values, expandedArr, changeParent}) {
     if (isUpdate) {
-      //编辑回调
-      updateTableDataRecord(values.id, values);
+      if (changeParent) {
+        reload();
+      } else {
+        // 编辑回调
+        updateTableDataRecord(values.id, values);
+      }
     } else {
-        if(!values['pid']){
+        if(!values['id'] || !values['${pidFieldName}']){
             //新增根节点
             reload();
         }else{
@@ -164,7 +239,7 @@
               let records = res.result.records
               const listMap = new Map();
               for (let item of records) {
-                  let pid = item['pid'];
+                  let pid = item['${pidFieldName}'];
                   if (unref(expandedRowKeys).includes(pid)) {
                       let mapList = listMap.get(pid);
                       if (mapList == null) {
@@ -212,7 +287,7 @@
     if (expanded) {
        expandedRowKeys.value.push(record.id)
       if (record.children.length > 0 && !!record.children[0].isLoading) {
-        let result = await getChildList({pid: record.id});
+        let result = await getChildList({${pidFieldName}: record.id});
         result=result.records?result.records:result;
         if (result && result.length > 0) {
           record.children = getDataByResult(result);
@@ -234,7 +309,7 @@
   async function expandTreeNode(key) {
     let record = findTableDataRecord(key)
     expandedRowKeys.value.push(key);
-      let result = await getChildList({pid: key});
+      let result = await getChildList({${pidFieldName}: key});
       if (result && result.length > 0) {
           record.children = getDataByResult(result);
       } else {
@@ -253,18 +328,70 @@
         onClick: handleEdit.bind(null, record),
       },
       {
-        label: '删除',
-        popConfirm: {
-          title: '确定删除吗?',
-          confirm: handleDelete.bind(null, record),
-        },
-      },
-      {
         label: '添加下级',
-        onClick: handleAddSub.bind(null, {pid: record.id}),
+        onClick: handleAddSub.bind(null, {${pidFieldName}: record.id}),
       }
     ]
   }
+   /**
+    * 下拉操作栏
+    */
+   function getDropDownAction(record){
+     <#if bpm_flag==true>
+     let dropDownAction = [
+       {
+         label: '详情',
+         onClick: handleDetail.bind(null, record),
+       }, {
+         label: '删除',
+         popConfirm: {
+           title: '是否确认删除',
+           confirm: handleDelete.bind(null, record)
+         }
+       }
+     ];
+     if(record.bpmStatus == '1'){
+       dropDownAction.push({
+         label: '发起流程',
+         popConfirm: {
+           title: '确认提交流程吗？',
+           confirm: handleProcess.bind(null, record),
+         }
+       })
+     }
+     return dropDownAction;
+     <#else>
+     return [
+       {
+         label: '详情',
+         onClick: handleDetail.bind(null, record),
+       }, {
+         label: '删除',
+         popConfirm: {
+           title: '确定删除吗?',
+           confirm: handleDelete.bind(null, record),
+         }
+       }
+     ]
+     </#if>
+   }
+
+  <#if bpm_flag==true>
+  /**
+   * 提交流程
+   */
+  async function handleProcess(record) {
+    let params = {
+      flowCode: 'dev_${tableName}_001',
+      id: record.id,
+      formUrl: '${entityPackage}/modules/${entityName}Form',
+      formUrlMobile: ''
+    }
+    await startProcess(params);
+    await reload();
+  }
+  </#if>
+
 </script>
 
 <style scoped>

@@ -11,29 +11,30 @@ import java.util.Random;
 
 /**
  * 登录验证码工具类
+ * @author: jeecg-boot
  */
 public class RandImageUtil {
 
-    public static final String key = "JEECG_LOGIN_KEY";
+    public static final String KEY = "JEECG_LOGIN_KEY";
 
     /**
      * 定义图形大小
      */
-    private static final int width = 105;
+    private static final int WIDTH = 105;
     /**
      * 定义图形大小
      */
-    private static final int height = 35;
+    private static final int HEIGHT = 35;
 
     /**
      * 定义干扰线数量
      */
-    private static final int count = 200;
+    private static final int COUNT = 200;
 
     /**
      * 干扰线的长度=1.414*lineWidth
      */
-    private static final int lineWidth = 2;
+    private static final int LINE_WIDTH = 2;
 
     /**
      * 图片格式
@@ -73,7 +74,8 @@ public class RandImageUtil {
         byte[] bytes = byteStream.toByteArray();
         //转换成base64串
         String base64 = Base64.getEncoder().encodeToString(bytes).trim();
-        base64 = base64.replaceAll("\n", "").replaceAll("\r", "");//删除 \r\n
+        //删除 \r\n
+        base64 = base64.replaceAll("\n", "").replaceAll("\r", "");
 
         //写到指定位置
         //ImageIO.write(bufferedImage, "png", new File(""));
@@ -83,25 +85,28 @@ public class RandImageUtil {
 
     private static BufferedImage getImageBuffer(String resultCode){
         // 在内存中创建图象
-        final BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+        final BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
         // 获取图形上下文
         final Graphics2D graphics = (Graphics2D) image.getGraphics();
         // 设定背景颜色
-        graphics.setColor(Color.WHITE); // ---1
-        graphics.fillRect(0, 0, width, height);
+        // ---1
+        graphics.setColor(Color.WHITE);
+        graphics.fillRect(0, 0, WIDTH, HEIGHT);
         // 设定边框颜色
 //		graphics.setColor(getRandColor(100, 200)); // ---2
-        graphics.drawRect(0, 0, width - 1, height - 1);
+        graphics.drawRect(0, 0, WIDTH - 1, HEIGHT - 1);
 
         final Random random = new Random();
         // 随机产生干扰线，使图象中的认证码不易被其它程序探测到
-        for (int i = 0; i < count; i++) {
-            graphics.setColor(getRandColor(150, 200)); // ---3
+        for (int i = 0; i < COUNT; i++) {
+            // ---3
+            graphics.setColor(getRandColor(150, 200));
 
-            final int x = random.nextInt(width - lineWidth - 1) + 1; // 保证画在边框之内
-            final int y = random.nextInt(height - lineWidth - 1) + 1;
-            final int xl = random.nextInt(lineWidth);
-            final int yl = random.nextInt(lineWidth);
+            // 保证画在边框之内
+            final int x = random.nextInt(WIDTH - LINE_WIDTH - 1) + 1;
+            final int y = random.nextInt(HEIGHT - LINE_WIDTH - 1) + 1;
+            final int xl = random.nextInt(LINE_WIDTH);
+            final int yl = random.nextInt(LINE_WIDTH);
             graphics.drawLine(x, y, x + xl, y + yl);
         }
         // 取随机产生的认证码
@@ -124,11 +129,12 @@ public class RandImageUtil {
 
     private static Color getRandColor(int fc, int bc) { // 取得给定范围随机颜色
         final Random random = new Random();
-        if (fc > 255) {
-            fc = 255;
+        int length = 255;
+        if (fc > length) {
+            fc = length;
         }
-        if (bc > 255) {
-            bc = 255;
+        if (bc > length) {
+            bc = length;
         }
 
         final int r = fc + random.nextInt(bc - fc);

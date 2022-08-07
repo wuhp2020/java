@@ -10,6 +10,7 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.jeecg.common.api.vo.Result;
 import org.jeecg.common.constant.CommonConstant;
+import org.jeecg.common.constant.SymbolConstant;
 import org.jeecg.common.system.query.QueryGenerator;
 import org.jeecg.common.system.vo.LoginUser;
 import org.jeecg.common.util.ImportExcelUtil;
@@ -132,7 +133,7 @@ public class QuartzJobController {
 		if (ids == null || "".equals(ids.trim())) {
 			return Result.error("参数不识别！");
 		}
-		for (String id : Arrays.asList(ids.split(","))) {
+		for (String id : Arrays.asList(ids.split(SymbolConstant.COMMA))) {
 			QuartzJob job = quartzJobService.getById(id);
 			quartzJobService.deleteAndStopJob(job);
 		}
@@ -228,7 +229,8 @@ public class QuartzJobController {
 		List<String> errorMessage = new ArrayList<>();
 		int successLines = 0, errorLines = 0;
 		for (Map.Entry<String, MultipartFile> entity : fileMap.entrySet()) {
-			MultipartFile file = entity.getValue();// 获取上传文件对象
+            // 获取上传文件对象
+			MultipartFile file = entity.getValue();
 			ImportParams params = new ImportParams();
 			params.setTitleRows(2);
 			params.setHeadRows(1);

@@ -12,6 +12,7 @@ import org.jeecg.common.constant.CommonConstant;
 import org.jeecg.common.util.DateUtils;
 import org.jeecg.common.util.PathMatcherUtil;
 import org.jeecg.common.config.mqtoken.UserTokenContext;
+import org.jeecg.config.mybatis.TenantContext;
 import org.jeecg.config.sign.interceptor.SignAuthConfiguration;
 import org.jeecg.config.sign.util.HttpUtils;
 import org.jeecg.config.sign.util.SignUtil;
@@ -44,12 +45,21 @@ import feign.codec.Encoder;
 import feign.form.spring.SpringFormEncoder;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * @Description: FeignConfig
+ * @author: JeecgBoot
+ */
 @ConditionalOnClass(Feign.class)
 @AutoConfigureBefore(FeignAutoConfiguration.class)
 @Slf4j
 @Configuration
 public class FeignConfig {
 
+    /**
+     * 设置feign header参数
+     * 【X_ACCESS_TOKEN】【X_SIGN】【X_TIMESTAMP】
+     * @return
+     */
     @Bean
     public RequestInterceptor requestInterceptor() {
         return requestTemplate -> {
@@ -62,38 +72,59 @@ public class FeignConfig {
                 if(token==null || "".equals(token)){
                     token = request.getParameter("token");
                 }
-                log.debug("Feign request token: {}", token);
+                log.info("Feign Login Request token: {}", token);
                 requestTemplate.header(CommonConstant.X_ACCESS_TOKEN, token);
 
-                //根据URL地址过滤请求 【字典表参数签名验证】
-                if (PathMatcherUtil.matches(Arrays.asList(SignAuthConfiguration.urlList),requestTemplate.path())) {
-                    try {
-                        log.info("============================ [begin] fegin starter url ============================");
-                        log.info(requestTemplate.path());
-                        log.info(requestTemplate.method());
-                        String queryLine = requestTemplate.queryLine();
-                        if(queryLine!=null && queryLine.startsWith("?")){
-                            queryLine = queryLine.substring(1);
-                        }
-                        log.info(queryLine);
-                        if(requestTemplate.body()!=null){
-                            log.info(new String(requestTemplate.body()));
-                        }
-                        SortedMap<String, String> allParams = HttpUtils.getAllParams(requestTemplate.path(),queryLine,requestTemplate.body(),requestTemplate.method());
-                        String sign = SignUtil.getParamsSign(allParams);
-                        log.info(" Feign request params sign: {}",sign);
-                        log.info("============================ [end] fegin starter url ============================");
-                        requestTemplate.header(CommonConstant.X_SIGN, sign);
-                        requestTemplate.header(CommonConstant.X_TIMESTAMP, DateUtils.getCurrentTimestamp().toString());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                //update-begin-author:taoyan date:2022-6-23 for: issues/I5AO20 多租户微服务之间调用找不到tenant-id（自定义页面）
+                // 将tenantId信息放入header中
+                String tenantId = request.getHeader(CommonConstant.TENANT_ID);
+                if(tenantId==null || "".equals(tenantId)){
+                    tenantId = request.getParameter(CommonConstant.TENANT_ID);
                 }
+                log.info("Feign Login Request tenantId: {}", tenantId);
+                requestTemplate.header(CommonConstant.TENANT_ID, tenantId);
+                //update-end-author:taoyan date:2022-6-23 for: issues/I5AO20 多租户微服务之间调用找不到tenant-id（自定义页面）
+
             }else{
-                String  token = UserTokenContext.getToken();
-                log.debug("Feign request token: {}", token);
+                String token = UserTokenContext.getToken();
+                log.info("Feign no Login token: {}", token);
                 requestTemplate.header(CommonConstant.X_ACCESS_TOKEN, token);
+
+                //update-begin-author:taoyan date:2022-6-23 for: issues/I5AO20 多租户微服务之间调用找不到tenant-id（自定义页面）
+                String tenantId = TenantContext.getTenant();
+                log.info("Feign no Login tenantId: {}", tenantId);
+                requestTemplate.header(CommonConstant.TENANT_ID, tenantId);
+                //update-end-author:taoyan date:2022-6-23 for: issues/I5AO20 多租户微服务之间调用找不到tenant-id（自定义页面）
             }
+
+            //================================================================================================================
+            //针对特殊接口，进行加签验证 ——根据URL地址过滤请求 【字典表参数签名验证】
+            if (PathMatcherUtil.matches(Arrays.asList(SignAuthConfiguration.SIGN_URL_LIST),requestTemplate.path())) {
+                try {
+                    log.info("============================ [begin] fegin starter url ============================");
+                    log.info(requestTemplate.path());
+                    log.info(requestTemplate.method());
+                    String queryLine = requestTemplate.queryLine();
+                    if(queryLine!=null && queryLine.startsWith("?")){
+                        queryLine = queryLine.substring(1);
+                    }
+                    log.info(queryLine);
+                    if(requestTemplate.body()!=null){
+                        log.info(new String(requestTemplate.body()));
+                    }
+                    SortedMap<String, String> allParams = HttpUtils.getAllParams(requestTemplate.path(),queryLine,requestTemplate.body(),requestTemplate.method());
+                    String sign = SignUtil.getParamsSign(allParams);
+                    log.info(" Feign request params sign: {}",sign);
+                    log.info("============================ [end] fegin starter url ============================");
+                    requestTemplate.header(CommonConstant.X_SIGN, sign);
+                    //update-begin--author:taoyan---date:20220421--for: VUEN-410【签名改造】 X-TIMESTAMP牵扯
+                    requestTemplate.header(CommonConstant.X_TIMESTAMP, String.valueOf(System.currentTimeMillis()));
+                    //update-end--author:taoyan---date:20220421--for: VUEN-410【签名改造】 X-TIMESTAMP牵扯
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            //================================================================================================================
         };
     }
 

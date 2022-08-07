@@ -1,18 +1,20 @@
 import {defHttp} from "/@/utils/http/axios";
-import {Modal} from 'ant-design-vue';
+import { useMessage } from "/@/hooks/web/useMessage";
+
+const { createConfirm } = useMessage();
 
 enum Api {
   list = '/${entityPackage}/${entityName?uncap_first}/rootList',
   save='/${entityPackage}/${entityName?uncap_first}/add',
   edit='/${entityPackage}/${entityName?uncap_first}/edit',
-  delete${entityName} = '/sys/${entityName?uncap_first}/delete',
-  deleteBatch = '/${entityPackage}/${entityName?uncap_first}/deleteBatch',
+  delete${entityName} = '/${entityPackage}/${entityName?uncap_first}/delete',
   importExcel = '/${entityPackage}/${entityName?uncap_first}/importExcel',
   exportXls = '/${entityPackage}/${entityName?uncap_first}/exportXls',
   loadTreeData = '/${entityPackage}/${entityName?uncap_first}/loadTreeRoot',
   getChildList = '/${entityPackage}/${entityName?uncap_first}/childList',
   getChildListBatch = '/${entityPackage}/${entityName?uncap_first}/getChildListBatch',
 }
+
 /**
  * 导出api
  * @param params
@@ -42,13 +44,14 @@ export const delete${entityName} = (params,handleSuccess) => {
  * @param params
  */
 export const batchDelete${entityName} = (params, handleSuccess) => {
-  Modal.confirm({
+  createConfirm({
+    iconType: 'warning',
     title: '确认删除',
     content: '是否删除选中数据',
     okText: '确认',
     cancelText: '取消',
     onOk: () => {
-      return defHttp.delete({url: Api.deleteBatch, data: params}, {joinParamsToUrl: true}).then(() => {
+      return defHttp.delete({url: Api.delete${entityName}, data: params}, {joinParamsToUrl: true}).then(() => {
         handleSuccess();
       });
     }

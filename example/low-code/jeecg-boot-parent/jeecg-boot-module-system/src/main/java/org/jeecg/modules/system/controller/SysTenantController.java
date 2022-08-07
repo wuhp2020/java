@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.jeecg.common.api.vo.Result;
 import org.jeecg.common.aspect.annotation.PermissionData;
+import org.jeecg.common.constant.SymbolConstant;
 import org.jeecg.common.system.query.QueryGenerator;
 import org.jeecg.common.system.vo.LoginUser;
 import org.jeecg.common.util.oConvertUtils;
@@ -22,6 +23,7 @@ import java.util.*;
 
 /**
  * 租户配置信息
+ * @author: jeecg-boot
  */
 @Slf4j
 @RestController
@@ -134,7 +136,7 @@ public class SysTenantController {
             // 过滤掉已被引用的租户
             List<Integer> idList = new ArrayList<>();
             for (String id : ls) {
-                int userCount = sysTenantService.countUserLinkTenant(id);
+                Long userCount = sysTenantService.countUserLinkTenant(id);
                 if (userCount == 0) {
                     idList.add(Integer.parseInt(id));
                 }
@@ -200,10 +202,10 @@ public class SysTenantController {
         try {
             LoginUser sysUser = (LoginUser) SecurityUtils.getSubject().getPrincipal();
             String tenantIds = sysUser.getRelTenantIds();
-            Map<String,Object> map = new HashMap<String,Object>();
+            Map<String,Object> map = new HashMap(5);
             if (oConvertUtils.isNotEmpty(tenantIds)) {
                 List<Integer> tenantIdList = new ArrayList<>();
-                for(String id: tenantIds.split(",")){
+                for(String id: tenantIds.split(SymbolConstant.COMMA)){
                     tenantIdList.add(Integer.valueOf(id));
                 }
                 // 该方法仅查询有效的租户，如果返回0个就说明所有的租户均无效。

@@ -6,7 +6,9 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.jeecg.common.api.vo.Result;
+import org.jeecg.common.system.vo.LoginUser;
 import org.jeecg.common.system.vo.SysUserCacheInfo;
+import org.jeecg.modules.system.entity.SysRoleIndex;
 import org.jeecg.modules.system.entity.SysUser;
 import org.jeecg.modules.system.model.SysUserSysDepartModel;
 import org.springframework.transaction.annotation.Transactional;
@@ -58,7 +60,12 @@ public interface ISysUserService extends IService<SysUser> {
 	 * @return
 	 */
 	public boolean deleteBatchUsers(String userIds);
-	
+
+    /**
+     * 根据用户名查询
+     * @param username 用户名
+     * @return SysUser
+     */
 	public SysUser getUserByName(String username);
 	
 	/**
@@ -82,31 +89,45 @@ public interface ISysUserService extends IService<SysUser> {
 	 * @return
 	 */
 	public List<String> getRole(String username);
+
+	/**
+	 * 获取根据登录用户的角色获取动态首页
+	 *
+	 * @param username
+	 * @param version 前端UI版本
+	 * @return
+	 */
+	public SysRoleIndex getDynamicIndexByUserRole(String username,String version);
 	
 	/**
 	  * 查询用户信息包括 部门信息
 	 * @param username
 	 * @return
 	 */
+	@Deprecated
 	public SysUserCacheInfo getCacheUser(String username);
 
 	/**
 	 * 根据部门Id查询
-	 * @param
+	 * @param page
+     * @param departId 部门id
+     * @param username 用户账户名称
 	 * @return
 	 */
 	public IPage<SysUser> getUserByDepId(Page<SysUser> page, String departId, String username);
 
 	/**
 	 * 根据部门Ids查询
-	 * @param
+	 * @param page
+     * @param departIds  部门id集合
+     * @param username 用户账户名称
 	 * @return
 	 */
 	public IPage<SysUser> getUserByDepIds(Page<SysUser> page, List<String> departIds, String username);
 
 	/**
 	 * 根据 userIds查询，查询用户所属部门的名称（多个部门名逗号隔开）
-	 * @param
+	 * @param userIds
 	 * @return
 	 */
 	public Map<String,String> getDepNamesByUserIds(List<String> userIds);
@@ -133,7 +154,9 @@ public interface ISysUserService extends IService<SysUser> {
 
 	/**
 	 * 根据角色Id查询
-	 * @param
+	 * @param page
+     * @param roleId 角色id
+     * @param username 用户账户名称
 	 * @return
 	 */
 	public IPage<SysUser> getUserByRoleId(Page<SysUser> page,String roleId, String username);
@@ -163,13 +186,17 @@ public interface ISysUserService extends IService<SysUser> {
 	
 	/**
 	 * 根据手机号获取用户名和密码
+     * @param phone 手机号
+     * @return SysUser
 	 */
 	public SysUser getUserByPhone(String phone);
 
 
 	/**
 	 * 根据邮箱获取用户
-	 */
+     * @param email 邮箱
+     * @return SysUser
+     */
 	public SysUser getUserByEmail(String email);
 
 
@@ -196,26 +223,35 @@ public interface ISysUserService extends IService<SysUser> {
 
 	/**
 	 * 查询被逻辑删除的用户
+     * @return List<SysUser>
 	 */
 	List<SysUser> queryLogicDeleted();
 
 	/**
 	 * 查询被逻辑删除的用户（可拼装查询条件）
+     * @param wrapper
+     * @return List<SysUser>
 	 */
 	List<SysUser> queryLogicDeleted(LambdaQueryWrapper<SysUser> wrapper);
 
 	/**
 	 * 还原被逻辑删除的用户
+     * @param userIds  存放用户id集合
+     * @param updateEntity
+     * @return boolean
 	 */
 	boolean revertLogicDeleted(List<String> userIds, SysUser updateEntity);
 
 	/**
 	 * 彻底删除被逻辑删除的用户
+     * @param userIds 存放用户id集合
+     * @return boolean
 	 */
 	boolean removeLogicDeleted(List<String> userIds);
 
     /**
      * 更新手机号、邮箱空字符串为 null
+     * @return boolean
      */
     @Transactional(rollbackFor = Exception.class)
     boolean updateNullPhoneEmail();
@@ -228,7 +264,8 @@ public interface ISysUserService extends IService<SysUser> {
 
 	/**
 	 * 根据部门Ids查询
-	 * @param
+	 * @param departIds 部门id集合
+     * @param username 用户账户名称
 	 * @return
 	 */
 	List<SysUser> queryByDepIds(List<String> departIds, String username);
@@ -249,7 +286,19 @@ public interface ISysUserService extends IService<SysUser> {
 	 */
 	void editUser(SysUser user, String roles, String departs);
 
-	/** userId转为username */
+	/**
+     * userId转为username
+     * @param userIdList
+     * @return List<String>
+     */
 	List<String> userIdToUsername(Collection<String> userIdList);
+
+
+	/**
+	 * 获取用户信息 字段信息是加密后的 【加密用户信息】
+	 * @param username
+	 * @return
+	 */
+	LoginUser getEncodeUserInfo(String username);
 
 }

@@ -2,13 +2,10 @@ package org.jeecg.modules.test.constant;
 
 /**
  * 微服务单元测试常量定义
+ * @author: zyf
+ * @date: 2022/04/21
  */
 public interface CloudConstant {
-
-    /**
-     * 微服务名【对应模块jeecg-boot-module-demo】
-     */
-    public final static String SERVER_NAME_JEECGDEMO = "jeecg-demo";
 
     /**
      * MQ测试队列名字

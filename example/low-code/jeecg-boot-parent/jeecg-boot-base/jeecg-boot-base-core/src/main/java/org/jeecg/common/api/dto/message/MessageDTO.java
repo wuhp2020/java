@@ -4,9 +4,11 @@ import lombok.Data;
 import org.jeecg.common.constant.CommonConstant;
 
 import java.io.Serializable;
+import java.util.Map;
 
 /**
  * 普通消息
+ * @author: jeecg-boot
  */
 @Data
 public class MessageDTO implements Serializable {
@@ -26,7 +28,7 @@ public class MessageDTO implements Serializable {
     /**
      * 发送给所有人
      */
-    protected boolean toAll;
+    protected Boolean toAll;
 
     /**
      * 消息主题
@@ -70,5 +72,19 @@ public class MessageDTO implements Serializable {
         this.content = content;
         this.category = category;
     }
+
+    /**
+     * 模板消息对应的模板编码
+     */
+    protected String templateCode;
+    /**
+     * 消息类型：org.jeecg.common.constant.enums.MessageTypeEnum
+     */
+    protected String type;
+
+    /**
+     * 解析模板内容 对应的数据
+     */
+    protected Map<String, Object> data;
 
 }

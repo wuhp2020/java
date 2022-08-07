@@ -1,10 +1,10 @@
 package org.jeecg.common.exception;
 
-import io.lettuce.core.RedisConnectionException;
+import cn.hutool.core.util.ObjectUtil;
 import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.jeecg.common.api.vo.Result;
-import org.springframework.beans.factory.annotation.Value;
+import org.jeecg.common.enums.SentinelErrorInfoEnum;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.data.redis.connection.PoolException;
@@ -27,13 +27,21 @@ import lombok.extern.slf4j.Slf4j;
 @RestControllerAdvice
 @Slf4j
 public class JeecgBootExceptionHandler {
-	@Value("${spring.servlet.multipart.max-file-size}")
-	private String maxFileSize;
+
 	/**
 	 * 处理自定义异常
 	 */
 	@ExceptionHandler(JeecgBootException.class)
 	public Result<?> handleJeecgBootException(JeecgBootException e){
+		log.error(e.getMessage(), e);
+		return Result.error(e.getMessage());
+	}
+
+	/**
+	 * 处理自定义微服务异常
+	 */
+	@ExceptionHandler(JeecgCloudException.class)
+	public Result<?> handleJeecgCloudException(JeecgCloudException e){
 		log.error(e.getMessage(), e);
 		return Result.error(e.getMessage());
 	}
@@ -69,6 +77,13 @@ public class JeecgBootExceptionHandler {
 	@ExceptionHandler(Exception.class)
 	public Result<?> handleException(Exception e){
 		log.error(e.getMessage(), e);
+		//update-begin---author:zyf ---date:20220411  for：处理Sentinel限流自定义异常
+		Throwable throwable = e.getCause();
+		SentinelErrorInfoEnum errorInfoEnum = SentinelErrorInfoEnum.getErrorByException(throwable);
+		if (ObjectUtil.isNotEmpty(errorInfoEnum)) {
+			return Result.error(errorInfoEnum.getError());
+		}
+		//update-end---author:zyf ---date:20220411  for：处理Sentinel限流自定义异常
 		return Result.error("操作失败，"+e.getMessage());
 	}
 	
@@ -78,7 +93,7 @@ public class JeecgBootExceptionHandler {
 	 * @return
 	 */
 	@ExceptionHandler(HttpRequestMethodNotSupportedException.class)
-	public Result<?> HttpRequestMethodNotSupportedException(HttpRequestMethodNotSupportedException e){
+	public Result<?> httpRequestMethodNotSupportedException(HttpRequestMethodNotSupportedException e){
 		StringBuffer sb = new StringBuffer();
 		sb.append("不支持");
 		sb.append(e.getMethod());
@@ -102,13 +117,14 @@ public class JeecgBootExceptionHandler {
     @ExceptionHandler(MaxUploadSizeExceededException.class)
     public Result<?> handleMaxUploadSizeExceededException(MaxUploadSizeExceededException e) {
     	log.error(e.getMessage(), e);
-        return Result.error(String.format("文件大小超出%s限制, 请压缩或降低文件质量! ", maxFileSize));
+        return Result.error("文件大小超出10MB限制, 请压缩或降低文件质量! ");
     }
 
     @ExceptionHandler(DataIntegrityViolationException.class)
     public Result<?> handleDataIntegrityViolationException(DataIntegrityViolationException e) {
     	log.error(e.getMessage(), e);
-        return Result.error("字段太长,超出数据库字段的长度");
+    	//【issues/3624】数据库执行异常handleDataIntegrityViolationException提示有误 #3624
+        return Result.error("执行数据库异常,违反了完整性例如：违反惟一约束、违反非空限制、字段内容超出长度等");
     }
 
     @ExceptionHandler(PoolException.class)

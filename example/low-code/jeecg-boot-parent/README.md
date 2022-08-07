@@ -1,15 +1,15 @@
 Jeecg-Boot 低代码开发平台
 ===============
 
-当前最新版本： 3.1.0（发布日期：20220301）
+当前最新版本： 3.3.0（发布日期：20220725）
 
 
 ## 后端技术架构
-- 基础框架：Spring Boot 2.3.5.RELEASE
+- 基础框架：Spring Boot 2.6.6
 
-- 持久层框架：Mybatis-plus 3.4.3.1
+- 持久层框架：Mybatis-plus 3.5.1
 
-- 安全框架：Apache Shiro 1.7.0，Jwt 3.11.0
+- 安全框架：Apache Shiro 1.8.0，Jwt 3.11.0
 
 - 数据库连接池：阿里巴巴Druid 1.1.22
 
@@ -44,6 +44,44 @@ Jeecg-Boot 低代码开发平台
 - 常见问题：  [http://jeecg.com/doc/qa](http://jeecg.com/doc/qa)
 
 - QQ交流群 ： ⑤860162132、④774126647(满)、③816531124(满)、②769925425(满)、①284271917(满)
+
+
+## Docker镜像启动后台
+
+
+- Docker镜像单体启动 ：  http://doc.jeecg.com/2043889
+- Docker镜像微服务启动： http://doc.jeecg.com/2656147
+
+
+下面是单体启动步骤：
+ ``` 
+
+注意： 如果本地安装了mysql和redis,启动容器前先停掉本地服务，不然会端口冲突。
+       net stop redis
+       net stop mysql
+ 
+# 1.配置host
+    127.0.0.1   jeecg-boot-redis
+    127.0.0.1   jeecg-boot-mysql
+    127.0.0.1   jeecg-boot-system
+  
+# 2.修改application-dev.yml文件的数据库和redis链接
+    修改数据库连接和redis连接，将连接改成host方式
+
+# 3.进jeecg-boot根目录，执行maven命令
+    mvn clean package
+
+# 4.启动镜像组
+    docker-compose up -d
+
+# 5.访问后台项目（等待2分钟左右后）
+    http://localhost:8080/jeecg-boot/doc.html
+``` 
+
+其他： 重新构建镜像组（当你改变本地代码，也可重新构建镜像）
+```
+   docker-compose build
+```
 
 
 ## 专项文档
@@ -158,38 +196,3 @@ code: {
 ```
 
 
-## docker镜像用法
-  文档： http://doc.jeecg.com/2043889
-
- ``` 
-注意： 如果本地安装了mysql和redis,启动容器前先停掉本地服务，不然会端口冲突。
-       net stop redis
-       net stop mysql
- 
- # 1.配置host
-
-    # jeecgboot
-    127.0.0.1   jeecg-boot-redis
-    127.0.0.1   jeecg-boot-mysql
-    127.0.0.1   jeecg-boot-system
-	
-# 2.修改项目配置文件 application.yml
-    active: dev
-	
-# 3.修改application-dev.yml文件的数据库和redis链接
-	修改数据库连接和redis连接，将连接改成host方式
-
-# 4.先进JAVA项目jeecg-boot根路径 maven打包
-    mvn clean package
- 
-
-# 5.构建镜像__容器组（当你改变本地代码，也可重新构建镜像）
-    docker-compose build
-
-
-# 6.启动镜像__容器组（也可取代运行中的镜像）
-    docker-compose up -d
-
-# 7.访问后台项目（注意要开启swagger）
-    http://localhost:8080/jeecg-boot/doc.html
-``` 

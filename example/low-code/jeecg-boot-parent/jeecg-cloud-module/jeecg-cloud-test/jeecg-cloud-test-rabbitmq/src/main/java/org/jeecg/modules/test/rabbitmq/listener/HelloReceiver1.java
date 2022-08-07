@@ -17,8 +17,12 @@ import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
 
 /**
+ * 定义接收者（可以定义N个接受者，消息会均匀的发送到N个接收者中）
+ *
  * RabbitMq接受者1
  * （@RabbitListener声明类上，一个类只能监听一个队列）
+ * @author: zyf
+ * @date: 2022/04/21
  */
 @Slf4j
 @RabbitListener(queues = CloudConstant.MQ_JEECG_PLACE_ORDER)
@@ -35,7 +39,7 @@ public class HelloReceiver1 extends BaseRabbiMqHandler<BaseMap> {
             public void handler(BaseMap map, Channel channel) {
                 //业务处理
                 String orderId = map.get("orderId").toString();
-                System.out.println("MQ Receiver1，orderId : " + orderId);
+                log.info("【我是处理人1】 MQ Receiver1，orderId : " + orderId);
                // jeecgTestClient.getMessage("JEECG");
                 try{
 //                    HttpHeaders requestHeaders = new HttpHeaders();

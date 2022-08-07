@@ -37,7 +37,7 @@ import java.util.stream.Collectors;
  */
 @Slf4j
 public class JeecgController<T, S extends IService<T>> {
-    //issues/2933 JeecgController注入service时改用protected修饰，能避免重复引用service
+    /**issues/2933 JeecgController注入service时改用protected修饰，能避免重复引用service*/
     @Autowired
     protected S service;
 
@@ -53,22 +53,19 @@ public class JeecgController<T, S extends IService<T>> {
         QueryWrapper<T> queryWrapper = QueryGenerator.initQueryWrapper(object, request.getParameterMap());
         LoginUser sysUser = (LoginUser) SecurityUtils.getSubject().getPrincipal();
 
-        // Step.2 获取导出数据
-        List<T> pageList = service.list(queryWrapper);
-        List<T> exportList = null;
-
         // 过滤选中数据
         String selections = request.getParameter("selections");
         if (oConvertUtils.isNotEmpty(selections)) {
             List<String> selectionList = Arrays.asList(selections.split(","));
-            exportList = pageList.stream().filter(item -> selectionList.contains(getId(item))).collect(Collectors.toList());
-        } else {
-            exportList = pageList;
+            queryWrapper.in("id",selectionList);
         }
+        // Step.2 获取导出数据
+        List<T> exportList = service.list(queryWrapper);
 
         // Step.3 AutoPoi 导出Excel
         ModelAndView mv = new ModelAndView(new JeecgEntityExcelView());
-        mv.addObject(NormalExcelConstants.FILE_NAME, title); //此处设置的filename无效 ,前端会重更新设置一下
+        //此处设置的filename无效 ,前端会重更新设置一下
+        mv.addObject(NormalExcelConstants.FILE_NAME, title);
         mv.addObject(NormalExcelConstants.CLASS, clazz);
         //update-begin--Author:liusq  Date:20210126 for：图片导出报错，ImageBasePath未设置--------------------
         ExportParams  exportParams=new ExportParams(title + "报表", "导出人:" + sysUser.getRealname(), title);
@@ -96,33 +93,36 @@ public class JeecgController<T, S extends IService<T>> {
         // Step.2 计算分页sheet数据
         double total = service.count();
         int count = (int)Math.ceil(total/pageNum);
-        // Step.3 多sheet处理
+        //update-begin-author:liusq---date:20220629--for: 多sheet导出根据选择导出写法调整 ---
+        // Step.3  过滤选中数据
+        String selections = request.getParameter("selections");
+        if (oConvertUtils.isNotEmpty(selections)) {
+            List<String> selectionList = Arrays.asList(selections.split(","));
+            queryWrapper.in("id",selectionList);
+        }
+        //update-end-author:liusq---date:20220629--for: 多sheet导出根据选择导出写法调整 ---
+        // Step.4 多sheet处理
         List<Map<String, Object>> listMap = new ArrayList<Map<String, Object>>();
         for (int i = 1; i <=count ; i++) {
             Page<T> page = new Page<T>(i, pageNum);
             IPage<T> pageList = service.page(page, queryWrapper);
-            List<T> records = pageList.getRecords();
-            List<T> exportList = null;
-            // 过滤选中数据
-            String selections = request.getParameter("selections");
-            if (oConvertUtils.isNotEmpty(selections)) {
-                List<String> selectionList = Arrays.asList(selections.split(","));
-                exportList = records.stream().filter(item -> selectionList.contains(getId(item))).collect(Collectors.toList());
-            } else {
-                exportList = records;
-            }
-            Map<String, Object> map = new HashMap<String, Object>();
+            List<T> exportList = pageList.getRecords();
+            Map<String, Object> map = new HashMap<>(5);
             ExportParams  exportParams=new ExportParams(title + "报表", "导出人:" + sysUser.getRealname(), title+i,upLoadPath);
             exportParams.setType(ExcelType.XSSF);
-            //map.put("title",exportParams);//表格Title
-            map.put(NormalExcelConstants.PARAMS,exportParams);//表格Title
-            map.put(NormalExcelConstants.CLASS,clazz);//表格对应实体
-            map.put(NormalExcelConstants.DATA_LIST, exportList);//数据集合
+            //map.put("title",exportParams);
+            //表格Title
+            map.put(NormalExcelConstants.PARAMS,exportParams);
+            //表格对应实体
+            map.put(NormalExcelConstants.CLASS,clazz);
+            //数据集合
+            map.put(NormalExcelConstants.DATA_LIST, exportList);
             listMap.add(map);
         }
         // Step.4 AutoPoi 导出Excel
         ModelAndView mv = new ModelAndView(new JeecgEntityExcelView());
-        mv.addObject(NormalExcelConstants.FILE_NAME, title); //此处设置的filename无效 ,前端会重更新设置一下
+        //此处设置的filename无效 ,前端会重更新设置一下
+        mv.addObject(NormalExcelConstants.FILE_NAME, title);
         mv.addObject(NormalExcelConstants.MAP_LIST, listMap);
         return mv;
     }
@@ -164,7 +164,8 @@ public class JeecgController<T, S extends IService<T>> {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         Map<String, MultipartFile> fileMap = multipartRequest.getFileMap();
         for (Map.Entry<String, MultipartFile> entity : fileMap.entrySet()) {
-            MultipartFile file = entity.getValue();// 获取上传文件对象
+            // 获取上传文件对象
+            MultipartFile file = entity.getValue();
             ImportParams params = new ImportParams();
             params.setTitleRows(2);
             params.setHeadRows(1);

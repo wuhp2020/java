@@ -55,7 +55,7 @@
           <template v-if="toggleSearchStatus">
     </#if>
           <#-- update-begin-author:taoyan date:20220303 for: /issues/3420 内嵌风格，datetime控件样式异常 -->
-          <#if po.queryModel=='group' && po.classType=='datetime'>
+          <#if po.queryMode?default("")?trim=='group' && po.classType=='datetime'>
           ${indent}<a-col :xl="10" :lg="12" :md="12" :sm="24">
           <#else>
           ${indent}<a-col :xl="6" :lg="7" :md="8" :sm="24">
@@ -241,10 +241,10 @@
           <div v-html="text"></div>
         </template>
 
-        <template slot="imgSlot" slot-scope="text">
+        <template slot="imgSlot" slot-scope="text,record">
           <div style="font-size: 12px;font-style: italic;">
             <span v-if="!text">无图片</span>
-            <img v-else :src="getImgView(text)" alt="" style="max-width:80px;height:25px;"/>
+            <img v-else :src="getImgView(text)" :preview="record.id" alt="" style="max-width:80px;height:25px;"/>
           </div>
         </template>
 

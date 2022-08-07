@@ -198,10 +198,17 @@ public class ThirdLoginController {
 		String token = JwtUtil.sign(user.getUsername(), user.getPassword());
 		redisUtil.set(CommonConstant.PREFIX_USER_TOKEN + token, token);
 		// 设置超时时间
-		redisUtil.expire(CommonConstant.PREFIX_USER_TOKEN + token, JwtUtil.EXPIRE_TIME / 1000);
+		redisUtil.expire(CommonConstant.PREFIX_USER_TOKEN + token, JwtUtil.EXPIRE_TIME * 2 / 1000);
 		return token;
 	}
 
+	/**
+	 * 第三方登录回调接口
+	 * @param token
+	 * @param thirdType
+	 * @return
+	 * @throws Exception
+	 */
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/getLoginUser/{token}/{thirdType}", method = RequestMethod.GET)
 	@ResponseBody
@@ -251,20 +258,21 @@ public class ThirdLoginController {
 		Result<String> result = new Result<String>();
 		String phone = jsonObject.getString("mobile");
 		String thirdUserUuid = jsonObject.getString("thirdUserUuid");
+		// 校验验证码
+		String captcha = jsonObject.getString("captcha");
+		Object captchaCache = redisUtil.get(phone);
+		if (oConvertUtils.isEmpty(captcha) || !captcha.equals(captchaCache)) {
+			result.setMessage("验证码错误");
+			result.setSuccess(false);
+			return result;
+		}
 		//校验用户有效性
 		SysUser sysUser = sysUserService.getUserByPhone(phone);
 		if(sysUser != null){
+			// 存在用户，直接绑定
 			sysThirdAccountService.updateThirdUserId(sysUser,thirdUserUuid);
 		}else{
 			// 不存在手机号，创建用户
-			String smscode = jsonObject.getString("captcha");
-			Object code = redisUtil.get(phone);
-			if (!smscode.equals(code)) {
-				result.setMessage("手机验证码错误");
-				result.setSuccess(false);
-				return result;
-			}
-			//创建用户
 			sysUser = sysThirdAccountService.createUser(phone,thirdUserUuid);
 		}
 		String token = saveToken(sysUser);
@@ -324,7 +332,10 @@ public class ThirdLoginController {
 			builder.append("&scope=openid");
 			// 跟随authCode原样返回。
 			builder.append("&state=").append(state);
-			url = builder.toString();
+            //update-begin---author:wangshuai ---date:20220613  for：[issues/I5BOUF]oauth2 钉钉无法登录------------
+            builder.append("&prompt=").append("consent");
+            //update-end---author:wangshuai ---date:20220613  for：[issues/I5BOUF]oauth2 钉钉无法登录--------------
+            url = builder.toString();
 		} else {
 			return "不支持的source";
 		}
@@ -369,9 +380,28 @@ public class ThirdLoginController {
             return "不支持的source";
         }
         try {
-            String token = saveToken(loginUser);
+
+			//update-begin-author:taoyan date:2022-6-30 for: 工作流发送消息 点击消息链接跳转办理页面
+			String redirect = "";
+			if (state.indexOf("?") > 0) {
+				String[] arr = state.split("\\?");
+				state = arr[0];
+				if(arr.length>1){
+					redirect = arr[1];
+				}
+			}
+
+			String token = saveToken(loginUser);
 			state += "/oauth2-app/login?oauth2LoginToken=" + URLEncoder.encode(token, "UTF-8");
-			state += "&thirdType=" + "wechat_enterprise";
+			//update-begin---author:wangshuai ---date:20220613  for：[issues/I5BOUF]oauth2 钉钉无法登录------------
+			state += "&thirdType=" + source;
+			//state += "&thirdType=" + "wechat_enterprise";
+			if (redirect != null && redirect.length() > 0) {
+				state += "&" + redirect;
+			}
+			//update-end-author:taoyan date:2022-6-30 for: 工作流发送消息 点击消息链接跳转办理页面
+
+            //update-end---author:wangshuai ---date:20220613  for：[issues/I5BOUF]oauth2 钉钉无法登录------------
 			log.info("OAuth2登录重定向地址: " + state);
             try {
                 response.sendRedirect(state);

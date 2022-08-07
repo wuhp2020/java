@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.jeecg.common.base.BaseMap;
 import org.jeecg.common.constant.CacheConstant;
+import org.jeecg.common.constant.CommonConstant;
 import org.jeecg.common.constant.GlobalConstants;
 import org.jeecg.common.util.oConvertUtils;
 import org.jeecg.modules.system.entity.SysGatewayRoute;
@@ -35,6 +36,7 @@ public class SysGatewayRouteServiceImpl extends ServiceImpl<SysGatewayRouteMappe
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
 
+    private static final String STRING_STATUS = "status";
 
     @Override
     public void addRoute2Redis(String key) {
@@ -75,10 +77,10 @@ public class SysGatewayRouteServiceImpl extends ServiceImpl<SysGatewayRouteMappe
             }
             route.setFilters(filters);
             route.setUri(json.getString("uri"));
-            if (json.get("status") == null) {
+            if (json.get(STRING_STATUS) == null) {
                 route.setStatus(1);
             } else {
-                route.setStatus(json.getInteger("status"));
+                route.setStatus(json.getInteger(STRING_STATUS));
             }
             this.saveOrUpdate(route);
             resreshRouter(null);
@@ -92,12 +94,12 @@ public class SysGatewayRouteServiceImpl extends ServiceImpl<SysGatewayRouteMappe
     /**
      * 更新redis路由缓存
      */
-    private void resreshRouter(String id) {
+    private void resreshRouter(String delRouterId) {
         //更新redis路由缓存
         addRoute2Redis(CacheConstant.GATEWAY_ROUTES);
         BaseMap params = new BaseMap();
-        params.put(GlobalConstants.HANDLER_NAME, "loderRouderHandler");
-        params.put("routerId", id);
+        params.put(GlobalConstants.HANDLER_NAME, GlobalConstants.LODER_ROUDER_HANDLER);
+        params.put("delRouterId", delRouterId);
         //刷新网关
         redisTemplate.convertAndSend(GlobalConstants.REDIS_TOPIC_NAME, params);
     }

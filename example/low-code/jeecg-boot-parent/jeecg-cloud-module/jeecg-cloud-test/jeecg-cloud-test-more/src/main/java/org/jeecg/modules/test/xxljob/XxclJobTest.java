@@ -6,9 +6,10 @@ import com.xxl.job.core.handler.annotation.XxlJob;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-
 /**
- * xxl-job定时任务测试
+ *  xxl-job定时任务测试
+ * @author: zyf
+ * @date: 2022/04/21
  */
 @Component
 @Slf4j
@@ -22,9 +23,9 @@ public class XxclJobTest {
      * @return
      */
 
-    @XxlJob(value = "testJob")
+    @XxlJob(value = "xxclJobTest")
     public ReturnT<String> demoJobHandler(String params) {
-        log.info("我是demo服务里的定时任务testJob,我执行了...............................");
+        log.info("我是 jeecg-system 服务里的定时任务 xxclJobTest , 我执行了...............................");
         return ReturnT.SUCCESS;
     }
 
