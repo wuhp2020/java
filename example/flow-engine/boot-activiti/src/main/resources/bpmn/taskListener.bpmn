@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://bpmn.io/schema/bpmn" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:yaoqiang="http://bpmn.sourceforge.net" exporter="Yaoqiang BPMN Editor" exporterVersion="5.3" expressionLanguage="http://www.w3.org/1999/XPath" id="sample-diagram" name="" targetNamespace="http://bpmn.io/schema/bpmn" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://bpmn.sourceforge.net/schemas/BPMN20.xsd">
+  <bpmn2:process id="Process_1" isClosed="false" isExecutable="true" name="执行监听" processType="None">
+    <bpmn2:extensionElements>
+      <yaoqiang:description/>
+      <yaoqiang:pageFormat height="841.8897637795276" imageableHeight="831.8897637795276" imageableWidth="588.1102362204724" imageableX="5.0" imageableY="5.0" orientation="0" width="598.1102362204724"/>
+      <yaoqiang:page background="#FFFFFF" horizontalCount="1" verticalCount="1"/>
+    </bpmn2:extensionElements>
+    <bpmn2:startEvent id="StartEvent_1" isInterrupting="true" parallelMultiple="false">
+      <bpmn2:outgoing>Flow_0rg8rs5</bpmn2:outgoing>
+      <bpmn2:outputSet/>
+    </bpmn2:startEvent>
+    <bpmn2:userTask activiti:assignee="bajie" completionQuantity="1" id="Activity_1jduzmq" implementation="##unspecified" isForCompensation="false" name="监听1" startQuantity="1">
+      <bpmn2:extensionElements>
+        <activiti:taskListener class="com.ywy.activiti.TaskListener" event="create"/>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>Flow_0rg8rs5</bpmn2:incoming>
+      <bpmn2:outgoing>Flow_0h8n23n</bpmn2:outgoing>
+    </bpmn2:userTask>
+    <bpmn2:sequenceFlow id="Flow_0rg8rs5" sourceRef="StartEvent_1" targetRef="Activity_1jduzmq"/>
+    <bpmn2:userTask activiti:assignee="wukong" completionQuantity="1" id="Activity_1xuet8j" implementation="##unspecified" isForCompensation="false" name="监听2" startQuantity="1">
+      <bpmn2:incoming>Flow_0h8n23n</bpmn2:incoming>
+      <bpmn2:outgoing>Flow_1ofueld</bpmn2:outgoing>
+    </bpmn2:userTask>
+    <bpmn2:sequenceFlow id="Flow_0h8n23n" sourceRef="Activity_1jduzmq" targetRef="Activity_1xuet8j"/>
+    <bpmn2:endEvent id="Event_157k5zu">
+      <bpmn2:incoming>Flow_1ofueld</bpmn2:incoming>
+      <bpmn2:inputSet/>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="Flow_1ofueld" sourceRef="Activity_1xuet8j" targetRef="Event_157k5zu"/>
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram id="Yaoqiang_Diagram-Process_1" name="Untitled Diagram" resolution="96.0">
+    <bpmndi:BPMNPlane bpmnElement="Process_1">
+      <bpmndi:BPMNShape bpmnElement="StartEvent_1" id="Yaoqiang-StartEvent_1">
+        <dc:Bounds height="32.0" width="32.0" x="412.0" y="240.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="18.96" width="6.0" x="425.0" y="280.52"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_1jduzmq" id="Yaoqiang-Activity_1jduzmq">
+        <dc:Bounds height="80.0" width="100.0" x="500.0" y="218.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="18.96" width="35.0" x="532.5" y="250.52"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_1xuet8j" id="Yaoqiang-Activity_1xuet8j">
+        <dc:Bounds height="80.0" width="100.0" x="660.0" y="218.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="18.96" width="35.0" x="692.5" y="250.52"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Event_157k5zu" id="Yaoqiang-Event_157k5zu">
+        <dc:Bounds height="32.0" width="32.0" x="822.0" y="240.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="18.96" width="6.0" x="835.0" y="280.52"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="Flow_1ofueld" id="Yaoqiang-Flow_1ofueld">
+        <di:waypoint x="760.3888888888889" y="258.0"/>
+        <di:waypoint x="822.3913003360421" y="256.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="18.96" width="6.0" x="788.0" y="247.13"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_0h8n23n" id="Yaoqiang-Flow_0h8n23n">
+        <di:waypoint x="600.3888888888889" y="258.0"/>
+        <di:waypoint x="660.3888888888889" y="258.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="18.96" width="6.0" x="627.39" y="248.52"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_0rg8rs5" id="Yaoqiang-Flow_0rg8rs5">
+        <di:waypoint x="444.3864774417356" y="256.0"/>
+        <di:waypoint x="500.3888888888889" y="258.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="18.96" width="6.0" x="469.0" y="247.91"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

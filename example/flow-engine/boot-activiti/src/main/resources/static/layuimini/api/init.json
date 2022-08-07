@@ -1,0 +1,71 @@
+{
+  "homeInfo": {
+    "title": "首页",
+    "href": "page/welcome-1.html"
+  },
+  "logoInfo": {
+    "title": "工作流管理",
+    "image": "images/logo.png",
+    "href": ""
+  },
+  "menuInfo": [
+    {
+      "title": "流程管理",
+      "icon": "fa fa-slideshare",
+      "href": "",
+      "target": "_self",
+      "child": [
+        {
+          "title": "首页",
+          "href": "page/welcome-1.html",
+          "icon": "fa fa-tachometer",
+          "target": "_self"
+        },
+        {
+          "title": "流程部署",
+          "href": "page/process-deployment.html",
+          "icon": "fa fa-calendar",
+          "target": "_self"
+        },
+        {
+          "title": "流程实例",
+          "href": "page/process-instance.html",
+          "icon": "fa fa-calendar",
+          "target": "_self"
+        },
+        {
+          "title": "待办任务",
+          "href": "page/todo-task.html",
+          "icon": "fa fa-snowflake-o",
+          "target": "_self"
+        },
+        {
+          "title": "历史任务",
+          "href": "page/history-task.html",
+          "icon": "fa fa-snowflake-o",
+          "target": "_self"
+        }
+      ]
+    },
+    {
+      "title": "系统管理",
+      "icon": "fa fa-address-book",
+      "href": "",
+      "target": "_self",
+      "child": [
+        {
+          "title": "菜单管理",
+          "href": "page/menu.html",
+          "icon": "fa fa-window-maximize",
+          "target": "_self"
+        },
+        {
+          "title": "系统设置",
+          "href": "page/setting.html",
+          "icon": "fa fa-gears",
+          "target": "_self"
+        }
+      ]
+    }
+  ]
+}

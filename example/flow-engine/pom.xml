@@ -20,6 +20,7 @@
         <module>jbpm</module>
         <module>osworkflow</module>
         <module>jeesite</module>
+        <module>boot-activiti</module>
     </modules>
     <packaging>pom</packaging>
 </project>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.activiti.org/test" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:yaoqiang="http://bpmn.sourceforge.net" exporter="Yaoqiang BPMN Editor" exporterVersion="5.3" expressionLanguage="http://www.w3.org/1999/XPath" id="_1659879383785" name="" targetNamespace="http://www.activiti.org/test" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://bpmn.sourceforge.net/schemas/BPMN20.xsd">
+  <process id="testProcess" isClosed="false" isExecutable="true" name="Test process" processType="None">
+    <extensionElements>
+      <yaoqiang:description/>
+      <yaoqiang:pageFormat height="841.8897637795276" imageableHeight="831.8897637795276" imageableWidth="588.1102362204724" imageableX="5.0" imageableY="5.0" orientation="0" width="598.1102362204724"/>
+      <yaoqiang:page background="#FFFFFF" horizontalCount="1" verticalCount="1"/>
+    </extensionElements>
+    <startEvent id="startevent1" isInterrupting="true" name="Start" parallelMultiple="false">
+      <outgoing>flow2</outgoing>
+      <outputSet/>
+    </startEvent>
+    <endEvent id="endevent1" name="End">
+      <incoming>flow3</incoming>
+      <inputSet/>
+    </endEvent>
+    <userTask activiti:assignee="zhangsan" completionQuantity="1" id="usertask1" implementation="##unspecified" isForCompensation="false" name="用户节点" startQuantity="1">
+      <incoming>flow2</incoming>
+      <outgoing>flow3</outgoing>
+    </userTask>
+    <sequenceFlow id="flow2" sourceRef="startevent1" targetRef="usertask1"/>
+    <sequenceFlow id="flow3" sourceRef="usertask1" targetRef="endevent1"/>
+  </process>
+  <bpmndi:BPMNDiagram id="Yaoqiang_Diagram-testProcess" name="Untitled Diagram" resolution="96.0">
+    <bpmndi:BPMNPlane bpmnElement="testProcess">
+      <bpmndi:BPMNShape bpmnElement="startevent1" id="Yaoqiang-startevent1">
+        <omgdc:Bounds height="32.0" width="32.0" x="370.0" y="80.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="18.96" width="31.0" x="370.5" y="120.52"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent1" id="Yaoqiang-endevent1">
+        <omgdc:Bounds height="32.0" width="32.0" x="370.0" y="290.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="18.96" width="26.0" x="373.0" y="330.52"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask1" id="Yaoqiang-usertask1">
+        <omgdc:Bounds height="55.0" width="105.0" x="335.0" y="170.0"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="18.96" width="50.0" x="362.5" y="190.02"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow3" id="Yaoqiang-flow3">
+        <omgdi:waypoint x="386.0" y="225.27777777777777"/>
+        <omgdi:waypoint x="386.0" y="290.2778742286858"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="18.96" width="6.0" x="383.0" y="248.3"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow2" id="Yaoqiang-flow2">
+        <omgdi:waypoint x="386.0" y="112.27768132686978"/>
+        <omgdi:waypoint x="386.0" y="170.27777777777777"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="18.96" width="6.0" x="383.0" y="131.8"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>流程实例</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../lib/layui-v2.6.3/css/layui.css" media="all">
+    <link rel="stylesheet" href="../css/public.css" media="all">
+</head>
+<body>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <script type="text/html" id="toolbarDemo">
+            <div class="layui-btn-container">
+            </div>
+        </script>
+
+        <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
+
+        <script type="text/html" id="currentTableBar">
+            {{#  if(d.status == 'RUNNING'){ }}
+            <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="suspend">挂起</a>
+            {{#  }else{ }}
+            <a class="layui-btn layui-btn-xs layui-btn-success" lay-event="resume">激活</a>
+            {{#  } }}
+            <a class="layui-btn layui-btn-xs layui-btn-info" lay-event="show">历史</a>
+            <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="delete">删除</a>
+        </script>
+    </div>
+</div>
+<script src="../lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
+<script src="../js/lay-config.js" charset="utf-8"></script>
+<script>
+    layui.use(['form', 'table'], function () {
+        var $ = layui.jquery,
+            form = layui.form,
+            table = layui.table;
+
+        var insTb = table.render({
+            elem: '#currentTableId',
+            url: publicUrl + 'processInstance/getInstances',
+            toolbar: '#toolbarDemo',
+            defaultToolbar: [],
+            cols: [[
+                {type: "checkbox", width: '5%', align: "center"},
+                {field: 'id', width: '15%', title: '流程实例id', align: "center"},
+                {field: 'name', width: '10%', title: '流程实例名称', align: "center"},
+                {field: 'startDate', width: '15%', title: '实例创建时间', align: "center"},
+                {field: 'processDefinitionId', width: '15%', title: '流程定义id', align: "center"},
+                {field: 'processDefinitionKey', width: '14%', title: '流程定义key', align: "center"},
+                {field: 'processDefinitionVersion', width: '6%', title: '流程定义版本', align: "center"},
+                {title: '操作', width: '20%', toolbar: '#currentTableBar', align: "center"}
+            ]],
+            limits: [10, 15, 20, 25, 50, 100],
+            limit: 10,
+            page: true,
+            skin: 'line',
+            parseData: function (res) {
+                // 处理时间
+                for(var i = 0 ; i< res.data.items.length ; i++) {
+                    res.data.items[i]["startDate"] = renderTime(res.data.items[i]["startDate"]);
+                }
+
+                return {
+                    "code": 0,
+                    "msg": res.msg,
+                    "count": res.data.count,
+                    "data": res.data.items
+                };
+            },
+            done: function (res, curr, count) {
+                if (res.code === 500) {
+                    layer.alert(res.msg, {icon: 2, title: '提示'});
+                }
+            }
+        });
+
+        // 监听搜索操作
+        form.on('submit(data-search-btn)', function (data) {
+            var result = JSON.stringify(data.field);
+
+            //执行搜索重载
+            table.reload('currentTableId', {
+                page: {
+                    curr: 1
+                },
+                where: {
+                    params: result
+                }
+            }, 'data');
+
+            return false;
+        });
+
+        // 监听表格复选框选择
+        table.on('checkbox(currentTableFilter)', function (obj) {
+            console.log(obj)
+        });
+
+        // tool监听事件
+        table.on('tool(currentTableFilter)', function (obj) {
+            var data = obj.data;
+
+            // 挂起流程实例
+            if (obj.event === 'suspend') {
+                suspendInstance(obj);
+            } else if (obj.event === 'resume') { // 激活流程实例
+                resumeInstance(obj);
+            } else if (obj.event === 'delete') { // 删除流程实例
+                deleteInstance(obj);
+            } else if (obj.event === 'show') { // 查看
+                window.open(publicUrl + 'bpmnjs/dist/index.html?type=showBPMN&instanceId='+data.id+'&deploymentId=' + data.deploymentId + '&resourceName=' + encodeURI(data.resourceName));
+            }
+        });
+
+        /**
+         * 挂起流程实例
+         */
+        function suspendInstance(obj) {
+            layer.confirm('确定要挂起该流程吗？', {
+                skin: 'layui-layer-admin',
+                shade: .1
+            }, function (index) {
+                layer.close(index);
+                var loadIndex = layer.load(2);
+                $.post(publicUrl + 'processInstance/suspendInstance', {
+                    instanceId: obj.data ? obj.data.id : ''
+                }, function (res) {
+                    layer.close(loadIndex);
+                    if (res.code === 200) {
+                        layer.msg(res.msg, {icon: 1});
+                        obj.del();
+                        insTb.reload();
+                    } else {
+                        layer.alert(res.msg, {icon: 2, title: '提示'});
+                    }
+                }, 'json');
+            });
+        }
+
+        /**
+         * 激活流程实例
+         */
+        function resumeInstance(obj) {
+            layer.confirm('确定要激活该流程吗？', {
+                skin: 'layui-layer-admin',
+                shade: .1
+            }, function (index) {
+                layer.close(index);
+                var loadIndex = layer.load(2);
+                $.post(publicUrl + 'processInstance/resumeInstance', {
+                    instanceId: obj.data ? obj.data.id : ''
+                }, function (res) {
+                    layer.close(loadIndex);
+                    if (res.code === 200) {
+                        layer.msg(res.msg, {icon: 1});
+                        obj.del();
+                        insTb.reload();
+                    } else {
+                        layer.alert(res.msg, {icon: 2, title: '提示'});
+                    }
+                }, 'json');
+            });
+        }
+
+        /**
+         * 删除流程实例
+         * @param obj
+         */
+        function deleteInstance(obj) {
+            layer.confirm('确定要删除该流程吗？', {
+                skin: 'layui-layer-admin',
+                shade: .1
+            }, function (index) {
+                layer.close(index);
+                var loadIndex = layer.load(2);
+                $.post(publicUrl + 'processInstance/deleteInstance', {
+                    deploymentId: obj.data ? obj.data.deploymentId : ''
+                }, function (res) {
+                    layer.close(loadIndex);
+                    if (res.code === 200) {
+                        layer.msg(res.msg, {icon: 1});
+                        obj.del();
+                        insTb.reload();
+                    } else {
+                        layer.alert(res.msg, {icon: 2, title: '提示'});
+                    }
+                }, 'json');
+            });
+        }
+    });
+</script>
+
+</body>
+</html>

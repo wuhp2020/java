@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>历史任务</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../lib/layui-v2.6.3/css/layui.css" media="all">
+    <link rel="stylesheet" href="../css/public.css" media="all">
+</head>
+<body>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <script type="text/html" id="toolbarDemo">
+            <div class="layui-btn-container">
+            </div>
+        </script>
+
+        <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
+
+        <script type="text/html" id="currentTableBar">
+        </script>
+    </div>
+</div>
+<script src="../lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
+<script src="../js/lay-config.js" charset="utf-8"></script>
+<script>
+    layui.use(['form', 'table'], function () {
+        var $ = layui.jquery,
+            form = layui.form,
+            table = layui.table;
+
+        var insTb = table.render({
+            elem: '#currentTableId',
+            url: publicUrl + 'history/getInstancesByUsername',
+            toolbar: '#toolbarDemo',
+            defaultToolbar: [],
+            cols: [[
+                {type: "checkbox", width: '5%', align: "center"},
+                {field: 'id', width: '15%', title: '任务id', align: "center"},
+                {field: 'taskDefinitionKey', width: '15%', title: 'KEY', align: "center"},
+                {field: 'name', width: '10%', title: '流程名称', align: "center"},
+                {field: 'processInstanceId', width: '15%', title: '流程实例id', align: "center"},
+                {field: 'createTime', width: '15%', title: '创建时间', align: "center"},
+                {field: 'startTime', width: '15%', title: '开始时间', align: "center"},
+                {field: 'assignee', width: '10%', title: '办理人', align: "center"},
+                // {title: '操作', width: '20%', toolbar: '#currentTableBar', align: "center"}
+            ]],
+            limits: [10, 15, 20, 25, 50, 100],
+            limit: 10,
+            page: true,
+            skin: 'line',
+            parseData: function (res) {
+                // 处理时间
+                for(var i = 0 ; i< res.data.items.length; i++) {
+                    res.data.items[i]["createTime"] = renderTime(res.data.items[i]["createTime"]);
+                    res.data.items[i]["startTime"] = renderTime(res.data.items[i]["startTime"]);
+                }
+
+                return {
+                    "code": 0,
+                    "msg": res.msg,
+                    "count": res.data.count,
+                    "data": res.data.items
+                };
+            },
+            done: function (res, curr, count) {
+                if (res.code === 500) {
+                    layer.alert(res.msg, {icon: 2, title: '提示'});
+                }
+            }
+        });
+
+        // 监听搜索操作
+        form.on('submit(data-search-btn)', function (data) {
+            var result = JSON.stringify(data.field);
+
+            //执行搜索重载
+            table.reload('currentTableId', {
+                page: {
+                    curr: 1
+                },
+                where: {
+                    params: result
+                }
+            }, 'data');
+
+            return false;
+        });
+
+        // 监听表格复选框选择
+        table.on('checkbox(currentTableFilter)', function (obj) {
+            console.log(obj)
+        });
+
+        // tool监听事件
+        table.on('tool(currentTableFilter)', function (obj) {
+
+        });
+    });
+</script>
+
+</body>
+</html>
