@@ -30,6 +30,7 @@
         <module>mycat</module>
         <module>seata</module>
         <module>sharding-jdbc</module>
+        <module>mybatis-plus-join</module>
     </modules>
     <packaging>pom</packaging>
 </project>
