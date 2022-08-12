@@ -508,3 +508,6 @@ innodb_buffer_pool_size必须是innodb_buffer_pool_chunk_size × innodb_buffer_p
 4. 修改连接数
 set GLOBAL max_connections=500;
 
+5.
+show status like 'Threads%';
+

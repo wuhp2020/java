@@ -16,6 +16,7 @@
     <modules>
         <module>activiti</module>
         <module>flowable</module>
+        <module>flowable-ui</module>
         <module>camunda</module>
         <module>jbpm</module>
         <module>osworkflow</module>
