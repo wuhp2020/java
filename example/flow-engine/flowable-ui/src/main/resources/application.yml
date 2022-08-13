@@ -9,7 +9,7 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
   application:
-    name: flowable-ui-idm
+    name: flowable-ui
   jmx:
     default-domain: ${spring.application.name}
   servlet:
@@ -50,7 +50,7 @@ spring:
 server:
   tomcat:
     uri-encoding: UTF-8
-  port: 8009
+  port: 8008
   servlet:
     context-path: /
   compression:
@@ -67,15 +67,13 @@ flowable:
   idm:
     app:
       admin:
-        password: admin
+        password: test
         user-id: admin
         first-name: admin
         last-name: admin
   labelFontName: 宋体
   common:
     app:
-      idm-admin:
-        password: admin
       role-prefix:
       idm-url: http://localhost:${server.port}/${spring.application.name}/idm
   xml:
@@ -95,7 +93,7 @@ flowable:
       server-config:
         app:
           context-root: ${spring.application.name}
-          password: admin
+          password: test
           server-address: http://localhost
           user-name: admin
           port: ${server.port}
@@ -105,7 +103,7 @@ flowable:
         process:
           context-root: ${spring.application.name}
           server-address: http://localhost
-          password: admin
+          password: test
           user-name: admin
           rest-root: process-api
           port: ${server.port}
@@ -114,7 +112,7 @@ flowable:
         form:
           context-root: ${spring.application.name}
           server-address: http://localhost
-          password: admin
+          password: test
           user-name: admin
           port: ${server.port}
           rest-root: form-api
@@ -123,7 +121,7 @@ flowable:
         dmn:
           context-root: ${spring.application.name}
           server-address: http://localhost
-          password: admin
+          password: test
           user-name: admin
           port: ${server.port}
           rest-root: dmn-api
@@ -131,7 +129,7 @@ flowable:
           description: Flowable DMN REST config
         cmmn:
           context-root: ${spring.application.name}
-          password: admin
+          password: test
           server-address: http://localhost
           user-name: admin
           port: ${server.port}
@@ -141,7 +139,7 @@ flowable:
         content:
           context-root: ${spring.application.name}
           server-address: http://localhost
-          password: admin
+          password: test
           user-name: admin
           rest-root: content-api
           port: ${server.port}
@@ -149,6 +147,7 @@ flowable:
           description: Flowable Content REST config
   database-schema-update: true
   annotationFontName: 宋体
+
 management:
   endpoint:
     health:
@@ -157,6 +156,7 @@ management:
   endpoints:
     jmx:
       unique-names: true
+
 mybatis:
   mapper-locations:
     - classpath:/META-INF/admin-mybatis-mappings/*.xml
@@ -165,6 +165,7 @@ mybatis:
     prefix:
     boolValue: TRUE
     blobType: BLOB
+
 swagger:
   docket:
     system:
@@ -187,4 +188,3 @@ swagger:
       base-packages: com.github.flowable
       base-path: /**
       exclude-path: /error, /ops/**
-
