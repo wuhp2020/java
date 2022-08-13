@@ -74,6 +74,8 @@ flowable:
   labelFontName: 宋体
   common:
     app:
+      idm-admin:
+        password: admin
       role-prefix:
       idm-url: http://localhost:${server.port}/${spring.application.name}/idm
   xml:
