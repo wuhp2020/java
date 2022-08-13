@@ -42,7 +42,7 @@ flowable:
         email: test-admin@126.com
   content:
     storage:
-      root-folder: data/
+      root-folder: ./data/
       create-root: true
   process:
     definition-cache-limit: 512
@@ -90,7 +90,7 @@ management:
 #logging
 logging:
   file:
-    path: logs
+    path: ./logs
     name: ${spring.application.name}
   level:
     com.lance.flowable: debug
