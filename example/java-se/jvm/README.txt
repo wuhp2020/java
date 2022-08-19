@@ -334,7 +334,7 @@ java
 -XX:+UseCMSInitiatingOccupancyOnly
 # IntegerCache有一个静态代码块, JVM在加载Integer这个类时, 会优先加载静态的代码, 当JVM进程启动完毕后, -128 ~ +127 范围的数字会被缓存起来, 调用valueOf方法的时候, 如果是这个范围内的数字, 则直接从缓存取出, 超过这个范围的, 就只能构造新的Integer对象了
 -XX:AutoBoxCacheMax=20000
-# 当大量抛出同样的异常的后, 后面的异常输出将不打印堆栈, 打印堆栈的时候底层会调用到Throwable.getOurStackTrace()方法, 而这个方法是synchronized的, 对性能有比较明显对影响
+# 当大量抛出同样的异常的后, 后面的异常输出将不打印堆栈, 打印堆栈的时候底层会调用到Throwable.getOurStackTrace()方法, 而这个方法是synchronized的, 对性能有比较明显的影响, 该参数是禁用该默认的优化
 -XX:-OmitStackTraceInFastThrow
 -XX:ErrorFile=/app/logs/hs_err_%p.log
 -XX:+HeapDumpOnOutOfMemoryError

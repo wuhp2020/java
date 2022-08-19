@@ -203,3 +203,26 @@ curl -XPUT 'localhost:9200/_cluster/settings' -d '{ "transient":{ "cluster.routi
 
 
 #####################################
+
+启动报错: max file descriptors [4096] for elasticsearch process is too low, increase to at least [65536]
+
+vi /etc/security/limits.conf
+#添加以下内容
+* hard nofile 655360
+* soft nofile 655360
+* soft nproc 204800
+* hard nproc 204800
+* hard stack 204800
+* soft stack 204800
+
+vi /etc/security/limits.d/20-nproc.conf
+#添加以下内容
+*          soft    nproc     204800
+*          hard    nproc     204800
+
+reboot
+
+ulimit -a
+
+#####################################
+

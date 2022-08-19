@@ -1,0 +1,78 @@
+server:
+  port: 88
+
+spring:
+  application:
+    name: springcloud-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      routes: # 路由可以有多个
+        # 产品服务路由器, 拦截/api/product请求, 并重写url地址
+        - id: product_route             # ⾃定义的路由ID, 保持唯⼀
+          uri: lb://payment-product    # ⽬标服务地址lb表是负载均衡, payment-product 服务名
+          predicates:                   # 断言
+            - Path=/api/product/**
+          filters:                      # 过滤器
+            - RewritePath=/api/(?<segment>/?.*), /$\{segment}
+        # 时间点后匹配
+        - id: after_route
+          uri: https://example.org
+          predicates:
+            - After=2017-01-20T17:42:47.789-07:00[America/Denver]
+        # 时间点前匹配
+        - id: before_route
+          uri: https://example.org
+          predicates:
+            - Before=2017-01-20T17:42:47.789-07:00[America/Denver]
+        # 时间区间匹配
+        - id: between_route
+          uri: https://example.org
+          predicates:
+            - Between=2017-01-20T17:42:47.789-07:00[America/Denver], 2017-01-21T17:42:47.789-07:00[America/Denver]
+        # 指定Cookie正则匹配指定值
+        - id: cookie_route
+          uri: https://example.org
+          predicates:
+            - Cookie=chocolate, ch.p
+        # 指定Header正则匹配指定值
+        - id: header_route
+          uri: https://example.org
+          predicates:
+            - Header=X-Request-Id, \d+
+        # 请求Host匹配指定值
+        - id: host_route
+          uri: https://example.org
+          predicates:
+            - Host=**.somehost.org,**.anotherhost.org
+        # 请求Method匹配指定请求方式
+        - id: method_route
+          uri: https://example.org
+          predicates:
+            - Method=GET,POST
+        # 请求路径正则匹配
+        - id: path_route
+          uri: https://example.org
+          predicates:
+            - Path=/red/{segment},/blue/{segment}
+        # 请求包含某参数
+        - id: query_route
+          uri: https://example.org
+          predicates:
+            - Query=green
+        # 远程地址匹配
+        - id: remoteaddr_route
+          uri: https://example.org
+          predicates:
+            - RemoteAddr=192.168.1.1/24
+        # 权重规则匹配
+        - id: weight_high
+          uri: https://weighthigh.org
+          predicates:
+            - Weight=group1, 8
+        - id: weight_low
+          uri: https://weightlow.org
+          predicates:
+            - Weight=group1, 2
