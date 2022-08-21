@@ -1,7 +1,7 @@
 package com.web.controller;
 
-import com.web.service.api.DetectApiService;
 import com.web.service.DetectService;
+import com.web.service.api.DetectFeign;
 import com.web.vo.common.ResponseVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -23,12 +23,12 @@ public class DetectController {
 
     // HardCodedTarget 动态代理类
     @Autowired
-    private DetectApiService detectApiService;
+    private DetectFeign detectFeign;
 
     @PostMapping("detect")
     @ApiOperation(value = "提取特征")
     public ResponseVO detect(@RequestBody String base64) {
-        return detectApiService.detect(base64);
+        return detectFeign.detect(base64);
     }
 
 }
