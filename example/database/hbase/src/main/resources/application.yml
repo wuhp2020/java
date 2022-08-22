@@ -1,12 +1,10 @@
 server:
   port: 8008
 
-hbase:
-  zookeeper:
-    quorum: 192.168.221.129
-    property:
-      clientPort: 2181
-
-zookeeper:
-  znode:
-    parent: /hbase
+# hbase 数据源配置
+spring:
+  data:
+    hbase:
+      quorum: 127.0.0.1:2181
+      rootDir: /hbase
+      nodeParent:
