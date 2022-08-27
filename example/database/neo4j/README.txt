@@ -1,6 +1,6 @@
 # 安装
 1. https://neo4j.com/business-subscription/?edition=enterprise&release=3.5.32&flavour=unix
-2. 修改neo4j.conf, 将 default_listen_adress=0.0.0.0 取消注释
+2. 修改neo4j.conf, 将 default_listen_address=0.0.0.0 取消注释
 3. 开放服务器7474、7687端口
 4. 进入bin, 执行./neo4j start启动
 
