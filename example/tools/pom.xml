@@ -38,6 +38,7 @@
         <module>linux</module>
         <module>shell</module>
         <module>ansible-agent</module>
+        <module>arthas</module>
     </modules>
     <packaging>pom</packaging>
 </project>

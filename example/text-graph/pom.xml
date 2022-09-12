@@ -27,6 +27,7 @@
         <module>esri-geometry</module>
         <module>pdf</module>
         <module>word</module>
+        <module>itext</module>
     </modules>
     <packaging>pom</packaging>
 </project>

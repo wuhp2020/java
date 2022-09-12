@@ -10,9 +10,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.mapstruct:mapstruct:1.4.2.Final" level="project" />
-    <orderEntry type="library" name="Maven: org.mapstruct:mapstruct-jdk8:1.4.2.Final" level="project" />
-    <orderEntry type="library" name="Maven: org.mapstruct:mapstruct-processor:1.4.2.Final" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.arthas:arthas-spring-boot-starter:3.6.5" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.arthas:arthas-agent-attach:3.6.5" level="project" />
+    <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy-agent:1.10.19" level="project" />
+    <orderEntry type="library" name="Maven: org.zeroturnaround:zt-zip:1.14" level="project" />
+    <orderEntry type="library" name="Maven: com.taobao.arthas:arthas-packaging:3.6.5" level="project" />
     <orderEntry type="module" module-name="global-handler" />
     <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.79" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-web:2.2.13.RELEASE" level="project" />
@@ -66,6 +68,7 @@
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.30" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.plugin:spring-plugin-metadata:1.2.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.mapstruct:mapstruct:1.2.0.Final" level="project" />
     <orderEntry type="library" name="Maven: io.springfox:springfox-swagger-ui:2.9.2" level="project" />
   </component>
 </module>
