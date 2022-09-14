@@ -39,6 +39,7 @@
         <module>shell</module>
         <module>ansible-agent</module>
         <module>arthas</module>
+        <module>arthas-tunnel-server</module>
     </modules>
     <packaging>pom</packaging>
 </project>
