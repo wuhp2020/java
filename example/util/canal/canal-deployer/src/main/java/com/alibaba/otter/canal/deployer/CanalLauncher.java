@@ -7,7 +7,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.BooleanUtils;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -37,6 +36,9 @@ public class CanalLauncher {
             logger.info("## set default uncaught exception handler");
             setGlobalUncaughtExceptionHandler();
 
+            // 支持rocketmq client 配置日志路径
+            System.setProperty("rocketmq.client.logUseSlf4j","true");
+
             logger.info("## load canal configurations");
             String conf = System.getProperty("canal.conf", "classpath:canal.properties");
             Properties properties = new Properties();
@@ -57,6 +59,10 @@ public class CanalLauncher {
                     CanalConstants.CANAL_ADMIN_AUTO_REGISTER));
                 String autoCluster = CanalController.getProperty(properties, CanalConstants.CANAL_ADMIN_AUTO_CLUSTER);
                 String name = CanalController.getProperty(properties, CanalConstants.CANAL_ADMIN_REGISTER_NAME);
+                if (StringUtils.isEmpty(name)) {
+                    name = AddressUtils.getHostName();
+                }
+
                 String registerIp = CanalController.getProperty(properties, CanalConstants.CANAL_REGISTER_IP);
                 if (StringUtils.isEmpty(registerIp)) {
                     registerIp = AddressUtils.getHostIp();
@@ -85,7 +91,6 @@ public class CanalLauncher {
 
                     private PlainCanal lastCanalConfig;
 
-                    @Override
                     public void run() {
                         try {
                             if (lastCanalConfig == null) {
@@ -115,6 +120,7 @@ public class CanalLauncher {
             } else {
                 canalStater.setProperties(properties);
             }
+
             canalStater.start();
             runningLatch.await();
             executor.shutdownNow();
