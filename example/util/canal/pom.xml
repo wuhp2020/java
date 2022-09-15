@@ -20,6 +20,7 @@
     <modules>
         <module>canal-deployer</module>
         <module>canal-admin</module>
+        <module>canal-client</module>
     </modules>
     <packaging>pom</packaging>
 
