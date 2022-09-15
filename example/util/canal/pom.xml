@@ -19,8 +19,9 @@
 
     <modules>
         <module>canal-deployer</module>
-        <module>canal-client</module>
+        <module>canal-client-adapter</module>
         <module>canal-admin</module>
+        <module>canal-tcp-connector</module>
     </modules>
     <packaging>pom</packaging>
 
