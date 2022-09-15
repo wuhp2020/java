@@ -46,26 +46,26 @@ canal.conf:
     rabbitmq.password:
     rabbitmq.resource.ownerId:
 
-#  srcDataSources:
-#    defaultDS:
-#      url: jdbc:mysql://127.0.0.1:3306/mytest?useUnicode=true
-#      username: root
-#      password: 121212
+  srcDataSources:
+    defaultDS:
+      url: jdbc:mysql://192.168.221.129:3306/a?useUnicode=true
+      username: root
+      password: 123
   canalAdapters:
   - instance: example # canal instance Name or mq topic name
     groups:
     - groupId: g1
       outerAdapters:
       - name: logger
-#      - name: rdb
-#        key: mysql1
-#        properties:
-#          jdbc.driverClassName: com.mysql.jdbc.Driver
-#          jdbc.url: jdbc:mysql://127.0.0.1:3306/mytest2?useUnicode=true
-#          jdbc.username: root
-#          jdbc.password: 121212
-#          druid.stat.enable: false
-#          druid.stat.slowSqlMillis: 1000
+      - name: rdb
+        key: mysql1
+        properties:
+          jdbc.driverClassName: com.mysql.jdbc.Driver
+          jdbc.url: jdbc:mysql://192.168.221.129:3306/b?useUnicode=true
+          jdbc.username: root
+          jdbc.password: 123
+          druid.stat.enable: false
+          druid.stat.slowSqlMillis: 1000
 #      - name: rdb
 #        key: oracle1
 #        properties:
