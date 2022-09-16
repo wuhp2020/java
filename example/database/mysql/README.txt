@@ -511,3 +511,75 @@ set GLOBAL max_connections=500;
 5.
 show status like 'Threads%';
 
+#####################################
+
+mysql主备搭建:
+
+修改主备auto.cnf的server-uuid不重复
+
+主my.cnf增加:
+server-id=1
+log-bin=mysql-bin
+binlog-ignore-db=mysql
+binlog_ignore_db=information_schema
+binlog_ignore_db=performation_schema
+binlog_ignore_db=sys
+binlog_format=MIXED
+重启
+
+备my.cnf增加:
+server-id=2
+log-bin=mysql-bin
+binlog-ignore-db=mysql
+binlog_ignore_db=information_schema
+binlog_ignore_db=performation_schema
+binlog_ignore_db=sys
+binlog_format=MIXED
+重启
+
+备执行:
+CHANGE MASTER TO MASTER_HOST='192.168.221.131',MASTER_USER='root',MASTER_PASSWORD='123',MASTER_LOG_FILE='mysql-bin.000001',MASTER_LOG_POS=0;
+START SLAVE;
+show slave status \G;
+SHOW PROCESSLIST;
+
+#####################################
+
+mysql主主搭建:
+
+修改主备auto.cnf的server-uuid不重复
+
+主my.cnf增加:
+server-id=1
+log-bin=mysql-bin
+binlog-ignore-db=mysql
+binlog_ignore_db=information_schema
+binlog_ignore_db=performation_schema
+binlog_ignore_db=sys
+binlog_format=MIXED
+重启
+
+备my.cnf增加:
+server-id=2
+log-bin=mysql-bin
+binlog-ignore-db=mysql
+binlog_ignore_db=information_schema
+binlog_ignore_db=performation_schema
+binlog_ignore_db=sys
+binlog_format=MIXED
+重启
+
+备执行:
+CHANGE MASTER TO MASTER_HOST='192.168.221.131',MASTER_USER='root',MASTER_PASSWORD='123',MASTER_LOG_FILE='mysql-bin.000001',MASTER_LOG_POS=0;
+START SLAVE;
+show slave status \G;
+SHOW PROCESSLIST;
+
+主执行:
+CHANGE MASTER TO MASTER_HOST='192.168.221.132',MASTER_USER='root',MASTER_PASSWORD='123',MASTER_LOG_FILE='mysql-bin.000001',MASTER_LOG_POS=0;
+START SLAVE;
+show slave status \G;
+SHOW PROCESSLIST;
+
+#####################################
+

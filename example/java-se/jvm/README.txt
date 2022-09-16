@@ -234,6 +234,7 @@ printf "%x\n" 23968
 4、查看线程信息
 jstack 23967 | grep -A 10 5da0
 jstack 23967 | grep 5da0 -A 30
+jstack -l pid > a.log
 
 5、查看进程的对象信息
 jmap -histo:live 23967 | more
