@@ -503,6 +503,18 @@ for i in `ll | grep -v grep | awk '{print $9}'`;do docker load -i $i; done
 
 #### （2）初始化kubenetes的master1节点
 
+
+
+所有节点都修改kubelet路径
+
+```
+cat > /etc/sysconfig/kubelet << EOF
+KUBELET_EXTRA_ARGS="--root-dir=/home/k8s/kubelet"
+EOF
+```
+
+
+
 执行如下命令，--control-plane-endpoint是vip和端口
 
 ```go
