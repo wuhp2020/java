@@ -26,7 +26,6 @@ data:
     nohup /mysql/bin/mysqld_safe --defaults-file=/mysql/conf/my.cnf &
     ln -s /mysql/tmp/mysql.sock /tmp/mysql.sock
 
-
     response1=$(/mysql/bin/mysql -uroot -p'{{.Values.password}}')
     if [[ $? -ne 0 ]]; then
       p=`cat /mysql/data/mysql.err | grep password | awk -F'root@localhost: ' '{print $2}'`
@@ -36,6 +35,14 @@ data:
       response2=$(/mysql/bin/mysqladmin -u root -p$p password "{{.Values.password}}")
       if [[ $? -eq 0 ]]; then
         break
+      else
+        response7=$(/mysql/bin/mysql -uroot -p'{{.Values.password}}' -e"show slave status \G;")
+        echo $response7
+        if [[ $response7 == *"Slave_IO_Running: Yes"* ]]; then
+          if [[ $response7 == *"Slave_SQL_Running: Yes"* ]]; then
+            break
+          fi
+        fi
       fi
       done
 

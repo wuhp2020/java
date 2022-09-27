@@ -38,6 +38,14 @@ data:
       response2=$(/mysql/bin/mysqladmin -u root -p$p password "{{.Values.password}}")
       if [[ $? -eq 0 ]]; then
         break
+      else
+        response7=$(/mysql/bin/mysql -uroot -p'{{.Values.password}}' -e"show slave status \G;")
+        echo $response7
+        if [[ $response7 == *"Slave_IO_Running: Yes"* ]]; then
+          if [[ $response7 == *"Slave_SQL_Running: Yes"* ]]; then
+            break
+          fi
+        fi
       fi
       done
 
