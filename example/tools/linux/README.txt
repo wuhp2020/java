@@ -34,7 +34,6 @@ ping 100.2.96.3
 # 虚拟机net模式
 BOOTPROTO=static
 NAME=ens33
-UUID=477ee6a0-e61d-4a66-aceb-f405913e8160
 DEVICE=ens33
 ONBOOT=yes
 IPADDR=192.168.221.129

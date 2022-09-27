@@ -51,6 +51,29 @@ data:
       done
     fi
 
+    while true; do
+      sleep 5
+      temp=$(ping mysql-master-statefulset-0.mysql-master-service.default.svc.cluster.local -c 1 | head -1 | awk -F\( '{print $2}' | awk -F\) '{print $1}')
+      if [[ $temp == *"Name or service not known"* ]]; then
+        echo 'service not known == wait'
+      else
+        while true
+        do
+        sleep 5
+        response4=$(/mysql/bin/mysql -uroot -p'{{.Values.password}}' -e"CHANGE MASTER TO MASTER_HOST='$temp',MASTER_USER='root',MASTER_PASSWORD='{{.Values.password}}',MASTER_LOG_FILE='mysql-bin.000001',MASTER_LOG_POS=0;")
+        response5=$(/mysql/bin/mysql -uroot -p'{{.Values.password}}' -e"START SLAVE;")
+        response6=$(/mysql/bin/mysql -uroot -p'{{.Values.password}}' -e"show slave status \G;")
+        echo $response6
+        if [[ $response6 == *"Slave_IO_Running: Yes"* ]]; then
+          if [[ $response6 == *"Slave_SQL_Running: Yes"* ]]; then
+            break
+          fi
+        fi
+        done
+        break
+      fi
+    done
+
     echo "started mysql-slave ..."
     tail -f /dev/null
 
@@ -65,6 +88,11 @@ data:
     socket=/mysql/tmp/mysql.sock
     log-error=/mysql/data/mysql.err
     pid-file=/mysql/data/mysql.pid
+    binlog-ignore-db=mysql
+    binlog_ignore_db=information_schema
+    binlog_ignore_db=performation_schema
+    binlog_ignore_db=sys
+    binlog_format=MIXED
 
     character_set_server=utf8mb4
     symbolic-links=0

@@ -1,12 +1,12 @@
 image: "mysql"
-imageTag: "5.7.34"
+imageTag: "5.7.36"
 
 servicename: mysql-service
 username: root
 password: 111111
 
 mysql_master:
-  port: 8306
+  port: 3306
   affinity: |
     #command
     podAntiAffinity:
@@ -18,7 +18,7 @@ mysql_master:
 
 mysql_slave:
   enable: true
-  port: 8306
+  port: 3306
   affinity: |
     #command
     podAntiAffinity:
