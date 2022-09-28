@@ -1,11 +1,11 @@
 image: "redis"
-imageTag: "5.0.13"
+imageTag: "5.0.9"
 
 replicas: 1
 servicename: redis-service
 saslEnable: false
 redis_master:
-  port: 8179
+  port: 6379
   affinity: |
     #command
     podAntiAffinity:
@@ -14,17 +14,9 @@ redis_master:
             matchLabels:
               app: "redis-master"
           topologyKey: kubernetes.io/hostname
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: kubernetes.io/hostname
-            operator: In
-            values:
-            - 127.0.0.1
 
 redis_slave:
-  port: 8279
+  port: 6479
   affinity: |
     #command
     podAntiAffinity:
@@ -33,11 +25,3 @@ redis_slave:
             matchLabels:
               app: "redis-slave"
           topologyKey: kubernetes.io/hostname
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: kubernetes.io/hostname
-            operator: In
-            values:
-            - 127.0.0.1
