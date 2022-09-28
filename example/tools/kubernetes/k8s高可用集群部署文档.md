@@ -1621,6 +1621,26 @@ local-path-provisioner-6c447d694c-jwrlt   1/1     Running   0          3m48s
 
 
 
+#### （3）1.20及以上版本StorageClass创建PVC不成功解决
+
+```
+vi /etc/kubernetes/manifests/kube-apiserver.yaml
+
+apiVersion: v1
+···
+    - --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
+    - --feature-gates=RemoveSelfLink=false # 添加这个配置
+```
+
+
+
+```
+ps aux|grep kube-apiserver
+kill -9 [Pid]
+```
+
+
+
 ## 3、测试kubernetes集群
 
 

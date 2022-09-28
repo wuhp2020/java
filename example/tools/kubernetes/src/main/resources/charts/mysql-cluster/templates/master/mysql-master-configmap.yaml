@@ -26,6 +26,8 @@ data:
     nohup /mysql/bin/mysqld_safe --defaults-file=/mysql/conf/my.cnf &
     ln -s /mysql/tmp/mysql.sock /tmp/mysql.sock
 
+    sleep 5
+
     response1=$(/mysql/bin/mysql -uroot -p'{{.Values.password}}')
     if [[ $? -ne 0 ]]; then
       p=`cat /mysql/data/mysql.err | grep password | awk -F'root@localhost: ' '{print $2}'`
@@ -34,50 +36,26 @@ data:
       sleep 1
       response2=$(/mysql/bin/mysqladmin -u root -p$p password "{{.Values.password}}")
       if [[ $? -eq 0 ]]; then
+        while true
+        do
+        sleep 1
+        response3=$(/mysql/bin/mysql -uroot -p'{{.Values.password}}' -e"update mysql.user set host='%' where user='root';flush privileges;")
+        if [[ $? -eq 0 ]]; then
+          break
+        fi
+        done
         break
       else
         response7=$(/mysql/bin/mysql -uroot -p'{{.Values.password}}' -e"show slave status \G;")
         echo $response7
-        if [[ $response7 == *"Slave_IO_Running: Yes"* ]]; then
-          if [[ $response7 == *"Slave_SQL_Running: Yes"* ]]; then
+        if [[ $response7 == *"Slave_IO_Running: No"* ]]; then
+          if [[ $response7 == *"Slave_SQL_Running: No"* ]]; then
             break
           fi
         fi
-      fi
-      done
-
-      while true
-      do
-      sleep 1
-      response3=$(/mysql/bin/mysql -uroot -p'{{.Values.password}}' -e"update mysql.user set host='%' where user='root';flush privileges;")
-      if [[ $? -eq 0 ]]; then
-        break
       fi
       done
     fi
-
-    while true; do
-      sleep 5
-      temp=$(ping mysql-slave-statefulset-0.mysql-slave-service.default.svc.cluster.local -c 1 | head -1 | awk -F\( '{print $2}' | awk -F\) '{print $1}')
-      if [[ $temp == *"Name or service not known"* ]]; then
-        echo 'service not known == wait'
-      else
-        while true
-        do
-        sleep 5
-        response4=$(/mysql/bin/mysql -uroot -p'{{.Values.password}}' -e"CHANGE MASTER TO MASTER_HOST='$temp',MASTER_USER='root',MASTER_PASSWORD='{{.Values.password}}',MASTER_LOG_FILE='mysql-bin.000001',MASTER_LOG_POS=0;")
-        response5=$(/mysql/bin/mysql -uroot -p'{{.Values.password}}' -e"START SLAVE;")
-        response6=$(/mysql/bin/mysql -uroot -p'{{.Values.password}}' -e"show slave status \G;")
-        echo $response6
-        if [[ $response6 == *"Slave_IO_Running: Yes"* ]]; then
-          if [[ $response6 == *"Slave_SQL_Running: Yes"* ]]; then
-            break
-          fi
-        fi
-        done
-        break
-      fi
-    done
 
     echo "started mysql-master ..."
     tail -f /dev/null

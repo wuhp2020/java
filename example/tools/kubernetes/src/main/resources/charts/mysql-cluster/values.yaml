@@ -3,7 +3,7 @@ imageTag: "5.7.36"
 
 servicename: mysql-service
 username: root
-password: 111111
+password: 123
 
 mysql_master:
   port: 3306
