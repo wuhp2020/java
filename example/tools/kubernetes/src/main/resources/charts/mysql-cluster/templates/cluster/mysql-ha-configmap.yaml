@@ -10,7 +10,7 @@ data:
 
     set -x
 
-    sleep 30
+    sleep 60
 
     echo "starting mysql-ha ..."
 
@@ -39,7 +39,7 @@ data:
           sleep 5
           response3=$(/mysql/bin/mysql -h$slaveip -uroot -p'{{.Values.password}}' -e"stop master;")
           response4=$(/mysql/bin/mysql -h$slaveip -uroot -p'{{.Values.password}}' -e"reset master;")
-          response5=$(/mysql/bin/mysql -h$slaveip -uroot -p'{{.Values.password}}' -e"CHANGE MASTER TO MASTER_HOST='$temp',MASTER_USER='root',MASTER_PASSWORD='{{.Values.password}}',MASTER_LOG_FILE='mysql-bin.000001',MASTER_LOG_POS=0;")
+          response5=$(/mysql/bin/mysql -h$slaveip -uroot -p'{{.Values.password}}' -e"CHANGE MASTER TO MASTER_HOST='$temp',MASTER_USER='root',MASTER_PASSWORD='{{.Values.password}}',MASTER_LOG_FILE='mysql-bin.000002',MASTER_LOG_POS=903;")
           response6=$(/mysql/bin/mysql -h$slaveip -uroot -p'{{.Values.password}}' -e"start slave;")
           response7=$(/mysql/bin/mysql -h$slaveip -uroot -p'{{.Values.password}}' -e"show slave status \G;")
           echo $response7
@@ -80,7 +80,7 @@ data:
           sleep 5
           response3=$(/mysql/bin/mysql -h$masterip -uroot -p'{{.Values.password}}' -e"stop master;")
           response4=$(/mysql/bin/mysql -h$masterip -uroot -p'{{.Values.password}}' -e"reset master;")
-          response5=$(/mysql/bin/mysql -h$masterip -uroot -p'{{.Values.password}}' -e"CHANGE MASTER TO MASTER_HOST='$temp',MASTER_USER='root',MASTER_PASSWORD='{{.Values.password}}',MASTER_LOG_FILE='mysql-bin.000001',MASTER_LOG_POS=0;")
+          response5=$(/mysql/bin/mysql -h$masterip -uroot -p'{{.Values.password}}' -e"CHANGE MASTER TO MASTER_HOST='$temp',MASTER_USER='root',MASTER_PASSWORD='{{.Values.password}}',MASTER_LOG_FILE='mysql-bin.000002',MASTER_LOG_POS=903;")
           response6=$(/mysql/bin/mysql -h$masterip -uroot -p'{{.Values.password}}' -e"start slave;")
           response7=$(/mysql/bin/mysql -h$masterip -uroot -p'{{.Values.password}}' -e"show slave status \G;")
           echo $response7
