@@ -11,7 +11,6 @@ data:
     set -x
 
     echo "starting mysql-slave ..."
-
     mkdir -p /mysql/tmp
     mkdir -p /mysql/conf
     mkdir -p /mysql/data
@@ -65,6 +64,7 @@ data:
   my.cnf: |
 
     [mysqld]
+    log-bin=mysql-bin
     server-id=2
     bind-address=0.0.0.0
     port={{.Values.mysql_slave.port}}

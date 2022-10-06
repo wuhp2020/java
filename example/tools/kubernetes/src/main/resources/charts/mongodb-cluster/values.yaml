@@ -19,9 +19,9 @@ mongodb_mongos:
 mongodb_shard:
   replicas: 3
   nodeList:
-  - 127.0.0.1
-  - 127.0.0.1
-  - 127.0.0.1
+  - master1
+  - master2
+  - master3
   port: 27018
   affinity: {}
   slave:
