@@ -1,27 +1,29 @@
 安装:
-docker run -itd --name elasticsearch -e ES_JAVA_OPTS="-Xms512m -Xmx512m" -e "discovery.type=single-node" -p 9200:9200 -p 9300:9300 elasticsearch:7.1.1
 
-#####################################
-
-#节点1的配置信息
-#集群名称, 保证唯一
-cluster.name: my-elasticsearch
-#节点名称, 必须不一样
-node.name: node-01
-# 是否为master
-node.master = true
-# 是否存数据
-node.data = false
-#必须为本机的ip地址
-network.host: 127.0.0.1
-#服务端口号, 在同一机器下必须不一样
+#集群名称（此名称在任何节点的配置文件下都是一致的）
+cluster.name: my-application
+#节点名称(这里需要修改，第一个节点是 node-1，配置第二个节点的时候就是 node-2)
+node.name: node-1
+#是不是有资格主节点
+node.master: true
+#是否存储数据
+node.data: true
+#最⼤集群节点数
+node.max_local_storage_nodes: 3
+#⽹关地址
+network.host: 0.0.0.0
+#端⼝
 http.port: 9200
-#集群间通信端口号, 在同一机器下必须不一样
+#内部节点之间沟通端⼝
 transport.tcp.port: 9300
-# 最小master数量
-discovery.zen.minimum_master_nodes = 1
-#设置集群自动发现机器候选主节点集合
-discovery.zen.ping.unicast.hosts: ["127.0.0.1:9300","127.0.0.1:9301","127.0.0.1:9302"]
+#es7.x 之后新增的配置，写⼊候选主节点的设备地址，在开启服务后可以被选为主节点
+# 部署在一个服务器用于测试的的伪分布式就用不同的端口，真分布式的话自行修改ip地址
+discovery.seed_hosts: ["localhost:9300","localhost:9400","localhost:9500"]
+#es7.x 之后新增的配置，初始化⼀个新的集群时需要此配置来选举master
+cluster.initial_master_nodes: ["node-1", "node-2","node-3"]
+#数据和存储路径
+path.data: ./data
+path.logs: ./logs
 
 #####################################
 
