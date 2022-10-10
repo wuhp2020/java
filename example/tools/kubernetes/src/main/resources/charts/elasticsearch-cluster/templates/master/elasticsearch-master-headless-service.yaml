@@ -1,12 +1,14 @@
+{{- if .Values.elasticsearch_master.enable }}
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql-master-service
+  name: elasticsearch-master-service
 spec:
   type: ClusterIP
   clusterIP: None
   ports:
-    - name: mysql-master
-      port: {{ .Values.mysql_master.port }}
+    - name: elasticsearch-master
+      port: {{ .Values.http_port }}
   selector:
-    app: "mysql-ha"
+    app: "elasticsearch"
+{{- end }}

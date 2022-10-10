@@ -3,50 +3,55 @@ imageTag: "7.7.1"
 
 servicename: elasticsearch-service
 
+cluster_name: my-application
+http_port: 9200
+discovery_seed_hosts: ["master1", "master2", "master3"]
+cluster_initial_master_nodes: ["elasticsearch-master-0", "elasticsearch-master-1", "elasticsearch-master-2"]
+
 elasticsearch_master_data_ingest:
   enable: true
-  port: 3306
+  replicas: 3
   affinity: |
     #command
     podAntiAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
         - labelSelector:
             matchLabels:
-              app: "mysql-ha"
+              app: "elasticsearch"
           topologyKey: kubernetes.io/hostname
 
 elasticsearch_master:
-  enable: true
-  port: 3306
+  enable: false
+  replicas: 3
   affinity: |
     #command
     podAntiAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
         - labelSelector:
             matchLabels:
-              app: "mysql-ha"
+              app: "elasticsearch"
           topologyKey: kubernetes.io/hostname
 
 elasticsearch_data:
-  enable: true
-  port: 3306
+  enable: false
+  replicas: 3
   affinity: |
     #command
     podAntiAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
         - labelSelector:
             matchLabels:
-              app: "mysql-ha"
+              app: "elasticsearch"
           topologyKey: kubernetes.io/hostname
 
 elasticsearch_ingest:
-  enable: true
-  port: 3306
+  enable: false
+  replicas: 3
   affinity: |
     #command
     podAntiAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
         - labelSelector:
             matchLabels:
-              app: "mysql-ha"
+              app: "elasticsearch"
           topologyKey: kubernetes.io/hostname

@@ -5,9 +5,9 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-  - name: mysql
-    port: {{.Values.mysql_master.port}}
+  - name: elasticsearch
+    port: {{ .Values.http_port }}
     protocol: TCP
-    targetPort: {{.Values.mysql_master.port}}
+    targetPort: {{ .Values.http_port }}
   selector:
-    app: "mysql-ha"
+    app: "elasticsearch"

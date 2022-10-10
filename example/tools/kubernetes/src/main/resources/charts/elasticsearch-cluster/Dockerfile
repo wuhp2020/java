@@ -1,5 +1,5 @@
-# https://cdn.mysql.com/archives/mysql-5.7/mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz
-# tar -zxvf mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz
-# mv mysql-5.7.36-linux-glibc2.12-x86_64 mysql
+# https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.7.1-linux-x86_64.tar.gz
+# tar -zxvf elasticsearch-7.7.1-linux-x86_64.tar.gz
+# mv elasticsearch-7.7.1-linux-x86_64 elasticsearch
 FROM centos:7
-COPY mysql /mysql
+COPY elasticsearch /elasticsearch

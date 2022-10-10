@@ -1,14 +1,14 @@
-{{- if .Values.mysql_slave.enable }}
+{{- if .Values.elasticsearch_ingest.enable }}
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql-slave-service
+  name: elasticsearch-ingest-service
 spec:
   type: ClusterIP
   clusterIP: None
   ports:
-    - name: mysql-slave
-      port: {{ .Values.mysql_slave.port }}
+    - name: elasticsearch-ingest
+      port: {{ .Values.http_port }}
   selector:
-    app: "mysql-ha"
+    app: "elasticsearch"
 {{- end }}

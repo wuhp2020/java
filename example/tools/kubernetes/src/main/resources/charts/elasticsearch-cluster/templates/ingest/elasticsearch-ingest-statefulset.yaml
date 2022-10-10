@@ -1,35 +1,35 @@
-{{- if .Values.mysql_slave.enable }}
+{{- if .Values.elasticsearch_ingest.enable }}
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: mysql-slave-statefulset
+  name: elasticsearch-ingest-statefulset
   labels:
-    app: "mysql-ha"
+    app: "elasticsearch"
     release: "{{ .Release.Name }}"
 spec:
-  serviceName: "mysql-slave-service"
-  replicas: {{ .Values.replicas | default 1 }}
+  serviceName: "elasticsearch-ingest-service"
+  replicas: {{ .Values.elasticsearch_ingest.replicas | default 1 }}
   selector:
     matchLabels:
-      app: "mysql-ha"
+      app: "elasticsearch"
       release: "{{ .Release.Name }}"
   updateStrategy:
     type: RollingUpdate
   template:
     metadata:
       labels:
-        app: "mysql-ha"
+        app: "elasticsearch"
         release: "{{ .Release.Name }}"
     spec:
       dnsPolicy: ClusterFirstWithHostNet
       hostNetwork: true
       restartPolicy: Always
-      {{- if .Values.mysql_slave.affinity }}
+      {{- if .Values.elasticsearch_ingest.affinity }}
       affinity:
-      {{ tpl .Values.mysql_slave.affinity . | indent 8 }}
+      {{ tpl .Values.elasticsearch_ingest.affinity . | indent 8 }}
       {{- end }}
       containers:
-      - name: mysql-slave
+      - name: elasticsearch-ingest
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"
         imagePullPolicy: IfNotPresent
         command: ['/bin/bash', '-c', '/bin/bash /run.sh']
@@ -40,7 +40,7 @@ spec:
                 fieldPath: metadata.name
         livenessProbe:
           tcpSocket:
-            port: {{.Values.mysql_slave.port}}
+            port: {{.Values.http_port}}
           initialDelaySeconds: 30
           periodSeconds: 15
           timeoutSeconds: 60
@@ -52,13 +52,13 @@ spec:
           - name: lib64
             mountPath: /usr/lib64
           - name: data
-            mountPath: /mysql/data
-          - name: mysql-slave-configmap
+            mountPath: /elasticsearch/data
+          - name: elasticsearch-ingest-configmap
             mountPath: /run.sh
             subPath: run.sh
-          - name: mysql-slave-configmap
-            mountPath: /mysql/conf/my.cnf
-            subPath: my.cnf
+          - name: elasticsearch-ingest-configmap
+            mountPath: /elasticsearch/config/elasticsearch.yml
+            subPath: elasticsearch.yml
       volumes:
         - name: ro
           hostPath:
@@ -66,9 +66,9 @@ spec:
         - name: lib64
           hostPath:
             path: /usr/lib64
-        - name: mysql-slave-configmap
+        - name: elasticsearch-ingest-configmap
           configMap:
-            name: mysql-slave-configmap
+            name: elasticsearch-ingest-configmap
   volumeClaimTemplates:
   - metadata:
       name: data
