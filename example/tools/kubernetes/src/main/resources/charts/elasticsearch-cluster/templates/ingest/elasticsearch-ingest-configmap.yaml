@@ -13,7 +13,10 @@ data:
     echo "starting elasticsearch-ingest ..."
     mkdir -p /elasticsearch/data
 
-
+    useradd es
+    chown -R es:es /elasticsearch
+    su es
+    cd /elasticsearch && ./bin/elasticsearch &
     
     echo "started elasticsearch-ingest ..."
     tail -f /dev/null
