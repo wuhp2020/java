@@ -8,4 +8,4 @@
 # cd ../
 # make && make install PREFIX=../
 FROM centos:7
-COPY redis /
+COPY redis /redis

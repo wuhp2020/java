@@ -1,4 +1,4 @@
-image: "mongo"
+image: "mongodb"
 imageTag: "3.6"
 
 mongodb_mongos:
