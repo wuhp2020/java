@@ -16,7 +16,7 @@ data:
     useradd es
     chown -R es:es /elasticsearch
     su es
-    cd /elasticsearch && ./bin/elasticsearch &
+    cd /elasticsearch && ./bin/elasticsearch -Enode.name=$POD_NAME &
     
     echo "started elasticsearch-data ..."
     tail -f /dev/null
@@ -44,7 +44,7 @@ data:
     #
     # Use a descriptive name for the node:
     #
-    node.name: {{ metadata.name }}
+    # node.name: node-1
     node.master: false
     node.data: true
     #
