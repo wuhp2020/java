@@ -15,7 +15,7 @@ data:
     mkdir -p /mongodb-shard-slave/logs
     mkdir -p /mongodb-shard-slave/pid
     rm -rf /mongodb-shard-slave/data/mongod.lock
-    mongod --repair
+    /mongodb/bin/mongod --repair
 
     sleep 10
 
@@ -23,18 +23,18 @@ data:
 
     index=$(echo echo $POD_NAME | egrep -o "[0-9]+" | head -1)
     if [[ {{ .Values.mongodb_shard.replicas }} -eq 1 ]]; then
-      mongod --port {{ .Values.mongodb_shard.slave.port }} --bind_ip 0.0.0.0 --shardsvr --replSet mongodb-shard-master-statefulset-0 --dbpath /mongodb-shard-slave/data --pidfilepath /mongodb-shard-slave/pid/mongodb-shard-slave.pid --logpath /mongodb-shard-slave/logs/mongodb-shard-slave.log --config /mongodb-shard-slave/conf/mongod.conf &
+      /mongodb/bin/mongod --port {{ .Values.mongodb_shard.slave.port }} --bind_ip 0.0.0.0 --shardsvr --replSet mongodb-shard-master-statefulset-0 --dbpath /mongodb-shard-slave/data --pidfilepath /mongodb-shard-slave/pid/mongodb-shard-slave.pid --logpath /mongodb-shard-slave/logs/mongodb-shard-slave.log --config /mongodb-shard-slave/conf/mongod.conf &
     elif [[ {{ .Values.mongodb_shard.replicas }} -eq 2 ]]; then
       if [[ $index -eq 0 ]]; then
-        mongod --port {{ .Values.mongodb_shard.slave.port }} --bind_ip 0.0.0.0 --shardsvr --replSet mongodb-shard-master-statefulset-1 --dbpath /mongodb-shard-slave/data --pidfilepath /mongodb-shard-slave/pid/mongodb-shard-slave.pid --logpath /mongodb-shard-slave/logs/mongodb-shard-slave.log --config /mongodb-shard-slave/conf/mongod.conf &
+        /mongodb/bin/mongod --port {{ .Values.mongodb_shard.slave.port }} --bind_ip 0.0.0.0 --shardsvr --replSet mongodb-shard-master-statefulset-1 --dbpath /mongodb-shard-slave/data --pidfilepath /mongodb-shard-slave/pid/mongodb-shard-slave.pid --logpath /mongodb-shard-slave/logs/mongodb-shard-slave.log --config /mongodb-shard-slave/conf/mongod.conf &
       else
-        mongod --port {{ .Values.mongodb_shard.slave.port }} --bind_ip 0.0.0.0 --shardsvr --replSet mongodb-shard-master-statefulset-0 --dbpath /mongodb-shard-slave/data --pidfilepath /mongodb-shard-slave/pid/mongodb-shard-slave.pid --logpath /mongodb-shard-slave/logs/mongodb-shard-slave.log --config /mongodb-shard-slave/conf/mongod.conf &
+        /mongodb/bin/mongod --port {{ .Values.mongodb_shard.slave.port }} --bind_ip 0.0.0.0 --shardsvr --replSet mongodb-shard-master-statefulset-0 --dbpath /mongodb-shard-slave/data --pidfilepath /mongodb-shard-slave/pid/mongodb-shard-slave.pid --logpath /mongodb-shard-slave/logs/mongodb-shard-slave.log --config /mongodb-shard-slave/conf/mongod.conf &
       fi
     else
       if [[ $index -eq 0 ]]; then
-        mongod --port {{ .Values.mongodb_shard.slave.port }} --bind_ip 0.0.0.0 --shardsvr --replSet mongodb-shard-master-statefulset-$(({{ .Values.mongodb_shard.replicas }}-1)) --dbpath /mongodb-shard-slave/data --pidfilepath /mongodb-shard-slave/pid/mongodb-shard-slave.pid --logpath /mongodb-shard-slave/logs/mongodb-shard-slave.log --config /mongodb-shard-slave/conf/mongod.conf &
+        /mongodb/bin/mongod --port {{ .Values.mongodb_shard.slave.port }} --bind_ip 0.0.0.0 --shardsvr --replSet mongodb-shard-master-statefulset-$(({{ .Values.mongodb_shard.replicas }}-1)) --dbpath /mongodb-shard-slave/data --pidfilepath /mongodb-shard-slave/pid/mongodb-shard-slave.pid --logpath /mongodb-shard-slave/logs/mongodb-shard-slave.log --config /mongodb-shard-slave/conf/mongod.conf &
       else
-        mongod --port {{ .Values.mongodb_shard.slave.port }} --bind_ip 0.0.0.0 --shardsvr --replSet mongodb-shard-master-statefulset-$(($index-1)) --dbpath /mongodb-shard-slave/data --pidfilepath /mongodb-shard-slave/pid/mongodb-shard-slave.pid --logpath /mongodb-shard-slave/logs/mongodb-shard-slave.log --config /mongodb-shard-slave/conf/mongod.conf &
+        /mongodb/bin/mongod --port {{ .Values.mongodb_shard.slave.port }} --bind_ip 0.0.0.0 --shardsvr --replSet mongodb-shard-master-statefulset-$(($index-1)) --dbpath /mongodb-shard-slave/data --pidfilepath /mongodb-shard-slave/pid/mongodb-shard-slave.pid --logpath /mongodb-shard-slave/logs/mongodb-shard-slave.log --config /mongodb-shard-slave/conf/mongod.conf &
       fi
     fi
 

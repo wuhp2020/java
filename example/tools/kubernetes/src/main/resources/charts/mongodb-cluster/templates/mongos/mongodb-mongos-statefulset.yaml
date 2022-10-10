@@ -35,7 +35,7 @@ spec:
         livenessProbe:
           exec:
             command:
-              - mongo
+              - /mongodb/bin/mongo
               - 127.0.0.1:{{ .Values.mongodb_mongos.port }}
               - --eval
               - "db.adminCommand('ping')"

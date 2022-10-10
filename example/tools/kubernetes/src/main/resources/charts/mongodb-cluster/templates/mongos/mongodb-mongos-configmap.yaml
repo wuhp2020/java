@@ -20,7 +20,7 @@ data:
     temp=mongodb-config-server-statefulset-$i.mongodb-config-server-service.default.svc.cluster.local:{{ .Values.mongodb_config_server.port }}
     while true
     do
-    response=$(mongo $temp/admin --eval "db.adminCommand('ping')" | grep "ok")
+    response=$(/mongodb/bin/mongo $temp/admin --eval "db.adminCommand('ping')" | grep "ok")
     echo '2'
     if [[ $? -eq 0 ]]; then
       if [[ $response == *'"ok" : 1'* ]]; then
@@ -41,7 +41,7 @@ data:
     echo '3'
     sleep 10
 
-    mongos --port {{ .Values.mongodb_mongos.port }} --bind_ip 0.0.0.0 --pidfilepath /mongodb-mongos/pid/mongodb-mongos.pid --logpath /mongodb-mongos/logs/mongodb-mongos.log --config /mongodb-mongos/conf/mongos.conf &
+    /mongodb/bin/mongos --port {{ .Values.mongodb_mongos.port }} --bind_ip 0.0.0.0 --pidfilepath /mongodb-mongos/pid/mongodb-mongos.pid --logpath /mongodb-mongos/logs/mongodb-mongos.log --config /mongodb-mongos/conf/mongos.conf &
     echo "started mongodb-mongos ..."
     tail -f /dev/null
 

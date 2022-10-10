@@ -47,7 +47,7 @@ spec:
         livenessProbe:
           exec:
             command:
-              - mongo
+              - /mongodb/bin/mongo
               - 127.0.0.1:{{ .Values.mongodb_shard.port }}
               - --eval
               - "db.adminCommand('ping')"
@@ -134,7 +134,7 @@ spec:
           livenessProbe:
             exec:
               command:
-                - mongo
+                - /mongodb/bin/mongo
                 - 127.0.0.1:{{ .Values.mongodb_shard.slave.port }}
                 - --eval
                 - "db.adminCommand('ping')"
@@ -220,7 +220,7 @@ spec:
           livenessProbe:
             exec:
               command:
-                - mongo
+                - /mongodb/bin/mongo
                 - 127.0.0.1:{{ .Values.mongodb_shard.slave.arbiter.port }}
                 - --eval
                 - "db.adminCommand('ping')"

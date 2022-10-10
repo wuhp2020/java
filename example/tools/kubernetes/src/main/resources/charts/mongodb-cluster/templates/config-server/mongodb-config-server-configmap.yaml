@@ -18,7 +18,7 @@ data:
     echo '1'
     sleep 10
 
-    mongod --port {{ .Values.mongodb_config_server.port }} --bind_ip 0.0.0.0 --configsvr --replSet config-server --dbpath /mongodb-config-server/data --pidfilepath /mongodb-config-server/pid/mongodb-config-server.pid --logpath /mongodb-config-server/logs/mongodb-config-server.log --config /mongodb-config-server/conf/mongod.conf &
+    /mongodb/bin/mongod --port {{ .Values.mongodb_config_server.port }} --bind_ip 0.0.0.0 --configsvr --replSet config-server --dbpath /mongodb-config-server/data --pidfilepath /mongodb-config-server/pid/mongodb-config-server.pid --logpath /mongodb-config-server/logs/mongodb-config-server.log --config /mongodb-config-server/conf/mongod.conf &
     echo "started mongodb-config-server ..."
     tail -f /dev/null
 
