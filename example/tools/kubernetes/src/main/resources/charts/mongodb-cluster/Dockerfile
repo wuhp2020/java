@@ -1,5 +1,5 @@
+# https://fastdl.mongodb.org/linux/mongodb-shell-linux-x86_64-rhel70-4.4.17.tgz
+# tar -zxvf mongodb-shell-linux-x86_64-rhel70-4.4.17.tgz
+# mv mongodb-shell-linux-x86_64-rhel70-4.4.17 mongodb
 FROM centos:7
-COPY mongodb/bin/install_compass /usr/local/bin/
-COPY mongodb/bin/mongo /usr/local/bin/
-COPY mongodb/bin/mongod /usr/local/bin/
-COPY mongodb/bin/mongos /usr/local/bin/
+COPY mongodb /
