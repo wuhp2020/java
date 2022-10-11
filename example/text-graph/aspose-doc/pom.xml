@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>aspose</artifactId>
+    <artifactId>aspose-doc</artifactId>
 
     <dependencies>
         <dependency>

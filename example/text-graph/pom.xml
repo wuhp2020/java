@@ -27,7 +27,7 @@
         <module>esri-geometry</module>
         <module>pdf</module>
         <module>itext</module>
-        <module>aspose</module>
+        <module>aspose-doc</module>
         <module>spire-doc</module>
         <module>spire-xls</module>
         <module>spire-ppt</module>
