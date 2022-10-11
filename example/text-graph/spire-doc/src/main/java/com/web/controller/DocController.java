@@ -15,10 +15,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 @RestController
-@RequestMapping("/api/v1/file")
+@RequestMapping("/api/v1/doc")
 @Api(tags = "文件")
 @Slf4j
-public class FileController {
+public class DocController {
 
     @GetMapping("/view")
     @ApiOperation(value = "预览")

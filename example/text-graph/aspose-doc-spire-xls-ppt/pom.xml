@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spire-doc</artifactId>
+    <artifactId>aspose-doc-spire-xls-ppt</artifactId>
 
     <repositories>
         <repository>
@@ -20,9 +20,29 @@
     </repositories>
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.luhuiguo</groupId>
+            <artifactId>aspose-words</artifactId>
+            <version>22.4</version>
+            <classifier>jdk17</classifier>
+        </dependency>
+
         <dependency>
             <groupId>e-iceblue</groupId>
-            <artifactId>spire.doc.free</artifactId>
+            <artifactId>spire.xls.free</artifactId>
+            <version>5.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>e-iceblue</groupId>
+            <artifactId>spire.presentation.free</artifactId>
+            <version>5.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>e-iceblue</groupId>
+            <artifactId>spire.pdf.free</artifactId>
             <version>5.1.0</version>
         </dependency>
     </dependencies>

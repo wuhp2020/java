@@ -1,6 +1,7 @@
 package com.web.controller;
 
-import com.spire.xls.Workbook;
+import com.spire.presentation.FileFormat;
+import com.spire.presentation.Presentation;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -9,15 +10,16 @@ import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.servlet.http.HttpServletResponse;
 import java.io.InputStream;
 import java.io.OutputStream;
 
 @RestController
-@RequestMapping("/api/v1/file")
-@Api(tags = "文件")
+@RequestMapping("/api/v1/ppt")
+@Api(tags = "ppt文件")
 @Slf4j
-public class FileController {
+public class PptController {
 
     @GetMapping("/view")
     @ApiOperation(value = "预览")
@@ -29,15 +31,15 @@ public class FileController {
         response.setHeader("Content-Disposition", "inline; filename=a.pdf");
 
         // 获取本地文件或网络文件
-        Resource resource = new ClassPathResource("1.xlsx");
+        Resource resource = new ClassPathResource("1.pptx");
         InputStream inputStream = resource.getInputStream();
         OutputStream outputStream = response.getOutputStream();
 
-        // xls或xlsx转pdf
-        Workbook xls = new Workbook();
-        xls.loadFromStream(inputStream);
-        xls.saveToStream(outputStream);
-        xls.dispose();
+        // ppt或pptx转pdf
+        Presentation ppt = new Presentation();
+        ppt.loadFromStream(inputStream, FileFormat.PDF);
+        ppt.saveToFile(outputStream, FileFormat.PDF);
+        ppt.dispose();
 
         inputStream.close();
         outputStream.close();
