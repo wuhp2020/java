@@ -28,9 +28,7 @@
         <module>pdf</module>
         <module>itext</module>
         <module>aspose-doc</module>
-        <module>spire-doc</module>
-        <module>spire-xls</module>
-        <module>spire-ppt</module>
+        <module>spire-xls-ppt</module>
     </modules>
     <packaging>pom</packaging>
 </project>

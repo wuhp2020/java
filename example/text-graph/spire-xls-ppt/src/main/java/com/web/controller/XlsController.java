@@ -15,10 +15,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 @RestController
-@RequestMapping("/api/v1/file")
-@Api(tags = "文件")
+@RequestMapping("/api/v1/xls")
+@Api(tags = "excel文件")
 @Slf4j
-public class FileController {
+public class XlsController {
 
     @GetMapping("/view")
     @ApiOperation(value = "预览")

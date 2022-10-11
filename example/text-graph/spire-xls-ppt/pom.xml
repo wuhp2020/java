@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spire-ppt</artifactId>
+    <artifactId>spire-xls-ppt</artifactId>
 
     <repositories>
         <repository>
@@ -20,6 +20,12 @@
     </repositories>
 
     <dependencies>
+        <dependency>
+            <groupId>e-iceblue</groupId>
+            <artifactId>spire.xls.free</artifactId>
+            <version>5.1.0</version>
+        </dependency>
+
         <dependency>
             <groupId>e-iceblue</groupId>
             <artifactId>spire.presentation.free</artifactId>
