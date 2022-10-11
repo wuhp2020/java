@@ -39,12 +39,6 @@
             <artifactId>spire.presentation.free</artifactId>
             <version>5.1.0</version>
         </dependency>
-
-        <dependency>
-            <groupId>e-iceblue</groupId>
-            <artifactId>spire.pdf.free</artifactId>
-            <version>5.1.0</version>
-        </dependency>
     </dependencies>
 
     <build>
