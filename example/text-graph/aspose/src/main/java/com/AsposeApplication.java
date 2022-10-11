@@ -4,8 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WordApplication {
+public class AsposeApplication {
     public static void main(String[] args) {
-        SpringApplication.run(WordApplication.class, args);
+        SpringApplication.run(AsposeApplication.class, args);
     }
 }

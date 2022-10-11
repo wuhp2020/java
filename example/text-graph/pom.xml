@@ -26,8 +26,11 @@
         <module>docx4j</module>
         <module>esri-geometry</module>
         <module>pdf</module>
-        <module>word</module>
         <module>itext</module>
+        <module>aspose</module>
+        <module>spire-doc</module>
+        <module>spire-xls</module>
+        <module>spire-ppt</module>
     </modules>
     <packaging>pom</packaging>
 </project>
