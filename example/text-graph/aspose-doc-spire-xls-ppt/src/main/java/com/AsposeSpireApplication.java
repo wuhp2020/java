@@ -4,8 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AsposeDocApplication {
+public class AsposeSpireApplication {
     public static void main(String[] args) {
-        SpringApplication.run(AsposeDocApplication.class, args);
+        SpringApplication.run(AsposeSpireApplication.class, args);
     }
 }

@@ -10,15 +10,16 @@ import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.servlet.http.HttpServletResponse;
 import java.io.InputStream;
 import java.io.OutputStream;
 
 @RestController
-@RequestMapping("/api/v1/file")
-@Api(tags = "文件")
+@RequestMapping("/api/v1/doc")
+@Api(tags = "doc文件")
 @Slf4j
-public class FileController {
+public class DocController {
 
     @GetMapping("/view")
     @ApiOperation(value = "预览")
