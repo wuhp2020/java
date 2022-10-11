@@ -18,18 +18,6 @@
             <version>22.4</version>
             <classifier>jdk17</classifier>
         </dependency>
-
-        <dependency>
-            <groupId>com.luhuiguo</groupId>
-            <artifactId>aspose-cells</artifactId>
-            <version>22.4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.luhuiguo</groupId>
-            <artifactId>aspose-slides</artifactId>
-            <version>22.4</version>
-        </dependency>
     </dependencies>
 
     <build>
