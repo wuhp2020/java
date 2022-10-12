@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 
@@ -30,8 +31,7 @@ public class XlsController {
         response.setHeader("Content-Disposition", "inline; filename=a.pdf");
 
         // 获取本地文件或网络文件
-        Resource resource = new ClassPathResource("1.xlsx");
-        InputStream inputStream = resource.getInputStream();
+        InputStream inputStream = new FileInputStream("/Users/wuheping/Desktop/1.xlsx");
         OutputStream outputStream = response.getOutputStream();
 
         // xls或xlsx转pdf

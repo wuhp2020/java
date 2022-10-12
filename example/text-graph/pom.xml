@@ -25,10 +25,7 @@
         <module>d3js</module>
         <module>docx4j</module>
         <module>esri-geometry</module>
-        <module>pdf</module>
-        <module>itext</module>
-        <module>aspose-doc-spire-xls-ppt</module>
-        <module>aspose-doc</module>
+        <module>itextpdf</module>
         <module>spire-doc</module>
         <module>spire-xls</module>
         <module>spire-ppt</module>

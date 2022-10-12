@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 
@@ -31,13 +32,12 @@ public class PptController {
         response.setHeader("Content-Disposition", "inline; filename=a.pdf");
 
         // 获取本地文件或网络文件
-        Resource resource = new ClassPathResource("1.pptx");
-        InputStream inputStream = resource.getInputStream();
+        InputStream inputStream = new FileInputStream("/Users/wuheping/Desktop/1.pptx");
         OutputStream outputStream = response.getOutputStream();
 
         // ppt或pptx转pdf
         Presentation ppt = new Presentation();
-        ppt.loadFromStream(inputStream, FileFormat.PDF);
+        ppt.loadFromStream(inputStream, FileFormat.PPTX_2013);
         ppt.saveToFile(outputStream, FileFormat.PDF);
         ppt.dispose();
 
