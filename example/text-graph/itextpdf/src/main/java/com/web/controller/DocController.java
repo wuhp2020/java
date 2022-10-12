@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 
@@ -31,10 +32,8 @@ public class DocController {
         response.setHeader("Content-Disposition", "inline; filename=a.pdf");
 
         // 获取本地文件或网络文件
-        Resource resource = new ClassPathResource("1.docx");
-        InputStream inputStream = resource.getInputStream();
+        InputStream inputStream = new FileInputStream("/Users/wuheping/Desktop/1.docx");
         OutputStream outputStream = response.getOutputStream();
 
-        // doc或docx转pdf
     }
 }
