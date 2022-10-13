@@ -29,6 +29,7 @@
         <module>spire-doc</module>
         <module>spire-xls</module>
         <module>spire-ppt</module>
+        <module>office-operate</module>
     </modules>
     <packaging>pom</packaging>
 </project>

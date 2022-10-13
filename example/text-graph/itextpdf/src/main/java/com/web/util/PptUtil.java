@@ -419,7 +419,7 @@ public class PptUtil {
 
     public static void main(String[] args) throws Exception {
         // 读入PPT文件
-        String filePath = "/Users/wuheping/Desktop/a/";
+        String filePath = "/Users/wuheping/Desktop/";
         String fileName = "1.pptx";
 
         List<byte[]> images = pptx2Image(new FileInputStream(new File(filePath + fileName)));
@@ -433,7 +433,7 @@ public class PptUtil {
 
         // 输出pdf
         byte[]           pdf = pptx2PDF(new FileInputStream(new File(filePath + fileName)));
-        FileOutputStream out = new FileOutputStream("/Users/wuheping/Desktop/a/1.pdf");
+        FileOutputStream out = new FileOutputStream("/Users/wuheping/Desktop/1.pdf");
         IOUtils.write(pdf, out);
         IOUtils.closeQuietly(out);
 
