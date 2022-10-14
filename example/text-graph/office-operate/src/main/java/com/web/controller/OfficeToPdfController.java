@@ -22,7 +22,7 @@ public class OfficeToPdfController {
     private OfficeToPdfService officeToPdfService;
 
     @GetMapping("/preview")
-    @ApiOperation(value = "预览")
+    @ApiOperation(value = "预览: linux 需要 yum install libreoffice")
     public void preview(HttpServletResponse response, @RequestParam("fileName") String fileName) throws Exception {
         InputStream inputStream = new FileInputStream("/home/" + fileName);
 
