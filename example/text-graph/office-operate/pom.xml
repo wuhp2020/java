@@ -13,6 +13,14 @@
     <groupId>office-operate</groupId>
     <version>1.0</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.libreoffice</groupId>
+            <artifactId>libreoffice</artifactId>
+            <version>7.3.6</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <!-- 加载配置文件 -->
         <resources>
