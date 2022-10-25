@@ -213,7 +213,33 @@ public class MagicApiController {
     }
 
     private void autoCreateDeleteByIds(String groupId, String tableName, List<Map<String, Object>> columns) {
-
+        ApiInfo apiInfo = new ApiInfo();
+        apiInfo.setGroupId(groupId);
+        apiInfo.setPath("/deleteByIds");
+        apiInfo.setUpdateBy("auto");
+        apiInfo.setMethod("POST");
+        apiInfo.setName("删除");
+        StringBuilder sb = new StringBuilder();
+        sb.append("db.transaction(()=>{\n");
+        sb.append("    for(index,item in body) {\n");
+        sb.append("        db.table('"+ tableName +"').where().eq('id', item).delete()\n");
+        sb.append("    }\n");
+        sb.append("});\n");
+        sb.append("return \"ok\"");
+        apiInfo.setScript(sb.toString());
+        BaseDefinition requestBodyDefinition = new BaseDefinition();
+        requestBodyDefinition.setRequired(true);
+        requestBodyDefinition.setDataType(DataType.Array);
+        ArrayList<BaseDefinition> children = new ArrayList<>();
+        BaseDefinition baseDefinition = new BaseDefinition();
+        baseDefinition.setRequired(true);
+        baseDefinition.setDataType(DataType.String);
+        baseDefinition.setValue("1");
+        children.add(baseDefinition);
+        requestBodyDefinition.setChildren(children);
+        apiInfo.setRequestBodyDefinition(requestBodyDefinition);
+        MagicResourceService magicResourceService = MagicConfiguration.getMagicResourceService();
+        magicResourceService.saveFile(apiInfo);
     }
 
     private void autoCreateSave(String groupId, String tableName, List<Map<String, Object>> columns) {
