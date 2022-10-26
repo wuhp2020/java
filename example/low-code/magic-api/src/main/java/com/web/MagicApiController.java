@@ -130,7 +130,7 @@ public class MagicApiController {
         });
     }
 
-    private void autoCreateFindById(String groupId, String tableName, List<Map<String, Object>> columnMap) {
+    private void autoCreateFindById(String groupId, String tableName, List<Map<String, Object>> columns) {
         ApiInfo apiInfo = new ApiInfo();
         apiInfo.setGroupId(groupId);
         apiInfo.setPath("/findById");
@@ -146,10 +146,16 @@ public class MagicApiController {
         baseDefinition.setName("id");
         baseDefinition.setRequired(true);
         baseDefinition.setDataType(DataType.String);
+        baseDefinition.setDescription("主键");
         baseDefinition.setValue("1");
         children.add(baseDefinition);
         requestBodyDefinition.setChildren(children);
         apiInfo.setRequestBodyDefinition(requestBodyDefinition);
+
+        BaseDefinition responseBodyDefinition = new BaseDefinition();
+        responseBodyDefinition.setDataType(DataType.Object);
+        responseBodyDefinition.setChildren(this.baseDefinitions(columns));
+        apiInfo.setResponseBodyDefinition(responseBodyDefinition);
         MagicResourceService magicResourceService = MagicConfiguration.getMagicResourceService();
         magicResourceService.saveFile(apiInfo);
     }
@@ -175,6 +181,7 @@ public class MagicApiController {
         Optional.ofNullable(columns).orElse(Collections.emptyList()).stream().forEach(column -> {
             String columnName = (String) column.get("COLUMN_NAME");
             String dataType = (String) column.get("DATA_TYPE");
+            String comment = (String) column.get("COLUMN_COMMENT");
             sb.append("  <if test=\"body."+ columnName +" != null and body."+ columnName +" != ''\">\n");
             sb.append("    and "+ columnName +" = #{body."+ columnName +"}\n");
             sb.append("  </if>\n");
@@ -182,6 +189,7 @@ public class MagicApiController {
             BaseDefinition baseDefinition = new BaseDefinition();
             baseDefinition.setName(columnName);
             baseDefinition.setRequired(false);
+            baseDefinition.setDescription(comment);
             Map<DataType, Object> dataTypeObjectMap = this.convertDataType(dataType);
             baseDefinition.setDataType(dataTypeObjectMap.keySet().stream().findFirst().get());
             baseDefinition.setValue(dataTypeObjectMap.get(dataTypeObjectMap.keySet().stream().findFirst().get()));
@@ -208,6 +216,12 @@ public class MagicApiController {
 
         requestBodyDefinition.setChildren(children);
         apiInfo.setRequestBodyDefinition(requestBodyDefinition);
+
+        BaseDefinition responseBodyDefinition = new BaseDefinition();
+        responseBodyDefinition.setDataType(DataType.Array);
+        responseBodyDefinition.setChildren(this.baseDefinitions(columns));
+        apiInfo.setResponseBodyDefinition(responseBodyDefinition);
+
         MagicResourceService magicResourceService = MagicConfiguration.getMagicResourceService();
         magicResourceService.saveFile(apiInfo);
     }
@@ -235,6 +249,7 @@ public class MagicApiController {
         baseDefinition.setRequired(true);
         baseDefinition.setDataType(DataType.String);
         baseDefinition.setValue("1");
+        baseDefinition.setDescription("主键");
         children.add(baseDefinition);
         requestBodyDefinition.setChildren(children);
         apiInfo.setRequestBodyDefinition(requestBodyDefinition);
@@ -264,8 +279,10 @@ public class MagicApiController {
             String columnName = (String) column.get("COLUMN_NAME");
             if (!"id".equals(columnName)) {
                 String dataType = (String) column.get("DATA_TYPE");
+                String comment = (String) column.get("COLUMN_COMMENT");
                 BaseDefinition baseDefinition = new BaseDefinition();
                 baseDefinition.setName(columnName);
+                baseDefinition.setDescription(comment);
                 baseDefinition.setRequired(false);
                 Map<DataType, Object> dataTypeObjectMap = this.convertDataType(dataType);
                 baseDefinition.setDataType(dataTypeObjectMap.keySet().stream().findFirst().get());
@@ -300,6 +317,7 @@ public class MagicApiController {
         Optional.ofNullable(columns).orElse(Collections.emptyList()).stream().forEach(column -> {
             String columnName = (String) column.get("COLUMN_NAME");
             String dataType = (String) column.get("DATA_TYPE");
+            String comment = (String) column.get("COLUMN_COMMENT");
             BaseDefinition baseDefinition = new BaseDefinition();
             baseDefinition.setName(columnName);
             if ("id".equals(columnName)) {
@@ -307,6 +325,7 @@ public class MagicApiController {
             } else {
                 baseDefinition.setRequired(false);
             }
+            baseDefinition.setDescription(comment);
             Map<DataType, Object> dataTypeObjectMap = this.convertDataType(dataType);
             baseDefinition.setDataType(dataTypeObjectMap.keySet().stream().findFirst().get());
             baseDefinition.setValue(dataTypeObjectMap.get(dataTypeObjectMap.keySet().stream().findFirst().get()));
@@ -339,6 +358,7 @@ public class MagicApiController {
         Optional.ofNullable(columns).orElse(Collections.emptyList()).stream().forEach(column -> {
             String columnName = (String) column.get("COLUMN_NAME");
             String dataType = (String) column.get("DATA_TYPE");
+            String comment = (String) column.get("COLUMN_COMMENT");
             sb.append("  <if test=\"body."+ columnName +" != null and body."+ columnName +" != ''\">\n");
             sb.append("    and "+ columnName +" = #{body."+ columnName +"}\n");
             sb.append("  </if>\n");
@@ -346,6 +366,7 @@ public class MagicApiController {
             BaseDefinition baseDefinition = new BaseDefinition();
             baseDefinition.setName(columnName);
             baseDefinition.setRequired(false);
+            baseDefinition.setDescription(comment);
             Map<DataType, Object> dataTypeObjectMap = this.convertDataType(dataType);
             baseDefinition.setDataType(dataTypeObjectMap.keySet().stream().findFirst().get());
             baseDefinition.setValue(dataTypeObjectMap.get(dataTypeObjectMap.keySet().stream().findFirst().get()));
@@ -358,8 +379,33 @@ public class MagicApiController {
 
         requestBodyDefinition.setChildren(children);
         apiInfo.setRequestBodyDefinition(requestBodyDefinition);
+
+        BaseDefinition responseBodyDefinition = new BaseDefinition();
+        responseBodyDefinition.setDataType(DataType.Array);
+        responseBodyDefinition.setChildren(this.baseDefinitions(columns));
+        apiInfo.setResponseBodyDefinition(responseBodyDefinition);
+
         MagicResourceService magicResourceService = MagicConfiguration.getMagicResourceService();
         magicResourceService.saveFile(apiInfo);
+    }
+
+    private ArrayList<BaseDefinition> baseDefinitions(List<Map<String, Object>> columns) {
+        ArrayList<BaseDefinition> baseDefinitions = new ArrayList<>();
+        Optional.ofNullable(columns).orElse(Collections.emptyList()).stream().forEach(column -> {
+            String columnName = (String) column.get("COLUMN_NAME");
+            String dataType = (String) column.get("DATA_TYPE");
+            String comment = (String) column.get("COLUMN_COMMENT");
+            BaseDefinition baseDefinition = new BaseDefinition();
+            baseDefinition.setName(columnName);
+            baseDefinition.setRequired(false);
+            Map<DataType, Object> dataTypeObjectMap = this.convertDataType(dataType);
+            baseDefinition.setDataType(dataTypeObjectMap.keySet().stream().findFirst().get());
+            baseDefinition.setValue(dataTypeObjectMap.get(dataTypeObjectMap.keySet().stream().findFirst().get()));
+            baseDefinition.setDescription(comment);
+            baseDefinitions.add(baseDefinition);
+        });
+
+        return baseDefinitions;
     }
 
     private Map<DataType, Object> convertDataType(String dataType) {
