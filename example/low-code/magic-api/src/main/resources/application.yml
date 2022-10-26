@@ -21,3 +21,7 @@ magic-api:
     page: page
     default-page: 1
     default-size: 10
+  response-code:
+    success: 200
+    invalid: 401
+    exception: 500

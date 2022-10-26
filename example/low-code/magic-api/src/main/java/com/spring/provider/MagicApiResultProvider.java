@@ -43,7 +43,7 @@ public class MagicApiResultProvider implements ResultProvider {
         return new HashMap<String,Object>(){
             {
                 put("total", total);
-                put("body", data);
+                put("records", data);
             }
         };
     }

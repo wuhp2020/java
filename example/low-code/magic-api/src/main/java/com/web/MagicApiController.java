@@ -103,7 +103,7 @@ public class MagicApiController {
             }
 
             ColumnMapRowMapper columnRowMapper = new ColumnMapRowMapper();
-            List<Map<String, Object>> columnMap = jdbcTemplate.query("select * from information_schema.COLUMNS where TABLE_SCHEMA = (select database()) and TABLE_NAME='" +tableName+ "'", columnRowMapper);
+            List<Map<String, Object>> columnMap = jdbcTemplate.query("select * from information_schema.COLUMNS where TABLE_SCHEMA = (select database()) and TABLE_NAME='" +tableNameReal+ "'", columnRowMapper);
 
             List<ApiInfo> apiInfos = magicResourceService.listFiles(groupId);
             Map<String, ApiInfo> apiInfoMap = Optional.ofNullable(apiInfos).orElse(Collections.emptyList())
