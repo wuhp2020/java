@@ -13,7 +13,7 @@ spring:
 #    history-level: full
 
   datasource:
-    url: jdbc:mysql://192.168.221.129:3306/at?useunicode=true&characterEncoding=utf8
+    url: jdbc:mysql://192.168.221.131:3306/at?useunicode=true&characterEncoding=utf8
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 123
