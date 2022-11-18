@@ -1,2 +1,22 @@
 server:
   port: 8008
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: public
+        username: nacos
+        password: nacos
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yml
+        namespace: public
+        group: demo
+        username: nacos
+        password: nacos
+        extension-configs:
+          - dataId: common.yml
+            group: demo
+            refresh: true
