@@ -5,8 +5,10 @@ servicename: elasticsearch-service
 
 cluster_name: my-application
 http_port: 9200
+# 写⼊候选主节点的设备地址，在开启服务后可以被选为主节点
 discovery_seed_hosts: ["master1", "master2", "master3"]
-cluster_initial_master_nodes: ["elasticsearch-master-0", "elasticsearch-master-1", "elasticsearch-master-2"]
+# 初始化⼀个新的集群时需要此配置来选举master
+cluster_initial_master_nodes: ["elasticsearch-master-data-ingest-statefulset-0", "elasticsearch-master-data-ingest-statefulset-1", "elasticsearch-master-data-ingest-statefulset-2"]
 
 elasticsearch_master_data_ingest:
   enable: true

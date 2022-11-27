@@ -57,8 +57,8 @@ spec:
             mountPath: /run.sh
             subPath: run.sh
           - name: elasticsearch-master-configmap
-            mountPath: /elasticsearch/config/elasticsearch.yml
-            subPath: elasticsearch.yml
+            mountPath: /elasticsearch/config/elasticsearch.yml.bak
+            subPath: elasticsearch.yml.bak
       volumes:
         - name: ro
           hostPath:
