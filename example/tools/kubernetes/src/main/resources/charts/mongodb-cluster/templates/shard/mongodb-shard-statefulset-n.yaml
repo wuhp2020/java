@@ -1,4 +1,4 @@
-{{- if gt 1 ($.Values.mongodb_shard.replicas | int) }}
+{{- if lt 1 ($.Values.mongodb_shard.replicas | int) }}
 {{- range $i, $e := $.Values.mongodb_shard.nodeList }}
 apiVersion: apps/v1
 kind: StatefulSet

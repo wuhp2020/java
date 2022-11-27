@@ -36,5 +36,5 @@ data:
         engine: wiredTiger
         wiredTiger:
             engineConfig:
-                cacheSizeGB: 16
+                cacheSizeGB: 1
 

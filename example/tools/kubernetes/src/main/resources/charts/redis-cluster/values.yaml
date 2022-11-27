@@ -1,7 +1,7 @@
 image: "redis"
 imageTag: "5.0.9"
 
-replicas: 1
+replicas: 3
 servicename: redis-service
 saslEnable: false
 redis_master:

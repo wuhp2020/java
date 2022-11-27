@@ -1,5 +1,5 @@
 image: "mongodb"
-imageTag: "3.6"
+imageTag: "3.6.23"
 
 mongodb_mongos:
   servicename: mongo-service

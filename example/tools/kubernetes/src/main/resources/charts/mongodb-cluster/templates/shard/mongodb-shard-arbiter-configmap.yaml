@@ -31,7 +31,7 @@ data:
       fi
     else
       if [[ $index -eq 0 ]]; then
-        mongod --port {{ .Values.mongodb_shard.slave.arbiter.port }} --bind_ip 0.0.0.0 --shardsvr --replSet mongodb-shard-master-statefulset-$(({{ .Values.mongodb_shard.replicas }}-2)) --dbpath /mongodb-shard-arbiter/data --pidfilepath /mongodb-shard-arbiter/pid/mongodb-shard-arbiter.pid --logpath /mongodb-shard-arbiter/logs/mongodb-shard-arbiter.log --config /mongodb-shard-arbiter/conf/mongod.conf &
+        /mongodb/bin/mongod --port {{ .Values.mongodb_shard.slave.arbiter.port }} --bind_ip 0.0.0.0 --shardsvr --replSet mongodb-shard-master-statefulset-$(({{ .Values.mongodb_shard.replicas }}-2)) --dbpath /mongodb-shard-arbiter/data --pidfilepath /mongodb-shard-arbiter/pid/mongodb-shard-arbiter.pid --logpath /mongodb-shard-arbiter/logs/mongodb-shard-arbiter.log --config /mongodb-shard-arbiter/conf/mongod.conf &
       elif [[ $index -eq 1 ]]; then
         /mongodb/bin/mongod --port {{ .Values.mongodb_shard.slave.arbiter.port }} --bind_ip 0.0.0.0 --shardsvr --replSet mongodb-shard-master-statefulset-$(({{ .Values.mongodb_shard.replicas }}-1)) --dbpath /mongodb-shard-arbiter/data --pidfilepath /mongodb-shard-arbiter/pid/mongodb-shard-arbiter.pid --logpath /mongodb-shard-arbiter/logs/mongodb-shard-arbiter.log --config /mongodb-shard-arbiter/conf/mongod.conf &
       else
@@ -57,5 +57,5 @@ data:
         engine: wiredTiger
         wiredTiger:
             engineConfig:
-                cacheSizeGB: 16
+                cacheSizeGB: 1
 {{- end }}
