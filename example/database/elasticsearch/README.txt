@@ -16,7 +16,6 @@ network.host: 0.0.0.0
 http.port: 9200
 #内部节点之间沟通端⼝
 transport.tcp.port: 9300
-#es7.x 之后新增的配置，写⼊候选主节点的设备地址，在开启服务后可以被选为主节点
 # 部署在一个服务器用于测试的的伪分布式就用不同的端口，真分布式的话自行修改ip地址
 discovery.seed_hosts: ["localhost:9300","localhost:9400","localhost:9500"]
 #es7.x 之后新增的配置，初始化⼀个新的集群时需要此配置来选举master
