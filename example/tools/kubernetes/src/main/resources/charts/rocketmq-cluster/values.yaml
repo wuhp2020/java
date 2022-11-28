@@ -1,0 +1,29 @@
+image: "mysql"
+imageTag: "5.7.36"
+
+servicename: mysql-service
+username: root
+password: 123
+
+mysql_master:
+  port: 3306
+  affinity: |
+    #command
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchLabels:
+              app: "mysql-ha"
+          topologyKey: kubernetes.io/hostname
+
+mysql_slave:
+  enable: true
+  port: 3306
+  affinity: |
+    #command
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchLabels:
+              app: "mysql-ha"
+          topologyKey: kubernetes.io/hostname

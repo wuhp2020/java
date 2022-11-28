@@ -1,0 +1,100 @@
+{{- if .Values.mysql_slave.enable }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-ha-configmap
+data:
+  run.sh: |
+
+    #!/bin/bash
+
+    set -x
+
+    sleep 60
+
+    echo "starting mysql-ha ..."
+
+    while true
+    do
+    sleep 5
+
+    slaveip=$(ping mysql-slave-statefulset-0.mysql-slave-service.default.svc.cluster.local -c 1 | head -1 | awk -F\( '{print $2}' | awk -F\) '{print $1}')
+    response1=$(/mysql/bin/mysql -h$slaveip -uroot -p'{{.Values.password}}')
+    if [[ $? -eq 0 ]]; then
+      response2=$(/mysql/bin/mysql -h$slaveip -uroot -p'{{.Values.password}}' -e"show slave status \G;")
+      echo $response2
+      if [[ $response2 == *"Slave_IO_Running: Yes"* ]]; then
+        if [[ $response2 == *"Slave_SQL_Running: Yes"* ]]; then
+          break
+        fi
+      else
+        while true; do
+        sleep 5
+        mastertemp=$(ping mysql-master-statefulset-0.mysql-master-service.default.svc.cluster.local -c 1 | head -1 | awk -F\( '{print $2}' | awk -F\) '{print $1}')
+        if [[ $temp == *"Name or service not known"* ]]; then
+          echo 'service not known == wait'
+        else
+          while true
+          do
+          sleep 5
+          response3=$(/mysql/bin/mysql -h$slaveip -uroot -p'{{.Values.password}}' -e"CHANGE MASTER TO MASTER_HOST='$mastertemp',MASTER_USER='root',MASTER_PASSWORD='{{.Values.password}}',MASTER_LOG_FILE='mysql-bin.000002',MASTER_LOG_POS=903;")
+          response4=$(/mysql/bin/mysql -h$slaveip -uroot -p'{{.Values.password}}' -e"start slave;")
+          response5=$(/mysql/bin/mysql -h$slaveip -uroot -p'{{.Values.password}}' -e"show slave status \G;")
+          echo $response5
+          if [[ $response5 == *"Slave_IO_Running: Yes"* ]]; then
+            if [[ $response5 == *"Slave_SQL_Running: Yes"* ]]; then
+              break
+            fi
+          fi
+          done
+          break
+        fi
+        done
+      fi
+    fi
+    done
+
+    sleep 10
+
+    while true
+    do
+    sleep 5
+    masterip=$(ping mysql-master-statefulset-0.mysql-master-service.default.svc.cluster.local -c 1 | head -1 | awk -F\( '{print $2}' | awk -F\) '{print $1}')
+    response6=$(/mysql/bin/mysql -h$masterip -uroot -p'{{.Values.password}}')
+    if [[ $? -eq 0 ]]; then
+      response7=$(/mysql/bin/mysql -h$masterip -uroot -p'{{.Values.password}}' -e"show slave status \G;")
+      echo $response7
+      if [[ $response7 == *"Slave_IO_Running: Yes"* ]]; then
+        if [[ $response7 == *"Slave_SQL_Running: Yes"* ]]; then
+          break
+        fi
+      else
+        while true; do
+        sleep 5
+        slavetemp=$(ping mysql-slave-statefulset-0.mysql-slave-service.default.svc.cluster.local -c 1 | head -1 | awk -F\( '{print $2}' | awk -F\) '{print $1}')
+        if [[ $temp == *"Name or service not known"* ]]; then
+          echo 'service not known == wait'
+        else
+          while true
+          do
+          sleep 5
+          response8=$(/mysql/bin/mysql -h$masterip -uroot -p'{{.Values.password}}' -e"CHANGE MASTER TO MASTER_HOST='$slavetemp',MASTER_USER='root',MASTER_PASSWORD='{{.Values.password}}',MASTER_LOG_FILE='mysql-bin.000002',MASTER_LOG_POS=903;")
+          response9=$(/mysql/bin/mysql -h$masterip -uroot -p'{{.Values.password}}' -e"start slave;")
+          response0=$(/mysql/bin/mysql -h$masterip -uroot -p'{{.Values.password}}' -e"show slave status \G;")
+          echo $response0
+          if [[ $response0 == *"Slave_IO_Running: Yes"* ]]; then
+            if [[ $response0 == *"Slave_SQL_Running: Yes"* ]]; then
+              break
+            fi
+          fi
+          done
+          break
+        fi
+        done
+      fi
+    fi
+    done
+
+    echo "started mysql-ha ..."
+
+{{- end }}
