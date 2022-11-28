@@ -28,7 +28,7 @@ data:
       echo "zookeeper.sasl.client=true" >> /zookeeper/conf/zoo.cfg
 
       echo " " >> /zookeeper/bin/zkEnv.sh
-      echo "for i in /zookeeper/zk_sasl_dependency/*.jar;" >> /zookeeper/bin/zkEnv.sh
+      echo "for i in /zookeeper/zk_sasl_lib/*.jar;" >> /zookeeper/bin/zkEnv.sh
       echo "do" >> /zookeeper/bin/zkEnv.sh
       echo '    CLASSPATH="$i:$CLASSPATH"' >> /zookeeper/bin/zkEnv.sh
       echo "done" >> /zookeeper/bin/zkEnv.sh
