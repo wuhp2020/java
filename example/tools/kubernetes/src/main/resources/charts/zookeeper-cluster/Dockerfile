@@ -8,5 +8,8 @@
 # slf4j-api-1.7.28.jar
 # slf4j-log4j12-1.7.28.jar
 # snappy-java-1.1.7.3.jar
-FROM centos-jdk:7
+FROM centos:7
+ADD jdk-8u152-linux-x64.tar.gz /
+ENV JAVA_HOME /jdk1.8.0_152
+ENV PATH $PATH:$JAVA_HOME/bin
 COPY zookeeper /zookeeper

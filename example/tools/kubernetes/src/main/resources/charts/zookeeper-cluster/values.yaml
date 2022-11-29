@@ -5,7 +5,7 @@ zookeeper:
   servicename: zookeeper-service
   saslEnable: false
   replicas: 1
-  port: 8121
+  port: 2181
   affinity: |
     #command
     podAntiAffinity:
