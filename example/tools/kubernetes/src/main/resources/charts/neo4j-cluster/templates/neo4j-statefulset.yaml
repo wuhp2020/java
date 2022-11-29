@@ -1,34 +1,34 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: zookeeper-statefulset
+  name: neo4j-statefulset
   labels:
-    app: "zookeeper"
+    app: "neo4j"
     release: "{{ .Release.Name }}"
 spec:
-  serviceName: "zookeeper-headless-service"
-  replicas: {{ .Values.zookeeper.replicas | default 1 }}
+  serviceName: "neo4j-headless-service"
+  replicas: {{ .Values.neo4j.replicas | default 1 }}
   selector:
     matchLabels:
-      app: "zookeeper"
+      app: "neo4j"
       release: "{{ .Release.Name }}"
   updateStrategy:
     type: RollingUpdate
   template:
     metadata:
       labels:
-        app: "zookeeper"
+        app: "neo4j"
         release: "{{ .Release.Name }}"
     spec:
       dnsPolicy: ClusterFirstWithHostNet
       hostNetwork: true
       restartPolicy: Always
-      {{- if .Values.zookeeper.affinity }}
+      {{- if .Values.neo4j.affinity }}
       affinity:
-      {{ tpl .Values.zookeeper.affinity . | indent 8 }}
+      {{ tpl .Values.neo4j.affinity . | indent 8 }}
       {{- end }}
       containers:
-      - name: zookeeper
+      - name: neo4j
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"
         imagePullPolicy: IfNotPresent
         command: ['/bin/bash', '-c', '/bin/bash /run.sh']
@@ -46,7 +46,7 @@ spec:
             memory: 8Gi
         livenessProbe:
           tcpSocket:
-            port: {{.Values.zookeeper.port}}
+            port: {{.Values.neo4j.port}}
           initialDelaySeconds: 120
           periodSeconds: 15
           timeoutSeconds: 60
@@ -56,23 +56,20 @@ spec:
           - name: ro
             mountPath: /etc/localtime:ro
           - name: data
-            mountPath: /zookeeper/data
-          - name: zookeeper-configmap
+            mountPath: /neo4j/data
+          - name: neo4j-configmap
             mountPath: /run.sh
             subPath: run.sh
-          - name: zookeeper-configmap
-            mountPath: /zookeeper/conf/zoo.cfg.bak
-            subPath: zoo.cfg.bak
-          - name: zookeeper-configmap
-            mountPath: /zookeeper/conf/zk_server_jaas.conf
-            subPath: zk_server_jaas.conf
+          - name: neo4j-configmap
+            mountPath: /neo4j/conf/neo4j.conf.bak
+            subPath: neo4j.conf.bak
       volumes:
         - name: ro
           hostPath:
             path: /etc/localtime
-        - name: zookeeper-configmap
+        - name: neo4j-configmap
           configMap:
-            name: zookeeper-configmap
+            name: neo4j-configmap
   volumeClaimTemplates:
   - metadata:
       name: data

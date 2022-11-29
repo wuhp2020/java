@@ -1,16 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: zookeeper-headless-service
+  name: neo4j-headless-service
 spec:
   type: ClusterIP
   clusterIP: None
   ports:
-    - name: zookeeper
-      port: {{ .Values.zookeeper.port }}
-    - name: zookeeper-tcp
-      port: 2888
-    - name: zookeeper-cluster
-      port: 3888
+    - name: neo4j
+      port: {{ .Values.neo4j.port }}
   selector:
-    app: "zookeeper"
+    app: "neo4j"
