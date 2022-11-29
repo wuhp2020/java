@@ -11,6 +11,21 @@ data:
 
     echo "starting neo4j ..."
 
+    rm -rf /neo4j/conf/neo4j.conf
+    cp /neo4j/conf/neo4j.conf.bak /neo4j/conf/neo4j.conf
+    host=""
+    for((i=0;i<{{ .Values.neo4j.replicas }};i++)); do
+      if [[ $i -gt 0 ]]; then
+        host=$host"neo4j-statefulset-$i.neo4j-headless-service.default.svc.cluster.local:5001,"
+      else
+        host=$host"neo4j-statefulset-$i.neo4j-headless-service.default.svc.cluster.local:5001"
+      fi
+      echo "dbms.mode=HA" >> /neo4j/conf/neo4j.conf
+      echo "ha.server_id=$(($i+1))" >> /neo4j/conf/neo4j.conf
+    done
+
+    echo "ha.initial_hosts=$host" >> /neo4j/conf/neo4j.conf
+
     cd /neo4j && ./bin/neo4j start
 
     echo "started neo4j ..."
