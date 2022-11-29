@@ -22,7 +22,7 @@ data:
       fi
     done
 
-    index=$(echo echo $POD_NAME | egrep -o "[0-9]+")
+    index=$((echo echo $POD_NAME | egrep -o "[0-9]+") | tail -1f)
     echo "dbms.mode=HA" >> /neo4j/conf/neo4j.conf
     echo "ha.server_id=$index" >> /neo4j/conf/neo4j.conf
     echo "ha.initial_hosts=$host" >> /neo4j/conf/neo4j.conf
