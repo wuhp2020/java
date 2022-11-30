@@ -111,4 +111,4 @@ data:
     #
     #action.destructive_requires_name: true
 
-  {{- end }}
+{{- end }}
