@@ -104,7 +104,7 @@ data:
     # Bolt connector
     dbms.connector.bolt.enabled=true
     #dbms.connector.bolt.tls_level=OPTIONAL
-    #dbms.connector.bolt.listen_address=:7687
+    dbms.connector.bolt.listen_address=:7687
 
     # HTTP Connector. There can be zero or one HTTP connectors.
     dbms.connector.http.enabled=true
