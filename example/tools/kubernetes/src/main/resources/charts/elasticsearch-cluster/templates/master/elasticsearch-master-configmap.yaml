@@ -14,6 +14,57 @@ data:
 
     cp /elasticsearch/config/elasticsearch.yml.bak /elasticsearch/config/elasticsearch.yml
     echo "node.name: $POD_NAME" >> /elasticsearch/config/elasticsearch.yml
+
+    discovery_seed_hosts=""
+    cluster_initial_master_nodes=""
+
+    if [[ '{{ .Values.elasticsearch_master_data_ingest.enable }}' == 'true' ]]; then
+      for((i=0;i<{{ .Values.elasticsearch_master_data_ingest.replicas }};i++)); do
+        if [[ $i -eq 0 ]]; then
+          cluster_initial_master_nodes="\"elasticsearch-master-data-ingest-statefulset-$i\""
+          discovery_seed_hosts="\"elasticsearch-master-data-ingest-statefulset-$i.elasticsearch-master-data-ingest-headless-service.default.svc.cluster.local:9300\""
+        else
+          cluster_initial_master_nodes=$cluster_initial_master_nodes",\"elasticsearch-master-data-ingest-statefulset-$i\""
+          discovery_seed_hosts=$discovery_seed_hosts",\"elasticsearch-master-data-ingest-statefulset-$i.elasticsearch-master-data-ingest-headless-service.default.svc.cluster.local:9300\""
+        fi
+      done
+    fi
+
+    if [[ '{{ .Values.elasticsearch_master.enable }}' == 'true' ]]; then
+      for((i=0;i<{{ .Values.elasticsearch_master.replicas }};i++)); do
+        if [[ $i -eq 0 ]] && [[ -z $discovery_seed_hosts ]]; then
+          cluster_initial_master_nodes="\"elasticsearch-master-data-ingest-statefulset-$i\""
+          discovery_seed_hosts="\"elasticsearch-master-statefulset-$i.elasticsearch-master-headless-service.default.svc.cluster.local:9300\""
+        else
+          cluster_initial_master_nodes=$cluster_initial_master_nodes",\"elasticsearch-master-data-ingest-statefulset-$i\""
+          discovery_seed_hosts=$discovery_seed_hosts",\"elasticsearch-master-statefulset-$i.elasticsearch-master-headless-service.default.svc.cluster.local:9300\""
+        fi
+      done
+    fi
+
+    if [[ '{{ .Values.elasticsearch_data.enable }}' == 'true' ]]; then
+      for((i=0;i<{{ .Values.elasticsearch_data.replicas }};i++)); do
+        if [[ $i -eq 0 ]] && [[ -z $discovery_seed_hosts ]]; then
+          discovery_seed_hosts="\"elasticsearch-data-statefulset-$i.elasticsearch-data-headless-service.default.svc.cluster.local:9300\""
+        else
+          discovery_seed_hosts=$discovery_seed_hosts",\"elasticsearch-data-statefulset-$i.elasticsearch-data-headless-service.default.svc.cluster.local:9300\""
+        fi
+      done
+    fi
+
+    if [[ '{{ .Values.elasticsearch_ingest.enable }}' == 'true' ]]; then
+      for((i=0;i<{{ .Values.elasticsearch_ingest.replicas }};i++)); do
+        if [[ $i -eq 0 ]] && [[ -z $discovery_seed_hosts ]]; then
+          discovery_seed_hosts="\"elasticsearch-ingest-statefulset-$i.elasticsearch-ingest-headless-service.default.svc.cluster.local:9300\""
+        else
+          discovery_seed_hosts=$discovery_seed_hosts",\"elasticsearch-ingest-statefulset-$i.elasticsearch-ingest-headless-service.default.svc.cluster.local:9300\""
+        fi
+      done
+    fi
+
+    echo "discovery.seed_hosts: [$discovery_seed_hosts]" >> /elasticsearch/config/elasticsearch.yml
+    echo "cluster.initial_master_nodes: [$cluster_initial_master_nodes]" >> /elasticsearch/config/elasticsearch.yml
+
     cd /elasticsearch && ./bin/elasticsearch -Enode.name=$POD_NAME &
     
     echo "started elasticsearch-master ..."
@@ -89,11 +140,11 @@ data:
     # Pass an initial list of hosts to perform discovery when this node is started:
     # The default list of hosts is ["127.0.0.1", "[::1]"]
     #
-    discovery.seed_hosts: {{ .Values.discovery_seed_hosts }}
+    #discovery.seed_hosts: ["host1", "host2"]
     #
     # Bootstrap the cluster using an initial set of master-eligible nodes:
     #
-    cluster.initial_master_nodes: {{ .Values.cluster_initial_master_nodes }}
+    #cluster.initial_master_nodes: ["node-1", "node-2"]
     #
     # For more information, consult the discovery and cluster formation module documentation.
     #
