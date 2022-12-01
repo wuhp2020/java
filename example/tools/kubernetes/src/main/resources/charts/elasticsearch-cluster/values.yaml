@@ -5,9 +5,6 @@ servicename: elasticsearch-service
 
 cluster_name: my-application
 http_port: 9200
-## 广播配置
-#discovery_seed_hosts: "[\"192.168.221.131:9300\", \"192.168.221.132:9300\", \"192.168.221.133:9300\"]"
-#cluster_initial_master_nodes: "[\"elasticsearch-master-data-ingest-statefulset-0\", \"elasticsearch-master-data-ingest-statefulset-1\", \"elasticsearch-master-data-ingest-statefulset-2\"]"
 
 elasticsearch_master_data_ingest:
   enable: true
