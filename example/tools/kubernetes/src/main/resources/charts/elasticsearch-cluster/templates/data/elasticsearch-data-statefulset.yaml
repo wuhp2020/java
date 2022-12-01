@@ -7,7 +7,7 @@ metadata:
     app: "elasticsearch"
     release: "{{ .Release.Name }}"
 spec:
-  serviceName: "elasticsearch-data-service"
+  serviceName: "elasticsearch-data-headless-service"
   replicas: {{ .Values.elasticsearch_data.replicas | default 1 }}
   selector:
     matchLabels:
