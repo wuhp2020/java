@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: elasticsearch-ingest-service
+  name: elasticsearch-ingest-headless-service
 spec:
   type: ClusterIP
   clusterIP: None
