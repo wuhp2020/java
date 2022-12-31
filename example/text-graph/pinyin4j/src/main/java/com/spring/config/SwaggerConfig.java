@@ -19,6 +19,6 @@ public class SwaggerConfig {
     }
 
     private ApiInfo swaggerInfo() {
-        return new ApiInfoBuilder().title("flink").version("1.0").build();
+        return new ApiInfoBuilder().title("flume").version("1.0").build();
     }
 }

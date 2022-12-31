@@ -4,8 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpireDocApplication {
+public class PinYin4jApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SpireDocApplication.class, args);
+        SpringApplication.run(PinYin4jApplication.class, args);
     }
 }
