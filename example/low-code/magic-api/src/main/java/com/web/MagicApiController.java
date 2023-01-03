@@ -83,7 +83,8 @@ public class MagicApiController {
         ColumnMapRowMapper tableRowMapper = new ColumnMapRowMapper();
         List<Map<String, Object>> tables = jdbcTemplate.query("select * from information_schema.TABLES where TABLE_SCHEMA=(select database())", tableRowMapper);
 
-        Optional.ofNullable(tables).orElse(Collections.emptyList()).stream().forEach(table -> {
+        Optional.ofNullable(tables).orElse(Collections.emptyList()).stream()
+                .filter(table -> (!"magic_api".equals(table.get("TABLE_NAME")))).forEach(table -> {
             String tableNameReal = ((String) table.get("TABLE_NAME"));
             String tableName = ((String) table.get("TABLE_NAME")).replaceAll("_", "");
             String groupId = "";
