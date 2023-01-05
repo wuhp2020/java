@@ -13,9 +13,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>cn.stylefeng.roses</groupId>
-            <artifactId>pinyin-sdk-pinyin4j</artifactId>
-            <version>7.3.2</version>
+            <groupId>com.belerweb</groupId>
+            <artifactId>pinyin4j</artifactId>
+            <version>2.5.1</version>
         </dependency>
     </dependencies>
 

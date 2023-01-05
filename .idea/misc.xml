@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/example/config-center/diamond/diamond-server" />
+    <file type="web" url="file://$PROJECT_DIR$/example/flow-engine/jeesite/jeesite-web" />
+    <file type="web" url="file://$PROJECT_DIR$/example/frontend/jsp" />
+    <file type="web" url="file://$PROJECT_DIR$/example/low-code/api-manager" />
+    <file type="web" url="file://$PROJECT_DIR$/example/util/war" />
+    <type id="Spring" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/example/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/example/text-graph/itext/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>
