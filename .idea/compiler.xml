@@ -86,6 +86,7 @@
         <module name="spring-cloud-starter-alibaba-nacos-config-server" />
         <module name="consul" />
         <module name="seata-storage" />
+        <module name="crudapi-example" />
         <module name="javafaker" />
         <module name="netty-client" />
         <module name="itextpdf" />

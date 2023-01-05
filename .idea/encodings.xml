@@ -45,8 +45,6 @@
     <file url="file://$PROJECT_DIR$/example/java-se/java8/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/java-se/jni/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/java-se/jvm/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/low-code/crudapi/crudapi-example/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/example/low-code/crudapi/crudapi-example/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/low-code/magic-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/low-code/rocket-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example/manage/hibernate/src/main/java" charset="UTF-8" />

@@ -26,6 +26,8 @@
       <module fileurl="file://$PROJECT_DIR$/example/util/commons-codec/commons-codec.iml" filepath="$PROJECT_DIR$/example/util/commons-codec/commons-codec.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/config-center/config-center.iml" filepath="$PROJECT_DIR$/example/config-center/config-center.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/register-center/consul/consul.iml" filepath="$PROJECT_DIR$/example/register-center/consul/consul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/crudapi/crudapi.iml" filepath="$PROJECT_DIR$/example/low-code/crudapi/crudapi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/crudapi/crudapi-example/crudapi-example.iml" filepath="$PROJECT_DIR$/example/low-code/crudapi/crudapi-example/crudapi-example.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/register-center/curator/curator.iml" filepath="$PROJECT_DIR$/example/register-center/curator/curator.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/tcp/cxf/cxf.iml" filepath="$PROJECT_DIR$/example/tcp/cxf/cxf.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/text-graph/d3js/d3js.iml" filepath="$PROJECT_DIR$/example/text-graph/d3js/d3js.iml" />
