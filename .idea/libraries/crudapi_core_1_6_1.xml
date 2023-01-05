@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="crudapi-core-1.6.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/example/low-code/crudapi/a/crudapi-core-1.6.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

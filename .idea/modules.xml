@@ -27,7 +27,15 @@
       <module fileurl="file://$PROJECT_DIR$/example/config-center/config-center.iml" filepath="$PROJECT_DIR$/example/config-center/config-center.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/register-center/consul/consul.iml" filepath="$PROJECT_DIR$/example/register-center/consul/consul.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/low-code/crudapi/crudapi.iml" filepath="$PROJECT_DIR$/example/low-code/crudapi/crudapi.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/low-code/crudapi/crudapi-example/crudapi-example.iml" filepath="$PROJECT_DIR$/example/low-code/crudapi/crudapi-example/crudapi-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/crudapi/crudapi-api/crudapi-api.iml" filepath="$PROJECT_DIR$/example/low-code/crudapi/crudapi-api/crudapi-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/crudapi/crudapi-core/crudapi-api (1).iml" filepath="$PROJECT_DIR$/example/low-code/crudapi/crudapi-core/crudapi-api (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/crudapi/crudapi-rest/crudapi-api (2).iml" filepath="$PROJECT_DIR$/example/low-code/crudapi/crudapi-rest/crudapi-api (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/crudapi/crudapi-security/crudapi-api (3).iml" filepath="$PROJECT_DIR$/example/low-code/crudapi/crudapi-security/crudapi-api (3).iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/crudapi/crudapi-weixin/crudapi-api (4).iml" filepath="$PROJECT_DIR$/example/low-code/crudapi/crudapi-weixin/crudapi-api (4).iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/crudapi/crudapi-core/crudapi-core.iml" filepath="$PROJECT_DIR$/example/low-code/crudapi/crudapi-core/crudapi-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/crudapi/crudapi-rest/crudapi-rest.iml" filepath="$PROJECT_DIR$/example/low-code/crudapi/crudapi-rest/crudapi-rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/crudapi/crudapi-security/crudapi-security.iml" filepath="$PROJECT_DIR$/example/low-code/crudapi/crudapi-security/crudapi-security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/crudapi/crudapi-weixin/crudapi-weixin.iml" filepath="$PROJECT_DIR$/example/low-code/crudapi/crudapi-weixin/crudapi-weixin.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/register-center/curator/curator.iml" filepath="$PROJECT_DIR$/example/register-center/curator/curator.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/tcp/cxf/cxf.iml" filepath="$PROJECT_DIR$/example/tcp/cxf/cxf.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/text-graph/d3js/d3js.iml" filepath="$PROJECT_DIR$/example/text-graph/d3js/d3js.iml" />

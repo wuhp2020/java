@@ -11,7 +11,9 @@
         <module name="nacos-client" />
         <module name="thrift-client" />
         <module name="sofaboot" />
+        <module name="crudapi-core" />
         <module name="ajax" />
+        <module name="crudapi-security" />
         <module name="grpc-client" />
         <module name="postman" />
         <module name="springcloud-eureka" />
@@ -27,8 +29,9 @@
         <module name="sharding-jdbc" />
         <module name="spring-security" />
         <module name="hutool" />
-        <module name="diamond-utils" />
         <module name="grpc-eureka" />
+        <module name="crudapi-weixin" />
+        <module name="diamond-utils" />
         <module name="easy-rules" />
         <module name="jsp" />
         <module name="poi" />
@@ -38,9 +41,10 @@
         <module name="netty-server" />
         <module name="freemarker" />
         <module name="commons-codec" />
-        <module name="spark" />
         <module name="java8" />
         <module name="open-meituan" />
+        <module name="spark" />
+        <module name="crudapi-rest" />
         <module name="axure" />
         <module name="activemq" />
         <module name="storm" />
@@ -50,6 +54,7 @@
         <module name="io-client" />
         <module name="dubbo-interface" />
         <module name="spring-cloud-alibaba-commons" />
+        <module name="crudapi-api" />
         <module name="neo4j" />
         <module name="asm" />
         <module name="kubernetes" />
@@ -62,8 +67,8 @@
         <module name="skywalking" />
         <module name="spring" />
         <module name="cxf" />
-        <module name="mycat" />
         <module name="jmockdata" />
+        <module name="mycat" />
         <module name="spring-cloud-circuitbreaker-sentinel" />
         <module name="mysql" />
         <module name="xjar" />
@@ -71,22 +76,21 @@
         <module name="jvm" />
         <module name="easymock" />
         <module name="oracle" />
-        <module name="sqlite" />
         <module name="springcloud-hystrix" />
+        <module name="sqlite" />
         <module name="dubbo-server" />
         <module name="elk" />
         <module name="aviator" />
         <module name="arthas-tunnel-server" />
         <module name="flink" />
-        <module name="seata-business" />
         <module name="curator" />
+        <module name="seata-business" />
         <module name="druid" />
         <module name="diamond-client" />
         <module name="shell" />
         <module name="spring-cloud-starter-alibaba-nacos-config-server" />
         <module name="consul" />
         <module name="seata-storage" />
-        <module name="crudapi-example" />
         <module name="javafaker" />
         <module name="netty-client" />
         <module name="itextpdf" />
@@ -96,13 +100,13 @@
         <module name="seata-eureka" />
         <module name="docker" />
         <module name="caffeine" />
-        <module name="sqlserver" />
         <module name="jboss" />
+        <module name="sqlserver" />
         <module name="linux" />
         <module name="springcloud-netflix" />
-        <module name="hadoop" />
         <module name="jetty" />
         <module name="prometheus" />
+        <module name="hadoop" />
         <module name="hbase" />
         <module name="junit" />
         <module name="io-server" />
@@ -252,7 +256,16 @@
       <module name="config-center" target="1.8" />
       <module name="consul" target="1.8" />
       <module name="crudapi" target="1.8" />
+      <module name="crudapi-api" target="1.8" />
+      <module name="crudapi-api (1)" target="1.8" />
+      <module name="crudapi-api (2)" target="1.8" />
+      <module name="crudapi-api (3)" target="1.8" />
+      <module name="crudapi-api (4)" target="1.8" />
+      <module name="crudapi-core" target="1.8" />
       <module name="crudapi-example" target="1.8" />
+      <module name="crudapi-rest" target="1.8" />
+      <module name="crudapi-security" target="1.8" />
+      <module name="crudapi-weixin" target="1.8" />
       <module name="curator" target="1.8" />
       <module name="cxf" target="1.8" />
       <module name="d3js" target="1.8" />
@@ -577,7 +590,12 @@
       <module name="command" options="-parameters" />
       <module name="commons-codec" options="-parameters" />
       <module name="consul" options="-parameters" />
+      <module name="crudapi-api" options="-parameters" />
+      <module name="crudapi-core" options="-parameters" />
       <module name="crudapi-example" options="-parameters" />
+      <module name="crudapi-rest" options="-parameters" />
+      <module name="crudapi-security" options="-parameters" />
+      <module name="crudapi-weixin" options="-parameters" />
       <module name="curator" options="-parameters" />
       <module name="cxf" options="-parameters" />
       <module name="d3js" options="-parameters" />
