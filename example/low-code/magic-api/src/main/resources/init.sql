@@ -8,10 +8,10 @@ CREATE TABLE `magic_api`  (
 CREATE TABLE `employee` (
     `id` bigint(20) NOT NULL COMMENT '主键',
     `name` varchar(255) DEFAULT NULL COMMENT '姓名',
-    `age` bigint(20) NOT NULL COMMENT '年龄',
+    `age` int NOT NULL COMMENT '年龄',
     `departmentid` varchar(255) DEFAULT NULL COMMENT '部门id',
-    `intotime` datetime DEFAULT NULL COMMENT '日期',
-    `create_date` date DEFAULT NULL COMMENT '创建日期',
+    `intotime` date DEFAULT NULL COMMENT '日期',
+    `create_date` datetime DEFAULT NULL COMMENT '创建日期',
     `salary` double DEFAULT NULL COMMENT '薪资',
     PRIMARY KEY (`id`),
     KEY `employee_age_name` (`age`,`name`),
