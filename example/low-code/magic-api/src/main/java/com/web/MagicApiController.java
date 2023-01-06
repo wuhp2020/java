@@ -271,7 +271,8 @@ public class MagicApiController {
         requestBodyDefinition.setDataType(DataType.Object);
         StringBuilder sb = new StringBuilder();
         sb.append("import com.alibaba.fastjson.JSON;\n");
-        sb.append("db.table('"+ tableName +"').primary('id', uuid()).save(JSON.toJSON(body))\n");
+        sb.append("import com.web.util.SnowflakeIdWorker;\n");
+        sb.append("db.table('"+ tableName +"').primary('id', SnowflakeIdWorker.getId()).save(JSON.toJSON(body))\n");
         sb.append("return \"ok\"");
         apiInfo.setScript(sb.toString());
 

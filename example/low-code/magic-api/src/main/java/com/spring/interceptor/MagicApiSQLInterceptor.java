@@ -18,17 +18,6 @@ public class MagicApiSQLInterceptor implements SQLInterceptor {
 
     @Override
     public void preHandle(BoundSql boundSql, RequestEntity requestEntity) {
-
-        if ("GET".equals(requestEntity.getApiInfo().getMethod())) {
-
-        } else if ("PUT".equals(requestEntity.getApiInfo().getMethod())) {
-
-        } else if ("DELETE".equals(requestEntity.getApiInfo().getMethod())) {
-
-        } else if ("POST".equals(requestEntity.getApiInfo().getMethod())) {
-
-        }
-
         log.info("要执行的SQL: " + boundSql.getSql());
         // 这里也可以通过boundSql的方法改写SQL和参数
         log.info("要执行的SQL参数: " + Arrays.toString(boundSql.getParameters()));

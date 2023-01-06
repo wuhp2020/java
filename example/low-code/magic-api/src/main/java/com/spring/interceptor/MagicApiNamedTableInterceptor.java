@@ -23,8 +23,7 @@ public class MagicApiNamedTableInterceptor implements NamedTableInterceptor {
     @Override
     public void preHandle(SqlMode sqlMode, NamedTable namedTable) {
         if (sqlMode == SqlMode.INSERT) {
-            // 插入时id列用雪花算法
-//            namedTable.column("id", 1);
+
         } else if (sqlMode == SqlMode.UPDATE) {
 
         } else if (sqlMode == SqlMode.DELETE) {

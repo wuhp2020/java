@@ -11,7 +11,7 @@ import org.ssssssss.magicapi.modules.db.provider.ColumnMapperProvider;
  */
 @Slf4j
 @Component
-public class CustomMapperProvider implements ColumnMapperProvider {
+public class MagicApiColumnMapperProvider implements ColumnMapperProvider {
 
     @Override
     public String name() {
