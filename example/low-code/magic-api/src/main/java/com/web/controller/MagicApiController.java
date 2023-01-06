@@ -183,7 +183,7 @@ public class MagicApiController {
         sb.append("\n<where>\n");
         Optional.ofNullable(columns).orElse(Collections.emptyList()).stream().forEach(column -> {
             String columnName = (String) column.get("COLUMN_NAME");
-            String dataType = (String) column.get("DATA_TYPE");
+            String columnType = (String) column.get("COLUMN_TYPE");
             String comment = (String) column.get("COLUMN_COMMENT");
             sb.append("  <if test=\"body."+ columnName +" != null and body."+ columnName +" != ''\">\n");
             sb.append("    and "+ columnName +" = #{body."+ columnName +"}\n");
@@ -193,7 +193,7 @@ public class MagicApiController {
             baseDefinition.setName(columnName);
             baseDefinition.setRequired(false);
             baseDefinition.setDescription(comment);
-            Map<DataType, Object> dataTypeObjectMap = this.convertDataType(dataType);
+            Map<DataType, Object> dataTypeObjectMap = this.convertColumnType(columnType);
             baseDefinition.setDataType(dataTypeObjectMap.keySet().stream().findFirst().get());
             baseDefinition.setValue(dataTypeObjectMap.get(dataTypeObjectMap.keySet().stream().findFirst().get()));
             children.add(baseDefinition);
@@ -282,13 +282,13 @@ public class MagicApiController {
         Optional.ofNullable(columns).orElse(Collections.emptyList()).stream().forEach(column -> {
             String columnName = (String) column.get("COLUMN_NAME");
             if (!"id".equals(columnName)) {
-                String dataType = (String) column.get("DATA_TYPE");
+                String columnType = (String) column.get("COLUMN_TYPE");
                 String comment = (String) column.get("COLUMN_COMMENT");
                 BaseDefinition baseDefinition = new BaseDefinition();
                 baseDefinition.setName(columnName);
                 baseDefinition.setDescription(comment);
                 baseDefinition.setRequired(false);
-                Map<DataType, Object> dataTypeObjectMap = this.convertDataType(dataType);
+                Map<DataType, Object> dataTypeObjectMap = this.convertColumnType(columnType);
                 baseDefinition.setDataType(dataTypeObjectMap.keySet().stream().findFirst().get());
                 baseDefinition.setValue(dataTypeObjectMap.get(dataTypeObjectMap.keySet().stream().findFirst().get()));
                 children.add(baseDefinition);
@@ -320,7 +320,7 @@ public class MagicApiController {
         ArrayList<BaseDefinition> children = new ArrayList<>();
         Optional.ofNullable(columns).orElse(Collections.emptyList()).stream().forEach(column -> {
             String columnName = (String) column.get("COLUMN_NAME");
-            String dataType = (String) column.get("DATA_TYPE");
+            String columnType = (String) column.get("COLUMN_TYPE");
             String comment = (String) column.get("COLUMN_COMMENT");
             BaseDefinition baseDefinition = new BaseDefinition();
             baseDefinition.setName(columnName);
@@ -330,7 +330,7 @@ public class MagicApiController {
                 baseDefinition.setRequired(false);
             }
             baseDefinition.setDescription(comment);
-            Map<DataType, Object> dataTypeObjectMap = this.convertDataType(dataType);
+            Map<DataType, Object> dataTypeObjectMap = this.convertColumnType(columnType);
             baseDefinition.setDataType(dataTypeObjectMap.keySet().stream().findFirst().get());
             baseDefinition.setValue(dataTypeObjectMap.get(dataTypeObjectMap.keySet().stream().findFirst().get()));
             children.add(baseDefinition);
@@ -361,7 +361,7 @@ public class MagicApiController {
         sb.append("\n<where>\n");
         Optional.ofNullable(columns).orElse(Collections.emptyList()).stream().forEach(column -> {
             String columnName = (String) column.get("COLUMN_NAME");
-            String dataType = (String) column.get("DATA_TYPE");
+            String columnType = (String) column.get("COLUMN_TYPE");
             String comment = (String) column.get("COLUMN_COMMENT");
             sb.append("  <if test=\"body."+ columnName +" != null and body."+ columnName +" != ''\">\n");
             sb.append("    and "+ columnName +" = #{body."+ columnName +"}\n");
@@ -371,7 +371,7 @@ public class MagicApiController {
             baseDefinition.setName(columnName);
             baseDefinition.setRequired(false);
             baseDefinition.setDescription(comment);
-            Map<DataType, Object> dataTypeObjectMap = this.convertDataType(dataType);
+            Map<DataType, Object> dataTypeObjectMap = this.convertColumnType(columnType);
             baseDefinition.setDataType(dataTypeObjectMap.keySet().stream().findFirst().get());
             baseDefinition.setValue(dataTypeObjectMap.get(dataTypeObjectMap.keySet().stream().findFirst().get()));
             children.add(baseDefinition);
@@ -397,12 +397,12 @@ public class MagicApiController {
         ArrayList<BaseDefinition> baseDefinitions = new ArrayList<>();
         Optional.ofNullable(columns).orElse(Collections.emptyList()).stream().forEach(column -> {
             String columnName = (String) column.get("COLUMN_NAME");
-            String dataType = (String) column.get("DATA_TYPE");
+            String columnType = (String) column.get("COLUMN_TYPE");
             String comment = (String) column.get("COLUMN_COMMENT");
             BaseDefinition baseDefinition = new BaseDefinition();
             baseDefinition.setName(columnName);
             baseDefinition.setRequired(false);
-            Map<DataType, Object> dataTypeObjectMap = this.convertDataType(dataType);
+            Map<DataType, Object> dataTypeObjectMap = this.convertColumnType(columnType);
             baseDefinition.setDataType(dataTypeObjectMap.keySet().stream().findFirst().get());
             baseDefinition.setValue(dataTypeObjectMap.get(dataTypeObjectMap.keySet().stream().findFirst().get()));
             baseDefinition.setDescription(comment);
@@ -412,33 +412,33 @@ public class MagicApiController {
         return baseDefinitions;
     }
 
-    private Map<DataType, Object> convertDataType(String dataType) {
+    private Map<DataType, Object> convertColumnType(String columnType) {
         Map<DataType, Object> result = new HashMap<>();
-        if ("varchar".equals(dataType)) {
+        if (columnType.toLowerCase(Locale.ROOT).startsWith("varchar")) {
             result.put(DataType.String, "1");
-        } else if ("bigint".equals(dataType.toLowerCase(Locale.ROOT))) {
+        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("bigint")) {
             result.put(DataType.Long, 1L);
-        } else if ("decimal".equals(dataType.toLowerCase(Locale.ROOT))) {
+        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("decimal")) {
             result.put(DataType.Double, 1.00D);
-        } else if ("int".equals(dataType.toLowerCase(Locale.ROOT))) {
+        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("int")) {
             result.put(DataType.Integer, 1);
-        } else if ("tinyint".equals(dataType.toLowerCase(Locale.ROOT))) {
+        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("tinyint")) {
             result.put(DataType.Boolean, true);
-        } else if ("float".equals(dataType.toLowerCase(Locale.ROOT))) {
+        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("float")) {
             result.put(DataType.Float, 1.0F);
-        } else if ("double".equals(dataType.toLowerCase(Locale.ROOT))) {
+        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("double")) {
             result.put(DataType.Double, 1.00D);
-        } else if ("date".equals(dataType.toLowerCase(Locale.ROOT))) {
+        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("date")) {
             result.put(DataType.String, "2020-10-18");
-        } else if ("datetime".equals(dataType.toLowerCase(Locale.ROOT))) {
+        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("datetime")) {
             result.put(DataType.String, "2020-10-18 10:11:32");
-        } else if ("timestamp".equals(dataType.toLowerCase(Locale.ROOT))) {
+        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("timestamp")) {
             result.put(DataType.Date, new Date());
-        } else if ("time".equals(dataType.toLowerCase(Locale.ROOT))) {
+        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("time")) {
             result.put(DataType.Date, new Date());
-        } else if ("char".equals(dataType.toLowerCase(Locale.ROOT))) {
+        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("char")) {
             result.put(DataType.String, "1");
-        } else if ("text".equals(dataType.toLowerCase(Locale.ROOT))) {
+        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("text")) {
             result.put(DataType.String, "1");
         }
         return result;
