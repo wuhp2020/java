@@ -24,7 +24,7 @@ public class MagicApiRequestInterceptor implements RequestInterceptor {
      */
     @Override
     public Object preHandle(ApiInfo info, MagicScriptContext context, HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("请求前: " + info.getPath());
+//        System.out.println("请求前: " + info.getPath());
         // 拦截请求并直接返回结果, 不继续后续代码
         // 需要注意的是, 拦截器返回的结果不会被包裹一层json值, 也不会走ResultProvider
         // return new JsonBean<>(100,"拦截器返回");
@@ -39,8 +39,8 @@ public class MagicApiRequestInterceptor implements RequestInterceptor {
      */
     @Override
     public Object postHandle(ApiInfo info, MagicScriptContext context, Object value, HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("请求后: " + info.getPath());
-        System.out.println("返回结果: " + value);
+//        System.out.println("请求后: " + info.getPath());
+//        System.out.println("返回结果: " + value);
         // 拦截请求并直接返回结果, 不继续后续代码
         // 需要注意的是, 拦截器返回的结果不会被包裹一层json值, 也不会走ResultProvider
         // return new JsonBean<>(100,"拦截器返回");

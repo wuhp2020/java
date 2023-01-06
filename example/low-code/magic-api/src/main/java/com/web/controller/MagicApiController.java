@@ -7,6 +7,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.ColumnMapRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +30,7 @@ public class MagicApiController {
 
     @PostMapping("reset")
     @ApiOperation(value = "重置资源")
+    @Transactional(rollbackFor = Exception.class)
     public void reset() {
         this.deleteAutoGroupsFiles();
         this.autoCreateGroupsFiles();
@@ -427,9 +429,9 @@ public class MagicApiController {
         } else if ("double".equals(dataType.toLowerCase(Locale.ROOT))) {
             result.put(DataType.Double, 1.00D);
         } else if ("date".equals(dataType.toLowerCase(Locale.ROOT))) {
-            result.put(DataType.Date, new Date());
+            result.put(DataType.String, "2020-10-18");
         } else if ("datetime".equals(dataType.toLowerCase(Locale.ROOT))) {
-            result.put(DataType.Date, new Date());
+            result.put(DataType.String, "2020-10-18 10:11:32");
         } else if ("timestamp".equals(dataType.toLowerCase(Locale.ROOT))) {
             result.put(DataType.Date, new Date());
         } else if ("time".equals(dataType.toLowerCase(Locale.ROOT))) {
@@ -438,8 +440,6 @@ public class MagicApiController {
             result.put(DataType.String, "1");
         } else if ("text".equals(dataType.toLowerCase(Locale.ROOT))) {
             result.put(DataType.String, "1");
-        } else if ("date".equals(dataType.toLowerCase(Locale.ROOT))) {
-            result.put(DataType.Date, new Date());
         }
         return result;
     }
