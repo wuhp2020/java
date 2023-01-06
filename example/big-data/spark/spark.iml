@@ -153,7 +153,6 @@
     <orderEntry type="library" name="Maven: org.glassfish.hk2.external:aopalliance-repackaged:2.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.hk2:hk2-api:2.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.hk2:hk2-utils:2.6.1" level="project" />
-    <orderEntry type="library" name="Maven: org.javassist:javassist:3.22.0-CR2" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-all:4.1.58.Final" level="project" />
     <orderEntry type="library" name="Maven: com.clearspring.analytics:stream:2.9.6" level="project" />
     <orderEntry type="library" name="Maven: io.dropwizard.metrics:metrics-core:4.1.17" level="project" />
@@ -217,5 +216,7 @@
     <orderEntry type="library" name="Maven: org.springframework.plugin:spring-plugin-metadata:1.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.mapstruct:mapstruct:1.2.0.Final" level="project" />
     <orderEntry type="library" name="Maven: io.springfox:springfox-swagger-ui:2.9.2" level="project" />
+    <orderEntry type="library" name="Maven: com.github.xiaoymin:swagger-bootstrap-ui:1.9.6" level="project" />
+    <orderEntry type="library" name="Maven: org.javassist:javassist:3.25.0-GA" level="project" />
   </component>
 </module>

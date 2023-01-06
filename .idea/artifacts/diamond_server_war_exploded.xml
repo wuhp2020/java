@@ -92,6 +92,8 @@
           <element id="library" level="project" name="Maven: org.springframework.plugin:spring-plugin-metadata:1.2.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.mapstruct:mapstruct:1.2.0.Final" />
           <element id="library" level="project" name="Maven: io.springfox:springfox-swagger-ui:2.9.2" />
+          <element id="library" level="project" name="Maven: com.github.xiaoymin:swagger-bootstrap-ui:1.9.6" />
+          <element id="library" level="project" name="Maven: org.javassist:javassist:3.25.0-GA" />
         </element>
       </element>
       <element id="directory" name="META-INF">
