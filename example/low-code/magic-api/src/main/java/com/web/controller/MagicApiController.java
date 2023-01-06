@@ -414,6 +414,7 @@ public class MagicApiController {
 
     private Map<DataType, Object> convertColumnType(String columnType) {
         Map<DataType, Object> result = new HashMap<>();
+        // 包含多个的类型放前面
         if (columnType.toLowerCase(Locale.ROOT).startsWith("varchar")) {
             result.put(DataType.String, "1");
         } else if (columnType.toLowerCase(Locale.ROOT).startsWith("bigint")) {
@@ -428,10 +429,10 @@ public class MagicApiController {
             result.put(DataType.Float, 1.0F);
         } else if (columnType.toLowerCase(Locale.ROOT).startsWith("double")) {
             result.put(DataType.Double, 1.00D);
-        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("date")) {
-            result.put(DataType.String, "2020-10-18");
         } else if (columnType.toLowerCase(Locale.ROOT).startsWith("datetime")) {
             result.put(DataType.String, "2020-10-18 10:11:32");
+        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("date")) {
+            result.put(DataType.String, "2020-10-18");
         } else if (columnType.toLowerCase(Locale.ROOT).startsWith("timestamp")) {
             result.put(DataType.Date, new Date());
         } else if (columnType.toLowerCase(Locale.ROOT).startsWith("time")) {
