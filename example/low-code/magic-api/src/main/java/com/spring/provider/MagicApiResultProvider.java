@@ -6,6 +6,9 @@ import org.ssssssss.magicapi.core.context.RequestEntity;
 import org.ssssssss.magicapi.core.interceptor.ResultProvider;
 import org.ssssssss.magicapi.modules.db.model.Page;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,8 +27,8 @@ public class MagicApiResultProvider implements ResultProvider {
      */
     @Override
     public Object buildResult(RequestEntity requestEntity, int code, String message, Object data) {
-        // 如果对分页格式有要求的话，可以对data的类型进行判断，进而返回不同的格式
-        return new HashMap(){
+        this.formatDate(data);
+        return new HashMap() {
             {
                 put("code", code);
                 put("message", message);
@@ -40,7 +43,8 @@ public class MagicApiResultProvider implements ResultProvider {
      */
     @Override
     public Object buildPageResult(RequestEntity requestEntity, Page page, long total, List<Map<String, Object>> data) {
-        return new HashMap<String,Object>(){
+        this.formatDate(data);
+        return new HashMap<String,Object>() {
             {
                 put("total", total);
                 put("records", data);
@@ -51,6 +55,35 @@ public class MagicApiResultProvider implements ResultProvider {
     @Override
     public Object buildException(RequestEntity requestEntity, Throwable throwable) {
         return buildResult(requestEntity, 500, throwable.getMessage());
+    }
+
+    private void formatDate(Object data) {
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
+        if (data != null && data instanceof List) {
+            List<Object> list = (List)data;
+            list.stream().forEach(dataTemp -> {
+                if (dataTemp != null && dataTemp instanceof Map) {
+                    Map<String, Object> map = (Map)dataTemp;
+                    map.forEach((k,v) -> {
+                        if (v instanceof Timestamp) {
+                            map.put(k, sdf1.format(v));
+                        } else if (v instanceof Date) {
+                            map.put(k, sdf2.format(v));
+                        }
+                    });
+                }
+            });
+        } else if (data != null && data instanceof Map) {
+            Map<String, Object> map = (Map)data;
+            map.forEach((k,v) -> {
+                if (v instanceof Timestamp) {
+                    map.put(k, sdf1.format(v));
+                } else if (v instanceof Date) {
+                    map.put(k, sdf2.format(v));
+                }
+            });
+        }
     }
 
 }
