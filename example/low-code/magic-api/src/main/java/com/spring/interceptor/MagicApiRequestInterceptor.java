@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * @ Author : wuheping
  * @ Date   : 2022/5/27
- * @ Desc   : 描述
+ * @ Desc   : 自定义拦截器
  */
 @Slf4j
 @Order(1)

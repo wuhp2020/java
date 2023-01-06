@@ -10,7 +10,7 @@ import java.util.Arrays;
 /**
  * @ Author : wuheping
  * @ Date   : 2022/5/26
- * @ Desc   : 描述
+ * @ Desc   : 自定义SQL拦截器
  */
 @Slf4j
 @Component

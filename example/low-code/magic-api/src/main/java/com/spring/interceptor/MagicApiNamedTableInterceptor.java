@@ -9,7 +9,7 @@ import org.ssssssss.magicapi.modules.db.table.NamedTable;
 /**
  * @ Author : wuheping
  * @ Date   : 2022/5/26
- * @ Desc   : 描述
+ * @ Desc   : 自定义单表API拦截器
  */
 @Slf4j
 @Component
