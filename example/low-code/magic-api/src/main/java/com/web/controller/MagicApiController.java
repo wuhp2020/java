@@ -1,4 +1,4 @@
-package com.web;
+package com.web.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/v1/magicapi")
-@Api(tags = "MagicApi")
+@Api(tags = "自动生成接口")
 @Slf4j
 public class MagicApiController {
 
