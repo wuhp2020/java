@@ -113,27 +113,27 @@ public class MagicApiController {
                     .stream().collect(Collectors.toMap(ApiInfo::getPath, e->e));
 
             if (apiInfoMap.get("/findById") == null) {
-                this.autoCreateFindById(groupId, tableNameReal, columnMap);
+                this.findById(groupId, tableNameReal, columnMap);
             }
             if (apiInfoMap.get("/findByPage") == null) {
-                this.autoCreateFindByPage(groupId, tableNameReal, columnMap);
+                this.findByPage(groupId, tableNameReal, columnMap);
             }
             if (apiInfoMap.get("/deleteByIds") == null) {
-                this.autoCreateDeleteByIds(groupId, tableNameReal, columnMap);
+                this.deleteByIds(groupId, tableNameReal, columnMap);
             }
             if (apiInfoMap.get("/save") == null) {
-                this.autoCreateSave(groupId, tableNameReal, columnMap);
+                this.save(groupId, tableNameReal, columnMap);
             }
             if (apiInfoMap.get("/updateById") == null) {
-                this.autoCreateUpdateById(groupId, tableNameReal, columnMap);
+                this.updateById(groupId, tableNameReal, columnMap);
             }
             if (apiInfoMap.get("/findList") == null) {
-                this.autoCreateFindList(groupId, tableNameReal, columnMap);
+                this.findList(groupId, tableNameReal, columnMap);
             }
         });
     }
 
-    private void autoCreateFindById(String groupId, String tableName, List<Map<String, Object>> columns) {
+    private void findById(String groupId, String tableName, List<Map<String, Object>> columns) {
         ApiInfo apiInfo = new ApiInfo();
         apiInfo.setGroupId(groupId);
         apiInfo.setPath("/findById");
@@ -145,13 +145,20 @@ public class MagicApiController {
         requestBodyDefinition.setRequired(true);
         requestBodyDefinition.setDataType(DataType.Object);
         ArrayList<BaseDefinition> children = new ArrayList<>();
-        BaseDefinition baseDefinition = new BaseDefinition();
-        baseDefinition.setName("id");
-        baseDefinition.setRequired(true);
-        baseDefinition.setDataType(DataType.String);
-        baseDefinition.setDescription("主键");
-        baseDefinition.setValue("1");
-        children.add(baseDefinition);
+        Optional.ofNullable(columns).orElse(Collections.emptyList()).stream().forEach(column -> {
+            String columnName = (String) column.get("COLUMN_NAME");
+            if ("id".equals(columnName)) {
+                String columnType = (String) column.get("COLUMN_TYPE");
+                BaseDefinition baseDefinition = new BaseDefinition();
+                baseDefinition.setName(columnName);
+                baseDefinition.setDescription("主键");
+                baseDefinition.setRequired(true);
+                Map<DataType, Object> dataTypeObjectMap = this.convertColumnType(columnType);
+                baseDefinition.setDataType(dataTypeObjectMap.keySet().stream().findFirst().get());
+                baseDefinition.setValue(dataTypeObjectMap.get(dataTypeObjectMap.keySet().stream().findFirst().get()));
+                children.add(baseDefinition);
+            }
+        });
         requestBodyDefinition.setChildren(children);
         apiInfo.setRequestBodyDefinition(requestBodyDefinition);
 
@@ -163,7 +170,7 @@ public class MagicApiController {
         magicResourceService.saveFile(apiInfo);
     }
 
-    private void autoCreateFindByPage(String groupId, String tableName, List<Map<String, Object>> columns) {
+    private void findByPage(String groupId, String tableName, List<Map<String, Object>> columns) {
         ApiInfo apiInfo = new ApiInfo();
         apiInfo.setGroupId(groupId);
         apiInfo.setPath("/findByPage");
@@ -229,7 +236,7 @@ public class MagicApiController {
         magicResourceService.saveFile(apiInfo);
     }
 
-    private void autoCreateDeleteByIds(String groupId, String tableName, List<Map<String, Object>> columns) {
+    private void deleteByIds(String groupId, String tableName, List<Map<String, Object>> columns) {
         ApiInfo apiInfo = new ApiInfo();
         apiInfo.setGroupId(groupId);
         apiInfo.setPath("/deleteByIds");
@@ -248,19 +255,27 @@ public class MagicApiController {
         requestBodyDefinition.setRequired(true);
         requestBodyDefinition.setDataType(DataType.Array);
         ArrayList<BaseDefinition> children = new ArrayList<>();
-        BaseDefinition baseDefinition = new BaseDefinition();
-        baseDefinition.setRequired(true);
-        baseDefinition.setDataType(DataType.String);
-        baseDefinition.setValue("1");
-        baseDefinition.setDescription("主键");
-        children.add(baseDefinition);
+        Optional.ofNullable(columns).orElse(Collections.emptyList()).stream().forEach(column -> {
+            String columnName = (String) column.get("COLUMN_NAME");
+            if ("id".equals(columnName)) {
+                String columnType = (String) column.get("COLUMN_TYPE");
+                BaseDefinition baseDefinition = new BaseDefinition();
+                baseDefinition.setName(columnName);
+                baseDefinition.setDescription("主键");
+                baseDefinition.setRequired(true);
+                Map<DataType, Object> dataTypeObjectMap = this.convertColumnType(columnType);
+                baseDefinition.setDataType(dataTypeObjectMap.keySet().stream().findFirst().get());
+                baseDefinition.setValue(dataTypeObjectMap.get(dataTypeObjectMap.keySet().stream().findFirst().get()));
+                children.add(baseDefinition);
+            }
+        });
         requestBodyDefinition.setChildren(children);
         apiInfo.setRequestBodyDefinition(requestBodyDefinition);
         MagicResourceService magicResourceService = MagicConfiguration.getMagicResourceService();
         magicResourceService.saveFile(apiInfo);
     }
 
-    private void autoCreateSave(String groupId, String tableName, List<Map<String, Object>> columns) {
+    private void save(String groupId, String tableName, List<Map<String, Object>> columns) {
         ApiInfo apiInfo = new ApiInfo();
         apiInfo.setGroupId(groupId);
         apiInfo.setPath("/save");
@@ -300,7 +315,7 @@ public class MagicApiController {
         magicResourceService.saveFile(apiInfo);
     }
 
-    private void autoCreateUpdateById(String groupId, String tableName, List<Map<String, Object>> columns) {
+    private void updateById(String groupId, String tableName, List<Map<String, Object>> columns) {
         ApiInfo apiInfo = new ApiInfo();
         apiInfo.setGroupId(groupId);
         apiInfo.setPath("/updateById");
@@ -341,7 +356,7 @@ public class MagicApiController {
         magicResourceService.saveFile(apiInfo);
     }
 
-    private void autoCreateFindList(String groupId, String tableName, List<Map<String, Object>> columns) {
+    private void findList(String groupId, String tableName, List<Map<String, Object>> columns) {
         ApiInfo apiInfo = new ApiInfo();
         apiInfo.setGroupId(groupId);
         apiInfo.setPath("/findList");
