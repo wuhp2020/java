@@ -262,7 +262,6 @@ public class MagicApiController {
                 BaseDefinition baseDefinition = new BaseDefinition();
                 baseDefinition.setName(columnName);
                 baseDefinition.setDescription("主键");
-                baseDefinition.setRequired(true);
                 Map<DataType, Object> dataTypeObjectMap = this.convertColumnType(columnType);
                 baseDefinition.setDataType(dataTypeObjectMap.keySet().stream().findFirst().get());
                 baseDefinition.setValue(dataTypeObjectMap.get(dataTypeObjectMap.keySet().stream().findFirst().get()));
