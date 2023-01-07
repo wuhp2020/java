@@ -413,33 +413,33 @@ public class MagicApiController {
     }
 
     private Map<DataType, Object> convertColumnType(String columnType) {
+        columnType = columnType.split("\\(")[0];
         Map<DataType, Object> result = new HashMap<>();
-        // 包含多个的类型放前面
-        if (columnType.toLowerCase(Locale.ROOT).startsWith("varchar")) {
+        if ("varchar".equals(columnType)) {
             result.put(DataType.String, "1");
-        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("bigint")) {
+        } else if ("bigint".equals(columnType)) {
             result.put(DataType.Long, 1L);
-        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("decimal")) {
+        } else if ("decimal".equals(columnType)) {
             result.put(DataType.Double, 1.00D);
-        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("int")) {
+        } else if ("int".equals(columnType)) {
             result.put(DataType.Integer, 1);
-        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("tinyint")) {
+        } else if ("tinyint".equals(columnType)) {
             result.put(DataType.Boolean, true);
-        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("float")) {
+        } else if ("float".equals(columnType)) {
             result.put(DataType.Float, 1.0F);
-        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("double")) {
+        } else if ("double".equals(columnType)) {
             result.put(DataType.Double, 1.00D);
-        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("datetime")) {
+        } else if ("datetime".equals(columnType)) {
             result.put(DataType.String, "2020-10-18 10:11:32");
-        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("date")) {
+        } else if ("date".equals(columnType)) {
             result.put(DataType.String, "2020-10-18");
-        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("timestamp")) {
+        } else if ("timestamp".equals(columnType)) {
             result.put(DataType.Date, new Date());
-        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("time")) {
+        } else if ("time".equals(columnType)) {
             result.put(DataType.Date, new Date());
-        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("char")) {
+        } else if ("char".equals(columnType)) {
             result.put(DataType.String, "1");
-        } else if (columnType.toLowerCase(Locale.ROOT).startsWith("text")) {
+        } else if ("text".equals(columnType)) {
             result.put(DataType.String, "1");
         }
         return result;
