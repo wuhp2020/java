@@ -413,7 +413,7 @@ public class MagicApiController {
     }
 
     private Map<DataType, Object> convertColumnType(String columnType) {
-        columnType = columnType.split("\\(")[0];
+        columnType = columnType.split("\\(")[0].split(" ")[0];
         Map<DataType, Object> result = new HashMap<>();
         if ("varchar".equals(columnType)) {
             result.put(DataType.String, "1");
