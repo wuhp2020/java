@@ -127,6 +127,9 @@ public class MagicApiController {
             if (apiInfoMap.get("/updateById") == null) {
                 this.updateById(groupId, tableNameReal, columnMap);
             }
+            if (apiInfoMap.get("/createOrUpdate") == null) {
+                this.createOrUpdate(groupId, tableNameReal, columnMap);
+            }
             if (apiInfoMap.get("/findList") == null) {
                 this.findList(groupId, tableNameReal, columnMap);
             }
@@ -368,10 +371,13 @@ public class MagicApiController {
         requestBodyDefinition.setDataType(DataType.Object);
         StringBuilder sb = new StringBuilder();
         sb.append("import com.alibaba.fastjson.JSON;\n");
-        sb.append("var one = db.table('"+ tableName +"').where().eq('id', body.id).selectOne()");
-        sb.append("if (one == null) {}");
-        sb.append("}");
-        sb.append("db.table('"+ tableName +"').primary('id').update(JSON.toJSON(body))\n");
+        sb.append("import com.web.util.SnowflakeIdWorker;\n");
+        sb.append("var one = db.table('"+ tableName +"').where().eq('id', body.id).selectOne()\n");
+        sb.append("if (one == null) {\n");
+        sb.append("    db.table('"+ tableName +"').primary('id', SnowflakeIdWorker.getId()).save(JSON.toJSON(body))\n");
+        sb.append("} else {\n");
+        sb.append("    db.table('"+ tableName +"').primary('id').update(JSON.toJSON(body))\n");
+        sb.append("}\n");
         sb.append("return \"ok\"");
         apiInfo.setScript(sb.toString());
         requestBodyDefinition.setChildren(this.baseDefinitions(columns));
