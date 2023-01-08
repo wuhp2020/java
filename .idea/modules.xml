@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/flow-engine/activiti/activiti.iml" filepath="$PROJECT_DIR$/example/flow-engine/activiti/activiti.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/frontend/ajax/ajax.iml" filepath="$PROJECT_DIR$/example/frontend/ajax/ajax.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/tools/ansible-agent/ansible-agent.iml" filepath="$PROJECT_DIR$/example/tools/ansible-agent/ansible-agent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/low-code/apijson/apijson.iml" filepath="$PROJECT_DIR$/example/low-code/apijson/apijson.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/config-center/apollo/apollo.iml" filepath="$PROJECT_DIR$/example/config-center/apollo/apollo.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/tools/arthas/arthas.iml" filepath="$PROJECT_DIR$/example/tools/arthas/arthas.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/tools/arthas-tunnel-server/arthas-tunnel-server.iml" filepath="$PROJECT_DIR$/example/tools/arthas-tunnel-server/arthas-tunnel-server.iml" />

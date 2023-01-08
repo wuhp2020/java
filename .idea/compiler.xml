@@ -44,6 +44,7 @@
         <module name="java8" />
         <module name="open-meituan" />
         <module name="spark" />
+        <module name="apijson" />
         <module name="crudapi-rest" />
         <module name="axure" />
         <module name="activemq" />
@@ -216,6 +217,7 @@
       <module name="ajax" target="1.8" />
       <module name="ansible-agent" target="1.8" />
       <module name="api-manager" target="1.8" />
+      <module name="apijson" target="1.8" />
       <module name="apollo" target="1.8" />
       <module name="arthas" target="1.8" />
       <module name="arthas-tunnel-server" target="1.8" />
@@ -555,6 +557,7 @@
       <module name="ajax" options="-parameters" />
       <module name="ansible-agent" options="-parameters" />
       <module name="api-manager" options="-parameters" />
+      <module name="apijson" options="-parameters" />
       <module name="apollo" options="-parameters" />
       <module name="arthas" options="-parameters" />
       <module name="arthas-tunnel-server" options="-parameters" />

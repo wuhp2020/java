@@ -355,6 +355,31 @@ public class MagicApiController {
         magicResourceService.saveFile(apiInfo);
     }
 
+    private void createOrUpdate(String groupId, String tableName, List<Map<String, Object>> columns) {
+        ApiInfo apiInfo = new ApiInfo();
+        apiInfo.setGroupId(groupId);
+        apiInfo.setPath("/createOrUpdate");
+        apiInfo.setUpdateBy("auto");
+        apiInfo.setMethod("POST");
+        apiInfo.setName("新增或修改");
+
+        BaseDefinition requestBodyDefinition = new BaseDefinition();
+        requestBodyDefinition.setRequired(true);
+        requestBodyDefinition.setDataType(DataType.Object);
+        StringBuilder sb = new StringBuilder();
+        sb.append("import com.alibaba.fastjson.JSON;\n");
+        sb.append("var one = db.table('"+ tableName +"').where().eq('id', body.id).selectOne()");
+        sb.append("if (one == null) {}");
+        sb.append("}");
+        sb.append("db.table('"+ tableName +"').primary('id').update(JSON.toJSON(body))\n");
+        sb.append("return \"ok\"");
+        apiInfo.setScript(sb.toString());
+        requestBodyDefinition.setChildren(this.baseDefinitions(columns));
+        apiInfo.setRequestBodyDefinition(requestBodyDefinition);
+        MagicResourceService magicResourceService = MagicConfiguration.getMagicResourceService();
+        magicResourceService.saveFile(apiInfo);
+    }
+
     private void findList(String groupId, String tableName, List<Map<String, Object>> columns) {
         ApiInfo apiInfo = new ApiInfo();
         apiInfo.setGroupId(groupId);

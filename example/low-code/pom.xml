@@ -16,6 +16,7 @@
     <modules>
         <module>magic-api</module>
         <module>rocket-api</module>
+        <module>apijson</module>
     </modules>
     <packaging>pom</packaging>
 </project>
