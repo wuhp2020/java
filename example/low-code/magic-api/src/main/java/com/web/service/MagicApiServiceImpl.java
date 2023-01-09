@@ -304,7 +304,7 @@ public class MagicApiServiceImpl implements IMagicApiService {
         sb.append("import com.web.util.SnowflakeIdWorker;\n");
         sb.append("var one = db.table('"+ tableName +"').where().eq('id', body.id).selectOne()\n");
         sb.append("if (one == null) {\n");
-        sb.append("    body.id = null");
+        sb.append("    body.id = null\n");
         sb.append("    db.table('"+ tableName +"').primary('id', SnowflakeIdWorker.getId()).save(JSON.toJSON(body))\n");
         sb.append("} else {\n");
         sb.append("    db.table('"+ tableName +"').primary('id').update(JSON.toJSON(body))\n");
