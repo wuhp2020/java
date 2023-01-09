@@ -28,10 +28,10 @@ public class MagicApiServiceImpl implements IMagicApiService {
             Group groupSaveApi = new Group();
             groupSaveApi.setUpdateBy("auto");
             groupSaveApi.setId(groupId);
-            groupSaveApi.setName(tableName);
+            groupSaveApi.setName(tableName.replaceAll("_", ""));
             groupSaveApi.setType("api");
             groupSaveApi.setParentId("0");
-            groupSaveApi.setPath("/" + tableName);
+            groupSaveApi.setPath("/" + tableName.replaceAll("_", ""));
             magicResourceService.saveGroup(groupSaveApi);
         }
         List<ApiInfo> apiInfos = magicResourceService.listFiles(groupId);

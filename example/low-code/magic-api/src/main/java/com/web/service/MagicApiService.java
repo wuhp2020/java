@@ -36,7 +36,7 @@ public class MagicApiService {
     /**
      * 删除自动创建的组、接口
      */
-    public void deleteGroupsFiles() {
+    private void deleteGroupsFiles() {
         MagicResourceService magicResourceService = MagicConfiguration.getMagicResourceService();
         Map<String, TreeNode<Group>> groupMap = magicResourceService.tree();
         Optional.ofNullable(groupMap).orElse(Collections.emptyMap()).forEach((k, v) -> {
@@ -62,7 +62,7 @@ public class MagicApiService {
     /**
      * 自动创建组、接口、函数
      */
-    public void createGroupsFiles() {
+    private void createGroupsFiles() {
         MagicResourceService magicResourceService = MagicConfiguration.getMagicResourceService();
         Map<String, TreeNode<Group>> groupTree = magicResourceService.tree();
         List<Group> groupList = new LinkedList<>();
@@ -86,7 +86,6 @@ public class MagicApiService {
         Optional.ofNullable(tables).orElse(Collections.emptyList()).stream()
                 .filter(table -> (!"magic_api".equals(table.get("TABLE_NAME")))).forEach(table -> {
             String tableName = ((String) table.get("TABLE_NAME"));
-            String groupName = ((String) table.get("TABLE_NAME")).replaceAll("_", "");
 
             ColumnMapRowMapper columnRowMapper = new ColumnMapRowMapper();
             List<Map<String, Object>> columnMap = jdbcTemplate.query("select * from information_schema.COLUMNS " +
@@ -95,10 +94,10 @@ public class MagicApiService {
             Optional.ofNullable(iMagicApiServices)
                     .orElse(Collections.emptyList()).stream().forEach(magicApiAbstractService -> {
                 if ("function".equals(magicApiAbstractService.type())) {
-                    Group group = groupMap.get("function-/" + groupName);
+                    Group group = groupMap.get("function-/" + tableName.replaceAll("_", ""));
                     magicApiAbstractService.autoCreate(group, tableName, columnMap);
                 } else if ("api".equals(magicApiAbstractService.type())) {
-                    Group group = groupMap.get("api-/" + groupName);
+                    Group group = groupMap.get("api-/" + tableName.replaceAll("_", ""));
                     magicApiAbstractService.autoCreate(group, tableName, columnMap);
                 }
             });
