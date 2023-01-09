@@ -25,3 +25,4 @@ magic-api:
     success: 200
     invalid: 401
     exception: 500
+  throw-exception: true
