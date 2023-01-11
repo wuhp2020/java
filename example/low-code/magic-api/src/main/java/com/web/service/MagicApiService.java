@@ -11,6 +11,7 @@ import org.springframework.util.CollectionUtils;
 import org.ssssssss.magicapi.core.config.MagicConfiguration;
 import org.ssssssss.magicapi.core.model.ApiInfo;
 import org.ssssssss.magicapi.core.model.Group;
+import org.ssssssss.magicapi.core.model.PathMagicEntity;
 import org.ssssssss.magicapi.core.model.TreeNode;
 import org.ssssssss.magicapi.core.service.MagicResourceService;
 
@@ -43,14 +44,14 @@ public class MagicApiService {
             Optional.ofNullable(v).ifPresent(treeNode -> {
                 Optional.ofNullable(treeNode.flat()).orElse(Collections.emptyList()).stream().forEach(group -> {
                     if (group != null && "auto".equals(group.getUpdateBy())) {
-                        List<ApiInfo> apiInfos = magicResourceService.listFiles(group.getId());
-                        List<ApiInfo> autoApiInfos = Optional.ofNullable(apiInfos).orElse(Collections.emptyList())
+                        List<PathMagicEntity> pathMagicEntityList = magicResourceService.listFiles(group.getId());
+                        List<PathMagicEntity> autos = Optional.ofNullable(pathMagicEntityList).orElse(Collections.emptyList())
                                 .stream().filter(apiInfo -> "auto".equals(apiInfo.getUpdateBy()))
                                 .collect(Collectors.toList());
-                        if (!CollectionUtils.isEmpty(apiInfos) && apiInfos.size() == autoApiInfos.size()) {
+                        if (!CollectionUtils.isEmpty(pathMagicEntityList) && pathMagicEntityList.size() == autos.size()) {
                             magicResourceService.delete(group.getId());
                         }
-                        autoApiInfos.stream().forEach(autoApiInfo -> {
+                        autos.stream().forEach(autoApiInfo -> {
                             magicResourceService.delete(autoApiInfo.getId());
                         });
                     }

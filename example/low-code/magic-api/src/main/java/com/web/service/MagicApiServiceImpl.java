@@ -73,7 +73,16 @@ public class MagicApiServiceImpl implements IMagicApiService {
         apiInfo.setUpdateBy("auto");
         apiInfo.setMethod("POST");
         apiInfo.setName("查询详情");
-        apiInfo.setScript("return db.table('"+ tableName +"').where().eq('id', body.id).selectOne()");
+        StringBuilder sb = new StringBuilder();
+        sb.append("import log;\n");
+        sb.append("import \"@/" + tableName.replaceAll("_", "") +"/beforeFindById\" as beforeFindById;\n");
+        sb.append("import \"@/" + tableName.replaceAll("_", "") +"/afterFindById\" as afterFindById;\n\n");
+
+        sb.append("beforeFindById(body);\n");
+        sb.append("var result = db.table('"+ tableName +"').where().eq('id', body.id).selectOne();\n");
+        sb.append("afterFindById(body);\n");
+        sb.append("return result;\n");
+        apiInfo.setScript(sb.toString());
         BaseDefinition requestBodyDefinition = new BaseDefinition();
         requestBodyDefinition.setRequired(true);
         requestBodyDefinition.setDataType(DataType.Object);
@@ -117,6 +126,11 @@ public class MagicApiServiceImpl implements IMagicApiService {
         ArrayList<BaseDefinition> children = new ArrayList<>();
 
         StringBuilder sb = new StringBuilder();
+        sb.append("import log;\n");
+        sb.append("import \"@/" + tableName.replaceAll("_", "") +"/beforeFindByPage\" as beforeFindByPage;\n");
+        sb.append("import \"@/" + tableName.replaceAll("_", "") +"/afterFindByPage\" as afterFindByPage;\n\n");
+
+        sb.append("beforeFindByPage(body);\n");
         sb.append("var sql = \"\"\"\n");
         sb.append("select * from ");
         sb.append(tableName);
@@ -140,7 +154,9 @@ public class MagicApiServiceImpl implements IMagicApiService {
         });
         sb.append("</where>\n");
         sb.append("\"\"\"\n");
-        sb.append("return db.page(sql, body.pageSize, body.pageNum * body.pageSize)");
+        sb.append("var result = db.page(sql, body.pageSize, body.pageNum * body.pageSize);");
+        sb.append("afterFindByPage(body);\n");
+        sb.append("return result;\n");
         apiInfo.setScript(sb.toString());
 
         BaseDefinition baseDefinitionPageNum = new BaseDefinition();
@@ -177,12 +193,18 @@ public class MagicApiServiceImpl implements IMagicApiService {
         apiInfo.setMethod("POST");
         apiInfo.setName("删除");
         StringBuilder sb = new StringBuilder();
+        sb.append("import log;\n");
+        sb.append("import \"@/" + tableName.replaceAll("_", "") +"/beforeDeleteByIds\" as beforeDeleteByIds;\n");
+        sb.append("import \"@/" + tableName.replaceAll("_", "") +"/afterDeleteByIds\" as afterDeleteByIds;\n\n");
+
+        sb.append("beforeDeleteByIds(body);\n");
         sb.append("db.transaction(()=>{\n");
         sb.append("    for(index,item in body) {\n");
-        sb.append("        db.table('"+ tableName +"').where().eq('id', item).delete()\n");
+        sb.append("        db.table('"+ tableName +"').where().eq('id', item).delete();\n");
         sb.append("    }\n");
         sb.append("});\n");
-        sb.append("return \"ok\"");
+        sb.append("afterDeleteByIds(body);\n");
+        sb.append("return \"ok\";");
         apiInfo.setScript(sb.toString());
         BaseDefinition requestBodyDefinition = new BaseDefinition();
         requestBodyDefinition.setRequired(true);
@@ -219,10 +241,16 @@ public class MagicApiServiceImpl implements IMagicApiService {
         requestBodyDefinition.setRequired(true);
         requestBodyDefinition.setDataType(DataType.Object);
         StringBuilder sb = new StringBuilder();
+        sb.append("import log;\n");
+        sb.append("import \"@/" + tableName.replaceAll("_", "") +"/beforeSave\" as beforeSave;\n");
+        sb.append("import \"@/" + tableName.replaceAll("_", "") +"/afterSave\" as afterSave;\n");
         sb.append("import com.alibaba.fastjson.JSON;\n");
-        sb.append("import com.web.util.SnowflakeIdWorker;\n");
-        sb.append("db.table('"+ tableName +"').primary('id', SnowflakeIdWorker.getId()).save(JSON.toJSON(body))\n");
-        sb.append("return \"ok\"");
+        sb.append("import com.web.util.SnowflakeIdWorker;\n\n");
+
+        sb.append("beforeSave(body);\n");
+        sb.append("db.table('"+ tableName +"').primary('id', SnowflakeIdWorker.getId()).save(JSON.toJSON(body));\n");
+        sb.append("afterSave(body);\n");
+        sb.append("return \"ok\";");
         apiInfo.setScript(sb.toString());
 
         ArrayList<BaseDefinition> children = new ArrayList<>();
@@ -259,9 +287,15 @@ public class MagicApiServiceImpl implements IMagicApiService {
         requestBodyDefinition.setRequired(true);
         requestBodyDefinition.setDataType(DataType.Object);
         StringBuilder sb = new StringBuilder();
-        sb.append("import com.alibaba.fastjson.JSON;\n");
-        sb.append("db.table('"+ tableName +"').primary('id').update(JSON.toJSON(body))\n");
-        sb.append("return \"ok\"");
+        sb.append("import log;\n");
+        sb.append("import \"@/" + tableName.replaceAll("_", "") +"/beforeUpdateById\" as beforeUpdateById;\n");
+        sb.append("import \"@/" + tableName.replaceAll("_", "") +"/afterUpdateById\" as afterUpdateById;\n");
+        sb.append("import com.alibaba.fastjson.JSON;\n\n");
+
+        sb.append("beforeUpdateById(body);\n");
+        sb.append("db.table('"+ tableName +"').primary('id').update(JSON.toJSON(body));\n");
+        sb.append("afterUpdateById(body);\n");
+        sb.append("return \"ok\";");
         apiInfo.setScript(sb.toString());
 
         ArrayList<BaseDefinition> children = new ArrayList<>();
@@ -300,16 +334,22 @@ public class MagicApiServiceImpl implements IMagicApiService {
         requestBodyDefinition.setRequired(true);
         requestBodyDefinition.setDataType(DataType.Object);
         StringBuilder sb = new StringBuilder();
+        sb.append("import log;\n");
+        sb.append("import \"@/" + tableName.replaceAll("_", "") +"/beforeCreateOrUpdate\" as beforeCreateOrUpdate;\n");
+        sb.append("import \"@/" + tableName.replaceAll("_", "") +"/afterCreateOrUpdate\" as afterCreateOrUpdate;\n");
         sb.append("import com.alibaba.fastjson.JSON;\n");
-        sb.append("import com.web.util.SnowflakeIdWorker;\n");
-        sb.append("var one = db.table('"+ tableName +"').where().eq('id', body.id).selectOne()\n");
+        sb.append("import com.web.util.SnowflakeIdWorker;\n\n");
+
+        sb.append("beforeCreateOrUpdate(body);\n");
+        sb.append("var one = db.table('"+ tableName +"').where().eq('id', body.id).selectOne();\n");
         sb.append("if (one == null) {\n");
-        sb.append("    body.id = null\n");
-        sb.append("    db.table('"+ tableName +"').primary('id', SnowflakeIdWorker.getId()).save(JSON.toJSON(body))\n");
+        sb.append("    body.id = null;\n");
+        sb.append("    db.table('"+ tableName +"').primary('id', SnowflakeIdWorker.getId()).save(JSON.toJSON(body));\n");
         sb.append("} else {\n");
-        sb.append("    db.table('"+ tableName +"').primary('id').update(JSON.toJSON(body))\n");
+        sb.append("    db.table('"+ tableName +"').primary('id').update(JSON.toJSON(body));\n");
         sb.append("}\n");
-        sb.append("return \"ok\"");
+        sb.append("afterCreateOrUpdate(body);\n");
+        sb.append("return \"ok\";");
         apiInfo.setScript(sb.toString());
         requestBodyDefinition.setChildren(this.baseDefinitions(columns));
         apiInfo.setRequestBodyDefinition(requestBodyDefinition);
@@ -331,6 +371,11 @@ public class MagicApiServiceImpl implements IMagicApiService {
         ArrayList<BaseDefinition> children = new ArrayList<>();
 
         StringBuilder sb = new StringBuilder();
+        sb.append("import log;\n");
+        sb.append("import \"@/" + tableName.replaceAll("_", "") +"/beforeFindList\" as beforeFindList;\n");
+        sb.append("import \"@/" + tableName.replaceAll("_", "") +"/afterFindList\" as afterFindList;\n\n");
+
+        sb.append("beforeFindList(body);\n");
         sb.append("var sql = \"\"\"\n");
         sb.append("select * from ");
         sb.append(tableName);
@@ -354,7 +399,9 @@ public class MagicApiServiceImpl implements IMagicApiService {
         });
         sb.append("</where>\n");
         sb.append("\"\"\"\n");
-        sb.append("return db.select(sql)");
+        sb.append("var result = db.select(sql);");
+        sb.append("afterFindList(body);\n");
+        sb.append("return result;\n");
         apiInfo.setScript(sb.toString());
 
         requestBodyDefinition.setChildren(children);
