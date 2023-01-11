@@ -154,7 +154,7 @@ public class MagicApiServiceImpl implements IMagicApiService {
         });
         sb.append("</where>\n");
         sb.append("\"\"\"\n");
-        sb.append("var result = db.page(sql, body.pageSize, body.pageNum * body.pageSize);");
+        sb.append("var result = db.page(sql, body.pageSize, body.pageNum * body.pageSize);\n");
         sb.append("afterFindByPage(body);\n");
         sb.append("return result;\n");
         apiInfo.setScript(sb.toString());
@@ -399,7 +399,7 @@ public class MagicApiServiceImpl implements IMagicApiService {
         });
         sb.append("</where>\n");
         sb.append("\"\"\"\n");
-        sb.append("var result = db.select(sql);");
+        sb.append("var result = db.select(sql);\n");
         sb.append("afterFindList(body);\n");
         sb.append("return result;\n");
         apiInfo.setScript(sb.toString());
