@@ -221,6 +221,7 @@
       <module fileurl="file://$PROJECT_DIR$/example/database/sqlserver/sqlserver.iml" filepath="$PROJECT_DIR$/example/database/sqlserver/sqlserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/big-data/storm/storm.iml" filepath="$PROJECT_DIR$/example/big-data/storm/storm.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/mvc/struts2/struts2.iml" filepath="$PROJECT_DIR$/example/mvc/struts2/struts2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/survey/survey.iml" filepath="$PROJECT_DIR$/example/survey/survey.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/util/swagger/swagger.iml" filepath="$PROJECT_DIR$/example/util/swagger/swagger.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/task/task.iml" filepath="$PROJECT_DIR$/example/task/task.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/tcp/tcp.iml" filepath="$PROJECT_DIR$/example/tcp/tcp.iml" />

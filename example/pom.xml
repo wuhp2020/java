@@ -39,6 +39,7 @@
         <module>open-ele-me</module>
         <module>open-meituan</module>
         <module>springcloud</module>
+        <module>survey</module>
         <module>spring-cloud-alibaba-starters</module>
     </modules>
 

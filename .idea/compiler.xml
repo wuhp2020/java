@@ -521,6 +521,7 @@
       <module name="sqlserver" target="1.8" />
       <module name="storm" target="1.8" />
       <module name="struts2" target="1.8" />
+      <module name="survey" target="1.8" />
       <module name="swagger" target="1.8" />
       <module name="task" target="1.8" />
       <module name="tcp" target="1.8" />
